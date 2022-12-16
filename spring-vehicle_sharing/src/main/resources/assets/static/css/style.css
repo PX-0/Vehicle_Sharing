@@ -11090,10 +11090,6 @@ fieldset:disabled .btn {
 /* -------------------------------------------------------------------------- */
 /*                          QUA IMPORTO I MIEI STILI                          */
 /* -------------------------------------------------------------------------- */
-body {
-  background: #F0FCF7 !important;
-}
-
 .swiper {
   width: 60%;
   height: auto;
@@ -11108,13 +11104,4 @@ body {
     font-size: 8rem;
     font-weight: 900;
   }
-}
-
-.leaflet-control-zoom-out, .leaflet-control-zoom-in {
-  background-color: #1da1f2 !important;
-  border-radius: 22px !important;
-}
-
-.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
-  border: 1px solid transparent !important;
 }
