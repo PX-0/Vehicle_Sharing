@@ -21,13 +21,20 @@ body{
 /* ------------------------------- END BANNER ------------------------------- */
 
 .mainTitle {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: 500;
 
-    @include media-breakpoint-up(lg) { 
-     font-size: 8rem;
-     font-weight: 900;
-    }
+    color: #F0FCF7;
 }
+
+a.nav-link{
+    color: $secondary;
+}
+
+.active{
+    color: #F0FCF7!important;
+}
+
 .leaflet-control-zoom-out, .leaflet-control-zoom-in{
     background-color: #1da1f2 !important;
     border-radius: 22px !important;

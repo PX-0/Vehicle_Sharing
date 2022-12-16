@@ -13,15 +13,15 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="pagamento")
+@Table(name="pagamenti")
 public class Pagamento {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@OneToOne(mappedBy = "pagamentoId")
-	    private Pagamento pagamento;
+	@OneToOne(mappedBy = "pagamento")
+	private Prenotazione prenotazione;
 	
 	private String metodoPagamento;
 	private String nCarta;
@@ -30,18 +30,19 @@ public class Pagamento {
 	private double importo;
 	
 	
+	public Prenotazione getPrenotazione() {
+		return prenotazione;
+	}
+	public void setPrenotazione(Prenotazione prenotazione) {
+		this.prenotazione = prenotazione;
+	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Pagamento getPagamento() {
-		return pagamento;
-	}
-	public void setPagamento(Pagamento pagamento) {
-		this.pagamento = pagamento;
-	}
+	
 	public String getMetodoPagamento() {
 		return metodoPagamento;
 	}

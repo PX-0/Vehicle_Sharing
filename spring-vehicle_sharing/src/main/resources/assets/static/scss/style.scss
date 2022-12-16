@@ -11,6 +11,8 @@
 /* -------------------------------------------------------------------------- */
 $primary: #1FAB89;
 $secondary: #41658A;
+$fonts: #0C211F;
+
 
 // $secondary:     $gray-600 !default;
 // $success:       $green !default;
@@ -19,6 +21,18 @@ $secondary: #41658A;
 // $danger:        $red !default;
 // $light:         $gray-100 !default;
 // $dark:          $gray-900 !default;
+
+/* -------------------------------------------------------------------------- */
+/*                               EFFETTO SAHDOW                               */
+/* -------------------------------------------------------------------------- */
+// $box-shadow:                  0 .5rem 1rem rgba($black, .15);
+// $box-shadow-sm:               0 .125rem .25rem rgba($black, .075);
+// $box-shadow-lg:               0 1rem 3rem rgba($black, .175);
+// $box-shadow-inset:            inset 0 1px 2px rgba($black, .075);
+
+/* -------------------------------------------------------------------------- */
+/*                                    FONTS                                   */
+/* -------------------------------------------------------------------------- */
 
 $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" ;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace ;

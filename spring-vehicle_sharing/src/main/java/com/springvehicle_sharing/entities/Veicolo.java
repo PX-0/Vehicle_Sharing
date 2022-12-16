@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -21,7 +20,7 @@ import jakarta.persistence.Table;
 public class Veicolo {
 	
 	@Id
-	private String id;
+	private String veicoloId;
 	
 	private String tipologia;
 	private String alimentazione;
@@ -40,20 +39,38 @@ public class Veicolo {
 	@JoinColumn(name = "utenteIns")
 	private ArchivioUtenti utenteIns;
 	
-	@OneToMany(mappedBy = "veicoloId",  fetch = FetchType.LAZY )
+	@OneToMany(mappedBy = "veicolo",  fetch = FetchType.LAZY )
 	private List<Prenotazione> prenotazioni;
 	
 	public Veicolo() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getId() {
-		return id;
+	
+
+	public String getVeicoloId() {
+		return veicoloId;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+
+
+	public void setVeicoloId(String veicoloId) {
+		this.veicoloId = veicoloId;
 	}
+
+
+
+	public List<Prenotazione> getPrenotazioni() {
+		return prenotazioni;
+	}
+
+
+
+	public void setPrenotazioni(List<Prenotazione> prenotazioni) {
+		this.prenotazioni = prenotazioni;
+	}
+
+
 
 	public String getTipologia() {
 		return tipologia;
