@@ -41,5 +41,101 @@ public class ArchivioUtenti {
 	
 	@OneToMany(mappedBy = "utenteId", fetch = FetchType.LAZY)
 	private List<Prenotazione> prenotazioni;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public LocalDateTime getUltimaModifica() {
+		return ultimaModifica;
+	}
+
+	public void setUltimaModifica(LocalDateTime ultimaModifica) {
+		this.ultimaModifica = ultimaModifica;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getFirma() {
+		return firma;
+	}
+
+	public void setFirma(String firma) {
+		this.firma = firma;
+	}
+
+	public char getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(char tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCognome() {
+		return cognome;
+	}
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+	public String getNascita() {
+		return nascita;
+	}
+
+	public void setNascita(String nascita) {
+		this.nascita = nascita;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public LocalDateTime getDataIscrizione() {
+		return dataIscrizione;
+	}
+
+	public void setDataIscrizione(LocalDateTime dataIscrizione) {
+		this.dataIscrizione = dataIscrizione;
+	}
+
+	public List<Veicolo> getVeicoli() {
+		return veicoli;
+	}
+
+	public void setVeicoli(List<Veicolo> veicoli) {
+		this.veicoli = veicoli;
+	}
+
+	public List<Prenotazione> getPrenotazioni() {
+		return prenotazioni;
+	}
+
+	public void setPrenotazioni(List<Prenotazione> prenotazioni) {
+		this.prenotazioni = prenotazioni;
+	}
 	
 }
