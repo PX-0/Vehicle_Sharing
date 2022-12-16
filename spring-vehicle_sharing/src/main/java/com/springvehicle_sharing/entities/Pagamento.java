@@ -21,7 +21,7 @@ public class Pagamento {
 	private int id;
 	
 	@OneToOne(mappedBy = "pagamento")
-	    private Pagamento pagamento;
+	private Prenotazione prenotazione;
 	
 	private String metodoPagamento;
 	private String nCarta;
@@ -36,12 +36,7 @@ public class Pagamento {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Pagamento getPagamento() {
-		return pagamento;
-	}
-	public void setPagamento(Pagamento pagamento) {
-		this.pagamento = pagamento;
-	}
+	
 	public String getMetodoPagamento() {
 		return metodoPagamento;
 	}
