@@ -29,6 +29,7 @@ public class Veicolo {
 	private String immagineVeicolo;
 	private String utenteIns;
 	
+	
 	@OneToMany(mappedBy = "veicolo" , fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<ArchivioUtenti> archivioUtenti;
 	
