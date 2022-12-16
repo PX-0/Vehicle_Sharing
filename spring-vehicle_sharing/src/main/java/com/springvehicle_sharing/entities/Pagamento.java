@@ -28,6 +28,50 @@ public class Pagamento {
 	private LocalDate scadenza;
 	private String cvv;
 	private double importo;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Pagamento getPagamento() {
+		return pagamento;
+	}
+	public void setPagamento(Pagamento pagamento) {
+		this.pagamento = pagamento;
+	}
+	public String getMetodoPagamento() {
+		return metodoPagamento;
+	}
+	public void setMetodoPagamento(String metodoPagamento) {
+		this.metodoPagamento = metodoPagamento;
+	}
+	public String getnCarta() {
+		return nCarta;
+	}
+	public void setnCarta(String nCarta) {
+		this.nCarta = nCarta;
+	}
+	public LocalDate getScadenza() {
+		return scadenza;
+	}
+	public void setScadenza(LocalDate scadenza) {
+		this.scadenza = scadenza;
+	}
+	public String getCvv() {
+		return cvv;
+	}
+	public void setCvv(String cvv) {
+		this.cvv = cvv;
+	}
+	public double getImporto() {
+		return importo;
+	}
+	public void setImporto(double importo) {
+		this.importo = importo;
+	}
+	
+	
 	
 	
 
