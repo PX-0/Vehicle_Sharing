@@ -117,4 +117,9 @@ public class Veicolo {
 	
 	
 	
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> b8228836cd28ee3d38f80f5a75c06c02c421a9cc
