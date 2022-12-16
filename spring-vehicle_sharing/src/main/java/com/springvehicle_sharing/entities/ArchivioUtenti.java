@@ -1,13 +1,16 @@
 package com.springvehicle_sharing.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -32,5 +35,8 @@ public class ArchivioUtenti {
 	@Column(columnDefinition = "DATE CURRENT_TIMESTAMP")
 	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private LocalDateTime dataIscrizione;
+	
+	@OneToMany(mappedBy = "utenteIns", fetch = FetchType.LAZY)
+	private List<Veicolo> veicoli;
 	
 }
