@@ -40,7 +40,7 @@ public class Veicolo {
 	@JoinColumn(name = "utenteIns")
 	private ArchivioUtenti utenteIns;
 	
-	@OneToMany(mappedBy = "veicoloId",  fetch = FetchType.LAZY )
+	@OneToMany(mappedBy = "veicolo",  fetch = FetchType.LAZY )
 	private List<Prenotazione> prenotazioni;
 	
 	public Veicolo() {
