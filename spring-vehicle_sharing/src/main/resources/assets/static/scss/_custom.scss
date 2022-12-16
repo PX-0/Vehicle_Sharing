@@ -2,3 +2,12 @@
     width: 60%;
     height: auto;
   }
+
+.mainTitle {
+    font-size: 2rem;
+
+    @include media-breakpoint-up(lg) { 
+     font-size: 8rem;
+     font-weight: 900;
+    }
+}
