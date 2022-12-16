@@ -9,19 +9,19 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Pagamento")
+@Table(name="pagamento")
 public class Pagamento {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-//	@OneToMany(mappedBy = "")
-//    private List<Prenotazione> prenotazione;
+	@OneToOne(mappedBy = "pagamentoId")
+	    private Pagamento pagamento;
 	
 	private String metodoPagamento;
 	private String nCarta;
