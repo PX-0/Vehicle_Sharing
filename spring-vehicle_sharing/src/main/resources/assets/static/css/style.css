@@ -1,6 +1,12 @@
 /* -------------------------------------------------------------------------- */
 /*                            OVERRIDE DI VARIABILI                           */
 /* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                               EFFETTO SAHDOW                               */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                    FONTS                                   */
+/* -------------------------------------------------------------------------- */
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11090,18 +11096,34 @@ fieldset:disabled .btn {
 /* -------------------------------------------------------------------------- */
 /*                          QUA IMPORTO I MIEI STILI                          */
 /* -------------------------------------------------------------------------- */
+body {
+  background: #F0FCF7 !important;
+}
+
 .swiper {
   width: 60%;
   height: auto;
 }
 
 .mainTitle {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #F0FCF7;
 }
 
-@media (min-width: 992px) {
-  .mainTitle {
-    font-size: 8rem;
-    font-weight: 900;
-  }
+a.nav-link {
+  color: #41658A;
+}
+
+.active {
+  color: #F0FCF7 !important;
+}
+
+.leaflet-control-zoom-out, .leaflet-control-zoom-in {
+  background-color: #1da1f2 !important;
+  border-radius: 22px !important;
+}
+
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+  border: 1px solid transparent !important;
 }
