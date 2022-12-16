@@ -39,7 +39,7 @@ public class ArchivioUtenti {
 	@OneToMany(mappedBy = "utenteIns", fetch = FetchType.LAZY)
 	private List<Veicolo> veicoli;
 	
-	@OneToMany(mappedBy = "utenteId", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "utente", fetch = FetchType.LAZY)
 	private List<Prenotazione> prenotazioni;
 
 	public String getId() {

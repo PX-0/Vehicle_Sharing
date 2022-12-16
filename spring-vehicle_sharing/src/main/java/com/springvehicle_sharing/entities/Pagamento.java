@@ -20,7 +20,7 @@ public class Pagamento {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@OneToOne(mappedBy = "pagamentoId")
+	@OneToOne(mappedBy = "pagamento")
 	    private Pagamento pagamento;
 	
 	private String metodoPagamento;
