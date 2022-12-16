@@ -27,9 +27,9 @@ public class Veicolo {
 	private String descrizione;
 	private String posizioneAttuale;
 	private String disponibilitaNoleggio;
-	@Column(columnDefinition = "DATE")
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-	private LocalDate dataPrenotazione;
+//	@Column(columnDefinition = "DATE")
+//    @DateTimeFormat(iso = ISO.DATE_TIME)
+//	private LocalDate dataPrenotazione;
 	private String immagineVeicolo;
 	
 
@@ -112,13 +112,13 @@ public class Veicolo {
 		this.disponibilitaNoleggio = disponibilitaNoleggio;
 	}
 
-	public LocalDate getDataPrenotazione() {
-		return dataPrenotazione;
-	}
-
-	public void setDataPrenotazione(LocalDate dataPrenotazione) {
-		this.dataPrenotazione = dataPrenotazione;
-	}
+//	public LocalDate getDataPrenotazione() {
+//		return dataPrenotazione;
+//	}
+//
+//	public void setDataPrenotazione(LocalDate dataPrenotazione) {
+//		this.dataPrenotazione = dataPrenotazione;
+//	}
 
 	public String getImmagineVeicolo() {
 		return immagineVeicolo;
