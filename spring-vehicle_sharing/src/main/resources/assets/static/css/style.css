@@ -11122,9 +11122,13 @@ body {
 }
 
 /* ------------------------------- END BANNER ------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                  TITOLO, NAVBAR e NAV-LINK                                  */
+/* -------------------------------------------------------------------------- */
 .mainTitle {
   font-size: 2.5rem;
   font-weight: 400;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #F0FCF7;
 }
 
@@ -11143,6 +11147,9 @@ a.nav-link {
   color: #F0FCF7 !important;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                 FINE NAVBAR                                */
+/* -------------------------------------------------------------------------- */
 .leaflet-control-zoom-out, .leaflet-control-zoom-in {
   background-color: #1da1f2 !important;
   border-radius: 22px !important;
@@ -11150,4 +11157,11 @@ a.nav-link {
 
 .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
   border: 1px solid transparent !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   FOOTER                                   */
+/* -------------------------------------------------------------------------- */
+.description-footer {
+  color: #41658A;
 }
