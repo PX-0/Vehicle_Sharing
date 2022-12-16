@@ -40,6 +40,9 @@ public class Veicolo {
 	@JoinColumn(name = "utenteIns")
 	private ArchivioUtenti utenteIns;
 	
+	@OneToMany(mappedBy = "veicoloId",  fetch = FetchType.LAZY )
+	private List<Prenotazione> prenotazioni;
+	
 	public Veicolo() {
 		// TODO Auto-generated constructor stub
 	}
