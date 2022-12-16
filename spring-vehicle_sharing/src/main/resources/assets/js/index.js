@@ -7,7 +7,6 @@ const swiper = new Swiper('.swiper', {
     // pagination: {
     //   el: '.swiper-pagination',
     // },
-  
     // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
@@ -25,14 +24,13 @@ const swiperBox = document.querySelector('#swiper-box');
 const url = "";
 
 var datiPosizione;
-
 /* ------------------------------ end function ------------------------------ */
 
 fetch(url).then(data=>{return data.json()})
 .then(resp=>{
       resp.forEach(element => {
         var swiperSlide = document.createElement('div');
-        swiperSlide.classList.add('swiper-slide')
+        swiperSlide.classList.add('swiper-slide','')
 
 
         
