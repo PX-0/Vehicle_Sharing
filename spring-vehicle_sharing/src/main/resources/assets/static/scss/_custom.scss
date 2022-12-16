@@ -10,8 +10,11 @@ body{
 }
 
 .swiper {
-    width: 60%;
+    width: 95%;
     height: 30%;
+    @include media-breakpoint-up(md){
+        width: 60%;
+    }
   }
 
 
@@ -19,7 +22,6 @@ body{
    color: #1FAB89 !important;
 }
 /* ------------------------------- END BANNER ------------------------------- */
-
 .mainTitle {
     font-size: 2.5rem;
     font-weight: 500;
