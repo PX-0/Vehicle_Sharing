@@ -9,7 +9,6 @@ function getCalendario() {
         })
         .then(listaVeicoli => {
             printTable(listaVeicoli, "calendario");
-            console.log(listaVeicoli());
         })
 }
 
