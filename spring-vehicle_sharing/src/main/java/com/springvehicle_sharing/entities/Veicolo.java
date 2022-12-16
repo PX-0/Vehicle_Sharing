@@ -84,6 +84,8 @@ public class Veicolo {
 	}
 	public void setUtenteIns(String utenteIns) {
 		this.utenteIns = utenteIns;
+		
+		
 	}
 	
 	
