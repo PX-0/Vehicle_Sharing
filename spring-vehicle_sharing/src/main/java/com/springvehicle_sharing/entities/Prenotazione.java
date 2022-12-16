@@ -8,6 +8,8 @@ public class Prenotazione {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private int id; 
+	
 	
 }
