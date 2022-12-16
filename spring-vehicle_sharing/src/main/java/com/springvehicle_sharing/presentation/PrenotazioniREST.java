@@ -10,29 +10,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springvehicle_sharing.dal.ArchivioUtentiDAO;
-import com.springvehicle_sharing.entities.ArchivioUtenti;
+import com.springvehicle_sharing.dal.PrenotazioniDAO;
+import com.springvehicle_sharing.entities.Prenotazione;
 
 @RestController
 @RequestMapping("api")
-public class ArchivioUtentiREST {
+public class PrenotazioniREST {
 	
 	@Autowired
-	ArchivioUtentiDAO dao;
+	PrenotazioniDAO dao;
 	
-	@GetMapping("utenti")
-	public List<ArchivioUtenti> findAll() {
+	@GetMapping("prenotazioni")
+	public List<Prenotazione> findAll() {
 		return dao.findAll();
 	}
 	
-	@GetMapping("utenti/{id}")
-	public ArchivioUtenti findById(@PathVariable("id") String id) {
+	@GetMapping("prenotazioni/{id}")
+	public Prenotazione findById(@PathVariable("id") int id) {
 		return dao.findById(id).get();
 	}
 	
-	@PostMapping("utenti")
-	public ArchivioUtenti setUtente(@RequestBody ArchivioUtenti utente) {
-		return dao.save(utente);
+	@PostMapping("prenotazioni")
+	public Prenotazione addPrenotazione(@RequestBody Prenotazione prenotazione) {
+		return dao.save(prenotazione);
 	}
 	
 }
