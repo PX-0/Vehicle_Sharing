@@ -2,11 +2,23 @@ body{
     background:#F0FCF7!important;
 }
 
+/* ----------------------------- SECTION BANNER ----------------------------- */
+
+#banner{
+    height: 100vh !important;
+    width: auto !important;
+}
 
 .swiper {
     width: 60%;
-    height: auto;
+    height: 30%;
   }
+
+
+.swiper-button-next, .swiper-button-prev{
+   color: #1FAB89 !important;
+}
+/* ------------------------------- END BANNER ------------------------------- */
 
 .mainTitle {
     font-size: 2rem;
