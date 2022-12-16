@@ -2,6 +2,9 @@ package com.springvehicle_sharing.entities;
 
 import java.time.LocalDateTime;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -26,6 +29,7 @@ public class ArchivioUtenti {
 	private String email;
 	
 	@Column(columnDefinition = "DATE CURRENT_TIMESTAMP")
+	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private LocalDateTime dataIscrizione;
 	
 }
