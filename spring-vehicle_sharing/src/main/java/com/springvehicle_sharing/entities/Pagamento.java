@@ -30,6 +30,12 @@ public class Pagamento {
 	private double importo;
 	
 	
+	public Prenotazione getPrenotazione() {
+		return prenotazione;
+	}
+	public void setPrenotazione(Prenotazione prenotazione) {
+		this.prenotazione = prenotazione;
+	}
 	public int getId() {
 		return id;
 	}
