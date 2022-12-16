@@ -3,11 +3,13 @@ package com.springvehicle_sharing.entities;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -15,75 +17,104 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "veicoli")
 public class Veicolo {
-
+	
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private int id;
-
+	private String id;
+	
 	private String tipologia;
 	private String alimentazione;
+	private String descrizione;
 	private String posizioneAttuale;
 	private String disponibilitaNoleggio;
+	@Column(columnDefinition = "DATE")
+    @DateTimeFormat(iso = ISO.DATE_TIME)
 	private LocalDate dataPrenotazione;
 	private String immagineVeicolo;
-	private String utenteIns;
+	
 
+	
+	
 	@OneToMany(mappedBy = "veicolo" , fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<ArchivioUtenti> archivioUtenti;
-
+	private ArchivioUtenti utenteIns;
+	
 	public Veicolo() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+
+	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getTipologia() {
 		return tipologia;
 	}
+
 	public void setTipologia(String tipologia) {
 		this.tipologia = tipologia;
 	}
+
 	public String getAlimentazione() {
 		return alimentazione;
 	}
+
 	public void setAlimentazione(String alimentazione) {
 		this.alimentazione = alimentazione;
 	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}
+
 	public String getPosizioneAttuale() {
 		return posizioneAttuale;
 	}
+
 	public void setPosizioneAttuale(String posizioneAttuale) {
 		this.posizioneAttuale = posizioneAttuale;
 	}
+
 	public String getDisponibilitaNoleggio() {
 		return disponibilitaNoleggio;
 	}
+
 	public void setDisponibilitaNoleggio(String disponibilitaNoleggio) {
 		this.disponibilitaNoleggio = disponibilitaNoleggio;
 	}
+
 	public LocalDate getDataPrenotazione() {
 		return dataPrenotazione;
 	}
+
 	public void setDataPrenotazione(LocalDate dataPrenotazione) {
 		this.dataPrenotazione = dataPrenotazione;
 	}
+
 	public String getImmagineVeicolo() {
 		return immagineVeicolo;
 	}
+
 	public void setImmagineVeicolo(String immagineVeicolo) {
 		this.immagineVeicolo = immagineVeicolo;
 	}
-	public String getUtenteIns() {
+
+	public ArchivioUtenti getUtenteIns() {
 		return utenteIns;
 	}
-	public void setUtenteIns(String utenteIns) {
+
+	public void setUtenteIns(ArchivioUtenti utenteIns) {
 		this.utenteIns = utenteIns;
 	}
-
-
-
+	
+	
+	
+	
+	
 }

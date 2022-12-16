@@ -18,6 +18,7 @@ public class ArchivioUtenti {
 	private String id;
 	
 	@Column(columnDefinition = "DATE")
+	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private LocalDateTime ultimaModifica;
 	
 	private String password;
