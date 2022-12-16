@@ -28,6 +28,8 @@ public class Pagamento {
 	private LocalDate scadenza;
 	private String cvv;
 	private double importo;
+	
+	
 	public int getId() {
 		return id;
 	}
