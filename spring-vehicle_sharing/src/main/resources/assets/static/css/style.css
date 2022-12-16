@@ -11105,3 +11105,12 @@ fieldset:disabled .btn {
     font-weight: 900;
   }
 }
+
+.leaflet-control-zoom-out, .leaflet-control-zoom-in {
+  background-color: #1da1f2 !important;
+  border-radius: 22px !important;
+}
+
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+  border: 1px solid transparent !important;
+}

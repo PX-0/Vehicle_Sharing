@@ -8,23 +8,20 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <link rel="stylesheet" href="../assets/static/css/style.css" th:href="@{/assets/css/style.css}">
+  <link rel="stylesheet" href="../assets/css/style.css" th:href="@{/assets/css/style.css}">
 </head>
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg bg-primary">
-      <div class="container">
-            <a class="navbar-brand" href="#">
-              <img src="../assets/img/logo.png" alt="Logo" width="50" height="40">
-              <span class="">Princesharing</span>
-            </a>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
@@ -43,41 +40,16 @@
     </nav>
   </header>
   <main>
-
-    <section id="banner">
-      <div class="container my-3">
-        
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper" id="swiper-box">
-            <!-- Slides -->
-            <!-- <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div> -->
-            ...
-          </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-          <!-- If we need scrollbar -->
-          <div class="swiper-scrollbar"></div>
-        </div>
-            </section>
-        
-            <section id="spacer"></section>
-            <section id="calendario"></section>
-      </div>
+    
+    <!-- div mappa -->
+    <div id="map"></div>
 
   </main>
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="../.././resources/assets/js/index.js"></script>
+  <script src="../.././resources/assets/js/veicolo.js"></script>
 </body>
 
 </html>
