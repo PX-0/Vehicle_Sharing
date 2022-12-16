@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 
 public class Prenotazione {
 	
@@ -24,7 +25,51 @@ public class Prenotazione {
 	@JoinColumn(name = "utenteId")
 	private ArchivioUtenti utente;
 	
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "pagamentoId")
+	private Pagamento pagamento;
+	
 	@Column(columnDefinition = "DATE CURRENT_TIMESTAMP")
 	private LocalDateTime dataPrenotazione;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Veicolo getVeicolo() {
+		return veicolo;
+	}
+
+	public void setVeicolo(Veicolo veicolo) {
+		this.veicolo = veicolo;
+	}
+
+	public ArchivioUtenti getUtente() {
+		return utente;
+	}
+
+	public void setUtente(ArchivioUtenti utente) {
+		this.utente = utente;
+	}
+
+	public Pagamento getPagamento() {
+		return pagamento;
+	}
+
+	public void setPagamento(Pagamento pagamento) {
+		this.pagamento = pagamento;
+	}
+
+	public LocalDateTime getDataPrenotazione() {
+		return dataPrenotazione;
+	}
+
+	public void setDataPrenotazione(LocalDateTime dataPrenotazione) {
+		this.dataPrenotazione = dataPrenotazione;
+	}
 	
 }
