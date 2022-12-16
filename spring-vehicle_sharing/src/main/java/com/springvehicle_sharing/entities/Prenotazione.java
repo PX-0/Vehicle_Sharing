@@ -20,6 +20,10 @@ public class Prenotazione {
 	@JoinColumn(name = "veicoloId")
 	private Veicolo veicolo;
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "utenteId")
+	private ArchivioUtenti utente;
+	
 	@Column(columnDefinition = "DATE CURRENT_TIMESTAMP")
 	private LocalDateTime dataPrenotazione;
 	
