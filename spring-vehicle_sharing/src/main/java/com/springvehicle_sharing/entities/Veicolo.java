@@ -20,7 +20,7 @@ import jakarta.persistence.Table;
 public class Veicolo {
 	
 	@Id
-	private String id;
+	private String veicoloId;
 	
 	private String tipologia;
 	private String alimentazione;
@@ -46,13 +46,31 @@ public class Veicolo {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getId() {
-		return id;
+	
+
+	public String getVeicoloId() {
+		return veicoloId;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+
+
+	public void setVeicoloId(String veicoloId) {
+		this.veicoloId = veicoloId;
 	}
+
+
+
+	public List<Prenotazione> getPrenotazioni() {
+		return prenotazioni;
+	}
+
+
+
+	public void setPrenotazioni(List<Prenotazione> prenotazioni) {
+		this.prenotazioni = prenotazioni;
+	}
+
+
 
 	public String getTipologia() {
 		return tipologia;

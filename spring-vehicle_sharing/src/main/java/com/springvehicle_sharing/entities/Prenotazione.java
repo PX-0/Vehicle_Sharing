@@ -33,7 +33,7 @@ public class Prenotazione {
 	@JoinColumn(name = "pagamentoId")
 	private Pagamento pagamento;
 	
-	@Column(columnDefinition = "DATE CURRENT_TIMESTAMP")
+	@Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private LocalDateTime dataPrenotazione;
 
 	public int getId() {

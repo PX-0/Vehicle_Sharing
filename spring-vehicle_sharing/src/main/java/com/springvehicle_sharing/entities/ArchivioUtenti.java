@@ -18,7 +18,7 @@ import jakarta.persistence.Table;
 public class ArchivioUtenti {
 	
 	@Id
-	private String id;
+	private String userId;
 	
 	@Column(columnDefinition = "DATE")
 	@DateTimeFormat(iso = ISO.DATE_TIME)
@@ -32,7 +32,7 @@ public class ArchivioUtenti {
 	private String nascita;
 	private String email;
 	
-	@Column(columnDefinition = "DATE CURRENT_TIMESTAMP")
+	@Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private LocalDateTime dataIscrizione;
 	
@@ -42,12 +42,14 @@ public class ArchivioUtenti {
 	@OneToMany(mappedBy = "utente", fetch = FetchType.LAZY)
 	private List<Prenotazione> prenotazioni;
 
-	public String getId() {
-		return id;
+	
+
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public LocalDateTime getUltimaModifica() {
