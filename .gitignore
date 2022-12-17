@@ -32,3 +32,4 @@ build/
 
 ### VS Code ###
 .vscode/
+spring-vehicle_sharing/src/main/resources/assets/db/db.json
