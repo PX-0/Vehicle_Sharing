@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -20,7 +22,7 @@ public class ArchivioUtenti {
 	@Id
 	private String userId;
 	
-	@Column(columnDefinition = "DATE")
+	@Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private LocalDateTime ultimaModifica;
 	
@@ -36,13 +38,13 @@ public class ArchivioUtenti {
 	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private LocalDateTime dataIscrizione;
 	
+	@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler", "prenotazioni", "utenteIns"})
 	@OneToMany(mappedBy = "utenteIns", fetch = FetchType.LAZY)
 	private List<Veicolo> veicoli;
 	
+	@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler", "veicolo", "utente"})
 	@OneToMany(mappedBy = "utente", fetch = FetchType.LAZY)
-	private List<Prenotazione> prenotazioni;
-
-	
+	private List<Prenotazione> prenotazioni;	
 
 	public String getUserId() {
 		return userId;
@@ -124,6 +126,7 @@ public class ArchivioUtenti {
 		this.dataIscrizione = dataIscrizione;
 	}
 
+//	@JsonManagedReference
 	public List<Veicolo> getVeicoli() {
 		return veicoli;
 	}
@@ -132,6 +135,7 @@ public class ArchivioUtenti {
 		this.veicoli = veicoli;
 	}
 
+//	@JsonManagedReference
 	public List<Prenotazione> getPrenotazioni() {
 		return prenotazioni;
 	}

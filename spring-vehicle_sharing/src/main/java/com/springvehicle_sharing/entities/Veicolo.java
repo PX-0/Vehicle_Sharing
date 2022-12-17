@@ -1,12 +1,11 @@
 package com.springvehicle_sharing.entities;
 
-import java.time.LocalDate;
 import java.util.List;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
@@ -32,45 +31,33 @@ public class Veicolo {
 //	private LocalDate dataPrenotazione;
 	private String immagineVeicolo;
 	
-
-	
-	
+	@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler", "veicoli", "prenotazioni"})
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "utenteIns")
+	@JoinColumn(name = "utente_ins")
 	private ArchivioUtenti utenteIns;
 	
-	@OneToMany(mappedBy = "veicolo",  fetch = FetchType.LAZY )
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "veicolo"})
+	@OneToMany(mappedBy = "veicolo",  fetch = FetchType.LAZY)
 	private List<Prenotazione> prenotazioni;
 	
-	public Veicolo() {
-		// TODO Auto-generated constructor stub
-	}
-
-	
+	public Veicolo() {}
 
 	public String getVeicoloId() {
 		return veicoloId;
 	}
 
-
-
 	public void setVeicoloId(String veicoloId) {
 		this.veicoloId = veicoloId;
 	}
 
-
-
+	@JsonManagedReference
 	public List<Prenotazione> getPrenotazioni() {
 		return prenotazioni;
 	}
 
-
-
 	public void setPrenotazioni(List<Prenotazione> prenotazioni) {
 		this.prenotazioni = prenotazioni;
 	}
-
-
 
 	public String getTipologia() {
 		return tipologia;
@@ -128,6 +115,7 @@ public class Veicolo {
 		this.immagineVeicolo = immagineVeicolo;
 	}
 
+//	@JsonBackReference
 	public ArchivioUtenti getUtenteIns() {
 		return utenteIns;
 	}
@@ -136,5 +124,4 @@ public class Veicolo {
 		this.utenteIns = utenteIns;
 	}
 	
-
 }

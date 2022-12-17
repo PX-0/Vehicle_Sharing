@@ -2,6 +2,8 @@ package com.springvehicle_sharing.entities;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -21,16 +23,19 @@ public class Prenotazione {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id; 
 	
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "prenotazioni"})
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "veicoloId")
+	@JoinColumn(name = "veicolo_id")
 	private Veicolo veicolo;
 	
+	@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler", "prenotazioni", "veicoli"})
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "utenteId")
+	@JoinColumn(name = "utente_id")
 	private ArchivioUtenti utente;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "pagamentoId")
+	@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler", "prenotazione"})
+	@OneToOne
+	@JoinColumn(name = "pagamento_id")
 	private Pagamento pagamento;
 	
 	@Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
@@ -44,6 +49,7 @@ public class Prenotazione {
 		this.id = id;
 	}
 
+//	@JsonBackReference
 	public Veicolo getVeicolo() {
 		return veicolo;
 	}
@@ -52,6 +58,7 @@ public class Prenotazione {
 		this.veicolo = veicolo;
 	}
 
+//	@JsonBackReference
 	public ArchivioUtenti getUtente() {
 		return utente;
 	}

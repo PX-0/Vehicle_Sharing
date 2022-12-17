@@ -10,32 +10,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springvehicle_sharing.dal.VeicoliDAO;
-import com.springvehicle_sharing.entities.Veicolo;
-
-
+import com.springvehicle_sharing.dal.PagamentiDAO;
+import com.springvehicle_sharing.entities.Pagamento;
 
 @RestController
 @RequestMapping("api")
-public class VeicoloREST {
+public class PagamentiREST {
 	
 	@Autowired
-	private VeicoliDAO dao;
+	private PagamentiDAO pagDao;
 	
-	@GetMapping("veicoli")
-	public List<Veicolo> findAll(){
-		return dao.findAll();
+	@GetMapping("pagamenti")
+	public List<Pagamento> findAll(){
+		return pagDao.findAll();
 	}
 	
-	@GetMapping("veicoli/{id}")
-	public Veicolo findById(@PathVariable("id") String id) {
-		return dao.findById(id).get();
+	@GetMapping("pagamenti/{id}")
+	public Pagamento findById(@PathVariable("id") Integer id){
+		return pagDao.findById(id).get();
 	}
 	
-	@PostMapping("veicoli")
-	public Veicolo addVeicolo(@RequestBody Veicolo v) {
-		return dao.save(v);
+	@PostMapping("pagamenti")
+	public Pagamento addPagamento(@RequestBody Pagamento p) {
+		return pagDao.save(p);
 	}
+	
 	
 
+	
 }

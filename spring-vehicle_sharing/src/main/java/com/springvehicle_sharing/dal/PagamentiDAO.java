@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.springvehicle_sharing.entities.Pagamento;
 
-public interface PagamentoDAO extends JpaRepository<Pagamento, Integer> {
+public interface PagamentiDAO extends JpaRepository<Pagamento, Integer> {
 
 }
