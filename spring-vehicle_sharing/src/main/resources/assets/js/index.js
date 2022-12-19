@@ -21,22 +21,28 @@ const swiper = new Swiper('.swiper', {
 
 const swiperBox = document.querySelector('#swiper-box');
 
-const url = "";
+const url = "http://localhost:3000/veicoli";
 /* ------------------------------ end function ------------------------------ */
 
 function CreateCard(url,desc,address,link){
+  //creo swiper-slide
   var swiperSlide = document.createElement('div');
-  swiperSlide.classList.add('swiper-slide','');
+  swiperSlide.classList.add('swiper-slide');
+
+  //inizio a creare la card
 
   var card = document.createElement('div');
   card.classList.add('card');
 
+  //immagine
   var img = document.createElement('img');
   img.setAttribute('src',url);
+  img.classList.add('card-img-top');
 
   var cardBody = document.createElement('div');
   cardBody.classList.add('card-body');
 
+  //testo della card
   var cardText = document.createElement('div');
   cardText.classList.add('card-text');
 
@@ -51,16 +57,21 @@ function CreateCard(url,desc,address,link){
   cardText.appendChild(descrizione);
   cardText.appendChild(posizioneAttuale);
 
+  //pulsante
   var buttonLink = document.createElement('a');
   buttonLink.classList.add('btn','btn-primary');
   buttonLink.setAttribute('href',link);
+  buttonLink.textContent="Maggiori Info";
 
   cardBody.appendChild(cardText);
   cardBody.appendChild(buttonLink);
 
+  card.appendChild(img);
   card.appendChild(cardBody);
 
   swiperSlide.appendChild(card);
+
+  swiperBox.appendChild(swiperSlide);
 }
 
 
@@ -70,7 +81,8 @@ function CreateCard(url,desc,address,link){
 fetch(url).then(data=>{return data.json()})
 .then(resp=>{
       resp.forEach(element => {
-      
+        CreateCard(element.immagineVeicolo,
+          element.descrizione,element.posizioneAttuale,'#')
 
       });
 

@@ -1,8 +1,9 @@
-//script per prendere coordinate
+
 const urlHead = "https://nominatim.openstreetmap.org/search.php?q=";
 const urlTail = "&format=json&limit=1";
 var city;
 var cityCap;
+
 //script per fare la mappa
 function mapFill() {
     var coors = JSON.parse(sessionStorage.getItem('coordinate'));

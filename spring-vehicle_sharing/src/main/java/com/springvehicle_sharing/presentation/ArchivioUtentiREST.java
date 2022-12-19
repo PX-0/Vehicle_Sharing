@@ -3,6 +3,7 @@ package com.springvehicle_sharing.presentation;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,12 @@ public class ArchivioUtentiREST {
 	@GetMapping("utenti/{id}")
 	public ArchivioUtenti findById(@PathVariable("id") String id) {
 		return dao.findById(id).get();
+	}
+	
+	@GetMapping("utentiByCredentials/{username}&{password}")
+	@CrossOrigin("*")
+	public ArchivioUtenti findByCredentials(@PathVariable("username") String userId, @PathVariable("password") String password) {
+		return dao.findByUserIdEqualsAndPasswordEquals(userId, password);
 	}
 	
 	@PostMapping("utenti")
