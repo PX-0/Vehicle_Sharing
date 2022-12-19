@@ -91,7 +91,8 @@ function stampaVeicoli(elencoVeicoli) {
         TR.appendChild(TD3);
         
         const TD4 = document.createElement('td');
-        TD4.textContent = elencoVeicoli[i].disponibilitaNoleggio;
+        TD4.setAttribute('value', elencoVeicoli[i].disponibilitaNoleggio);
+        TD4.innerHTML = elencoVeicoli[i].disponibilitaNoleggio == 'true' ? '<i class="bi bi-check-circle-fill"></i>' : '<i class="bi bi-x-circle-fill"></i>';
         TR.appendChild(TD4);
         
         const TD5 = document.createElement('td');
@@ -109,6 +110,32 @@ function stampaVeicoli(elencoVeicoli) {
         const TD8 = document.createElement('td');
         TD8.textContent = `${elencoVeicoli[i].utenteIns.userId} - ${elencoVeicoli[i].utenteIns.nome} ${elencoVeicoli[i].utenteIns.cognome}`;
         TR.appendChild(TD8);
+
+        const TD9 = document.createElement('td');
+        TD9.innerHTML = '<a href="#veicoloId" class="bi bi-pencil-fill" style="cursor:pointer";></a>';
+        TD9.addEventListener('click', () => {
+            document.querySelector('#veicoloId').value = TD.textContent;
+            document.querySelector('#alimentazione').value = TD2.textContent;
+            document.querySelector('#descrizione').value = TD3.textContent;
+            if (TD4.getAttribute('value') == 'true') {
+				document.querySelector('#disponibilitaNoleggio').checked = true;
+			} else {
+				document.querySelector('#disponibilitaNoleggio').checked = false;
+			}
+			document.querySelector('#immagineVeicolo').value = TD5.textContent;
+			document.querySelector('#posizioneAttuale').value = TD6.textContent;
+			document.querySelector('#tipologia').value = TD7.textContent;
+        });
+
+        TR.appendChild(TD9);
+
+        const TD10 = document.createElement('td');
+        TD10.innerHTML = '<i class="bi bi-trash-fill" style="cursor:pointer";></i>';
+        TD10.addEventListener('click', () => {
+
+        });
+
+        TR.appendChild(TD10);
 
         tableBody.appendChild(TR);
     }
