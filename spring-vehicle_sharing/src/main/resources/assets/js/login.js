@@ -1,6 +1,6 @@
 var username = document.querySelector('#username');
 var password = document.querySelector('#password');
-var btnLogin = document.querySelector('#btnLogin');
+var mioForm = document.querySelector('#mioForm');
 
 document.querySelector('#mostraPassword').addEventListener('change', () => {
     password.getAttribute('type') == 'text' ? password.setAttribute('type', 'password') : password.setAttribute('type', 'text');
@@ -35,32 +35,49 @@ password.addEventListener('input', passwordCheck);
 
 const URL_UTENTI = "http://localhost:9014/api/utenti";
 
-btnLogin.addEventListener('click', (event) => {
+mioForm.addEventListener('submit', (event) => {
 
     if (!usernameCheck() || !passwordCheck()) {
         event.preventDefault();
         return;
     }
     
-    const URL_UTENTIBYCREDENTIALS = `http://localhost:9014/api/utentiByCredentials/${username.value}&${password.value}`;
+    // const URL_UTENTIBYCREDENTIALS = `http://localhost:9014/api/utentiByCredentials/${username.value}&${password.value}`;
 
-    fetch(URL_UTENTIBYCREDENTIALS, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            "Access-Control-Allow-Origin": "*"
-        }
-    })
-    .then(data => {
-        console.log(data.status);
-        return data.json();
-    })
-    .then(response => {
-        console.log(response);
-    })
-    // .catch(error => {
-    //     console.log('aaaaaaaaaaaaaaaa' + error);
+    // fetch(URL_UTENTIBYCREDENTIALS, {
+    //     method: 'GET',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         "Access-Control-Allow-Origin": "*",
+    //         "Access-Control-Allow-Credentials" : true
+    //     }
     // })
-    ;
+    // .then(data => data.json())
+    // .then(response => {
+    //     console.log(response);
+    // })
+    // .catch(error => {
+    //     if (error == 'SyntaxError: Unexpected end of JSON input') {
+    //         alertPlaceholder.innerHTML = '';
+    //         alert('Credenziali errate', 'danger')
+    //     }
+    // });
 
 });
+
+// const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+// const alert = (message, type) => {
+//   const wrapper = document.createElement('div')
+//   wrapper.innerHTML = [
+//     `<div class="alert alert-${type} alert-dismissible mt-3" role="alert">`,
+//     `   <div>${message}</div>`,
+//     '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+//     '</div>'
+//   ].join('')
+
+//   alertPlaceholder.append(wrapper)
+// }
+
+// alertPlaceholder.innerHTML = '';
+// alert('Credenziali errate', 'danger')

@@ -32,7 +32,7 @@ public class ArchivioUtentiREST {
 	}
 	
 	@GetMapping("utentiByCredentials/{username}&{password}")
-	@CrossOrigin("*")
+	@CrossOrigin
 	public ArchivioUtenti findByCredentials(@PathVariable("username") String userId, @PathVariable("password") String password) {
 		return dao.findByUserIdEqualsAndPasswordEquals(userId, password);
 	}
