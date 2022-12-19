@@ -58,19 +58,18 @@ function riempiTabella(veicolo, tabella) {
     td.innerHTML = "<h5>" + veicolo.veicoloId + "</h5><ul>" +
                    "<li>" + veicolo.tipologia + "</li>" +
                    "<li>" + veicolo.descrizione + "</li>" +
-                   "<li>" + veicolo.posizioneAttuale + "</li><ul>";
+                   "<li>" + veicolo.posizioneAttuale + "</li></ul>";
 
-    console.log("1");
-
-    // if (veicolo.disponibilitaNoleggio == "false") {
-    //     td.innerHTML += "Date prenotate: ";
-    //     for (var i = 0; i < (veicolo.prenotazioni).length; i++) {
-    //         var dataNoleggio = veicolo.prenotazioni[i].dataPrenotazione.split("T")[0];
-    //         td.innerHTML += dataNoleggio;
-    // }
-
-    console.log("2");
-
+    if (veicolo.disponibilitaNoleggio == "false") {
+        td.innerHTML += "<p>Veicolo prenotato per i giorni:</p>";
+        var ul = document.createElement("ul");
+        td.appendChild(ul);
+        for (var i = 0; i < veicolo.prenotazioni.length; i++) {
+            ul.innerHTML += "<li>" + veicolo.prenotazioni[i].dataPrenotazione.split("T")[0] + "</li>";
+        }
+    }
+    td.innerHTML += "<button type='button' class='btn btn-primary'>Ulteriori informazioni</button>";
+    
     tr.appendChild(td);
     tbody.appendChild(tr);
 
