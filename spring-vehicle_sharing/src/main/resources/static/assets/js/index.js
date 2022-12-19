@@ -47,8 +47,20 @@ const swiper = new Swiper('.swiper', {
 var calendario = document.getElementById("datePicker");
 calendario.addEventListener("change", getCalendario);
 document.getElementById("datePicker").valueAsDate = new Date();
+document.getElementById("datePicker").setAttribute("min", dataOggi());
 
 getCalendario();
+
+function dataOggi() {
+  var today = new Date();
+  var yyyy = today.getFullYear();
+  var mm = today.getMonth()+1;
+  if (mm < 10) dd="0" + dd;
+  var dd = today.getDate();
+  if (dd < 10) dd="0" + dd;
+  today = yyyy + "-" + mm + "-" + dd;
+  return today;
+}
 
 function getCalendario() {
     const VEICOLI_URL = "/api/veicoli";
