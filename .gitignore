@@ -35,3 +35,4 @@ build/
 spring-vehicle_sharing/src/main/resources/assets/db/db.json
 spring-vehicle_sharing/src/main/resources/static/assets/js/scriptCalendario.js
 spring-vehicle_sharing/src/main/resources/templates/calendarioSection.html
+spring-vehicle_sharing/src/main/resources/templates/calendario.html
