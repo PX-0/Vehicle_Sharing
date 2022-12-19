@@ -114,6 +114,7 @@ function stampaVeicoli(elencoVeicoli) {
         const TD9 = document.createElement('td');
         TD9.innerHTML = '<a href="#veicoloId" class="bi bi-pencil-fill" style="cursor:pointer";></a>';
         TD9.addEventListener('click', () => {
+			document.querySelector('#mioForm').removeAttribute('hidden');
             document.querySelector('#veicoloId').value = TD.textContent;
             document.querySelector('#alimentazione').value = TD2.textContent;
             document.querySelector('#descrizione').value = TD3.textContent;
@@ -132,7 +133,15 @@ function stampaVeicoli(elencoVeicoli) {
         const TD10 = document.createElement('td');
         TD10.innerHTML = '<i class="bi bi-trash-fill" style="cursor:pointer";></i>';
         TD10.addEventListener('click', () => {
-
+	
+			fetch(`http://localhost:9014/api/veicoli/${TD.textContent}`, {
+				method: 'DELETE',
+			})
+				.then(data => data.json())
+				.then(response => console.log(response));
+				LMAX--;
+				location.reload();
+	
         });
 
         TR.appendChild(TD10);

@@ -110,4 +110,39 @@ public class VeicoliMVC {
 		return "redirect:/";
 	}
 	
+	@PostMapping("editVeicolo")
+	public String editVeicolo(HttpSession session, @RequestParam("veicoloId") String veicoloId,
+			@RequestParam("alimentazione") String alimentazione, @RequestParam("descrizione")
+			String descrizione, @RequestParam(value = "disponibilitaNoleggio", 
+			defaultValue = "false") boolean disponibilitaNoleggio, @RequestParam("immagineVeicolo") 
+			String immagineVeicolo, @RequestParam("posizioneAttuale") String posizioneAttuale, 
+			@RequestParam("tipologia") String tipologia, Model m) {
+		
+		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
+		
+		if (session.getAttribute("loggedUser") != null) {
+			
+			if (utente.getTipo() != 'A')
+				return "loginUserError";
+		}
+		
+		Veicolo veicolo = new Veicolo();
+		veicolo.setVeicoloId(veicoloId);
+		veicolo.setAlimentazione(alimentazione);
+		veicolo.setDescrizione(descrizione);
+		veicolo.setDisponibilitaNoleggio(String.valueOf(disponibilitaNoleggio));
+		veicolo.setImmagineVeicolo(immagineVeicolo);
+		veicolo.setPosizioneAttuale(posizioneAttuale);
+		veicolo.setTipologia(tipologia);
+		veicolo.setUtenteIns(utente);
+		
+		dao.save(veicolo);
+		
+		return elencoVeicoliAmministrabili(session, m);
+	}
+	
+	@GetMapping("editVeicolo")
+	public String redirectEditVeicolo() {
+		return "redirect:/utenti/login";
+	}
 }
