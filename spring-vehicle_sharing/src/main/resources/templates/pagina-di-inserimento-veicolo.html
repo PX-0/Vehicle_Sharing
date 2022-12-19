@@ -64,10 +64,10 @@
     <main>
 
 		<div class="container">
-            <form action="inserisciVeicolo" method="POST" id="mioForm" name="mioForm">
+            <form action="addVeicolo" method="POST" id="mioForm" name="mioForm">
               <div class="mb-3">
                 <label for="veicoloId" class="form-label">Veicolo (ID)</label>
-                <input type="email" class="form-control" id="veicoloId" name="veicoloId">
+                <input type="text" class="form-control" id="veicoloId" name="veicoloId">
                 <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
               </div>
               <div class="mb-3">
@@ -93,12 +93,13 @@
               <div class="mb-3">
                   <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
                     <option value="-1" selected disabled>Tipologia di veicolo</option>
-                    <option value="auto">Auto</option>
-                    <option value="bicicletta">Bicicletta</option>
-                    <option value="monopattino">Monopattino</option>
-                    <option value="motorino">Motorino</option>
+                    <option value="Auto">Auto</option>
+                    <option value="Bicicletta">Bicicletta</option>
+                    <option value="Monopattino">Monopattino</option>
+                    <option value="Motorino">Motorino</option>
                   </select>
               </div>
+              <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
@@ -237,7 +238,9 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="../.././resources/assets/js/veicolo.js"></script>
+    <script>
+    	
+    </script>
 </body>
 
 </html>
