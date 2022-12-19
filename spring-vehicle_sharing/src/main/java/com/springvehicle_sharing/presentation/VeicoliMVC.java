@@ -31,7 +31,6 @@ public class VeicoliMVC {
 		}
 		
 		return "redirect:/utenti/login";
-		
 	}
 	
 }

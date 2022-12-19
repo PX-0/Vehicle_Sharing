@@ -63,6 +63,46 @@
     </header>
     <main>
 
+		<div class="container">
+            <form action="inserisciVeicolo" method="POST" id="mioForm" name="mioForm">
+              <div class="mb-3">
+                <label for="veicoloId" class="form-label">Veicolo (ID)</label>
+                <input type="email" class="form-control" id="veicoloId" name="veicoloId">
+                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+              </div>
+              <div class="mb-3">
+                <label for="alimentazione" class="form-label">Alimentazione</label>
+                <input type="text" class="form-control" id="alimentazione" name="alimentazione">
+              </div>
+              <div class="mb-3">
+                <label for="descrizione" class="form-label">Descrizione</label>
+                <input type="text" class="form-control" id="descrizione" name="descrizione">
+              </div>
+              <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="disponibilitaNoleggio" name="disponibilitaNoleggio">
+                <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
+              </div>
+              <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
+              <div class="input-group mb-3">
+                  <input type="url" class="form-control" id="immagineVeicolo" name="immagineVeicolo" aria-describedby="basic-addon3">
+              </div>
+              <div class="mb-3">
+                <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
+                <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
+              </div>
+              <div class="mb-3">
+                  <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
+                    <option value="-1" selected disabled>Tipologia di veicolo</option>
+                    <option value="auto">Auto</option>
+                    <option value="bicicletta">Bicicletta</option>
+                    <option value="monopattino">Monopattino</option>
+                    <option value="motorino">Motorino</option>
+                  </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
         <!-- div mappa -->
         <div id="map"></div>
 
