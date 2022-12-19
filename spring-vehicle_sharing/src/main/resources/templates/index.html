@@ -77,59 +77,51 @@
           <div class="swiper-wrapper" id="swiper-box"></div>
         </div>
     </section>
-    <section id="calendario" class="mt-5">
-      <!-- inizio calendario -->
-      <div class="container">
-        <!-- inizio container -->
-        <div class="row justify-content-center mb-3">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-4 d-flex justify-content-center align-items-center">
 
-            <section id="calendario" class="my-5"> <!-- inizio calendario -->
-              <div class="sectionTitle-calendario text-secondary">LE NOSTRE DISPONIBILITÀ DI OGGI</div>
-              <div class="container"> <!-- inizio container -->
-              
-              <div class="row justify-content-center justify-content-md-start mb-3">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-                  
-                  <label>Verifica la disponibilità dei nostri veicoli:</label>
-                    <div class="dataPicker"><input type="date" id="datePicker" class="form-control mx-auto " placeholder="Username"></div>
-                  
-                  <div id="dataScelta"></div>
-                </div>
-              </div>
-            
-                <div class="row table-calendario"> <!-- inizio row -->
-                
-                  <!-- colonna 1 -->
-                  <div class="col-6">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th scope="col">
-                            <h4>Veicoli disponibili</h4>
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody id="veicoliDisponibili"></tbody>
-                    </table>
-                  </div>
-                  <!-- colonna 2 -->
-                  <div class="col-6">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th scope="col">
-                            <h4>Veicoli noleggiati</h4>
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody id="veicoliNoleggiati"></tbody>
-                    </table>
-                  </div>
-                </div> <!-- fine row -->
-              </div> <!-- fine container -->
-            </section> <!-- fine calendario -->
-  </main>
+    <section id="calendario" class="my-5"> <!-- inizio calendario -->
+      <div class="container"> <!-- inizio container -->
+        <div class="sectionTitle-calendario text-secondary">LE NOSTRE DISPONIBILITÀ DI OGGI</div>
+        <div class="row justify-content-center justify-content-md-start mb-3">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+            <label>Verifica la disponibilità dei nostri veicoli:</label>
+            <div class="dataPicker">
+              <input type="date" id="datePicker" class="form-control mx-auto " placeholder="Username">
+            </div>
+            <div id="dataScelta"></div>
+          </div>
+        </div>
+        <div class="row table-calendario"> <!-- inizio row -->
+          <!-- colonna 1 -->
+          <div class="col-6">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <h4>Veicoli disponibili</h4>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="veicoliDisponibili"></tbody>
+            </table>
+          </div>
+          <!-- colonna 2 -->
+          <div class="col-6">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <h4>Veicoli noleggiati</h4>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="veicoliNoleggiati"></tbody>
+            </table>
+          </div>
+        </div> <!-- fine row -->
+      </div> <!-- fine container -->
+    </section> <!-- fine calendario -->
+    </main>
+
   <!-- Remove the container if you want to extend the Footer to full width. -->
   <!-- <div class="container my-5"> -->
   <!-- Footer -->
