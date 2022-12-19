@@ -3,29 +3,69 @@ body{
 }
 
 /* -------------------------------------------------------------------------- */
-/*                               SECTION BANNER                               */
+/*                                     HERO                                    */
 /* -------------------------------------------------------------------------- */
 
-#banner{
-    height: 100vh !important;
+#hero{
+    position: relative;
+
+    height: calc(100vh - 99px);
     width: auto !important;
+
+    background: url('../../static/assets/img/hero-bg-final.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+   
+    .overlay{
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 99px);
+        top: 0;
+        left: 0;
+
+        background:#1FAB89;
+        opacity: 0.2;
+    }
+
+    .cta{
+        width: 100%;
+        height:calc(100vh - 99px);
+    }
 }
 
+/* -------------------------------- END HERO -------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                                   BANNER                                   */
+/* -------------------------------------------------------------------------- */
+
 .swiper {
-    width: 95%;
-    height: 30%;
-    @include media-breakpoint-up(md){
-        width: 60%;
-    }
-  }
+    width: 100%;
+    height: auto;
+}
 
 
 .swiper-button-next, .swiper-button-prev{
    color: #1FAB89 !important;
 }
-/* -------------------------------------------------------------------------- */
-/*                                 FINE BANNER                                */
-/* -------------------------------------------------------------------------- */
+
+.card-body{
+    text-align: center;
+}
+
+.card-title{
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+}
+
+/* ------------------------------- END BANNER ------------------------------- */
+
+
+
+
+
 
 /* -------------------------------------------------------------------------- */
 /*                                  TITOLO, NAVBAR e NAV-LINK                 */

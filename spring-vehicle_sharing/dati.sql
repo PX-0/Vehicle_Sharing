@@ -20,13 +20,13 @@ INSERT INTO archivio_utenti (user_id, password, firma, tipo, nome, cognome, nasc
 VALUES ('Paolo', 'paolo', 'Utente con diritti minimi', 'B', 'Paolo','DeSantis','20/10/2001', 'paolo.desantis@gmail.com', 20100801102040);
 
 INSERT INTO veicoli (veicolo_id, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) 
-VALUES ('Ferrari', 'Auto', 'Benzina', '599xx evo, colore rosso, 499,99cc', 'Italia, Roma, Via Genzano 89', 'true', 'https://www.gtspiritmedia.com/gtspirit/uploads/2015/06/Ferrari-599XX-For-Sale6.jpg', 'Amministratore');
+VALUES ('Ferrari', 'Auto', 'Benzina', '599xx evo, colore nero, 499,99cc', 'Italia, Roma, Via Genzano 89', 'true', 'https://www.gtspiritmedia.com/gtspirit/uploads/2015/06/Ferrari-599XX-For-Sale6.jpg', 'Amministratore');
 
 INSERT INTO pagamenti (metodo_pagamento, n_carta, scadenza, cvv, importo) 
 values ('Mastercard', '1234567890123456', 20221222, '123', 12000);
 
-INSERT INTO prenotazioni (utente_id, veicolo_id, data_prenotazione, pagamento_id) 
-values ('Paolo', 'Ferrari', 20221010101022, 3);
+INSERT INTO prenotazioni (utente_id, veicolo_id, data_prenotazione, pagamento_id) values ('Paolo', 'Ferrari', 20221010101022, 3);
+
 
 insert into prenotazioni (id, data_prenotazione, pagamento_id, utente_id, veicolo_id)
 values (3,20230811000000, 3, "Paolo", "Ferrari");
@@ -83,4 +83,9 @@ values("Vespa", "Benzina", "Vespa anni 60, colore rosso fuoco", "false", "VespaF
 
 insert into prenotazioni (id, data_prenotazione, pagamento_id, utente_id, veicolo_id)
 values (5,20221010000000, 6, "Alessia", "Vespa");
+
+
+
+INSERT INTO veicoli (veicolo_id, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) VALUES ('Opel', 'Auto', 'Benzina', 'una bellissima macchina in noleggio', 'Italia, Roma, Via Montarlei 30', 'true', 'https://source.unsplash.com/600x400?car', 'Amministratore');
+INSERT INTO veicoli (veicolo_id, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) VALUES ('Suzuki', 'Auto', 'Elettrica', 'una bellissima macchina in noleggio', 'Italia, Roma, Via Celacolui 89', 'true', 'https://source.unsplash.com/600x400?car', 'Amministratore');
 
