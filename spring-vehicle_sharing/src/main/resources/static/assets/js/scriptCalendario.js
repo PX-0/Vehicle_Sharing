@@ -1,4 +1,13 @@
+var calendario = document.getElementById("datePicker");
+calendario.addEventListener("change", getCalendario);
+document.getElementById("datePicker").valueAsDate = new Date();
+
 getCalendario();
+
+function getData() {
+	var data = calendario.value;
+	return data;
+}
 
 function dataOggi() {
     var today = new Date();
@@ -12,8 +21,7 @@ function dataOggi() {
 }
 
 function getCalendario() {
-    // const VEICOLI_URL = "/api/veicoli";
-    const VEICOLI_URL = "http://localhost:3000/veicoli";
+    const VEICOLI_URL = "/api/veicoli";
     
     fetch(VEICOLI_URL)
     .then(response => {

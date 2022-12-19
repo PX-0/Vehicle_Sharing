@@ -40,91 +40,99 @@ const swiper = new Swiper('.swiper', {
     // },
   });
 
-  /* -------------------------------------------------------------------------- */
-  /*                              SCRIPT CALENDARIO                             */
-  /* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                              SCRIPT CALENDARIO                             */
+/* -------------------------------------------------------------------------- */
 
-  getCalendario();
+var calendario = document.getElementById("datePicker");
+calendario.addEventListener("change", getCalendario);
+document.getElementById("datePicker").valueAsDate = new Date();
 
-  function dataOggi() {
-      var today = new Date();
-      var yyyy = today.getFullYear();
-      var mm = today.getMonth()+1;
-      if (mm < 10) dd="0" + dd;
-      var dd = today.getDate();
-      if (dd < 10) dd="0" + dd;
-      today = yyyy + "-" + mm + "-" + dd;
-      return today;
-  }
-  
-  function getCalendario() {
-      const VEICOLI_URL = "/api/veicoli";
-      // const VEICOLI_URL = "http://localhost:3000/veicoli";
-      
-      fetch(VEICOLI_URL)
-      .then(response => {
-              return response.json();
-          })
-          .then(listaVeicoli => {
-              // printDisponibili(listaVeicoli, "veicoliDisponibili");
-              // printNoleggiati(listaVeicoli, "veicoliNoleggiati");
-              stampaVeicoli(listaVeicoli, "veicoliDisponibili", "veicoliNoleggiati");
-              // printCard(listaVeicoli, "cardVeicoli");
-              // printSwiper(listaVeicoli, "swiperVeicoli");
-          })
-  }
-      
-  function isPrenotato(veicolo, data) {
-      for (var i = 0; i < (veicolo.prenotazioni).length; i++) {
-          var dataNoleggio = veicolo.prenotazioni[i].dataPrenotazione.split("T")[0];
-          if (dataNoleggio == data) {
-              return true;
-          } 
-      }
-      return false;
-  }
-  
-  function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
-      for (const veicolo of listaVeicoli) {
-          if (!isPrenotato(veicolo, dataOggi())) {
-              riempiTabella(veicolo, tabella1);
-          } else {
-              riempiTabella(veicolo, tabella2);
-          }
-      }
-  }
-  
-  function riempiTabella(veicolo, tabella) {
-  
-      if (veicolo.disponibilitaNoleggio == "true") {
-  
-          var tbody = document.getElementById(tabella);
-          
-          var tr = document.createElement("tr");
-          var td = document.createElement("td");
-  
-          td.innerHTML = "<h5>" + veicolo.veicoloId + "</h5><ul>" +
-                         "<li>" + veicolo.tipologia + "</li>" +
-                         "<li>" + veicolo.descrizione + "</li>" +
-                         "<li>" + veicolo.posizioneAttuale + "</li></ul>";
-  
-          if (veicolo.prenotazioni.length >= 1) {
-              td.innerHTML += "<p>Veicolo prenotato per i giorni:</p>";
-              var ul = document.createElement("ul");
-              td.appendChild(ul);
-              for (var i = 0; i < veicolo.prenotazioni.length; i++) {
-                  ul.innerHTML += "<li>" + veicolo.prenotazioni[i].dataPrenotazione.split("T")[0] + "</li>";
-              }
-          }
-  
-          td.innerHTML += "<button type='button' class='btn btn-primary'>Ulteriori informazioni</button>";
-          
-          tr.appendChild(td);
-          tbody.appendChild(tr);
-  
-      }
-  
-  }
+getCalendario();
+
+function getData() {
+	var data = calendario.value;
+	return data;
+}
+
+// function dataOggi() {
+//     var today = new Date();
+//     var yyyy = today.getFullYear();
+//     var mm = today.getMonth()+1;
+//     if (mm < 10) dd="0" + dd;
+//     var dd = today.getDate();
+//     if (dd < 10) dd="0" + dd;
+//     today = yyyy + "-" + mm + "-" + dd;
+//     return today;
+// }
+
+function getCalendario() {
+    const VEICOLI_URL = "/api/veicoli";
+    
+    fetch(VEICOLI_URL)
+    .then(response => {
+            return response.json();
+        })
+        .then(listaVeicoli => {
+            // printDisponibili(listaVeicoli, "veicoliDisponibili");
+            // printNoleggiati(listaVeicoli, "veicoliNoleggiati");
+            stampaVeicoli(listaVeicoli, "veicoliDisponibili", "veicoliNoleggiati");
+            // printCard(listaVeicoli, "cardVeicoli");
+            // printSwiper(listaVeicoli, "swiperVeicoli");
+        })
+}
+    
+function isPrenotato(veicolo, data) {
+    for (var i = 0; i < (veicolo.prenotazioni).length; i++) {
+        var dataNoleggio = veicolo.prenotazioni[i].dataPrenotazione.split("T")[0];
+        if (dataNoleggio == data) {
+            return true;
+        } 
+    }
+    return false;
+}
+
+function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
+    for (const veicolo of listaVeicoli) {
+        if (!isPrenotato(veicolo, getData())) {
+            riempiTabella(veicolo, tabella1);
+        } else {
+            riempiTabella(veicolo, tabella2);
+        }
+    }
+}
+
+function riempiTabella(veicolo, tabella) {
+
+    if (veicolo.disponibilitaNoleggio == "true") {
+
+        var tbody = document.getElementById(tabella);
+        
+        var tr = document.createElement("tr");
+        var td = document.createElement("td");
+
+        td.innerHTML = "<h5>" + veicolo.veicoloId + "</h5><ul>" +
+                        "<li>" + veicolo.tipologia + "</li>" +
+                        "<li>" + veicolo.descrizione + "</li>" +
+                        "<li>" + veicolo.posizioneAttuale + "</li></ul>";
+
+        if (veicolo.prenotazioni.length >= 1) {
+            td.innerHTML += "<p>Veicolo prenotato per i giorni:</p>";
+            var ul = document.createElement("ul");
+            td.appendChild(ul);
+            for (var i = 0; i < veicolo.prenotazioni.length; i++) {
+                ul.innerHTML += "<li>" + veicolo.prenotazioni[i].dataPrenotazione.split("T")[0] + "</li>";
+            }
+        }
+
+        td.innerHTML += "<button type='button' class='btn btn-primary'>Ulteriori informazioni</button>";
+        
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+
+    }
+
+}
 
 /* -------------------------------------------------------------------------- */
 /*                           FINE SCRIPT CALENDARIO                           */
