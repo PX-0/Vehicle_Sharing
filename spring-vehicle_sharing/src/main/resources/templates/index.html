@@ -101,10 +101,20 @@
     </section>
 
     <section id="spacer"></section>
-    <section id="calendario">
 
-      <div class="container">
+    <section id="calendario"> <!-- inizio calendario -->
+      <div class="container"> <!-- inizio container -->
+      
+	    <div class="row justify-content-end mb-3">
+	      <div class="col-8 col-sm-6 col-md-4 col-lg-3">
+    	    <label>Seleziona una data per verificare la disponibilità dei nostri veicoli:</label>
+    	    <input type="date" id="datePicker" class="form-control" placeholder="Username">
+    	    <div id="dataScelta"></div>
+  		  </div>
+  		</div>
+		
         <div class="row"> <!-- inizio row -->
+        
           <!-- colonna 1 -->
           <div class="col-6">
             <table class="table">
@@ -118,6 +128,7 @@
               <tbody id="veicoliDisponibili"></tbody>
             </table>
           </div>
+          
           <!-- colonna 2 -->
           <div class="col-6">
             <table class="table">
@@ -131,10 +142,10 @@
               <tbody id="veicoliNoleggiati"></tbody>
             </table>
           </div>
+          
         </div> <!-- fine row -->
-      </div>
-      
-    </section>
+      </div> <!-- fine container -->
+    </section> <!-- fine calendario -->
 
   </main>
 
