@@ -26,7 +26,7 @@ function getCalendario() {
             printCard(listaVeicoli, "cardVeicoli");
             printSwiper(listaVeicoli, "swiperVeicoli");
         })
-    }
+}
     
 function isPrenotato(veicolo, data) {
     for (var i = 0; i < (veicolo.prenotazioni).length; i++) {
