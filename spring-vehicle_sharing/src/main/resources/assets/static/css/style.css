@@ -11100,7 +11100,9 @@ body {
   background: #F0FCF7 !important;
 }
 
-/* ----------------------------- SECTION BANNER ----------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                               SECTION BANNER                               */
+/* -------------------------------------------------------------------------- */
 #banner {
   height: 100vh !important;
   width: auto !important;
@@ -11121,13 +11123,15 @@ body {
   color: #1FAB89 !important;
 }
 
-/* ------------------------------- END BANNER ------------------------------- */
 /* -------------------------------------------------------------------------- */
-/*                                  TITOLO, NAVBAR e NAV-LINK                                  */
+/*                                 FINE BANNER                                */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                  TITOLO, NAVBAR e NAV-LINK                 */
 /* -------------------------------------------------------------------------- */
 .mainTitle {
   font-size: 2.5rem;
-  font-weight: 400;
+  font-weight: 300;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #F0FCF7;
 }
@@ -11135,7 +11139,7 @@ body {
 @media (min-width: 992px) {
   .mainTitle {
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 }
 
@@ -11165,3 +11169,35 @@ a.nav-link {
 .description-footer {
   color: #41658A;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                 FINE FOOTER                                */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                PAGINA LOGIN                                */
+/* -------------------------------------------------------------------------- */
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background: #fccb90;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+@media (min-width: 768px) {
+  .gradient-form {
+    height: 100vh !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 FINE LOGIN                                 */
+/* -------------------------------------------------------------------------- */
