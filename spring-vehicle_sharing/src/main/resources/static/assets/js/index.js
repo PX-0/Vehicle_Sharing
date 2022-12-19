@@ -55,17 +55,6 @@ function getData() {
 	return data;
 }
 
-// function dataOggi() {
-//     var today = new Date();
-//     var yyyy = today.getFullYear();
-//     var mm = today.getMonth()+1;
-//     if (mm < 10) dd="0" + dd;
-//     var dd = today.getDate();
-//     if (dd < 10) dd="0" + dd;
-//     today = yyyy + "-" + mm + "-" + dd;
-//     return today;
-// }
-
 function getCalendario() {
     const VEICOLI_URL = "/api/veicoli";
     
@@ -74,11 +63,7 @@ function getCalendario() {
             return response.json();
         })
         .then(listaVeicoli => {
-            // printDisponibili(listaVeicoli, "veicoliDisponibili");
-            // printNoleggiati(listaVeicoli, "veicoliNoleggiati");
             stampaVeicoli(listaVeicoli, "veicoliDisponibili", "veicoliNoleggiati");
-            // printCard(listaVeicoli, "cardVeicoli");
-            // printSwiper(listaVeicoli, "swiperVeicoli");
         })
 }
     
