@@ -29,7 +29,7 @@ public class ArchivioUtentiMVC {
 			if (utente.getTipo() == 'B')
 				return "loginUserError";
 			
-			return "pannello";
+			return "pannello-di-lavoro";
 		}
 		
 		return "login";
@@ -47,10 +47,15 @@ public class ArchivioUtentiMVC {
 			
 			session.setAttribute("loggedUser", utente);
 			
-			return "pannello";
+			return "pannello-di-lavoro";
 		}
 		
 		return "login";
+	}
+	
+	@GetMapping("loginCheck")
+	public String redirect() {
+		return "redirect:/utenti/login";
 	}
 	
 	@RequestMapping("logout")
