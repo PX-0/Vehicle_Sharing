@@ -50,11 +50,6 @@ document.getElementById("datePicker").valueAsDate = new Date();
 
 getCalendario();
 
-function getData() {
-	var data = calendario.value;
-	return data;
-}
-
 function getCalendario() {
     const VEICOLI_URL = "/api/veicoli";
     
@@ -78,8 +73,14 @@ function isPrenotato(veicolo, data) {
 }
 
 function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
+	
+	var tbody1 = document.getElementById(tabella1);
+	tbody1.innerHTML = "";
+	var tbody2 = document.getElementById(tabella2);
+	tbody2.innerHTML = "";
+
     for (const veicolo of listaVeicoli) {
-        if (!isPrenotato(veicolo, getData())) {
+        if (!isPrenotato(veicolo, calendario.value)) {
             riempiTabella(veicolo, tabella1);
         } else {
             riempiTabella(veicolo, tabella2);
