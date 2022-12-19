@@ -47,12 +47,19 @@ const swiper = new Swiper('.swiper', {
 var calendario = document.getElementById("datePicker");
 calendario.addEventListener("change", getCalendario);
 document.getElementById("datePicker").valueAsDate = new Date();
+document.getElementById("datePicker").setAttribute("min", dataOggi());
 
 getCalendario();
 
-function getData() {
-	var data = calendario.value;
-	return data;
+function dataOggi() {
+  var today = new Date();
+  var yyyy = today.getFullYear();
+  var mm = today.getMonth()+1;
+  if (mm < 10) dd="0" + dd;
+  var dd = today.getDate();
+  if (dd < 10) dd="0" + dd;
+  today = yyyy + "-" + mm + "-" + dd;
+  return today;
 }
 
 function getCalendario() {
@@ -78,8 +85,14 @@ function isPrenotato(veicolo, data) {
 }
 
 function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
+	
+	var tbody1 = document.getElementById(tabella1);
+	tbody1.innerHTML = "";
+	var tbody2 = document.getElementById(tabella2);
+	tbody2.innerHTML = "";
+
     for (const veicolo of listaVeicoli) {
-        if (!isPrenotato(veicolo, getData())) {
+        if (!isPrenotato(veicolo, calendario.value)) {
             riempiTabella(veicolo, tabella1);
         } else {
             riempiTabella(veicolo, tabella2);
