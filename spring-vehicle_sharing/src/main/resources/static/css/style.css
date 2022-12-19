@@ -11098,6 +11098,7 @@ fieldset:disabled .btn {
 /* -------------------------------------------------------------------------- */
 body {
   background: #F0FCF7 !important;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* -------------------------------------------------------------------------- */
@@ -11155,13 +11156,12 @@ body {
 /*                                  TITOLO, NAVBAR e NAV-LINK                 */
 /* -------------------------------------------------------------------------- */
 .mainTitle {
-  font-size: 1rem;
-  font-weight: 300;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2rem;
+  font-weight: 400;
   color: #F0FCF7;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .mainTitle {
     font-size: 2.5rem;
     font-weight: 500;
@@ -11204,7 +11204,6 @@ a.nav-link {
 .loginTitle {
   font-size: 1.5rem;
   font-weight: 500;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #d63384;
 }
 
