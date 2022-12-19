@@ -83,3 +83,4 @@ values("Vespa", "Benzina", "Vespa anni 60, colore rosso fuoco", "false", "VespaF
 
 insert into prenotazioni (id, data_prenotazione, pagamento_id, utente_id, veicolo_id)
 values (5,20221010000000, 6, "Alessia", "Vespa");
+
