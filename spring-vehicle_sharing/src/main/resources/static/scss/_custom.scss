@@ -62,6 +62,31 @@ body{
 }
 /* ------------------------------- END BANNER ------------------------------- */
 
+.dataPicker{
+    padding-top: .5rem;
+    max-width: 66%;
+}
+
+.table-calendario{
+    border: 1px solid rgba(0, 0, 0, 0.312);
+    border-radius: 10px;
+    padding: 1rem;
+}
+.sectionTitle-calendario{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0 1rem;
+
+    padding-bottom: 2rem;
+
+    @include media-breakpoint-up(md){
+        font-size: 3rem;
+    }
+}
+
+
+
 /* -------------------------------------------------------------------------- */
 /*                                  TITOLO, NAVBAR e NAV-LINK                 */
 /* -------------------------------------------------------------------------- */
@@ -149,7 +174,3 @@ a.nav-link{
     /* -------------------------------------------------------------------------- */
     /*                             PANNELLO DI LAVORO                             */
     /* -------------------------------------------------------------------------- */
-    .workbench{
-        height: calc(100vh-99px);
-        width: auto;
-    }

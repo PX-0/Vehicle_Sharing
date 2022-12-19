@@ -116,6 +116,7 @@ function riempiTabella(veicolo, tabella) {
         tr.appendChild(td);
         tbody.appendChild(tr);
 
+        
     }
 
 }
