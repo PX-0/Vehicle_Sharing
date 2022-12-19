@@ -33,7 +33,7 @@
     <nav class="navbar navbar-expand-lg bg-primary">
       <div class="container-fluid">
           <a class="navbar-brand d-flex align-items-center me-0 " href="#">
-            <img src="../../resources/static/assets/img/logo.png" alt="Logo" width="40" height="30" class="">
+            <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
             <span class="mainTitle ">Princesharing</span>
           </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -78,14 +78,16 @@
   <main>
 
     <section id="hero">
-      <div class="overlay"></div>
       <div class="cta d-flex align-items-start justify-content-center">
-        <div class="text-cta">
-          <p>BE PRINCE GO EVERYWHERE</p>
-          <p>Robe fighe e motivanti per buttare soldi</p>
+        <div class="text-cta text-center mt-5">
+          <p class="fs-1 text-secondary">BE PRINCESS GO EVERYWHERE</p>
+          <p class="text-white">Il primo servizio di car sharing improntanto sull'utilizzo di veicoli elettrici</p>
           <a href="#" class="btn btn-primary">Visualizza Prodotti</a>
         </div>
       </div>
+      <div class="overlay"></div>
+
+    
     </section>
 
     <section id="banner">
@@ -93,26 +95,7 @@
 
         <div class="swiper">
           <!-- Additional required wrapper -->
-          <div class="swiper-wrapper" id="swiper-box">
-            <!-- Slides -->
-            <!-- <div class="swiper-slide">
-
-              <div class="card mb-3">
-                <img src="https://source.unsplash.com/600x400?car" class="card-img-top">
-                <div class="card-body">
-                  <div class="card-text">
-                    <p id="descrizione"></p>
-                    <p> id="</p>
-                  </div>
-                  <div class="d-flex justify-content-center">
-                    <a href="" class="btn btn-primary">Di più</a>
-                  </div>
-                </div>
-              </div>
-
-          </div> -->
-          
-        </div>
+          <div class="swiper-wrapper " id="swiper-box"></div>
         <div class="swiper-pagination"></div>
       </div>
     </section>
