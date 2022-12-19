@@ -1,11 +1,22 @@
 getCalendario();
 
+function dataOggi() {
+    var today = new Date();
+    var yyyy = today.getFullYear();
+    var mm = today.getMonth()+1;
+    if (mm < 10) dd="0" + dd;
+    var dd = today.getDate();
+    if (dd < 10) dd="0" + dd;
+    today = yyyy + "-" + mm + "-" + dd;
+    return today;
+}
+
 function getCalendario() {
     // const VEICOLI_URL = "/api/veicoli";
     const VEICOLI_URL = "http://localhost:3000/veicoli";
-
+    
     fetch(VEICOLI_URL)
-        .then(response => {
+    .then(response => {
             return response.json();
         })
         .then(listaVeicoli => {
@@ -15,11 +26,21 @@ function getCalendario() {
             printCard(listaVeicoli, "cardVeicoli");
             printSwiper(listaVeicoli, "swiperVeicoli");
         })
+    }
+    
+function isPrenotato(veicolo, data) {
+    for (var i = 0; i < (veicolo.prenotazioni).length; i++) {
+        var dataNoleggio = veicolo.prenotazioni[i].dataPrenotazione.split("T")[0];
+        if (dataNoleggio == data) {
+            return true;
+        } 
+    }
+    return false;
 }
 
 function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
     for (const veicolo of listaVeicoli) {
-        if (veicolo.disponibilitaNoleggio == "true") {
+        if (veicolo.disponibilitaNoleggio == "true" && !isPrenotato(veicolo, dataOggi())) {
             riempiTabella(veicolo, tabella1);
         } else {
             riempiTabella(veicolo, tabella2);
@@ -38,6 +59,17 @@ function riempiTabella(veicolo, tabella) {
                    "<li>" + veicolo.tipologia + "</li>" +
                    "<li>" + veicolo.descrizione + "</li>" +
                    "<li>" + veicolo.posizioneAttuale + "</li><ul>";
+
+    console.log("1");
+
+    // if (veicolo.disponibilitaNoleggio == "false") {
+    //     td.innerHTML += "Date prenotate: ";
+    //     for (var i = 0; i < (veicolo.prenotazioni).length; i++) {
+    //         var dataNoleggio = veicolo.prenotazioni[i].dataPrenotazione.split("T")[0];
+    //         td.innerHTML += dataNoleggio;
+    // }
+
+    console.log("2");
 
     tr.appendChild(td);
     tbody.appendChild(tr);
@@ -68,16 +100,14 @@ function printCard(listaVeicoli, div) {
         
         // card image
         var cardImg = document.createElement("img");
-        if (veicolo.tipologia == "Auto") {
-            // cardImg.setAttribute("src", veicolo.immagineVeicolo);
-            cardImg.setAttribute("src", "https://source.unsplash.com/600x400?car");
-        } else if (veicolo.tipologia == "Bicicletta") {
-            // cardImg.setAttribute("src", veicolo.immagineVeicolo);
-            cardImg.setAttribute("src", "https://source.unsplash.com/600x400?bicycle");
-        } else {
-            // cardImg.setAttribute("src", veicolo.immagineVeicolo);
-            cardImg.setAttribute("src", "https://source.unsplash.com/600x400?scooter");
-        }
+        // if (veicolo.tipologia == "Auto") {
+        //     cardImg.setAttribute("src", "https://source.unsplash.com/600x400?car");
+        // } else if (veicolo.tipologia == "Bicicletta") {
+        //     cardImg.setAttribute("src", "https://source.unsplash.com/600x400?bicycle");
+        // } else {
+        //     cardImg.setAttribute("src", "https://source.unsplash.com/600x400?scooter");
+        // }
+        cardImg.setAttribute("src", veicolo.immagineVeicolo);
         cardImg.setAttribute("class", "card-img-top");
         card.appendChild(cardImg);
         
@@ -125,16 +155,14 @@ function printSwiper(listaVeicoli, div) {
         
         // card image
         var cardImg = document.createElement("img");
-        if (veicolo.tipologia == "Auto") {
-            // cardImg.setAttribute("src", veicolo.immagineVeicolo);
-            cardImg.setAttribute("src", "https://source.unsplash.com/600x400?car");
-        } else if (veicolo.tipologia == "Bicicletta") {
-            // cardImg.setAttribute("src", veicolo.immagineVeicolo);
-            cardImg.setAttribute("src", "https://source.unsplash.com/600x400?bicycle");
-        } else {
-            // cardImg.setAttribute("src", veicolo.immagineVeicolo);
-            cardImg.setAttribute("src", "https://source.unsplash.com/600x400?scooter");
-        }
+        // if (veicolo.tipologia == "Auto") {
+        //     cardImg.setAttribute("src", "https://source.unsplash.com/600x400?car");
+        // } else if (veicolo.tipologia == "Bicicletta") {
+        //     cardImg.setAttribute("src", "https://source.unsplash.com/600x400?bicycle");
+        // } else {
+        //     cardImg.setAttribute("src", "https://source.unsplash.com/600x400?scooter");
+        // }
+        cardImg.setAttribute("src", veicolo.immagineVeicolo);
         cardImg.setAttribute("class", "card-img-top");
         card.appendChild(cardImg);
         
