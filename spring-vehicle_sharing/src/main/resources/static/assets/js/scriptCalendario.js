@@ -4,21 +4,35 @@ document.getElementById("datePicker").valueAsDate = new Date();
 
 getCalendario();
 
+parseData("2022-10-10");
+
+function parseDate(data) {
+    var dataDaFormattare = Date.parse(data);
+    console.log(dataDaFormattare);
+}
+
+
+
+
+
+
+
+
 function getData() {
 	var data = calendario.value;
 	return data;
 }
 
-function dataOggi() {
-    var today = new Date();
-    var yyyy = today.getFullYear();
-    var mm = today.getMonth()+1;
-    if (mm < 10) dd="0" + dd;
-    var dd = today.getDate();
-    if (dd < 10) dd="0" + dd;
-    today = yyyy + "-" + mm + "-" + dd;
-    return today;
-}
+// function dataOggi() {
+//     var today = new Date();
+//     var yyyy = today.getFullYear();
+//     var mm = today.getMonth()+1;
+//     if (mm < 10) dd="0" + dd;
+//     var dd = today.getDate();
+//     if (dd < 10) dd="0" + dd;
+//     today = yyyy + "-" + mm + "-" + dd;
+//     return today;
+// }
 
 function getCalendario() {
     const VEICOLI_URL = "/api/veicoli";
