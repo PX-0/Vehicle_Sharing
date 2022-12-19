@@ -84,8 +84,6 @@ values("Vespa", "Benzina", "Vespa anni 60, colore rosso fuoco", "false", "VespaF
 insert into prenotazioni (id, data_prenotazione, pagamento_id, utente_id, veicolo_id)
 values (5,20221010000000, 6, "Alessia", "Vespa");
 
-
-
 INSERT INTO veicoli (veicolo_id, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) VALUES ('Opel', 'Auto', 'Benzina', 'una bellissima macchina in noleggio', 'Italia, Roma, Via Montarlei 30', 'true', 'https://source.unsplash.com/600x400?car', 'Amministratore');
 INSERT INTO veicoli (veicolo_id, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) VALUES ('Suzuki', 'Auto', 'Elettrica', 'una bellissima macchina in noleggio', 'Italia, Roma, Via Celacolui 89', 'true', 'https://source.unsplash.com/600x400?car', 'Amministratore');
 
