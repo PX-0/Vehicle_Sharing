@@ -26,10 +26,10 @@ public class ArchivioUtentiMVC {
 		
 		if (session.getAttribute("loggedUser") != null) {
 			
-			if (utente.getTipo() == 'B')
+			if (utente.getTipo() != 'A')
 				return "loginUserError";
 			
-			return "pannello";
+			return "pannello-di-lavoro";
 		}
 		
 		return "login";
@@ -42,15 +42,20 @@ public class ArchivioUtentiMVC {
 		
 		if (utente != null) {
 			
-			if (utente.getTipo() == 'B')
+			if (utente.getTipo() != 'A')
 				return "loginUserError";
 			
 			session.setAttribute("loggedUser", utente);
 			
-			return "pannello";
+			return "pannello-di-lavoro";
 		}
 		
 		return "login";
+	}
+	
+	@GetMapping("loginCheck")
+	public String redirect() {
+		return "redirect:/utenti/login";
 	}
 	
 	@RequestMapping("logout")
