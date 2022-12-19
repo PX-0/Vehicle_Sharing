@@ -77,5 +77,9 @@ values("Liberty", "Benzina", "Liberty piaggio 125 Grigio", "false", "Piaggiolibe
 INSERT INTO veicoli (veicolo_id, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) 
 VALUES ('Audi', 'Auto', 'Disel', 'AudiA1, colore bianco', 'Italia, Torino, Via Genova 10126', 'true', 'audiA1.jpg', 'Amministratore');
 
+
 insert into veicoli (veicolo_id,alimentazione,descrizione,disponibilita_noleggio,immagine_veicolo,posizione_attuale,tipologia,utente_ins)
 values("Vespa", "Benzina", "Vespa anni 60, colore rosso fuoco", "false", "VespaFuoco.jpg", "Italia, Roma, Via Nazionale 00184", "Motorino", "Amministratore");
+
+insert into prenotazioni (id, data_prenotazione, pagamento_id, utente_id, veicolo_id)
+values (5,20221010000000, 6, "Alessia", "Vespa");
