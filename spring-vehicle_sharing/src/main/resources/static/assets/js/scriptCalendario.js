@@ -22,7 +22,7 @@ function getCalendario() {
         .then(listaVeicoli => {
             // printDisponibili(listaVeicoli, "veicoliDisponibili");
             // printNoleggiati(listaVeicoli, "veicoliNoleggiati");
-            stampaVeicoli(listaVeicoli, "veicoliDisponibili", "veicoliNoleggiati")
+            stampaVeicoli(listaVeicoli, "veicoliDisponibili", "veicoliNoleggiati");
             printCard(listaVeicoli, "cardVeicoli");
             printSwiper(listaVeicoli, "swiperVeicoli");
         })
