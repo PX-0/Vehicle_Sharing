@@ -2,6 +2,7 @@ package com.springvehicle_sharing.presentation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,12 +24,19 @@ public class VeicoliMVC {
 	@GetMapping("inserisci")
 	public String inserisciVeicolo(HttpSession session) {
 		
+		if (session.getAttribute("loggedUser") == null) {
+			session.setAttribute("showBtn", false);
+			return "loginUserError";
+		}
+		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
 		if (session.getAttribute("loggedUser") != null) {
 			
-			if (utente.getTipo() != 'A')
+			if (utente.getTipo() != 'A') {
+				session.setAttribute("showBtn", true);
 				return "loginUserError";
+			}
 			
 			return "pagina-di-inserimento-veicolo";
 		}
@@ -70,6 +78,36 @@ public class VeicoliMVC {
 	@GetMapping("addVeicolo")
 	public String redirect() {
 		return "redirect:/utenti/login";
+	}
+	
+	@GetMapping("elenco")
+	public String elencoVeicoliAmministrabili(HttpSession session, Model m) {
+		
+		if (session.getAttribute("loggedUser") == null) {
+			session.setAttribute("showBtn", false);
+			return "loginUserError";
+		}
+		
+		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
+		
+		if (session.getAttribute("loggedUser") != null) {
+			
+			if (utente.getTipo() != 'A') {
+				session.setAttribute("showBtn", true);
+				return "loginUserError";
+			}
+		}
+		
+		
+		
+		return "elenco-veicoli-amministrabili";
+	}
+	
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("loggedUser");
+		session.removeAttribute("showBtn");
+		return "redirect:/";
 	}
 	
 }
