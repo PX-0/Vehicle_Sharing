@@ -42,7 +42,7 @@ values ("Mattia","Verdi",20210604033845,"mattiaverdi@gmail.com","Utente","04/10/
 
 
 insert into veicoli (veicolo_id,alimentazione,descrizione,disponibilita_noleggio,immagine_veicolo,posizione_attuale,tipologia,utente_ins)
-values("Xiaomi", "Elettrico", "Xiaomi colore rosso metallizzato", "false", "monopattinoXiaomi.jpg", "Via appia nuova 678 00179", "Monopattino", "Amministratore");
+values("Xiaomi", "Elettrico", "Xiaomi colore rosso metallizzato", "false", "monopattinoXiaomi.jpg", "Via Appia Nuova 678, 00179", "Monopattino", "Amministratore");
 
 insert into prenotazioni (id, data_prenotazione, pagamento_id, utente_id, veicolo_id)
 values (4,20230207000000, 4, "Mattia", "Xiaomi");
@@ -58,10 +58,10 @@ VALUES ('7', '321', '450.00', 'Mastercard', '5167099046768999', 20250101);
 
 
 INSERT INTO veicoli (veicolo_id, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) 
-VALUES ('Trek', 'bicicletta', 'elettrica', 'colore nero', 'Italia, Roma, Via Fregene 00183', 'true', 'Trek.jpg', 'Amministratore');
+VALUES ('Trek', 'Bicicletta', 'elettrica', 'colore nero', 'Italia, Roma, Via Fregene 00183', 'true', 'Trek.jpg', 'Amministratore');
 
 INSERT INTO veicoli (veicolo_id, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) 
-VALUES ('E-bike', 'bicicletta', 'elettrica', 'Cube Stereo Hybrid 120 Pro 625, colore azzurro', 'Italia, Roma, Via Fregene 00183', 'false','cube.jpg','Amministratore');
+VALUES ('E-bike', 'Bicicletta', 'elettrica', 'Cube Stereo Hybrid 120 Pro 625, colore azzurro', 'Italia, Roma, Via Fregene 00183', 'false','cube.jpg','Amministratore');
 
 insert into archivio_utenti (user_id,cognome,data_iscrizione,email,firma,nascita,nome,password,tipo,ultima_modifica)
 values ("Luca","Gialli",20180503050000,"lucagialli@gmail.com","Utente con diritti minimi","06/07/1999","luca","GIALLI","B",20220702000000);
@@ -70,10 +70,10 @@ insert into archivio_utenti (user_id,cognome,data_iscrizione,email,firma,nascita
 values ("Alessia","Como",20200204000000,"comale@tiscali.com","Utente","07/09/1995","alessia","ComAle","B",20220401000000);
 
 insert into veicoli (veicolo_id,alimentazione,descrizione,disponibilita_noleggio,immagine_veicolo,posizione_attuale,tipologia,utente_ins)
-values("Aovo", "Elettrico", "AovoPro colore nero opaco", "true", "monopattinoAovo.jpg", "via tiburtina 1361 00131", "Monopattino", "Amministratore");
+values("Aovo", "Elettrico", "AovoPro colore nero opaco", "true", "monopattinoAovo.jpg", "Via Tiburtina 1361, 00131", "Monopattino", "Amministratore");
 
 insert into veicoli (veicolo_id,alimentazione,descrizione,disponibilita_noleggio,immagine_veicolo,posizione_attuale,tipologia,utente_ins)
-values("Liberty", "Benzina", "Liberty piaggio 125 Grigio", "false", "Piaggioliberty.jpg", "via parghelia 2 00178", "Motorino", "Amministratore");
+values("Liberty", "Benzina", "Liberty piaggio 125 Grigio", "false", "Piaggioliberty.jpg", "Via Parghelia 2, 00178", "Motorino", "Amministratore");
 
 INSERT INTO veicoli (veicolo_id, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) 
 VALUES ('Audi', 'Auto', 'Disel', 'AudiA1, colore bianco', 'Italia, Torino, Via Genova 10126', 'true', 'audiA1.jpg', 'Amministratore');
