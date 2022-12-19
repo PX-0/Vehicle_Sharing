@@ -11201,6 +11201,20 @@ a.nav-link {
 /* -------------------------------------------------------------------------- */
 /*                                PAGINA LOGIN                                */
 /* -------------------------------------------------------------------------- */
+.loginTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #d63384;
+}
+
+@media (min-width: 576px) {
+  .loginTitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+}
+
 .gradient-custom-2 {
   /* fallback for old browsers */
   background: #fccb90;
