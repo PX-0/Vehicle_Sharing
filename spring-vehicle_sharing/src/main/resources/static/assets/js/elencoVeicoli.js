@@ -6,18 +6,17 @@ function fetchVeicoli() {
 	fetch(URL_VEICOLI, {})
 	    .then(data => data.json())
 	    .then(response => {
-	        
-	        setTimeout(() => {
-	            stampaVeicoli(response);
-	        }, 1000);
-	
-	    });
+            LMAX = response.length; //Math.ceil(response.length / 10);
+            stampaVeicoli(response);
+        });
 }
 
 fetchVeicoli();
 
 var cStart = 0;
 var cEnd = 10;
+var LMAX = 0;
+var pagina = 1;
 
 var tableBody = document.querySelector('#tableBody');
 
@@ -29,7 +28,7 @@ function incrDimCon(cosaFaccio) {
 
     if (cosaFaccio == 'incrementa') {
 
-        if (cEnd <= elencoVeicoli.length) {
+        if (cEnd  <= LMAX) {
             cStart += 10;
             cEnd += 10;
             fetchVeicoli();
@@ -43,6 +42,8 @@ function incrDimCon(cosaFaccio) {
             fetchVeicoli();
         }
     }
+    // console.log(cStart);
+    // console.log(cEnd);
 }
 
 function stampaVeicoli(elencoVeicoli) {
