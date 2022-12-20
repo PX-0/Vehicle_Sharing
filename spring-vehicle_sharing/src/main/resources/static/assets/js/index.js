@@ -109,8 +109,21 @@ function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
     }
   }
 
-  printPlaceholderCard(disponibili-noleggiati, tabella2);
-  
+  var tab1 = document.getElementById("tabellaDisponibili");
+  var tab2 = document.getElementById("tabellaNoleggiati");
+
+  // if (noleggiati != 0) {
+  //   printPlaceholderCard((disponibili - noleggiati), tabella2);
+  //   tab1.setAttribute("class", "col-6");
+  //   tab2.removeAttribute("hidden");
+
+  // } else {
+  //   tab1.setAttribute("class", "col-12");
+  //   tab2.setAttribute("hidden", "");
+  // }
+
+  printPlaceholderCard((disponibili - noleggiati), tabella2);
+
 }
 
 function riempiTabella(veicolo, tabella) {
@@ -120,28 +133,54 @@ function riempiTabella(veicolo, tabella) {
         var tbody = document.getElementById(tabella);
         
         var tr = document.createElement("tr");
+        tr.setAttribute("class", "tr-veicoli");
         tbody.appendChild(tr);
         
         var td = document.createElement("td");
-        td.setAttribute("class", "py-4");
+        td.setAttribute("class", "ps-4 pt-4");
         tr.appendChild(td);
 
-        td.innerHTML = "<h5>" + veicolo.veicoloId + "</h5><ul>" +
+        td.innerHTML = "<h3>" + veicolo.veicoloId + "</h3><ul>" +
                        "<li>" + veicolo.tipologia + "</li>" +
                        "<li>" + veicolo.descrizione + "</li>" +
                        "<li>" + veicolo.posizioneAttuale + "</li></ul>";
 
-        if (veicolo.prenotazioni.length >= 1) {
-            td.innerHTML += "<p>Veicolo prenotato per i giorni:</p>";
-            var ul = document.createElement("ul");
-            td.appendChild(ul);
-            for (var i = 0; i < veicolo.prenotazioni.length; i++) {
-                ul.innerHTML += "<li>" + veicolo.prenotazioni[i].dataPrenotazione.split("T")[0] + "</li>";
-            }
-        }
+         var row = document.createElement("div");
+         row.setAttribute("class", "row align-items-center")
+         td.appendChild(row);
 
-        td.innerHTML += "<button type='button' class='btn btn-primary'>Ulteriori informazioni</button>";
+         var col1 = document.createElement("div");
+         col1.setAttribute("class", "col-12 col-md-6 mb-2")
+         row.appendChild(col1);
+
+         var col2 = document.createElement("div");
+         col2.setAttribute("class", "col-12 col-md-6")
+         row.appendChild(col2);
+
+        if (veicolo.prenotazioni.length >= 1) {
+
+          var p = document.createElement("div");
+          p.setAttribute("class", "col-12");
+          col1.appendChild(p);
+          p.textContent = "Veicolo prenotato per i giorni:";
+
+          var ul = document.createElement("ul");
+          ul.setAttribute("class", "pb-0 mb-0")
+          col1.appendChild(ul);
+
+          for (var i = 0; i < veicolo.prenotazioni.length; i++) {
+              ul.innerHTML += "<li>" + veicolo.prenotazioni[i].dataPrenotazione.split("T")[0] + "</li>";
+          }
+
+          col2.innerHTML = "<button type='button' class='btn btn-primary'>Ulteriori informazioni</button>";
+
+        } else {
+
+          col1.innerHTML = "<div>Veicolo disponibile</div>";
+          col2.innerHTML = "<button type='button' class='btn btn-primary'>Ulteriori informazioni</button>";        
         
+        }
+  
     }
 
 }
@@ -153,8 +192,9 @@ function printPlaceholderCard(n, tabella) {
   for (var i = 0; i < n; i++) {
     
     var tr = document.createElement("tr");
+    tr.setAttribute("class", "tr-veicoli");
     tbody.appendChild(tr);
-
+    
     var td = document.createElement("td");
     tr.appendChild(td);
 
@@ -210,7 +250,7 @@ function printPlaceholderCard(n, tabella) {
     
     // card button
     var cardBtn = document.createElement("a");
-    cardBtn.setAttribute("class", "btn btn-primary disabled placeholder col-10 col-sm-10 col-md-8 col-lg-6 float-start");
+    cardBtn.setAttribute("class", "btn btn-primary disabled placeholder col-10 col-sm-10 col-md-8 col-lg-6 float-end");
     cardBody.appendChild(cardBtn);
 
   }
@@ -291,7 +331,7 @@ fetch(url).then(data=>{return data.json()})
       resp.forEach(element => {
         CreateCard(element.immagineVeicolo,element.veicoloId,
           element.descrizione,element.posizioneAttuale,'#')
-          console.log(element.immagineVeicolo[0]);
+          // console.log(element.immagineVeicolo[0]);
 
       });
 
