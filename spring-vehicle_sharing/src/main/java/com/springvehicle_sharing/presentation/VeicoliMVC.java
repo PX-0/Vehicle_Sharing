@@ -1,5 +1,10 @@
 package com.springvehicle_sharing.presentation;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.springvehicle_sharing.dal.ArchivioUtentiDAO;
 import com.springvehicle_sharing.dal.VeicoliDAO;
@@ -48,13 +54,16 @@ public class VeicoliMVC {
 		return "redirect:/utenti/login";
 	}
 	
+	public static String UPLOAD_DIRECTORY = "src/main/resources/static/assets/uploads";
+	
 	@PostMapping("addVeicolo")
 	public String addVeicolo(HttpSession session, @RequestParam("veicoloId") String veicoloId,
 			@RequestParam("alimentazione") String alimentazione, @RequestParam("descrizione")
 			String descrizione, @RequestParam(value = "disponibilitaNoleggio", 
 			defaultValue = "false") boolean disponibilitaNoleggio, @RequestParam("immagineVeicolo") 
-			String immagineVeicolo, @RequestParam("posizioneAttuale") String posizioneAttuale, 
-			@RequestParam("tipologia") String tipologia) {
+			/*String immagineVeicolo*/ MultipartFile file, 
+			@RequestParam("posizioneAttuale") String posizioneAttuale, 
+			@RequestParam("tipologia") String tipologia) throws IOException {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
@@ -64,12 +73,17 @@ public class VeicoliMVC {
 				return "loginUserError";
 		}
 		
+		StringBuilder fileNames = new StringBuilder();
+        Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, file.getOriginalFilename());
+        fileNames.append(file.getOriginalFilename());
+        Files.write(fileNameAndPath, file.getBytes());
+		
 		Veicolo veicolo = new Veicolo();
 		veicolo.setVeicoloId(veicoloId);
 		veicolo.setAlimentazione(alimentazione);
 		veicolo.setDescrizione(descrizione);
 		veicolo.setDisponibilitaNoleggio(String.valueOf(disponibilitaNoleggio));
-		veicolo.setImmagineVeicolo(immagineVeicolo);
+		veicolo.setImmagineVeicolo(fileNameAndPath.toString());
 		veicolo.setPosizioneAttuale(posizioneAttuale);
 		veicolo.setTipologia(tipologia);
 		veicolo.setUtenteIns(utente);
