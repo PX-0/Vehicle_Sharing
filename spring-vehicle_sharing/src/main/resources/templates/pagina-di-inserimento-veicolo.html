@@ -26,16 +26,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link" aria-current="page" href="loginCheck">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About Us</a>
+                  <a href="../../veicoli/elenco" class="nav-link">Elenco dei veicoli amministrabili</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Novità</a>
+                  <a href="../../veicoli/inserisci" class="nav-link active">Inserisci un veicolo</a>
                 </li>
                 <li class="nav-item">
-                  <a href="utenti/login" class="btn btn-secondary">Login</a>
+                  <a href="logout" class="btn btn-secondary">Logout</a>
                 </li>
               </ul>
             </div>
@@ -44,49 +44,51 @@
       </header>
     <main>
 
-		<div class="container">
-            <form action="addVeicolo" method="POST" id="mioForm" name="mioForm">
-              <div class="mb-3">
-                <label for="veicoloId" class="form-label">Veicolo (ID)</label>
-                <input type="text" class="form-control" id="veicoloId" name="veicoloId">
-                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-              </div>
-              <div class="mb-3">
-                <label for="alimentazione" class="form-label">Alimentazione</label>
-                <input type="text" class="form-control" id="alimentazione" name="alimentazione">
-              </div>
-              <div class="mb-3">
-                <label for="descrizione" class="form-label">Descrizione</label>
-                <input type="text" class="form-control" id="descrizione" name="descrizione">
-              </div>
-              <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="disponibilitaNoleggio" name="disponibilitaNoleggio">
-                <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
-              </div>
-              <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
-              <div class="input-group mb-3">
-                  <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo" aria-describedby="basic-addon3">
-              </div>
-              <div class="mb-3">
-                <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
-                <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
-              </div>
-              <div class="mb-3">
-                  <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
-                    <option value="-1" selected disabled>Tipologia di veicolo</option>
-                    <option value="Auto">Auto</option>
-                    <option value="Bicicletta">Bicicletta</option>
-                    <option value="Monopattino">Monopattino</option>
-                    <option value="Motorino">Motorino</option>
-                  </select>
-              </div>
-              <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+		<div class="Wrapper-form">
+            <div class="container p-3">
+                        <div class="text-center py-3">
+                            <p class="Title">AGGIUNGI VEICOLO</p>
+                        </div>
+                        <form action="addVeicolo" method="POST" id="mioForm" name="mioForm">
+                          <div class="mb-3">
+                            <label for="veicoloId" class="form-label">Veicolo (ID)</label>
+                            <input type="text" class="form-control" id="veicoloId" name="veicoloId">
+                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                          </div>
+                          <div class="mb-3">
+                            <label for="alimentazione" class="form-label">Alimentazione</label>
+                            <input type="text" class="form-control" id="alimentazione" name="alimentazione">
+                          </div>
+                          <div class="mb-3">
+                            <label for="descrizione" class="form-label">Descrizione</label>
+                            <input type="text" class="form-control" id="descrizione" name="descrizione">
+                          </div>
+                          <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" role="switch" id="disponibilitaNoleggio" name="disponibilitaNoleggio">
+                            <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
+                          </div>
+                          <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
+                          <div class="input-group mb-3">
+                              <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo" aria-describedby="basic-addon3">
+                          </div>
+                          <div class="mb-3">
+                            <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
+                            <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
+                          </div>
+                          <div class="mb-3">
+                              <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
+                                <option value="-1" selected disabled>Tipologia di veicolo</option>
+                                <option value="Auto">Auto</option>
+                                <option value="Bicicletta">Bicicletta</option>
+                                <option value="Monopattino">Monopattino</option>
+                                <option value="Motorino">Motorino</option>
+                              </select>
+                          </div>
+                          <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
+                          <button type="submit" class="btn btn-primary text-white">Submit</button>
+                        </form>
+                    </div>
         </div>
-
-        <!-- div mappa -->
-        <div id="map"></div>
 
     </main>
     <!-- Remove the container if you want to extend the Footer to full width. -->
@@ -132,41 +134,6 @@
                 <!-- Grid row -->
                 <div class="row mt-3">
                     <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold">Company name</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px" />
-                        <p class="description-footer">
-                            Here you can use rows and columns to organize your footer
-                            content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit.
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold">Products</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px" />
-                        <p>
-                            <a href="#!" class="nav-link">MDBootstrap</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="nav-link">MDWordPress</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="nav-link">BrandFlow</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="nav-link">Bootstrap Angular</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold">Useful links</h6>
@@ -208,7 +175,7 @@
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
             © 2020 Copyright:
-            <a class="text-dark" style="text-decoration: none" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            <a class="text-dark" style="text-decoration: none" href="https://localhost:9014/">Princesharing</a>
         </div>
         <!-- Copyright -->
     </footer>
