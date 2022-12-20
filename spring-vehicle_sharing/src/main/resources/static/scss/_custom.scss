@@ -1,6 +1,11 @@
 body {
     background: #F0FCF7 !important;
     font-family: $font-family-sans-serif;
+    font-weight: 500;
+}
+
+header{
+    background-image: linear-gradient(to left bottom, #26a96c, #009391, #0077a5, #005799, #4a326f) !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -147,7 +152,7 @@ a.nav-link {
 .loginTitle {
     font-size: 1.5rem;
     font-weight: 500;
-    color: $pink;
+    color: $primary;
 
     @include media-breakpoint-up(sm) {
         font-size: 2.5rem;
@@ -157,13 +162,7 @@ a.nav-link {
 
 .gradient-custom-2 {
     /* fallback for old browsers */
-    background: #fccb90;
-
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
-
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    background-image: linear-gradient(to right top, #26a96c, #009391, #0077a5, #005799, #4a326f);
 }
 
 @media (min-width: 768px) {
