@@ -79,8 +79,10 @@
           <div class="swiper-wrapper" id="swiper-box"></div>
         </div>
     </section>
-    <section id="calendario" class="my-5"> <!-- inizio calendario -->
-      <div class="container"> <!-- inizio container -->
+    <section id="calendario" class="my-5">
+      <!-- inizio calendario -->
+      <div class="container">
+        <!-- inizio container -->
         <div class="sectionTitle-calendario text-secondary">LE NOSTRE DISPONIBILITÀ</div>
         <div class="row justify-content-center justify-content-md-start mb-3">
           <div class="col-12 col-sm-6 col-md-4 col-lg-4">
@@ -91,8 +93,10 @@
             <div id="dataScelta"></div>
           </div>
         </div>
-        <div class="row table-calendario"> <!-- inizio row -->
-          <div class="col-12 col-sm-6 p-md-3"> <!-- colonna 1 -->
+        <div class="row table-calendario">
+          <!-- inizio row -->
+          <div class="col-12 col-sm-6 p-md-3">
+            <!-- colonna 1 -->
             <table class="table table-borderless">
               <thead>
                 <tr>
@@ -104,7 +108,8 @@
               <tbody id="veicoliDisponibili"></tbody>
             </table>
           </div>
-          <div class="col-12 col-sm-6 p-md-3"> <!-- colonna 2 -->
+          <div class="col-12 col-sm-6 p-md-3">
+            <!-- colonna 2 -->
             <table class="table table-borderless">
               <thead>
                 <tr>
@@ -127,7 +132,8 @@
   <!-- Footer -->
   <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
     <!-- Section: Social media -->
-    <section class="d-flex justify-content-between p-3 text-white bg-primary">
+    <section class="d-flex justify-content-between p-3 text-white"
+      style="background-image: linear-gradient(to left bottom, #26a96c, #009391, #0077a5, #005799, #4a326f) !important;">
       <!-- Left -->
       <div class="">
         <span>Get connected with us on social networks:</span>
@@ -158,10 +164,11 @@
           <!-- Grid column -->
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
-            <p class="text-uppercase mb-0 fw-bold">PRINCESS</p>
-            <hr class="mb-2 mt-0 d-inline-block mx-auto" style="width: 60px; height:2px"/>
+            <p class="text-uppercase mb-0 fw-bold titleTeam">PRINCESS</p>
+            <hr class="mb-2 mt-0 d-inline-block mx-auto" style="width: 60px; height:2px" />
             <p>
-              PRINCESS progetta, sviluppa e commercializza prodotti e servizi per l’Internet of Things e per il coordinamento e la sicurezza di persone, merci e veicoli in mobilità.
+              PRINCESS progetta, sviluppa e commercializza prodotti e servizi per l’Internet of Things e per il
+              coordinamento e la sicurezza di persone, merci e veicoli in mobilità.
             </p>
           </div>
           <!-- Grid column -->
@@ -171,10 +178,10 @@
             <p class="text-uppercase mb-0 fw-bold">Useful links</p>
             <hr class="mb-2 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px;" />
             <p>
-                <a href="../other/workwithus" class="" style="color: #1FAB89; text-decoration: none">Work with us</a>
+              <a href="../other/workwithus" class="" style="color: #1FAB89; text-decoration: none">Work with us</a>
             </p>
             <p>
-                <a href="../other/help" class="" style="color: #1FAB89; text-decoration: none">Help</a>
+              <a href="../other/help" class="" style="color: #1FAB89; text-decoration: none">Help</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -211,7 +218,7 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script th:src="@{/assets/js/index.js}" ></script>
+  <script th:src="@{/assets/js/index.js}"></script>
 
   <div hidden th:text="${session.loggedUser}"></div>
 </body>
