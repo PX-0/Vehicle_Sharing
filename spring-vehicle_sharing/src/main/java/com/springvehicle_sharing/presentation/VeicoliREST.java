@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springvehicle_sharing.dal.PrenotazioniDAO;
 import com.springvehicle_sharing.dal.VeicoliDAO;
 import com.springvehicle_sharing.entities.Veicolo;
 
@@ -23,6 +24,9 @@ public class VeicoliREST {
 	
 	@Autowired
 	private VeicoliDAO dao;
+	
+	@Autowired
+	PrenotazioniDAO pDao;
 	
 	@GetMapping("veicoli")
 	@CrossOrigin
@@ -42,6 +46,9 @@ public class VeicoliREST {
 	
 	@DeleteMapping("veicoli/{id}")
 	public void deleteVeicolo(@PathVariable("id") String id) {
+		
+		pDao.updateVeicoloId(id);
+		
 		dao.deleteById(id);
 	}
 
