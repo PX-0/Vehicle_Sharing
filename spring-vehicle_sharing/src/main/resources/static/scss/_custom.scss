@@ -105,6 +105,10 @@ body {
 
 a.nav-link {
     color: $secondary;
+    
+    &:hover{
+        color: #F0FCF7!important;
+    }
 }
 
 .active {
@@ -204,19 +208,22 @@ a.nav-link {
 /*                             INSERIMENTO VEICOLO                            */
 /* -------------------------------------------------------------------------- */
 
-.Wrapper-form {
-    height: calc(100vh-99px);
-}
-
-.Title {
+.title-formAdd{
     font-size: 2rem;
-    font-weight: 600;
-    color: $primary;
+    font-weight: 700;
+    text-align: center;
+    color: $secondary;
 }
 
 #mioForm {
+    font-weight: 600    ;
+    background: $primary;
+    color: $secondary;
+    padding: 2rem;
     max-width: 40%;
     margin: 0 auto;
+    border: 1px solid transparent;
+    border-radius: 10px;
 }
 
 

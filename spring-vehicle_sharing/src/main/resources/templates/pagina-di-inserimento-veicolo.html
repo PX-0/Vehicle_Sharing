@@ -43,7 +43,8 @@
     </header>
     <main>
 
-        <div class="container">
+        <div class="container py-3">
+            <div class="title-formAdd"><p>AGGIUNGI VEICOLO</p></div>
             <form action="addVeicolo" method="POST" id="mioForm" name="mioForm" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="veicoloId" class="form-label">Veicolo (ID)</label>
@@ -86,7 +87,7 @@
                     </select>
                 </div>
                 <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-secondary">Submit</button>
             </form>
         </div>
 
