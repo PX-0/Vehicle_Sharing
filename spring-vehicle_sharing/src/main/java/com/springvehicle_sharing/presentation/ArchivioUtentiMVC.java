@@ -63,7 +63,6 @@ public class ArchivioUtentiMVC {
 		return "redirect:/utenti/login";
 	}
 	
-
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("loggedUser");
