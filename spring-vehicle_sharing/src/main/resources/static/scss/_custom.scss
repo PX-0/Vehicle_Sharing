@@ -8,6 +8,14 @@ header{
     background-image: linear-gradient(to left bottom, #26a96c, #009391, #0077a5, #005799, #4a326f) !important;
 }
 
+header a:hover{
+        color: #F0FCF7!important;
+}
+
+footer a:hover{
+    color:$secondary !important;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                     HERO                                    */
 /* -------------------------------------------------------------------------- */
@@ -117,10 +125,6 @@ header{
 
 a.nav-link {
     color: $secondary;
-    
-    &:hover{
-        color: #F0FCF7!important;
-    }
 }
 
 .active {
@@ -242,6 +246,7 @@ a.nav-link {
     width: 12rem;
 }
 
+<<<<<<< Updated upstream
 /* -------------------------------------------------------------------------- */
 /*                                  ABOUT US                                  */
 /* -------------------------------------------------------------------------- */
@@ -251,4 +256,19 @@ a.nav-link {
 }
 .titleTeam{
     color: $pink;
+=======
+
+
+/* -------------------------------------------------------------------------- */
+/*                                  HELP PAGE                                 */
+/* -------------------------------------------------------------------------- */
+.section{
+    padding: 2rem 0;
+
+    font-weight: 600;
+
+    h2{
+        color: $secondary;
+    }
+>>>>>>> Stashed changes
 }
