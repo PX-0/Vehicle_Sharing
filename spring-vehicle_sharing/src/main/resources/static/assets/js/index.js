@@ -1,5 +1,3 @@
-var ciao = "ciao";
-ciao.startsWith
 const swiper = new Swiper('.swiper', {
 
       slidesPerView: 1,
