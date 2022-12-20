@@ -44,56 +44,59 @@
     <main>
 
         <div class="container py-3">
-            <div class="title-formAdd"><p>AGGIUNGI VEICOLO</p></div>
+            <div class="title-formAdd">
+                <p>AGGIUNGI VEICOLO</p>
+            </div>
             <form action="addVeicolo" method="POST" id="mioForm" name="mioForm" enctype="multipart/form-data">
-              <div class="mb-3">
-                <label for="veicoloId" class="form-label">Veicolo (ID)</label>
-                <input type="text" class="form-control" id="veicoloId" name="veicoloId">
-                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-              </div>
-              <div class="mb-3">
-                <label for="alimentazione" class="form-label">Alimentazione</label>
-                <input type="text" class="form-control" id="alimentazione" name="alimentazione">
-              </div>
-              <div class="mb-3">
-                <label for="descrizione" class="form-label">Descrizione</label>
-                <input type="text" class="form-control" id="descrizione" name="descrizione">
-              </div>
-              <!-- <div class="form-check form-switch mb-3">
+                <div class="mb-3">
+                    <label for="veicoloId" class="form-label">Veicolo (ID)</label>
+                    <input type="text" class="form-control" id="veicoloId" name="veicoloId">
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-3">
+                    <label for="alimentazione" class="form-label">Alimentazione</label>
+                    <input type="text" class="form-control" id="alimentazione" name="alimentazione">
+                </div>
+                <div class="mb-3">
+                    <label for="descrizione" class="form-label">Descrizione</label>
+                    <input type="text" class="form-control" id="descrizione" name="descrizione">
+                </div>
+                <!-- <div class="form-check form-switch mb-3">
                 <input class="form-check-input" type="checkbox" role="switch" id="disponibilitaNoleggio" name="disponibilitaNoleggio">
                 <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
               </div>-->
-              <div class="mb-3">
-                  <select id="disponibilitaNoleggio" name="disponibilitaNoleggio" class="form-select">
-                    <option value="-1" selected disabled>Tipologia di noleggio</option>
-                    <option value="Prolungato">Prolungato</option>
-                    <option value="Giornaliero">Giornaliero (durata: 1 giorno)</option>
-                    <option value="No">Non disponibile</option>
-                  </select>
-              </div>
-              <!-- <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
+                <div class="mb-3">
+                    <select id="disponibilitaNoleggio" name="disponibilitaNoleggio" class="form-select">
+                        <option value="-1" selected disabled>Tipologia di noleggio</option>
+                        <option value="Prolungato">Prolungato</option>
+                        <option value="Giornaliero">Giornaliero (durata: 1 giorno)</option>
+                        <option value="No">Non disponibile</option>
+                    </select>
+                </div>
+                <!-- <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
               <div class="input-group mb-3">
                   <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo" aria-describedby="basic-addon3">
               </div>-->
-              <div class="input-group mb-3">
-				  <input type="file" class="form-control" id="immagineVeicolo" name="immagineVeicolo" accept="image/*">
-				  <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
-			  </div>
-              <div class="mb-3">
-                <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
-                <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
-              </div>
-              <div class="mb-3">
-                  <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
-                    <option value="-1" selected disabled>Tipologia di veicolo</option>
-                    <option value="Auto">Auto</option>
-                    <option value="Bicicletta">Bicicletta</option>
-                    <option value="Monopattino">Monopattino</option>
-                    <option value="Motorino">Motorino</option>
-                  </select>
-              </div>
-              <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
-              <button type="submit" class="btn btn-secondary">Submit</button>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="immagineVeicolo" name="immagineVeicolo"
+                        accept="image/*">
+                    <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
+                </div>
+                <div class="mb-3">
+                    <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
+                    <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
+                </div>
+                <div class="mb-3">
+                    <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
+                        <option value="-1" selected disabled>Tipologia di veicolo</option>
+                        <option value="Auto">Auto</option>
+                        <option value="Bicicletta">Bicicletta</option>
+                        <option value="Monopattino">Monopattino</option>
+                        <option value="Motorino">Motorino</option>
+                    </select>
+                </div>
+                <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
+                <button type="submit" class="btn btn-secondary">Submit</button>
             </form>
         </div>
 
@@ -143,33 +146,34 @@
                     </div>
                     <!-- Grid column -->
                     <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <p class="text-uppercase fw-bold">Useful links</p>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
-                        <p>
-                            <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Work with</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Help</a>
-                        </p>
-                    </div>
+                    div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <p class="text-uppercase mb-0 fw-bold">Useful links</p>
+                    <hr class="mb-2 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px;" />
+                    <p>
+                        <a href="../templates/work-with-us.html" class=""
+                            style="color: #1FAB89; text-decoration: none">Work with us</a>
+                    </p>
+                    <p>
+                        <a href="../templates/help.html" class="" style="color: #1FAB89; text-decoration: none">Help</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold">Contact</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
+                    <p class="description-footer"><i class="bi bi-house-fill"></i> Piazza del Colosseo, 1, 00184
+                        Roma RM</p>
+                    <p class="description-footer"><i class="bi bi-envelope-at-fill"></i> info@princesharing.com</p>
+                    <p class="description-footer"><i class="bi bi-telephone-fill"></i> + 06 123 456 78</p>
+                    <p class="description-footer"><i class="bi bi-printer-fill"></i> + 06 234 567 89</p>
                     <!-- Grid column -->
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold">Contact</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
-                        <p class="description-footer"><i class="bi bi-house-fill"></i> Piazza del Colosseo, 1, 00184
-                            Roma RM</p>
-                        <p class="description-footer"><i class="bi bi-envelope-at-fill"></i> info@princesharing.com</p>
-                        <p class="description-footer"><i class="bi bi-telephone-fill"></i> + 06 123 456 78</p>
-                        <p class="description-footer"><i class="bi bi-printer-fill"></i> + 06 234 567 89</p>
-                        <!-- Grid column -->
-                    </div>
-                    <!-- Grid row -->
                 </div>
                 <!-- Grid row -->
+            </div>
+            <!-- Grid row -->
             </div>
         </section>
         <!-- Section: Links  -->
