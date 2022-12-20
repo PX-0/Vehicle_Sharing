@@ -1,6 +1,8 @@
 package com.springvehicle_sharing.presentation;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +17,6 @@ import com.springvehicle_sharing.dal.PrenotazioniDAO;
 import com.springvehicle_sharing.dal.VeicoliDAO;
 import com.springvehicle_sharing.entities.ArchivioUtenti;
 import com.springvehicle_sharing.entities.Prenotazione;
-import com.springvehicle_sharing.entities.Veicolo;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -36,21 +37,26 @@ public class PrenotazioniMVC {
 	
 	@PostMapping("addPrenotazione")
 	public String addPrenotazioneUtente(HttpSession session, Model m, 
-			@RequestParam("utenteId") String u, @RequestParam("veicoloId") String v) {
+			@RequestParam("utenteId") String u, @RequestParam("veicoloId") String v,
+			@RequestParam("datePicker") String datePicker) {
 		
 		String prevId = (String) session.getAttribute("veicoloSingoloId");
 		
 		session.removeAttribute("veicoloSingoloId");
-		System.out.println(u);
-		System.out.println(v);
+//		System.out.println(u);
+//		System.out.println(v);
 		
 		if (session.getAttribute("loggedUser") == null) {
 			//m.addAttribute("notLogged", true);
 			return "redirect:/veicoli/" + prevId;
 		}
+
+		String[] data = datePicker.split("-");
 		
 		Prenotazione prenotazione = new Prenotazione();
-		prenotazione.setDataPrenotazione(LocalDateTime.now());
+		prenotazione.setDataPrenotazione(LocalDateTime.of(LocalDate.of(Integer.valueOf(
+				data[0]), Integer.valueOf(data[1]), Integer.valueOf(data[2])), 
+				LocalTime.of(0, 0)));
 		prenotazione.setVeicolo(daoV.findById(v).get());
 		prenotazione.setUtente(daoU.findById(u).get());
 		

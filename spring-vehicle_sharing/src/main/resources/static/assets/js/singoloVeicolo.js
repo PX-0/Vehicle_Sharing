@@ -64,6 +64,7 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
   var calendarioIn = document.createElement('input');
   calendarioIn.setAttribute('type', 'date');
   calendarioIn.setAttribute('id', 'datePicker');
+  calendarioIn.setAttribute('name', 'datePicker');
   calendarioIn.setAttribute('class', 'form-control mx-auto');
   calendarioIn.valueAsDate = new Date();
   calendarioIn.setAttribute("min", dataOggi());
