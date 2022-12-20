@@ -35,7 +35,7 @@ password.addEventListener('input', passwordCheck);
 
 const URL_UTENTI = "http://localhost:9014/api/utenti";
 
-mioForm.addEventListener('submit', (event) => {
+mioForm.addEventListener('submit', event => {
 
     if (!usernameCheck() || !passwordCheck()) {
         event.preventDefault();

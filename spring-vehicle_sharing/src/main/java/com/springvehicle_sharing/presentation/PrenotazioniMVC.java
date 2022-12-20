@@ -15,6 +15,7 @@ import com.springvehicle_sharing.dal.PrenotazioniDAO;
 import com.springvehicle_sharing.dal.VeicoliDAO;
 import com.springvehicle_sharing.entities.ArchivioUtenti;
 import com.springvehicle_sharing.entities.Prenotazione;
+import com.springvehicle_sharing.entities.Veicolo;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -30,6 +31,41 @@ public class PrenotazioniMVC {
 	
 	@Autowired
 	VeicoliDAO daoV;
+	
+	//UTENTE
+	
+	@PostMapping("addPrenotazione")
+	public String addPrenotazioneUtente(HttpSession session, Model m, 
+			@RequestParam("utenteId") String u, @RequestParam("veicoloId") String v) {
+		
+		String prevId = (String) session.getAttribute("veicoloSingoloId");
+		
+		session.removeAttribute("veicoloSingoloId");
+		System.out.println(u);
+		System.out.println(v);
+		
+		if (session.getAttribute("loggedUser") == null) {
+			//m.addAttribute("notLogged", true);
+			return "redirect:/veicoli/" + prevId;
+		}
+		
+		Prenotazione prenotazione = new Prenotazione();
+		prenotazione.setDataPrenotazione(LocalDateTime.now());
+		prenotazione.setVeicolo(daoV.findById(v).get());
+		prenotazione.setUtente(daoU.findById(u).get());
+		
+		dao.save(prenotazione);
+		
+		//session.setAttribute("avvenuta", true);
+		return "redirect:/veicoli/" + prevId;
+	}
+	
+	@GetMapping("addPrenotazione")
+	public String addPrenotazioneRedirect() {
+		return "redirect:/";
+	}
+	
+	//ADMIN
 	
 	@GetMapping("elenco")
 	public String elencoPrenotazioni(HttpSession session, Model m) {

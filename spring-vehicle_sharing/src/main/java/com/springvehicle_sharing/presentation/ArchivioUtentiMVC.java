@@ -25,13 +25,13 @@ public class ArchivioUtentiMVC {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
-		if (utente != null) {
+		/*if (utente != null) {
 			
 			if (utente.getTipo() != 'A')
 				return "loginUserError";
 			
 			return "pannello-di-lavoro";
-		}
+		}*/
 		
 		return "login";
 	}
@@ -39,23 +39,26 @@ public class ArchivioUtentiMVC {
 	@PostMapping("loginCheck")
 	public String loginCheck(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session, Model m) {
 		
+		if (dao.findByUserIdEqualsAndPasswordEquals(username, password) == null) {
+			return "redirect:/utenti/login";
+		}
+		
 		ArchivioUtenti utente = dao.findByUserIdEqualsAndPasswordEquals(username, password);
 		
 		System.out.println(utente.getTipo());
+			
+		session.setAttribute("loggedUser", utente);
+		//session.setAttribute("loggedUserId", utente.getUserId());
 		
-		if (utente != null) {
-			
-			session.setAttribute("loggedUser", utente);
-			
-			if (utente.getTipo() != 'A') {
-				session.setAttribute("showBtn", true);
-				return "loginUserError";
-			}
-			
+		/*if (utente.getTipo() != 'A') {
+			session.setAttribute("showBtn", true);
+			return "loginUserError";
+		}*/
+		
+		if (utente.getTipo() == 'A')
 			return "pannello-di-lavoro";
-		}
 		
-		return "login";
+		return "redirect:/";
 	}
 	
 	@GetMapping("loginCheck")

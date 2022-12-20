@@ -10,9 +10,6 @@
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
      crossorigin=""/>
     <link rel="stylesheet" th:href="@{/css/style.css}">
-    <style type="text/css">
-    #map { height: 180px; }
-    </style>
 </head>
 
 <body>
@@ -40,7 +37,7 @@
                             <a class="nav-link" href="#">Novità</a>
                         </li>
                         <li class="nav-item">
-                            <a href="utenti/login" class="btn btn-secondary ms-2">Login</a>
+                            <a href="../utenti/login" class="btn btn-secondary ms-2">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -57,7 +54,7 @@
                 <img src="" alt="" id="immagineVeicolo" class="card-img-top">
                 <div class="card-body">
 
-                    <div class="card-title" id="veicoloId"></div>
+                    <div class="card-title" id="veicoloIdTitolo"></div>
 
                     <div class="card-text">
                         <div id="descrizione"></div>
@@ -72,11 +69,16 @@
                         <!-- div mappa -->
                         <div id="map"></div>
 
-                        <div class="d-flex justify-content-center gap-3">
-                            <div id="calendario"></div>
-
-                            <div id="btnPrenota"></div>
-                        </div>
+						<form action="../prenotazioni/addPrenotazione" method="POST" id="mioForm">
+							<input type="hidden" id="veicoloId" name="veicoloId">
+                        	<input type="hidden" th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}" id="userId" name="utenteId">
+						</form>
+						<!-- <div th:text="${session.avvenuta}"></div> -->
+						<!-- <th:block th:text="${session.loggedUser == null} ? 'Devi effettuare il login per prenotare il veicolo' : ''"></th:block> -->
+						<div th:if="${session.avvenuta == true}">Prenotazione avvenuta con successo</div> <!-- ancora non funzionante -->
+                        
+                        <!-- <div th:text="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}"></div>
+                        <div style="color:red;" th:text="${session.loggedUser == null} ? 'Devi essere loggato per prenotare il veicolo' : ''" th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}" id="userId"></div>-->
 
 						<div id="demo"></div>
 
