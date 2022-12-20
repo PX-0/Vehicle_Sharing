@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.springvehicle_sharing.dal.ArchivioUtentiDAO;
 import com.springvehicle_sharing.dal.VeicoliDAO;
 import com.springvehicle_sharing.entities.ArchivioUtenti;
 import com.springvehicle_sharing.entities.Veicolo;
@@ -20,6 +21,9 @@ public class VeicoliMVC {
 
 	@Autowired
 	VeicoliDAO dao;
+	
+	@Autowired
+	ArchivioUtentiDAO uDao;
 	
 	@GetMapping("inserisci")
 	public String inserisciVeicolo(HttpSession session) {
@@ -116,7 +120,8 @@ public class VeicoliMVC {
 			String descrizione, @RequestParam(value = "disponibilitaNoleggio", 
 			defaultValue = "false") boolean disponibilitaNoleggio, @RequestParam("immagineVeicolo") 
 			String immagineVeicolo, @RequestParam("posizioneAttuale") String posizioneAttuale, 
-			@RequestParam("tipologia") String tipologia, Model m) {
+			@RequestParam("tipologia") String tipologia, @RequestParam("utenteIns")
+			String utenteIns, Model m) {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
@@ -134,7 +139,7 @@ public class VeicoliMVC {
 		veicolo.setImmagineVeicolo(immagineVeicolo);
 		veicolo.setPosizioneAttuale(posizioneAttuale);
 		veicolo.setTipologia(tipologia);
-		veicolo.setUtenteIns(utente);
+		veicolo.setUtenteIns(uDao.findById(utenteIns).get());
 		
 		dao.save(veicolo);
 		

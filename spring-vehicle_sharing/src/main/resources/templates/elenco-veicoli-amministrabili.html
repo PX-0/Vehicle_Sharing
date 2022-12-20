@@ -55,7 +55,7 @@
                   <th scope="col">Immagine</th>
                   <th scope="col">Posizione attuale</th>
                   <th scope="col">Tipologia</th>
-                  <th scope="col">Amministratore</th>
+                  <th scope="col">Inserito da</th>
                 </tr>
               </thead>
               <tbody class="table-group-divider" id="tableBody">
@@ -103,7 +103,7 @@
                         <option value="Motorino">Motorino</option>
                     </select>
                 </div>
-                <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
+                <input type="hidden" name="utenteIns" id="utenteIns" readonly>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="reset" class="btn btn-primary">Reset</button>
             </form>

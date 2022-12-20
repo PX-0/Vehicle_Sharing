@@ -109,6 +109,7 @@ function stampaVeicoli(elencoVeicoli) {
         
         const TD8 = document.createElement('td');
         TD8.textContent = `${elencoVeicoli[i].utenteIns.userId} - ${elencoVeicoli[i].utenteIns.nome} ${elencoVeicoli[i].utenteIns.cognome}`;
+        TD8.setAttribute('value', elencoVeicoli[i].utenteIns.userId);
         TR.appendChild(TD8);
 
         const TD9 = document.createElement('td');
@@ -126,6 +127,7 @@ function stampaVeicoli(elencoVeicoli) {
 			document.querySelector('#immagineVeicolo').value = TD5.textContent;
 			document.querySelector('#posizioneAttuale').value = TD6.textContent;
 			document.querySelector('#tipologia').value = TD7.textContent;
+			document.querySelector('#utenteIns').value = TD8.getAttribute('value');
         });
 
         TR.appendChild(TD9);
