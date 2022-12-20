@@ -84,37 +84,34 @@
       <div class="container">
         <!-- inizio container -->
         <div class="sectionTitle-calendario text-secondary">LE NOSTRE DISPONIBILITÀ</div>
-        <div class="row justify-content-center justify-content-md-start mb-3">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="row justify-content-start mb-3">
+          <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
             <label>Verifica la disponibilità dei nostri veicoli:</label>
             <div class="dataPicker">
-              <input type="date" id="datePicker" class="form-control mx-auto">
+              <input type="date" id="datePicker" class="form-control">
             </div>
             <div id="dataScelta"></div>
           </div>
         </div>
-        <div class="row table-calendario">
-          <!-- inizio row -->
-          <div class="col-12 col-sm-6 p-md-3">
-            <!-- colonna 1 -->
-            <table class="table table-borderless">
+        <div class="row table-calendario p-0"> <!-- inizio row -->
+          <div id="tabellaDisponibili" class="col-12 col-sm-6 px-0"> <!-- colonna 1 -->
+            <table class="table table-striped pe-0">
               <thead>
                 <tr>
                   <th scope="col">
-                    <h3>Veicoli disponibili</h3>
+                    <h3 class="ps-4 pt-4">Veicoli disponibili</h3>
                   </th>
                 </tr>
               </thead>
               <tbody id="veicoliDisponibili"></tbody>
             </table>
           </div>
-          <div class="col-12 col-sm-6 p-md-3">
-            <!-- colonna 2 -->
-            <table class="table table-borderless">
+          <div class="col-12 col-sm-6 px-0"> <!-- colonna 2 -->
+            <table id="tabellaNoleggiati" class="table table-striped px-0">
               <thead>
                 <tr>
                   <th scope="col">
-                    <h3>Veicoli noleggiati</h3>
+                    <h3 class="ps-4 pt-4">Veicoli noleggiati</h3>
                   </th>
                 </tr>
               </thead>
