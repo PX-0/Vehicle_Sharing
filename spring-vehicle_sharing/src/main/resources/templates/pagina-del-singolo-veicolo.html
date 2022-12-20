@@ -13,32 +13,32 @@
     <header th:fragment="header">
 
         <nav class="navbar navbar-expand-lg bg-primary">
-          <div class="container-fluid">
-              <a class="navbar-brand d-flex align-items-center me-0 " href="#">
-                <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
-                <span class="mainTitle ">Princesharing</span>
-              </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Novità</a>
-                </li>
-                <li class="nav-item">
-                  <a href="utenti/login" class="btn btn-secondary">Login</a>
-                </li>
-              </ul>
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center me-0 " href="#">
+                    <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
+                    <span class="mainTitle ">Princesharing</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Novità</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="utenti/login" class="btn btn-secondary">Login</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </nav>
     </header>
 
@@ -49,121 +49,123 @@
 
     </main>
 
-  <!-- Remove the container if you want to extend the Footer to full width. -->
-  <!-- <div class="container my-5"> -->
-  <!-- Footer -->
-  <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-between p-4 text-white bg-primary">
-      <!-- Left -->
-      <div class="me-5">
-        <span>Get connected with us on social networks:</span>
-      </div>
-      <!-- Left -->
-      <!-- Right -->
-      <div>
-        <a href="" class="text-white me-4 text-decoration-none">
-          <i class="bi bi-facebook"></i>
-        </a>
-        <a href="" class="text-white me-4 text-decoration-none">
-          <i class="bi bi-twitter"></i>
-        </a>
-        <a href="" class="text-white me-4 text-decoration-none">
-          <i class="bi bi-google"></i>
-        </a>
-        <a href="" class="text-white me-4 text-decoration-none">
-          <i class="bi bi-instagram"></i>
-        </a>
-        <a href="" class="text-white me-4 text-decoration-none">
-          <i class="bi bi-linkedin"></i>
-        </a>
-        <a href="" class="text-white me-4 text-decoration-none">
-          <i class="bi bi-github"></i>
-        </a>
-      </div>
-      <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold">Princess</h6>
-            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
-            <p style="color:#3f4142">
-              PRINCESHARING progetta, sviluppa e commercializza prodotti e servizi per l’Internet of Things e per il
-              coordinamento e la sicurezza di veicoli in mobilità.
-            </p>
-          </div>
-          <!-- Grid column -->
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Products</h6>
-            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
-            <p>
-              <a href="#!" class="text-decoration-none">Powertrain and electrified mobility</a>
-            </p>
-            <p>
-              <a href="#!" class="text-decoration-none">Automated mobility</a>
-            </p>
-            <p>
-              <a href="#!" class="text-decoration-none">Personalized mobility</a>
-            </p>
-            <p>
-              <a href="#!" class="text-decoration-none">Connected mobility</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Useful links</h6>
-            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
-            <p>
-              <a href="#!" class="text-decoration-none">Your Account</a>
-            </p>
-            <p>
-              <a href="#!" class="text-decoration-none">Become an Affiliate</a>
-            </p>
-            <p>
-              <a href="#!" class="text-decoration-none">Shipping Rates</a>
-            </p>
-            <p>
-              <a href="#!" class="text-decoration-none">Help</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Contact</h6>
-            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
-            <p class="description-footer"><i class="bi bi-house-fill"></i> Piazza del Colosseo, 1, 00184 Roma RM</p>
-            <p class="description-footer"><i class="bi bi-envelope-at-fill"></i> info@princesharing.com</p>
-            <p class="description-footer"><i class="bi bi-telephone-fill"></i> + 06 123 456 78</p>
-            <p class="description-footer"><i class="bi bi-printer-fill"></i> + 06 234 567 89</p>
-          </div>
-          <!-- Grid column -->
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+    <!-- <div class="container my-5"> -->
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-between p-4 text-white bg-primary">
+            <!-- Left -->
+            <div class="me-5">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+            <!-- Right -->
+            <div>
+                <a href="" class="text-white me-4 text-decoration-none">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="" class="text-white me-4 text-decoration-none">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="" class="text-white me-4 text-decoration-none">
+                    <i class="bi bi-google"></i>
+                </a>
+                <a href="" class="text-white me-4 text-decoration-none">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="" class="text-white me-4 text-decoration-none">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="" class="text-white me-4 text-decoration-none">
+                    <i class="bi bi-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold">Princess</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
+                        <p style="color:#3f4142">
+                            PRINCESHARING progetta, sviluppa e commercializza prodotti e servizi per l’Internet of
+                            Things e per il
+                            coordinamento e la sicurezza di veicoli in mobilità.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Products</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
+                        <p>
+                            <a href="#!" class="text-decoration-none">Powertrain and electrified mobility</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none">Automated mobility</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none">Personalized mobility</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none">Connected mobility</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Useful links</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
+                        <p>
+                            <a href="#!" class="text-decoration-none">Your Account</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none">Become an Affiliate</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none">Shipping Rates</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-decoration-none">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Contact</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
+                        <p class="description-footer"><i class="bi bi-house-fill"></i> Piazza del Colosseo, 1, 00184
+                            Roma RM</p>
+                        <p class="description-footer"><i class="bi bi-envelope-at-fill"></i> info@princesharing.com</p>
+                        <p class="description-footer"><i class="bi bi-telephone-fill"></i> + 06 123 456 78</p>
+                        <p class="description-footer"><i class="bi bi-printer-fill"></i> + 06 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+        <!-- Copyright -->
+        <div class="text-center text-black p-3" style="background-color:#41658A">
+            © 2020 Copyright:
+            <a class="text-black" style="text-decoration: none" href="">WAPrincess.com</a>
         </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
-    <!-- Copyright -->
-    <div class="text-center text-black p-3" style="background-color:#41658A">
-      © 2020 Copyright:
-      <a class="text-black" style="text-decoration: none" href="">WAPrincess.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-  <!-- </div> -->
-  <!-- End of .container -->
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <!-- </div> -->
+    <!-- End of .container -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
