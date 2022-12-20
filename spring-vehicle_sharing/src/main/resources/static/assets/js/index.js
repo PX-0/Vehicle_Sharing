@@ -1,3 +1,5 @@
+var ciao = "ciao";
+ciao.startsWith
 const swiper = new Swiper('.swiper', {
 
       slidesPerView: 1,
@@ -236,7 +238,11 @@ function CreateCard(url,title,desc,address,link){
 
   //immagine
   var img = document.createElement('img');
-  img.setAttribute('src',url);
+  if(url.startsWith('https')){
+    img.setAttribute('src',url);
+  }else{
+    img.setAttribute('src',"../assets/uploads/"+url);
+  }
   img.classList.add('card-img-top');
 
   var cardBody = document.createElement('div');
@@ -264,7 +270,6 @@ function CreateCard(url,title,desc,address,link){
   //pulsante
   var buttonLink = document.createElement('a');
   buttonLink.classList.add('btn','btn-primary');
-  buttonLink.setAttribute('href',link);
   buttonLink.textContent="Maggiori Info";
 
   cardBody.appendChild(cardTitle);
@@ -288,6 +293,7 @@ fetch(url).then(data=>{return data.json()})
       resp.forEach(element => {
         CreateCard(element.immagineVeicolo,element.veicoloId,
           element.descrizione,element.posizioneAttuale,'#')
+          console.log(element.immagineVeicolo[0]);
 
       });
 
