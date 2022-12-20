@@ -210,27 +210,24 @@ a.nav-link {
 
 .title-formAdd{
     font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    color: $secondary;
+    font-weight: 600;
+    color: $primary;
 }
 
-#mioForm {
-    font-weight: 600    ;
-    background: $primary;
+#mioForm{
     color: $secondary;
-    padding: 2rem;
+    font-weight: 700;
+    border: 1px solid $secondary;
+    padding: 1.2rem;
+    border-radius: 10px;
+    background:$primary;
+
+   @include media-breakpoint-up(md){
     max-width: 40%;
     margin: 0 auto;
-    border: 1px solid transparent;
-    border-radius: 10px;
 }
-
-
+}
 /* -------------------------------------------------------------------------- */
 /*                                 VEICOLI AMM                                */
 /* -------------------------------------------------------------------------- */
-.table-veicoliAmm {
-    border: 1px solid rgba(0, 0, 0, 0.281);
-    padding: 1.2rem;
-}
+

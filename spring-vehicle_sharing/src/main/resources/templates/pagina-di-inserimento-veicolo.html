@@ -68,26 +68,25 @@
               <div class="input-group mb-3">
                   <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo" aria-describedby="basic-addon3">
               </div>-->
-                <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="immagineVeicolo" name="immagineVeicolo"
-                        accept="image/*">
-                    <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
-                </div>
-                <div class="mb-3">
-                    <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
-                    <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
-                </div>
-                <div class="mb-3">
-                    <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
-                        <option value="-1" selected disabled>Tipologia di veicolo</option>
-                        <option value="Auto">Auto</option>
-                        <option value="Bicicletta">Bicicletta</option>
-                        <option value="Monopattino">Monopattino</option>
-                        <option value="Motorino">Motorino</option>
-                    </select>
-                </div>
-                <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
-                <button type="submit" class="btn btn-secondary">Submit</button>
+              <div class="input-group mb-3">
+				  <input type="file" class="form-control" id="immagineVeicolo" name="immagineVeicolo" accept="image/*">
+				  <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
+			  </div>
+              <div class="mb-3">
+                <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
+                <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
+              </div>
+              <div class="mb-3">
+                  <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
+                    <option value="-1" selected disabled>Tipologia di veicolo</option>
+                    <option value="Auto">Auto</option>
+                    <option value="Bicicletta">Bicicletta</option>
+                    <option value="Monopattino">Monopattino</option>
+                    <option value="Motorino">Motorino</option>
+                  </select>
+              </div>
+              <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
+              <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
 
