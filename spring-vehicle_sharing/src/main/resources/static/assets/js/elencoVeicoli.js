@@ -171,7 +171,9 @@ function stampaVeicoli(elencoVeicoli) {
 				.then(data => data.json())
 				.then(response => console.log(response));
 				LMAX--;
-				setTimeout(() => location.reload(), 150);
+				setTimeout(() => {
+						location.reload();
+					}, 500);
 	
         });
 
@@ -264,4 +266,8 @@ document.querySelector('#mioForm').addEventListener('submit', event => {
         event.preventDefault();
         return;
     }
+    
+    setTimeout(() => {
+		location.reload();
+	}, 500);
 });

@@ -26,7 +26,7 @@ INSERT INTO pagamenti (metodo_pagamento, n_carta, scadenza, cvv, importo)
 values ('Mastercard', '1234567890123456', 20241222, '123', 12000);
 
 INSERT INTO prenotazioni (utente_id, veicolo_id, data_prenotazione, pagamento_id) 
-values ('Paolo', 'Ferrari', 20230210101022, 3);
+values ('Paolo', 'Ferrari', 20230210101022, 2);
 
 
 insert into prenotazioni (id, data_prenotazione, pagamento_id, utente_id, veicolo_id)
