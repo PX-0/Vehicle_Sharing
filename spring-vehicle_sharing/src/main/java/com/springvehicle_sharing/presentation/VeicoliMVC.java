@@ -63,7 +63,7 @@ public class VeicoliMVC {
 			defaultValue = "false") boolean disponibilitaNoleggio, @RequestParam("immagineVeicolo") 
 			/*String immagineVeicolo*/ MultipartFile file, 
 			@RequestParam("posizioneAttuale") String posizioneAttuale, 
-			@RequestParam("tipologia") String tipologia) throws IOException {
+			@RequestParam("tipologia") String tipologia) {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
@@ -76,7 +76,12 @@ public class VeicoliMVC {
 		StringBuilder fileNames = new StringBuilder();
         Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, file.getOriginalFilename());
         fileNames.append(file.getOriginalFilename());
-        Files.write(fileNameAndPath, file.getBytes());
+        try {
+			Files.write(fileNameAndPath, file.getBytes());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		Veicolo veicolo = new Veicolo();
 		veicolo.setVeicoloId(veicoloId);
@@ -133,9 +138,10 @@ public class VeicoliMVC {
 			@RequestParam("alimentazione") String alimentazione, @RequestParam("descrizione")
 			String descrizione, @RequestParam(value = "disponibilitaNoleggio", 
 			defaultValue = "false") boolean disponibilitaNoleggio, @RequestParam("immagineVeicolo") 
-			String immagineVeicolo, @RequestParam("posizioneAttuale") String posizioneAttuale, 
-			@RequestParam("tipologia") String tipologia, @RequestParam("utenteIns")
-			String utenteIns, Model m) {
+			/*String immagineVeicolo*/ MultipartFile file, @RequestParam("posizioneAttuale") 
+			String posizioneAttuale, @RequestParam("tipologia") String tipologia, 
+			@RequestParam("utenteIns") String utenteIns, @RequestParam("linkVeicolo")
+			String linkVeicolo, Model m) {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
@@ -150,7 +156,22 @@ public class VeicoliMVC {
 		veicolo.setAlimentazione(alimentazione);
 		veicolo.setDescrizione(descrizione);
 		veicolo.setDisponibilitaNoleggio(String.valueOf(disponibilitaNoleggio));
-		veicolo.setImmagineVeicolo(immagineVeicolo);
+		
+		if (file != null) {
+			StringBuilder fileNames = new StringBuilder();
+			Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, file.getOriginalFilename());
+			fileNames.append(file.getOriginalFilename());
+			try {
+				Files.write(fileNameAndPath, file.getBytes());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			veicolo.setImmagineVeicolo(fileNameAndPath.toString());
+		} else {
+			veicolo.setImmagineVeicolo(linkVeicolo);
+		}
+		
 		veicolo.setPosizioneAttuale(posizioneAttuale);
 		veicolo.setTipologia(tipologia);
 		veicolo.setUtenteIns(uDao.findById(utenteIns).get());
