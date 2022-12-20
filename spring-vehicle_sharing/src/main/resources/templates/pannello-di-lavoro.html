@@ -12,8 +12,8 @@
 
 <body>
     <header th:fragment="header">
-
-        <nav class="navbar navbar-expand-lg bg-primary">
+        
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center me-0 " href="#">
                     <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
@@ -26,16 +26,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="../../utenti/login">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a href="../../veicoli/elenco" class="nav-link">Elenco dei veicoli amministrabili</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Novità</a>
+                            <a href="../../veicoli/inserisci" class="nav-link">Inserisci un veicolo</a>
                         </li>
                         <li class="nav-item">
-                            <a href="utenti/login" class="btn btn-secondary">Login</a>
+                            <a href="logout" class="btn btn-secondary">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -55,62 +55,66 @@
           </section>
 
     </main>
-   <!-- Remove the container if you want to extend the Footer to full width. -->
+    <!-- Remove the container if you want to extend the Footer to full width. -->
     <!-- <div class="container my-5"> -->
     <!-- Footer -->
     <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
         <!-- Section: Social media -->
-        <section class="d-flex justify-content-between p-4 text-white bg-primary">
+        <section class="d-flex justify-content-between p-3 text-white bg-primary">
             <!-- Left -->
-            <div class="me-5">
+            <div class="">
                 <span>Get connected with us on social networks:</span>
             </div>
             <!-- Left -->
+
             <!-- Right -->
-            <div>
-                <a href="" class="text-white me-4 text-decoration-none">
+            <div class="text-nowrap">
+                <a href="" class="text-white ms-3 text-decoration-none">
                     <i class="bi bi-facebook"></i>
                 </a>
-                <a href="" class="text-white me-4 text-decoration-none">
+                <a href="" class="text-white ms-3 text-decoration-none">
                     <i class="bi bi-twitter"></i>
                 </a>
-                <a href="" class="text-white me-4 text-decoration-none">
-                    <i class="bi bi-google"></i>
-                </a>
-                <a href="" class="text-white me-4 text-decoration-none">
+                <a href="" class="text-white ms-3 text-decoration-none">
                     <i class="bi bi-instagram"></i>
-                </a>
-                <a href="" class="text-white me-4 text-decoration-none">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="" class="text-white me-4 text-decoration-none">
-                    <i class="bi bi-github"></i>
                 </a>
             </div>
             <!-- Right -->
         </section>
         <!-- Section: Social media -->
+
         <!-- Section: Links  -->
         <section class="">
             <div class="container text-center text-md-start mt-5">
                 <!-- Grid row -->
                 <div class="row mt-3">
                     <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold">PRINCESS</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
+                        <p>
+                            PRINCESS progetta, sviluppa e commercializza prodotti e servizi per l’Internet of Things e
+                            per il coordinamento e la sicurezza di persone, merci e veicoli in mobilità.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold">Useful links</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
                         <p>
-                            <a href="#!" class="text-decoration-none">Your Account</a>
+                            <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Your Account</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-decoration-none">Become an Affiliate</a>
+                            <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Become an Affiliate</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-decoration-none">Shipping Rates</a>
+                            <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Shipping Rates</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-decoration-none">Help</a>
+                            <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Help</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -124,15 +128,17 @@
                         <p class="description-footer"><i class="bi bi-envelope-at-fill"></i> info@princesharing.com</p>
                         <p class="description-footer"><i class="bi bi-telephone-fill"></i> + 06 123 456 78</p>
                         <p class="description-footer"><i class="bi bi-printer-fill"></i> + 06 234 567 89</p>
+                        <!-- Grid column -->
                     </div>
-                    <!-- Grid column -->
+                    <!-- Grid row -->
                 </div>
                 <!-- Grid row -->
             </div>
         </section>
         <!-- Section: Links  -->
+
         <!-- Copyright -->
-        <div class="text-center text-black p-3" style="background-color:#41658A">
+        <div class="text-center p-3" style="background-color: #5a83b5f5">
             © 2020 Copyright:
             <a class="text-dark" style="text-decoration: none" href="https://localhost:9014/">Princesharing</a>
         </div>

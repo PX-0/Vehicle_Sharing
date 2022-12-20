@@ -29,7 +29,7 @@
 
 <body>
   <header th:fragment="header">
-    <nav class="navbar navbar-expand-md bg-primary">
+    <nav class="navbar navbar-expand-md">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center me-0 " href="#">
           <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
@@ -64,9 +64,9 @@
     <section id="hero">
       <div class="cta d-flex align-items-start justify-content-center py-3">
         <div class="text-cta text-center mt-4">
-          <p class="fs-1 text-secondary mb-3">BE PRINCESS GO EVERYWHERE</p>
-          <p class="">Il primo servizio di car sharing improntato sull'utilizzo di veicoli elettrici</p>
-          <a href="#" class="text-white btn btn-primary">Visualizza Prodotti</a>
+          <p class="fs-1 fw-bold text-secondary mb-3">BE PRINCESS GO EVERYWHERE</p>
+          <p>Il primo servizio di car sharing improntato sull'utilizzo di veicoli elettrici</p>
+          <a href="#calendario" class="text-white btn btn-primary">Visualizza Prodotti</a>
         </div>
       </div>
     </section>
@@ -81,37 +81,35 @@
 
     <section id="calendario" class="my-5"> <!-- inizio calendario -->
       <div class="container"> <!-- inizio container -->
-        <div class="sectionTitle-calendario text-secondary">LE NOSTRE DISPONIBILITÀ DI OGGI</div>
+        <div class="sectionTitle-calendario text-secondary">LE NOSTRE DISPONIBILITÀ</div>
         <div class="row justify-content-center justify-content-md-start mb-3">
           <div class="col-12 col-sm-6 col-md-4 col-lg-4">
             <label>Verifica la disponibilità dei nostri veicoli:</label>
             <div class="dataPicker">
-              <input type="date" id="datePicker" class="form-control mx-auto " placeholder="Username">
+              <input type="date" id="datePicker" class="form-control mx-auto">
             </div>
             <div id="dataScelta"></div>
           </div>
         </div>
         <div class="row table-calendario"> <!-- inizio row -->
-          <!-- colonna 1 -->
-          <div class="col-6 p-md-3">
+          <div class="col-12 col-sm-6 p-md-3"> <!-- colonna 1 -->
             <table class="table table-borderless">
               <thead>
                 <tr>
                   <th scope="col">
-                    <h4>Veicoli disponibili</h4>
+                    <h3>Veicoli disponibili</h3>
                   </th>
                 </tr>
               </thead>
               <tbody id="veicoliDisponibili"></tbody>
             </table>
           </div>
-          <!-- colonna 2 -->
-          <div class="col-6 p-md-3">
+          <div class="col-12 col-sm-6 p-md-3"> <!-- colonna 2 -->
             <table class="table table-borderless">
               <thead>
                 <tr>
                   <th scope="col">
-                    <h4>Veicoli noleggiati</h4>
+                    <h3>Veicoli noleggiati</h3>
                   </th>
                 </tr>
               </thead>
@@ -121,95 +119,96 @@
         </div> <!-- fine row -->
       </div> <!-- fine container -->
     </section> <!-- fine calendario -->
-    </main>
+
+  </main>
 
   <!-- Remove the container if you want to extend the Footer to full width. -->
-    <!-- <div class="container my-5"> -->
-    <!-- Footer -->
-    <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
-      <!-- Section: Social media -->
-      <section class="d-flex justify-content-between p-4 text-white bg-primary">
-          <!-- Left -->
-          <div class="me-5">
-              <span>Get connected with us on social networks:</span>
-          </div>
-          <!-- Left -->
-
-          <!-- Right -->
-          <div>
-              <a href="" class="text-white me-4 text-decoration-none">
-                  <i class="bi bi-facebook"></i>
-              </a>
-              <a href="" class="text-white me-4 text-decoration-none">
-                  <i class="bi bi-twitter"></i>
-              </a>
-              <a href="" class="text-white me-4 text-decoration-none">
-                  <i class="bi bi-google"></i>
-              </a>
-              <a href="" class="text-white me-4 text-decoration-none">
-                  <i class="bi bi-instagram"></i>
-              </a>
-              <a href="" class="text-white me-4 text-decoration-none">
-                  <i class="bi bi-linkedin"></i>
-              </a>
-              <a href="" class="text-white me-4 text-decoration-none">
-                  <i class="bi bi-github"></i>
-              </a>
-          </div>
-          <!-- Right -->
-      </section>
-      <!-- Section: Social media -->
-
-      <!-- Section: Links  -->
-      <section class="">
-          <div class="container text-center text-md-start mt-5">
-              <!-- Grid row -->
-              <div class="row mt-3">
-                  <!-- Grid column -->
-                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                      <!-- Links -->
-                      <h6 class="text-uppercase fw-bold">Useful links</h6>
-                      <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                          style="width: 60px; background-color: #7c4dff; height: 2px" />
-                      <p>
-                          <a href="#!" class="nav-link">Your Account</a>
-                      </p>
-                      <p>
-                          <a href="#!" class="nav-link">Become an Affiliate</a>
-                      </p>
-                      <p>
-                          <a href="#!" class="nav-link">Shipping Rates</a>
-                      </p>
-                      <p>
-                          <a href="#!" class="nav-link">Help</a>
-                      </p>
-                  </div>
-                  <!-- Grid column -->
-
-                  <!-- Grid column -->
-                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                      <!-- Links -->
-                      <h6 class="text-uppercase fw-bold">Contact</h6>
-                      <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                          style="width: 60px; background-color: #7c4dff; height: 2px" />
-                      <p class="description-footer"><i class="bi bi-house-fill"></i> New York, NY 10012, US</p>
-                      <p class="description-footer"><i class="bi bi-envelope-at-fill"></i> info@princesharing.com</p>
-                      <p class="description-footer"><i class="bi bi-telephone-fill"></i> + 02 234 567 88</p>
-                      <p class="description-footer"><i class="bi bi-printer-fill"></i> + 02 234 567 89</p>
-                  </div>
-                  <!-- Grid column -->
-              </div>
-              <!-- Grid row -->
-          </div>
-      </section>
-      <!-- Section: Links  -->
-
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-          © 2020 Copyright:
-          <a class="text-dark" style="text-decoration: none" href="https://localhost:9014/">Princesharing</a>
+  <!-- <div class="container my-5"> -->
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-between p-3 text-white bg-primary">
+      <!-- Left -->
+      <div class="">
+        <span>Get connected with us on social networks:</span>
       </div>
-      <!-- Copyright -->
+      <!-- Left -->
+
+      <!-- Right -->
+      <div class="text-nowrap">
+        <a href="" class="text-white ms-3 text-decoration-none">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="" class="text-white ms-3 text-decoration-none">
+          <i class="bi bi-twitter"></i>
+        </a>
+        <a href="" class="text-white ms-3 text-decoration-none">
+          <i class="bi bi-instagram"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">PRINCESS</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;"/>
+            <p>
+              PRINCESS progetta, sviluppa e commercializza prodotti e servizi per l’Internet of Things e per il coordinamento e la sicurezza di persone, merci e veicoli in mobilità.
+            </p>
+          </div>
+          <!-- Grid column -->
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
+            <p>
+              <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Your Account</a>
+            </p>
+            <p>
+              <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Become an Affiliate</a>
+            </p>
+            <p>
+              <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Shipping Rates</a>
+            </p>
+            <p>
+              <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
+            <p class="description-footer"><i class="bi bi-house-fill"></i> Piazza del Colosseo, 1, 00184
+              Roma RM</p>
+            <p class="description-footer"><i class="bi bi-envelope-at-fill"></i> info@princesharing.com</p>
+            <p class="description-footer"><i class="bi bi-telephone-fill"></i> + 06 123 456 78</p>
+            <p class="description-footer"><i class="bi bi-printer-fill"></i> + 06 234 567 89</p>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: #5a83b5f5">
+      © 2020 Copyright:
+      <a class="text-dark" style="text-decoration: none" href="https://localhost:9014/">Princesharing</a>
+    </div>
+    <!-- Copyright -->
   </footer>
   <!-- Footer -->
   <!-- </div> -->
