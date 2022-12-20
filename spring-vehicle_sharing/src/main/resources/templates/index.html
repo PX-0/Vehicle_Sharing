@@ -33,7 +33,7 @@
   <header th:fragment="header">
     <nav class="navbar navbar-expand-md">
       <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center me-0 " href="#">
+        <a class="navbar-brand d-flex align-items-center me-0" href="#">
           <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
           <span class="mainTitle ">Princesharing</span>
         </a>
@@ -47,13 +47,13 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
+              <a class="nav-link" href="../other/aboutus">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Novità</a>
+              <a class="nav-link" href="../other/novità">Novità</a>
             </li>
             <li class="nav-item">
-              <a href="utenti/login" class="btn btn-secondary">Login</a>
+              <a href="utenti/login" class="btn btn-secondary ms-2">Login</a>
             </li>
           </ul>
         </div>
@@ -66,7 +66,7 @@
       <div class="cta d-flex align-items-start justify-content-center py-3">
         <div class="text-cta text-center mt-4">
           <p class="fs-1 fw-bold text-secondary mb-3">BE PRINCESS GO EVERYWHERE</p>
-          <p>Il primo servizio di car sharing improntato sull'utilizzo di veicoli elettrici</p>
+          <p>Il primo servizio di vehicle sharing improntato sull'utilizzo di veicoli elettrici</p>
           <a href="#calendario" class="text-white btn btn-primary">Visualizza Prodotti</a>
         </div>
       </div>
@@ -79,8 +79,10 @@
           <div class="swiper-wrapper" id="swiper-box"></div>
         </div>
     </section>
-    <section id="calendario" class="my-5"> <!-- inizio calendario -->
-      <div class="container"> <!-- inizio container -->
+    <section id="calendario" class="my-5">
+      <!-- inizio calendario -->
+      <div class="container">
+        <!-- inizio container -->
         <div class="sectionTitle-calendario text-secondary">LE NOSTRE DISPONIBILITÀ</div>
         <div class="row justify-content-start mb-3">
           <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
@@ -127,7 +129,8 @@
   <!-- Footer -->
   <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
     <!-- Section: Social media -->
-    <section class="d-flex justify-content-between p-3 text-white bg-primary">
+    <section class="d-flex justify-content-between p-3 text-white"
+      style="background-image: linear-gradient(to left bottom, #26a96c, #009391, #0077a5, #005799, #4a326f) !important;">
       <!-- Left -->
       <div class="">
         <span>Get connected with us on social networks:</span>
@@ -158,37 +161,32 @@
           <!-- Grid column -->
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
-            <h6 class="text-uppercase fw-bold">PRINCESS</h6>
-            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;"/>
+            <p class="text-uppercase mb-0 fw-bold titleTeam">PRINCESS</p>
+            <hr class="mb-2 mt-0 d-inline-block mx-auto" style="width: 60px; height:2px" />
             <p>
-              PRINCESS progetta, sviluppa e commercializza prodotti e servizi per l’Internet of Things e per il coordinamento e la sicurezza di persone, merci e veicoli in mobilità.
+              PRINCESS progetta, sviluppa e commercializza prodotti e servizi per l’Internet of Things e per il
+              coordinamento e la sicurezza di persone, merci e veicoli in mobilità.
             </p>
           </div>
           <!-- Grid column -->
           <!-- Grid column -->
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Useful links</h6>
-            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
+            <p class="text-uppercase mb-0 fw-bold">Useful links</p>
+            <hr class="mb-2 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px;" />
             <p>
-              <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Your Account</a>
+              <a href="../other/workwithus" class="" style="color: #1FAB89; text-decoration: none">Work with us</a>
             </p>
             <p>
-              <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Become an Affiliate</a>
-            </p>
-            <p>
-              <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Shipping Rates</a>
-            </p>
-            <p>
-              <a href="#!" class="" style="color: #1FAB89; text-decoration: none">Help</a>
+              <a href="../other/help" class="" style="color: #1FAB89; text-decoration: none">Help</a>
             </p>
           </div>
           <!-- Grid column -->
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Contact</h6>
-            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
+            <p class="text-uppercase mb-0 fw-bold">Contact</p>
+            <hr class="mb-2 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
             <p class="description-footer"><i class="bi bi-house-fill"></i> Piazza del Colosseo, 1, 00184
               Roma RM</p>
             <p class="description-footer"><i class="bi bi-envelope-at-fill"></i> info@princesharing.com</p>
@@ -204,9 +202,9 @@
     <!-- Section: Links  -->
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: #5a83b5f5">
+    <div class="text-center p-3" style="background-image: linear-gradient(to left bottom, #26a96c, #009391, #0077a5, #005799, #4a326f) !important;">
       © 2020 Copyright:
-      <a class="text-dark" style="text-decoration: none" href="https://localhost:9014/">Princesharing</a>
+      <a class="text-dark" style="text-decoration: none" href="http://localhost:9014/">Princesharing</a>
     </div>
     <!-- Copyright -->
   </footer>
@@ -218,6 +216,8 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script th:src="@{/assets/js/index.js}"></script>
+
+  <div hidden th:text="${session.loggedUser}"></div>
 </body>
 
 </html>
