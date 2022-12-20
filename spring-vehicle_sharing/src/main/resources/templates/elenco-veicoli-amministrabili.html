@@ -50,7 +50,7 @@
                   <th scope="col">Veicolo ID</th>
                   <th scope="col">Alimentazione</th>
                   <th scope="col">Descrizione</th>
-                  <th scope="col">Noleggiabile</th>
+                  <th scope="col">Disponibilità noleggio</th>
                   <th scope="col">Immagine</th>
                   <th scope="col">Posizione attuale</th>
                   <th scope="col">Tipologia</th>
@@ -81,11 +81,18 @@
                     <label for="descrizione" class="form-label">Descrizione</label>
                     <input type="text" class="form-control" id="descrizione" name="descrizione">
                 </div>
-                <div class="form-check form-switch mb-3">
-                    <input class="form-check-input" type="checkbox" role="switch" id="disponibilitaNoleggio"
-                        name="disponibilitaNoleggio">
-                    <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
-                </div>
+                <!-- <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="disponibilitaNoleggio" name="disponibilitaNoleggio">
+                <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
+              </div>-->
+              <div class="mb-3">
+                  <select id="disponibilitaNoleggio" name="disponibilitaNoleggio" class="form-select">
+                    <option value="-1" selected disabled>Tipologia di noleggio</option>
+                    <option value="Prolungato">Prolungato</option>
+                    <option value="Giornaliero">Giornaliero (durata: 1 giorno)</option>
+                    <option value="No">Non disponibile</option>
+                  </select>
+              </div>
                 <!-- <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
 	              <div class="input-group mb-3">
 	                  <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo" aria-describedby="basic-addon3">
@@ -95,6 +102,10 @@
 					  <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
 				  	  <input type="hidden" id="linkVeicolo" name="linkVeicolo">
 				  </div>
+				  <div class="form-check form-switch mb-3">
+	                <input class="form-check-input" type="checkbox" role="switch" id="imgCheck" name="imgCheck" checked>
+	                <label class="form-check-label" for="imgCheck">Non cancellare l'immagine</label>
+	              </div>
                 <div class="mb-3">
                     <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
                     <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">

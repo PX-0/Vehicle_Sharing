@@ -25,7 +25,7 @@ public class Veicolo {
 	private String alimentazione;
 	private String descrizione;
 	private String posizioneAttuale;
-	private String disponibilitaNoleggio;
+	private String disponibilitaNoleggio; // prolungato - giornaliero - no
 //	@Column(columnDefinition = "DATE")
 //    @DateTimeFormat(iso = ISO.DATE_TIME)
 //	private LocalDate dataPrenotazione;

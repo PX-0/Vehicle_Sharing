@@ -59,10 +59,10 @@ public class VeicoliMVC {
 	@PostMapping("addVeicolo")
 	public String addVeicolo(HttpSession session, @RequestParam("veicoloId") String veicoloId,
 			@RequestParam("alimentazione") String alimentazione, @RequestParam("descrizione")
-			String descrizione, @RequestParam(value = "disponibilitaNoleggio", 
-			defaultValue = "false") boolean disponibilitaNoleggio, @RequestParam("immagineVeicolo") 
+			String descrizione, @RequestParam(value = "disponibilitaNoleggio", required = false) 
+			String disponibilitaNoleggio, @RequestParam(value = "immagineVeicolo", required = false) 
 			/*String immagineVeicolo*/ MultipartFile file, 
-			@RequestParam("posizioneAttuale") String posizioneAttuale, 
+			@RequestParam(value = "posizioneAttuale", required = false) String posizioneAttuale, 
 			@RequestParam("tipologia") String tipologia) {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
@@ -73,23 +73,30 @@ public class VeicoliMVC {
 				return "loginUserError";
 		}
 		
-		StringBuilder fileNames = new StringBuilder();
-        Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, file.getOriginalFilename());
-        fileNames.append(file.getOriginalFilename());
-        try {
-			Files.write(fileNameAndPath, file.getBytes());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		Veicolo veicolo = new Veicolo();
 		veicolo.setVeicoloId(veicoloId);
 		veicolo.setAlimentazione(alimentazione);
 		veicolo.setDescrizione(descrizione);
-		veicolo.setDisponibilitaNoleggio(String.valueOf(disponibilitaNoleggio));
-		veicolo.setImmagineVeicolo(fileNameAndPath.toString());
-		veicolo.setPosizioneAttuale(posizioneAttuale);
+		
+		if (disponibilitaNoleggio != null)
+			veicolo.setDisponibilitaNoleggio(disponibilitaNoleggio);
+		
+		if (file != null) {
+			StringBuilder fileNames = new StringBuilder();
+			Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, file.getOriginalFilename());
+			fileNames.append(file.getOriginalFilename());
+			try {
+				Files.write(fileNameAndPath, file.getBytes());
+				veicolo.setImmagineVeicolo(fileNameAndPath.toString());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.getMessage();
+			}
+		}
+		
+		if (posizioneAttuale != null)
+			veicolo.setPosizioneAttuale(posizioneAttuale);
+		
 		veicolo.setTipologia(tipologia);
 		veicolo.setUtenteIns(utente);
 		
@@ -136,12 +143,13 @@ public class VeicoliMVC {
 	@PostMapping("editVeicolo")
 	public String editVeicolo(HttpSession session, @RequestParam("veicoloId") String veicoloId,
 			@RequestParam("alimentazione") String alimentazione, @RequestParam("descrizione")
-			String descrizione, @RequestParam(value = "disponibilitaNoleggio", 
-			defaultValue = "false") boolean disponibilitaNoleggio, @RequestParam("immagineVeicolo") 
-			/*String immagineVeicolo*/ MultipartFile file, @RequestParam("posizioneAttuale") 
-			String posizioneAttuale, @RequestParam("tipologia") String tipologia, 
-			@RequestParam("utenteIns") String utenteIns, @RequestParam("linkVeicolo")
-			String linkVeicolo, Model m) {
+			String descrizione, @RequestParam(value = "disponibilitaNoleggio", required = false) 
+			String disponibilitaNoleggio, @RequestParam(value = "immagineVeicolo", required = false) 
+			/*String immagineVeicolo*/ MultipartFile file, 
+			@RequestParam(value = "posizioneAttuale", required = false) String posizioneAttuale, 
+			@RequestParam("tipologia") String tipologia, @RequestParam("utenteIns") 
+			String utenteIns, @RequestParam("linkVeicolo") String linkVeicolo,
+			@RequestParam(defaultValue = "false", value = "imgCheck") boolean imgCheck, Model m) {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
@@ -155,24 +163,32 @@ public class VeicoliMVC {
 		veicolo.setVeicoloId(veicoloId);
 		veicolo.setAlimentazione(alimentazione);
 		veicolo.setDescrizione(descrizione);
-		veicolo.setDisponibilitaNoleggio(String.valueOf(disponibilitaNoleggio));
 		
-		if (file != null) {
-			StringBuilder fileNames = new StringBuilder();
-			Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, file.getOriginalFilename());
-			fileNames.append(file.getOriginalFilename());
-			try {
-				Files.write(fileNameAndPath, file.getBytes());
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			veicolo.setImmagineVeicolo(fileNameAndPath.toString());
-		} else {
+		if (disponibilitaNoleggio != null)
+			veicolo.setDisponibilitaNoleggio(disponibilitaNoleggio);
+		
+		if (imgCheck) {
+			
 			veicolo.setImmagineVeicolo(linkVeicolo);
+		} else {
+			
+			if (file != null) {
+				StringBuilder fileNames = new StringBuilder();
+				Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, file.getOriginalFilename());
+				fileNames.append(file.getOriginalFilename());
+				try {
+					Files.write(fileNameAndPath, file.getBytes());
+					veicolo.setImmagineVeicolo(fileNameAndPath.toString());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.getMessage();
+				}
+			}
 		}
 		
-		veicolo.setPosizioneAttuale(posizioneAttuale);
+		if (posizioneAttuale != null)
+			veicolo.setPosizioneAttuale(posizioneAttuale);
+		
 		veicolo.setTipologia(tipologia);
 		veicolo.setUtenteIns(uDao.findById(utenteIns).get());
 		

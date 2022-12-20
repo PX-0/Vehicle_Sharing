@@ -58,9 +58,17 @@
                 <label for="descrizione" class="form-label">Descrizione</label>
                 <input type="text" class="form-control" id="descrizione" name="descrizione">
               </div>
-              <div class="form-check form-switch mb-3">
+              <!-- <div class="form-check form-switch mb-3">
                 <input class="form-check-input" type="checkbox" role="switch" id="disponibilitaNoleggio" name="disponibilitaNoleggio">
                 <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
+              </div>-->
+              <div class="mb-3">
+                  <select id="disponibilitaNoleggio" name="disponibilitaNoleggio" class="form-select">
+                    <option value="-1" selected disabled>Tipologia di noleggio</option>
+                    <option value="Prolungato">Prolungato</option>
+                    <option value="Giornaliero">Giornaliero (durata: 1 giorno)</option>
+                    <option value="No">Non disponibile</option>
+                  </select>
               </div>
               <!-- <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
               <div class="input-group mb-3">
@@ -179,9 +187,7 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script>
-
-    </script>
+    <script th:src="@{/assets/js/inserimentoVeicolo.js}"></script>
 </body>
 
 </html>
