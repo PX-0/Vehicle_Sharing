@@ -178,7 +178,7 @@ a.nav-link {
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
     .gradient-custom-2 {
         border-top-right-radius: .3rem;
         border-bottom-right-radius: .3rem;
@@ -246,4 +246,12 @@ a.nav-link {
 #map{
     height: 6rem;
     width: 12rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  ABOUT US                                  */
+/* -------------------------------------------------------------------------- */
+
+.card{
+    @media (md) 
 }
