@@ -41,7 +41,7 @@ const swiper = new Swiper('.swiper', {
   });
 
 /* -------------------------------------------------------------------------- */
-/*                              SCRIPT CALENDARIO                             */
+/*                                 CALENDARIO                                 */
 /* -------------------------------------------------------------------------- */
 
 var calendario = document.getElementById("datePicker");
@@ -215,9 +215,7 @@ function printPlaceholderCard(n, tabella) {
 
 }
 
-/* -------------------------------------------------------------------------- */
-/*                           FINE SCRIPT CALENDARIO                           */
-/* -------------------------------------------------------------------------- */
+/* ----------------------------- FINE CALENDARIO ---------------------------- */
 
 const swiperBox = document.querySelector('#swiper-box');
 
