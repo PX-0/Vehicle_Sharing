@@ -87,7 +87,7 @@ public class VeicoliMVC {
 			fileNames.append(file.getOriginalFilename());
 			try {
 				Files.write(fileNameAndPath, file.getBytes());
-				veicolo.setImmagineVeicolo(fileNameAndPath.toString());
+				veicolo.setImmagineVeicolo(fileNames.toString());
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.getMessage();
@@ -178,7 +178,7 @@ public class VeicoliMVC {
 				fileNames.append(file.getOriginalFilename());
 				try {
 					Files.write(fileNameAndPath, file.getBytes());
-					veicolo.setImmagineVeicolo(fileNameAndPath.toString());
+					veicolo.setImmagineVeicolo(fileNames.toString());
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.getMessage();
