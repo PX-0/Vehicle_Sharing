@@ -1,5 +1,5 @@
-body{
-    background:#F0FCF7!important;
+body {
+    background: #F0FCF7 !important;
     font-family: $font-family-sans-serif;
 }
 
@@ -7,7 +7,7 @@ body{
 /*                                     HERO                                    */
 /* -------------------------------------------------------------------------- */
 
-#hero{
+#hero {
     position: relative;
 
     height: calc(100vh - 99px);
@@ -18,20 +18,20 @@ body{
     background-repeat: no-repeat;
     background-position: center;
 
-    .overlay{
+    .overlay {
         position: absolute;
         width: 100%;
         height: calc(100vh - 99px);
         top: 0;
         left: 0;
 
-        background:#1FAB89;
+        background: #1FAB89;
         opacity: 0.25;
     }
 
-    .cta{
+    .cta {
         width: 100%;
-        height:calc(100vh - 99px);
+        height: calc(100vh - 99px);
     }
 }
 
@@ -47,32 +47,35 @@ body{
 }
 
 
-.swiper-button-next, .swiper-button-prev{
-    
+.swiper-button-next,
+.swiper-button-prev {
+
     color: #1FAB89 !important;
 }
 
-.card-body{
+.card-body {
     text-align: center;
 }
 
-.card-title{
+.card-title {
     font-size: 1.5rem !important;
     font-weight: 600 !important;
 }
+
 /* ------------------------------- END BANNER ------------------------------- */
 
-.dataPicker{
+.dataPicker {
     padding-top: .5rem;
     max-width: 66%;
 }
 
-.table-calendario{
+.table-calendario {
     border: 1px solid rgba(0, 0, 0, 0.312);
     border-radius: 10px;
     padding: 1rem;
 }
-.sectionTitle-calendario{
+
+.sectionTitle-calendario {
     text-align: center;
     font-size: 2rem;
     font-weight: 600;
@@ -80,7 +83,7 @@ body{
 
     padding-bottom: 2rem;
 
-    @include media-breakpoint-up(md){
+    @include media-breakpoint-up(md) {
         font-size: 3rem;
     }
 }
@@ -92,38 +95,44 @@ body{
     font-size: 2rem;
     font-weight: 400;
 
-    @include media-breakpoint-up(md) { 
+    @include media-breakpoint-up(md) {
         font-size: 2.5rem;
         font-weight: 500;
-   }
+    }
+
     color: #F0FCF7;
 }
 
-a.nav-link{
+a.nav-link {
     color: $secondary;
 }
 
-.active{
-    color: #F0FCF7!important;
+.active {
+    color: #F0FCF7 !important;
 }
+
 /* -------------------------------------------------------------------------- */
 /*                                 FINE NAVBAR                                */
 /* -------------------------------------------------------------------------- */
 
-.leaflet-control-zoom-out, .leaflet-control-zoom-in{
+.leaflet-control-zoom-out,
+.leaflet-control-zoom-in {
     background-color: #1da1f2 !important;
     border-radius: 22px !important;
 }
-.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar{
+
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
     border: 1px solid transparent !important;
-} 
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                   FOOTER                                   */
 /* -------------------------------------------------------------------------- */
-.description-footer{
+.description-footer {
     color: $secondary;
 }
+
 /* -------------------------------------------------------------------------- */
 /*                                 FINE FOOTER                                */
 /* -------------------------------------------------------------------------- */
@@ -131,45 +140,59 @@ a.nav-link{
 /* -------------------------------------------------------------------------- */
 /*                                PAGINA LOGIN                                */
 /* -------------------------------------------------------------------------- */
-.loginTitle{
+.loginTitle {
     font-size: 1.5rem;
     font-weight: 500;
     color: $pink;
 
-    @include media-breakpoint-up(sm) { 
+    @include media-breakpoint-up(sm) {
         font-size: 2.5rem;
         font-weight: 600;
-   }
+    }
 }
+
 .gradient-custom-2 {
     /* fallback for old browsers */
     background: #fccb90;
-    
+
     /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
-    
+
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
-    }
-    
-    @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
     .gradient-form {
-    height: 100vh !important;
+        height: 100vh !important;
     }
-    }
-    @media (min-width: 769px) {
+}
+
+@media (min-width: 769px) {
     .gradient-custom-2 {
-    border-top-right-radius: .3rem;
-    border-bottom-right-radius: .3rem;
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
     }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 FINE LOGIN                                 */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                             PANNELLO DI LAVORO                             */
+/* -------------------------------------------------------------------------- */
+
+.workbench {
+    text-align: center;
+    margin-top: 6%;
+
+    p {
+        font-size: 1.8rem;
+        font-weight: 600 !important;
+        color: $secondary;
     }
-    /* -------------------------------------------------------------------------- */
-    /*                                 FINE LOGIN                                 */
-    /* -------------------------------------------------------------------------- */
-
-    /* -------------------------------------------------------------------------- */
-    /*                             PANNELLO DI LAVORO                             */
-    /* -------------------------------------------------------------------------- */
+}
 
 
 
@@ -177,30 +200,30 @@ a.nav-link{
 
 
 
+/* -------------------------------------------------------------------------- */
+/*                             INSERIMENTO VEICOLO                            */
+/* -------------------------------------------------------------------------- */
 
-    /* -------------------------------------------------------------------------- */
-    /*                             INSERIMENTO VEICOLO                            */
-    /* -------------------------------------------------------------------------- */
- 
-.Wrapper-form{
+.Wrapper-form {
     height: calc(100vh-99px);
 }
 
-.Title{
+.Title {
     font-size: 2rem;
     font-weight: 600;
     color: $primary;
 }
-#mioForm{
+
+#mioForm {
     max-width: 40%;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 
 /* -------------------------------------------------------------------------- */
 /*                                 VEICOLI AMM                                */
 /* -------------------------------------------------------------------------- */
-.table-veicoliAmm{
-    border:1px solid rgba(0, 0, 0, 0.281);
+.table-veicoliAmm {
+    border: 1px solid rgba(0, 0, 0, 0.281);
     padding: 1.2rem;
 }

@@ -85,33 +85,30 @@ function isPrenotato(veicolo, data) {
 }
 
 function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
-	
-	var tbody1 = document.getElementById(tabella1);
-	tbody1.innerHTML = "";
-	var tbody2 = document.getElementById(tabella2);
-	tbody2.innerHTML = "";
+  var tbody1 = document.getElementById(tabella1);
+  tbody1.innerHTML = "";
+  var tbody2 = document.getElementById(tabella2);
+  tbody2.innerHTML = "";
 
   var disponibili = 0;
   var noleggiati = 0;
 
-    for (const veicolo of listaVeicoli) {
-        if (!isPrenotato(veicolo, calendario.value)) {
-            riempiTabella(veicolo, tabella1);
-            if (veicolo.disponibilitaNoleggio == "true") {
-              disponibili++;
-            }
-        } else {
-            riempiTabella(veicolo, tabella2);
-            if (veicolo.disponibilitaNoleggio == "true") {
-              noleggiati++;
-            }
-        }
+  for (const veicolo of listaVeicoli) {
+    if (!isPrenotato(veicolo, calendario.value)) {
+      riempiTabella(veicolo, tabella1);
+      if (veicolo.disponibilitaNoleggio == "true") {
+        disponibili++;
+      }
+    } else {
+      riempiTabella(veicolo, tabella2);
+      if (veicolo.disponibilitaNoleggio == "true") {
+        noleggiati++;
+      }
     }
-    
-    if (noleggiati == 0) {
-      printPlaceholderCard(disponibili, tabella2);
-    }
+  }
 
+  printPlaceholderCard(disponibili-noleggiati, tabella2);
+  
 }
 
 function riempiTabella(veicolo, tabella) {
@@ -121,7 +118,11 @@ function riempiTabella(veicolo, tabella) {
         var tbody = document.getElementById(tabella);
         
         var tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        
         var td = document.createElement("td");
+        td.setAttribute("class", "py-4");
+        tr.appendChild(td);
 
         td.innerHTML = "<h5>" + veicolo.veicoloId + "</h5><ul>" +
                        "<li>" + veicolo.tipologia + "</li>" +
@@ -139,9 +140,6 @@ function riempiTabella(veicolo, tabella) {
 
         td.innerHTML += "<button type='button' class='btn btn-primary'>Ulteriori informazioni</button>";
         
-        tr.appendChild(td);
-        tbody.appendChild(tr);
-
     }
 
 }
@@ -153,13 +151,14 @@ function printPlaceholderCard(n, tabella) {
   for (var i = 0; i < n; i++) {
     
     var tr = document.createElement("tr");
-    var td = document.createElement("td");
     tbody.appendChild(tr);
+
+    var td = document.createElement("td");
     tr.appendChild(td);
 
     // card
     var card = document.createElement("div");
-    card.setAttribute("class", "card w-50");
+    card.setAttribute("class", "card col-12 col-lg-9 my-3 my-lg-2");
     td.appendChild(card);
     
     // // card image
@@ -170,24 +169,24 @@ function printPlaceholderCard(n, tabella) {
     
     // card body
     var cardBody = document.createElement("div");
-    cardBody.setAttribute("class", "card-body");
+    cardBody.setAttribute("class", "card-body p-2 p-sm-3 p-md-4");
     card.appendChild(cardBody);
     
     // card title
     var cardTitle = document.createElement("h5");
-    cardTitle.setAttribute("class", "card-title placeholder-glow");
-    // cardTitle.innerHTML = "Nessun veicolo prenotato per oggi";
+    cardTitle.setAttribute("class", "card-title text-start");
+    // cardTitle.setAttribute("class", "card-title placeholder-glow text-start");
+    cardTitle.innerHTML = "Slot libero";
     cardBody.appendChild(cardTitle);
 
-    // card title - placeholder
-    var titlePlaceholder = document.createElement("span");
-    titlePlaceholder.setAttribute("class", "placeholder col-4");
-    cardTitle.appendChild(titlePlaceholder);
+    // // card title - placeholder
+    // var titlePlaceholder = document.createElement("span");
+    // titlePlaceholder.setAttribute("class", "placeholder col-6 col-lg-4");
+    // cardTitle.appendChild(titlePlaceholder);
 
     // card text
     var cardText = document.createElement("p");
-    cardText.setAttribute("class", "card-text placeholder-glow");
-    // cardText.innerHTML = "Puoi prenotare uno dei veicoli qua a sinistra";
+    cardText.setAttribute("class", "card-text placeholder-glow text-start");
     cardBody.appendChild(cardText);
 
     // card text - placeholder
@@ -196,20 +195,20 @@ function printPlaceholderCard(n, tabella) {
     var textPlaceholder3 = document.createElement("span");
     var textPlaceholder4 = document.createElement("span");
     var textPlaceholder5 = document.createElement("span");
-    textPlaceholder1.setAttribute("class", "placeholder col-2 mx-1");
-    textPlaceholder2.setAttribute("class", "placeholder col-8 mx-1");
-    textPlaceholder3.setAttribute("class", "placeholder col-7 mx-1");
-    textPlaceholder4.setAttribute("class", "placeholder col-3 mx-1");
-    textPlaceholder5.setAttribute("class", "placeholder col-10 mx-1");
+    textPlaceholder1.setAttribute("class", "placeholder col-8 mx-1");
+    textPlaceholder2.setAttribute("class", "placeholder col-5 mx-1");
+    textPlaceholder3.setAttribute("class", "placeholder col-4 mx-1");
+    textPlaceholder4.setAttribute("class", "placeholder col-4 mx-1");
+    textPlaceholder5.setAttribute("class", "placeholder col-3 mx-1");
     cardText.appendChild(textPlaceholder1);
     cardText.appendChild(textPlaceholder2);
     cardText.appendChild(textPlaceholder3);
     cardText.appendChild(textPlaceholder4);
     cardText.appendChild(textPlaceholder5);
     
-    // card buitton
+    // card button
     var cardBtn = document.createElement("a");
-    cardBtn.setAttribute("class", "btn btn-primary disabled placeholder col-6");
+    cardBtn.setAttribute("class", "btn btn-primary disabled placeholder col-10 col-sm-10 col-md-8 col-lg-6 float-start");
     cardBody.appendChild(cardBtn);
 
   }
