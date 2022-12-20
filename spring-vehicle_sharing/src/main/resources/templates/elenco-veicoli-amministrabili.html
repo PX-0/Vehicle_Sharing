@@ -14,58 +14,57 @@
     <header th:fragment="header">
 
         <nav class="navbar navbar-expand-lg bg-primary">
-            <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center me-0 " href="#">
-                    <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
-                    <span class="mainTitle ">Princesharing</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Novità</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="utenti/login" class="btn btn-secondary">Login</a>
-                        </li>
-                    </ul>
-                </div>
+          <div class="container-fluid">
+              <a class="navbar-brand d-flex align-items-center me-0 " href="#">
+                <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
+                <span class="mainTitle ">Princesharing</span>
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="loginCheck">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="../../veicoli/elenco" class="nav-link active">Elenco dei veicoli amministrabili</a>
+                </li>
+                <li class="nav-item">
+                  <a href="../../veicoli/inserisci" class="nav-link">Inserisci un veicolo</a>
+                </li>
+                <li class="nav-item">
+                  <a href="logout" class="btn btn-secondary">Logout</a>
+                </li>
+              </ul>
             </div>
         </nav>
     </header>
     <main>
 
-        <div class="container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Veicolo ID</th>
-                        <th scope="col">Alimentazione</th>
-                        <th scope="col">Descrizione</th>
-                        <th scope="col">Noleggiabile</th>
-                        <th scope="col">Immagine</th>
-                        <th scope="col">Posizione attuale</th>
-                        <th scope="col">Tipologia</th>
-                        <th scope="col">Inserito da</th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider" id="tableBody">
-
-                </tbody>
+		<div class="container py-2">
+            <table class="table table-veicoliAmm">
+              <thead>
+                <tr>
+                  <th scope="col">Veicolo ID</th>
+                  <th scope="col">Alimentazione</th>
+                  <th scope="col">Descrizione</th>
+                  <th scope="col">Noleggiabile</th>
+                  <th scope="col">Immagine</th>
+                  <th scope="col">Posizione attuale</th>
+                  <th scope="col">Tipologia</th>
+                  <th scope="col">Inserito da</th>
+                </tr>
+              </thead>
+              <tbody class="table-group-divider" id="tableBody">
+                
+              </tbody>
             </table>
 
             <div class="d-flex justify-content-center gap-3 my-3">
-                <button type="button" id="indietroBtn" class="btn btn-lg btn-dark">Indietro</button>
-                <button type="button" id="avantiBtn" class="btn btn-lg btn-dark">Avanti</button>
+                <button type="button" id="indietroBtn" class="btn btn-secondary">Indietro</button>
+                <button type="button" id="avantiBtn" class="btn btn-secondary">Avanti</button>
             </div>
 
             <form action="editVeicolo" method="post" class="mb-3" id="mioForm" hidden>
@@ -109,7 +108,6 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="reset" class="btn btn-primary">Reset</button>
             </form>
-            <a href="logout" class="btn btn-secondary">Logout</a>
         </div>
 
 
@@ -117,7 +115,7 @@
         <div id="map"></div>
 
     </main>
-    <!-- Remove the container if you want to extend the Footer to full width. -->
+   <!-- Remove the container if you want to extend the Footer to full width. -->
     <!-- <div class="container my-5"> -->
     <!-- Footer -->
     <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
@@ -158,37 +156,6 @@
                 <!-- Grid row -->
                 <div class="row mt-3">
                     <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold">Princess</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
-                        <p style="color:#3f4142">
-                            PRINCESHARING progetta, sviluppa e commercializza prodotti e servizi per l’Internet of
-                            Things e per il
-                            coordinamento e la sicurezza di veicoli in mobilità.
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold">Products</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
-                        <p>
-                            <a href="#!" class="text-decoration-none">Powertrain and electrified mobility</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-decoration-none">Automated mobility</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-decoration-none">Personalized mobility</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-decoration-none">Connected mobility</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-                    <!-- Grid column -->
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold">Useful links</h6>
@@ -227,7 +194,7 @@
         <!-- Copyright -->
         <div class="text-center text-black p-3" style="background-color:#41658A">
             © 2020 Copyright:
-            <a class="text-black" style="text-decoration: none" href="">WAPrincess.com</a>
+            <a class="text-dark" style="text-decoration: none" href="https://localhost:9014/">Princesharing</a>
         </div>
         <!-- Copyright -->
     </footer>

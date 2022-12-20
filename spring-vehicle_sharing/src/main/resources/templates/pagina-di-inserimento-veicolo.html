@@ -14,81 +14,79 @@
     <header th:fragment="header">
 
         <nav class="navbar navbar-expand-lg bg-primary">
-            <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center me-0 " href="#">
-                    <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
-                    <span class="mainTitle ">Princesharing</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Novità</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="utenti/login" class="btn btn-secondary">Login</a>
-                        </li>
-                    </ul>
-                </div>
+          <div class="container-fluid">
+              <a class="navbar-brand d-flex align-items-center me-0 " href="#">
+                <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
+                <span class="mainTitle ">Princesharing</span>
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="../../utenti/login">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="../../veicoli/elenco" class="nav-link">Elenco dei veicoli amministrabili</a>
+                </li>
+                <li class="nav-item">
+                  <a href="../../veicoli/inserisci" class="nav-link active">Inserisci un veicolo</a>
+                </li>
+                <li class="nav-item">
+                  <a href="logout" class="btn btn-secondary">Logout</a>
+                </li>
+              </ul>
             </div>
         </nav>
     </header>
     <main>
 
-        <div class="container">
-            <form action="addVeicolo" method="POST" id="mioForm" name="mioForm">
-                <div class="mb-3">
-                    <label for="veicoloId" class="form-label">Veicolo (ID)</label>
-                    <input type="text" class="form-control" id="veicoloId" name="veicoloId">
-                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                </div>
-                <div class="mb-3">
-                    <label for="alimentazione" class="form-label">Alimentazione</label>
-                    <input type="text" class="form-control" id="alimentazione" name="alimentazione">
-                </div>
-                <div class="mb-3">
-                    <label for="descrizione" class="form-label">Descrizione</label>
-                    <input type="text" class="form-control" id="descrizione" name="descrizione">
-                </div>
-                <div class="form-check form-switch mb-3">
-                    <input class="form-check-input" type="checkbox" role="switch" id="disponibilitaNoleggio"
-                        name="disponibilitaNoleggio">
-                    <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
-                </div>
-                <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo"
-                        aria-describedby="basic-addon3">
-                </div>
-                <div class="mb-3">
-                    <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
-                    <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
-                </div>
-                <div class="mb-3">
-                    <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
-                        <option value="-1" selected disabled>Tipologia di veicolo</option>
-                        <option value="Auto">Auto</option>
-                        <option value="Bicicletta">Bicicletta</option>
-                        <option value="Monopattino">Monopattino</option>
-                        <option value="Motorino">Motorino</option>
-                    </select>
-                </div>
-                <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
-                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+		<div class="container">
+            <form action="addVeicolo" method="POST" id="mioForm" name="mioForm" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="veicoloId" class="form-label">Veicolo (ID)</label>
+                <input type="text" class="form-control" id="veicoloId" name="veicoloId">
+                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+              </div>
+              <div class="mb-3">
+                <label for="alimentazione" class="form-label">Alimentazione</label>
+                <input type="text" class="form-control" id="alimentazione" name="alimentazione">
+              </div>
+              <div class="mb-3">
+                <label for="descrizione" class="form-label">Descrizione</label>
+                <input type="text" class="form-control" id="descrizione" name="descrizione">
+              </div>
+              <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="disponibilitaNoleggio" name="disponibilitaNoleggio">
+                <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
+              </div>
+              <!-- <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
+              <div class="input-group mb-3">
+                  <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo" aria-describedby="basic-addon3">
+              </div>-->
+              <div class="input-group mb-3">
+				  <input type="file" class="form-control" id="immagineVeicolo" name="immagineVeicolo" accept="image/*">
+				  <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
+			  </div>
+              <div class="mb-3">
+                <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
+                <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
+              </div>
+              <div class="mb-3">
+                  <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
+                    <option value="-1" selected disabled>Tipologia di veicolo</option>
+                    <option value="Auto">Auto</option>
+                    <option value="Bicicletta">Bicicletta</option>
+                    <option value="Monopattino">Monopattino</option>
+                    <option value="Motorino">Motorino</option>
+                  </select>
+              </div>
+              <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
+              <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
-
-        <!-- div mappa -->
-        <div id="map"></div>
 
     </main>
     <!-- Remove the container if you want to extend the Footer to full width. -->
@@ -132,37 +130,6 @@
                 <!-- Grid row -->
                 <div class="row mt-3">
                     <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold">Princess</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
-                        <p style="color:#3f4142">
-                            PRINCESHARING progetta, sviluppa e commercializza prodotti e servizi per l’Internet of
-                            Things e per il
-                            coordinamento e la sicurezza di veicoli in mobilità.
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold">Products</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px" />
-                        <p>
-                            <a href="#!" class="text-decoration-none">Powertrain and electrified mobility</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-decoration-none">Automated mobility</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-decoration-none">Personalized mobility</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-decoration-none">Connected mobility</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-                    <!-- Grid column -->
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold">Useful links</h6>
@@ -201,7 +168,7 @@
         <!-- Copyright -->
         <div class="text-center text-black p-3" style="background-color:#41658A">
             © 2020 Copyright:
-            <a class="text-black" style="text-decoration: none" href="">WAPrincess.com</a>
+            <a class="text-dark" style="text-decoration: none" href="https://localhost:9014/">Princesharing</a>
         </div>
         <!-- Copyright -->
     </footer>
