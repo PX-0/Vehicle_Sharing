@@ -159,14 +159,14 @@ function printPlaceholderCard(n, tabella) {
 
     // card
     var card = document.createElement("div");
-    card.setAttribute("class", "card col-4");
+    card.setAttribute("class", "card w-50");
     td.appendChild(card);
     
-    // card image
-    var cardImg = document.createElement("img");
-    cardImg.setAttribute("src", "../assets/img/elementor-placeholder-image.jpg");
-    cardImg.setAttribute("class", "card-img-top");
-    card.appendChild(cardImg);
+    // // card image
+    // var cardImg = document.createElement("img");
+    // cardImg.setAttribute("src", "../assets/img/elementor-placeholder-image.jpg");
+    // cardImg.setAttribute("class", "card-img-top");
+    // card.appendChild(cardImg);
     
     // card body
     var cardBody = document.createElement("div");
@@ -175,15 +175,42 @@ function printPlaceholderCard(n, tabella) {
     
     // card title
     var cardTitle = document.createElement("h5");
-    cardTitle.setAttribute("class", "card-title");
+    cardTitle.setAttribute("class", "card-title placeholder-glow");
     // cardTitle.innerHTML = "Nessun veicolo prenotato per oggi";
     cardBody.appendChild(cardTitle);
 
+    // card title - placeholder
+    var titlePlaceholder = document.createElement("span");
+    titlePlaceholder.setAttribute("class", "placeholder col-4");
+    cardTitle.appendChild(titlePlaceholder);
+
     // card text
     var cardText = document.createElement("p");
-    cardText.setAttribute("class", "card-text");
+    cardText.setAttribute("class", "card-text placeholder-glow");
     // cardText.innerHTML = "Puoi prenotare uno dei veicoli qua a sinistra";
     cardBody.appendChild(cardText);
+
+    // card text - placeholder
+    var textPlaceholder1 = document.createElement("span");
+    var textPlaceholder2 = document.createElement("span");
+    var textPlaceholder3 = document.createElement("span");
+    var textPlaceholder4 = document.createElement("span");
+    var textPlaceholder5 = document.createElement("span");
+    textPlaceholder1.setAttribute("class", "placeholder col-2 mx-1");
+    textPlaceholder2.setAttribute("class", "placeholder col-8 mx-1");
+    textPlaceholder3.setAttribute("class", "placeholder col-7 mx-1");
+    textPlaceholder4.setAttribute("class", "placeholder col-3 mx-1");
+    textPlaceholder5.setAttribute("class", "placeholder col-10 mx-1");
+    cardText.appendChild(textPlaceholder1);
+    cardText.appendChild(textPlaceholder2);
+    cardText.appendChild(textPlaceholder3);
+    cardText.appendChild(textPlaceholder4);
+    cardText.appendChild(textPlaceholder5);
+    
+    // card buitton
+    var cardBtn = document.createElement("a");
+    cardBtn.setAttribute("class", "btn btn-primary disabled placeholder col-6");
+    cardBody.appendChild(cardBtn);
 
   }
 
