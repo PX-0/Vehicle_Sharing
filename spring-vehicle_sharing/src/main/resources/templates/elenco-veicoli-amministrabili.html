@@ -67,7 +67,7 @@
                 <button type="button" id="avantiBtn" class="btn btn-secondary">Avanti</button>
             </div>
 
-            <form action="editVeicolo" method="post" class="mb-3" id="mioForm" hidden>
+            <form action="editVeicolo" method="post" class="mb-3" id="mioForm" enctype="multipart/form-data" hidden>
                 <div class="mb-3">
                     <label for="veicoloId" class="form-label">Veicolo (ID)</label>
                     <input type="text" class="form-control" id="veicoloId" name="veicoloId" readonly>
@@ -86,11 +86,15 @@
                         name="disponibilitaNoleggio">
                     <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
                 </div>
-                <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo"
-                        aria-describedby="basic-addon3">
-                </div>
+                <!-- <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
+	              <div class="input-group mb-3">
+	                  <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo" aria-describedby="basic-addon3">
+	              </div>-->
+	              <div class="input-group mb-3">
+					  <input type="file" class="form-control" id="immagineVeicolo" name="immagineVeicolo" accept="image/*">
+					  <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
+				  	  <input type="hidden" id="linkVeicolo" name="linkVeicolo">
+				  </div>
                 <div class="mb-3">
                     <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
                     <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">

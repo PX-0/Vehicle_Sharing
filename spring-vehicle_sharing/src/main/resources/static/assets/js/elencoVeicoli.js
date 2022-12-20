@@ -96,7 +96,18 @@ function stampaVeicoli(elencoVeicoli) {
         TR.appendChild(TD4);
         
         const TD5 = document.createElement('td');
-        TD5.textContent = elencoVeicoli[i].immagineVeicolo;
+        TD5.textContent =  elencoVeicoli[i].immagineVeicolo;
+        //TD5.setAttribute('value', elencoVeicoli[i].immagineVeicolo);
+        //const IMG = document.createElement('img');
+        
+        //elencoVeicoli[i].immagineVeicolo = elencoVeicoli[i].immagineVeicolo.replace(String.fromCharCode(92),String.fromCharCode(92,92));
+        //var linkEdited = '@{' + elencoVeicoli[i].immagineVeicolo.substring(25);
+        //linkEdited += '}';
+        
+        //IMG.setAttribute('width', '125px');
+        //IMG.setAttribute('height', 'auto');
+        //IMG.setAttribute('th:src', linkEdited);
+        //TD5.appendChild(IMG);
         TR.appendChild(TD5);
         
         const TD6 = document.createElement('td');
@@ -119,12 +130,14 @@ function stampaVeicoli(elencoVeicoli) {
             document.querySelector('#veicoloId').value = TD.textContent;
             document.querySelector('#alimentazione').value = TD2.textContent;
             document.querySelector('#descrizione').value = TD3.textContent;
+            
             if (TD4.getAttribute('value') == 'true') {
 				document.querySelector('#disponibilitaNoleggio').checked = true;
 			} else {
 				document.querySelector('#disponibilitaNoleggio').checked = false;
 			}
-			document.querySelector('#immagineVeicolo').value = TD5.textContent;
+			
+			document.querySelector('#linkVeicolo').value = TD5.getAttribute('value');
 			document.querySelector('#posizioneAttuale').value = TD6.textContent;
 			document.querySelector('#tipologia').value = TD7.textContent;
 			document.querySelector('#utenteIns').value = TD8.getAttribute('value');
