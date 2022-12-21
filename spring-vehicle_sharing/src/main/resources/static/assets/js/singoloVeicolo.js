@@ -49,6 +49,11 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
 
   document.querySelector('#veicoloIdTitolo').textContent = title;
   document.querySelector('#veicoloId').value = title;
+  
+  
+  document.querySelector('#navLoginBtn').setAttribute('href', "../utenti/login/" + title);
+  
+  
 
   document.querySelector('#descrizione').textContent = desc;
   
