@@ -96,19 +96,19 @@ function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
   for (const veicolo of listaVeicoli) {
     if (!isPrenotato(veicolo, calendario.value)) {
       riempiTabella(veicolo, tabella1);
-      if (veicolo.disponibilitaNoleggio == "true") {
+      if (veicolo.disponibilitaNoleggio != "No") {
         disponibili++;
       }
     } else {
       riempiTabella(veicolo, tabella2);
-      if (veicolo.disponibilitaNoleggio == "true") {
+      if (veicolo.disponibilitaNoleggio != "No") {
         noleggiati++;
       }
     }
   }
 
-  var tab1 = document.getElementById("tabellaDisponibili");
-  var tab2 = document.getElementById("tabellaNoleggiati");
+  // var tab1 = document.getElementById("tabellaDisponibili");
+  // var tab2 = document.getElementById("tabellaNoleggiati");
 
   // if (noleggiati != 0) {
   //   printPlaceholderCard((disponibili - noleggiati), tabella2);
@@ -126,7 +126,7 @@ function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
 
 function riempiTabella(veicolo, tabella) {
 
-    if (veicolo.disponibilitaNoleggio == "true") {
+    if (veicolo.disponibilitaNoleggio != "No") {
 
         var tbody = document.getElementById(tabella);
         
@@ -135,7 +135,7 @@ function riempiTabella(veicolo, tabella) {
         tbody.appendChild(tr);
         
         var td = document.createElement("td");
-        td.setAttribute("class", "ps-4 pt-4");
+        td.setAttribute("class", "ps-4 py-3 py-sm-0");
         tr.appendChild(td);
 
         td.innerHTML = "<h3>" + veicolo.veicoloId + "</h3><ul>" +
