@@ -214,6 +214,13 @@ header .btn-secondary:hover{
     color: $secondary;
 }
 
+.bgFooter{
+    background-color: $footer;
+    a:hover{
+       color: lighten($secondary,30%) !important;
+    }
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                 FINE FOOTER                                */
 /* -------------------------------------------------------------------------- */

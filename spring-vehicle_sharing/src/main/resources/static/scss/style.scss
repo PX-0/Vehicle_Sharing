@@ -13,7 +13,8 @@ $primary: #47A15B;
 $secondary: rgb(0, 101, 159);
 $fonts: #0C211F;
 
-
+// $footer:  rgb(7, 98, 151);
+$footer: darken($secondary,10%);
 // $secondary:     $gray-600 !default;
 // $success:       $green !default;
 // $info:          $cyan !default;
@@ -21,12 +22,13 @@ $fonts: #0C211F;
 // $danger:        $red !default;
 // $light:         $gray-100 !default;
 // $dark:          $gray-900 !default;
+
 // scss-docs-start color-variables;
 // $blue:    #0d6efd !default;
 // $indigo:  #6610f2 !default;
 // $purple:  #6f42c1 !default;
 $pink: #d63384 !default;
-// $red:     #dc3545 !default;
+//$red:     #dc3545 !default;
 // $orange:  #fd7e14 !default;
 // $yellow:  #ffc107 !default;
 // $green:   #198754 !default;
