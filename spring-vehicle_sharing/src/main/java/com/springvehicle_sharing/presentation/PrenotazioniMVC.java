@@ -1,6 +1,8 @@
 package com.springvehicle_sharing.presentation;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +32,46 @@ public class PrenotazioniMVC {
 	
 	@Autowired
 	VeicoliDAO daoV;
+	
+	//UTENTE
+	
+	@PostMapping("addPrenotazione")
+	public String addPrenotazioneUtente(HttpSession session, Model m, 
+			@RequestParam("utenteId") String u, @RequestParam("veicoloId") String v,
+			@RequestParam("datePicker") String datePicker) {
+		
+		String prevUrl = (String) session.getAttribute("prevUrl");
+		
+		session.removeAttribute("prevUrl");
+//		System.out.println(u);
+//		System.out.println(v);
+		
+		if (session.getAttribute("loggedUser") == null) {
+			//m.addAttribute("notLogged", true);
+			return "redirect:/" + prevUrl;
+		}
+
+		String[] data = datePicker.split("-");
+		
+		Prenotazione prenotazione = new Prenotazione();
+		prenotazione.setDataPrenotazione(LocalDateTime.of(LocalDate.of(Integer.valueOf(
+				data[0]), Integer.valueOf(data[1]), Integer.valueOf(data[2])), 
+				LocalTime.of(0, 0)));
+		prenotazione.setVeicolo(daoV.findById(v).get());
+		prenotazione.setUtente(daoU.findById(u).get());
+		
+		dao.save(prenotazione);
+		
+		//session.setAttribute("avvenuta", true);
+		return "redirect:/" + prevUrl;
+	}
+	
+	@GetMapping("addPrenotazione")
+	public String addPrenotazioneRedirect() {
+		return "redirect:/";
+	}
+	
+	//ADMIN
 	
 	@GetMapping("elenco")
 	public String elencoPrenotazioni(HttpSession session, Model m) {

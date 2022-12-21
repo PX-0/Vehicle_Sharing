@@ -37,7 +37,7 @@ function getPosizione(indirizzo) {
 var calendario = document.querySelector('#calendario');
 var btnPrenota = document.querySelector('#btnPrenota');
 
-function CreateCard(url,title,desc,address,link,tipo,alim,dispNol){
+function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloCompleto){
 
   if(url.startsWith('https')){
 	  
@@ -47,7 +47,8 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol){
     document.querySelector('#immagineVeicolo').setAttribute('src',"../assets/uploads/"+url);
   }
 
-  document.querySelector('#veicoloId').textContent = title;
+  document.querySelector('#veicoloIdTitolo').textContent = title;
+  document.querySelector('#veicoloId').value = title;
 
   document.querySelector('#descrizione').textContent = desc;
   
@@ -60,37 +61,71 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol){
   document.querySelector('#posizione-attuale').textContent = address;
   getPosizione(address);
   
-  var calendarioIn = document.createElement('input');
-  calendarioIn.setAttribute('type', 'date');
-  calendarioIn.setAttribute('id', 'datePicker');
-  calendarioIn.setAttribute('class', 'form-control mx-auto');
+  //var calendarioIn = document.createElement('input');
+  //calendarioIn.setAttribute('type', 'date');
+  //calendarioIn.setAttribute('id', 'datePicker');
+  //calendarioIn.setAttribute('name', 'datePicker');
+  //calendarioIn.setAttribute('class', 'form-control mx-auto');
+  var calendarioIn = document.querySelector('#datePicker');
   calendarioIn.valueAsDate = new Date();
   calendarioIn.setAttribute("min", dataOggi());
   
-  calendario.appendChild(calendarioIn);
+  //document.querySelector('#mioForm').appendChild(calendarioIn);
   
   //pulsante
-  var buttonLink = document.createElement('a');
-  buttonLink.classList.add('btn','btn-primary');
-  buttonLink.textContent="Prenota ora";
+  //var buttonLink = document.createElement('button');
+  //buttonLink.setAttribute('type', 'submit');
+  //buttonLink.classList.add('btn','btn-primary');
+  //buttonLink.textContent="Prenota ora";
   
-  buttonLink.addEventListener('click', () => {
-	 
-	 if (isPrenotato()) {
-		 
-	 } else {
-		 document.querySelector('#demo').textContent = "NO";
-	 }
+  document.querySelector('#btnPrenota').addEventListener('click', event => {
 	  
+	 if (isPrenotato(veicoloCompleto)) {
+		 document.querySelector('#demo').textContent = "Veicolo non disponibile in questa data";
+		 event.preventDefault();
+		 return;
+	 } else {
+		 
+		 if (document.querySelector('#userId').getAttribute('value') == '') {
+			document.querySelector('#demo').textContent = "Devi effettuare il login per prenotare il veicolo";
+		 	event.preventDefault();
+		 	return;
+		 }
+		 
+		 /*var userIdLogged = document.querySelector('#userId').getAttribute('value');
+		 
+		 fetch("http://localhost:9014/api/utenti/" + userIdLogged, {})
+		 	.then(data => data.json())
+		 	.then(response => setTimeout( () => aggiungiPrenotazione(response, veicoloCompleto)), 500);*/
+		 
+	 }
   });
   
-  btnPrenota.appendChild(buttonLink);
+  //document.querySelector('#mioForm').appendChild(buttonLink);
+}
+/*
+function Prenotazione(id, utente, veicolo, dataPrenotazione){
+	this.id = id;
+	this.utente = utente;
+	this.veicolo = veicolo;
+	this.dataPrenotazione = dataPrenotazione;
 }
 
-function isPrenotato() {
+function aggiungiPrenotazione(utente, veicolo) {
 	
-	var veicolo = document.querySelector('#veicoloId').textContent;
-	var dataNoleggio = document.querySelector('#datePicker').value;
+	fetch("http://localhost:9014/api/prenotazioni", {
+		method: "POST",
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(new Prenotazione(null, utente, veicolo, null))
+	})
+	.then(data => data.json());
+}*/
+
+function isPrenotato(veicolo) {
+	
+	var data = document.querySelector('#datePicker').value;
 	
     for (var i = 0; i < (veicolo.prenotazioni).length; i++) {
         var dataNoleggio = veicolo.prenotazioni[i].dataPrenotazione.split("T")[0];
@@ -108,7 +143,7 @@ const VEICOLO_ID = window.location.href.substring(window.location.href.lastIndex
 fetch(URL_VEICOLI + VEICOLO_ID).then(data=>data.json())
 .then(resp => {
     CreateCard(resp.immagineVeicolo,resp.veicoloId, resp.descrizione,resp.posizioneAttuale,
-    '#', resp.tipologia, resp.alimentazione, resp.disponibilitaNoleggio);
+    '#', resp.tipologia, resp.alimentazione, resp.disponibilitaNoleggio, resp);
       //console.log(resp.immagineVeicolo[0]);
    }
 );

@@ -204,8 +204,9 @@ public class VeicoliMVC {
 	}
 	
 	@GetMapping("{id}")
-	public String veicoloSingolo(@PathVariable("id") String id) {
-		
+	public String veicoloSingolo(@PathVariable("id") String id, HttpSession session) {
+		session.setAttribute("prevUrl", "veicoli/" + id);
+//		session.removeAttribute("avvenuta");
 		return "pagina-del-singolo-veicolo";
 	}
 	
