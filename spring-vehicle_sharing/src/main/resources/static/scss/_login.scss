@@ -1,0 +1,35 @@
+/* -------------------------------------------------------------------------- */
+/*                                PAGINA LOGIN                                */
+/* -------------------------------------------------------------------------- */
+.loginTitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $primary;
+
+    @include media-breakpoint-up(sm) {
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+}
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background-image: linear-gradient(to right top, #26a96c, #009391, #0077a5, #005799, #4a326f);
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 FINE LOGIN                                 */
+/* -------------------------------------------------------------------------- */

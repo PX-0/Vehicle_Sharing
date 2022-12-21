@@ -11144,6 +11144,79 @@ fieldset:disabled .btn {
 /* -------------------------------------------------------------------------- */
 /*                          QUA IMPORTO I MIEI STILI                          */
 /* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                  ABOUT US                                  */
+/* -------------------------------------------------------------------------- */
+.nomeTeam {
+  color: #d63384;
+}
+
+.titleTeam {
+  color: #d63384;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                     API                                    */
+/* -------------------------------------------------------------------------- */
+.endpoint-section {
+  margin-top: 1.5rem;
+}
+
+.endpoint-section .wrapper-output {
+  width: auto;
+  max-height: 18rem;
+  overflow-y: scroll;
+}
+
+.endpoint-section .url-example {
+  margin-left: 1rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.endpoint-section:nth-of-type(even) {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 VEICOLI AMM                                */
+/* -------------------------------------------------------------------------- */
+.table-veicoliAmm {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: #F0FCF7;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 PAGE ERROR                                 */
+/* -------------------------------------------------------------------------- */
+.page-error {
+  height: 100vh !important;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  HELP PAGE                                 */
+/* -------------------------------------------------------------------------- */
+.section {
+  padding: 2rem 0;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(2, 64, 0, 0.522);
+}
+
+.section h2, .section .h2 {
+  color: #00659f;
+}
+
+.section:last-child {
+  border: none;
+}
+
 body {
   background: #F0FCF7 !important;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -11365,6 +11438,32 @@ header .btn-secondary:hover {
 /*                                 FINE FOOTER                                */
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
+/*                             INSERIMENTO VEICOLO                            */
+/* -------------------------------------------------------------------------- */
+.title-formAdd {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #47A15B;
+  text-align: center;
+}
+
+#mioForm {
+  color: #47A15B;
+  font-weight: 700;
+  border: 1px solid transparent;
+  padding: 1.2rem;
+  border-radius: 10px;
+  background: #f8f8f8;
+}
+
+@media (min-width: 768px) {
+  #mioForm {
+    max-width: 40%;
+    margin: 0 auto;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                PAGINA LOGIN                                */
 /* -------------------------------------------------------------------------- */
 .loginTitle {
@@ -11402,6 +11501,14 @@ header .btn-secondary:hover {
 /*                                 FINE LOGIN                                 */
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
+/*                           PAGINA VEICOLO SINGOLO                           */
+/* -------------------------------------------------------------------------- */
+#map {
+  height: 6rem;
+  width: 12rem;
+}
+
+/* -------------------------------------------------------------------------- */
 /*                             PANNELLO DI LAVORO                             */
 /* -------------------------------------------------------------------------- */
 .workbench {
@@ -11413,111 +11520,4 @@ header .btn-secondary:hover {
   font-size: 1.8rem;
   font-weight: 600 !important;
   color: #00659f;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                             INSERIMENTO VEICOLO                            */
-/* -------------------------------------------------------------------------- */
-.title-formAdd {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #47A15B;
-  text-align: center;
-}
-
-#mioForm {
-  color: #47A15B;
-  font-weight: 700;
-  border: 1px solid transparent;
-  padding: 1.2rem;
-  border-radius: 10px;
-  background: #f8f8f8;
-}
-
-@media (min-width: 768px) {
-  #mioForm {
-    max-width: 40%;
-    margin: 0 auto;
-  }
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                 VEICOLI AMM                                */
-/* -------------------------------------------------------------------------- */
-.table-veicoliAmm {
-  border: 1px solid transparent;
-  border-radius: 8px;
-  background-color: #F0FCF7;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                           PAGINA VEICOLO SINGOLO                           */
-/* -------------------------------------------------------------------------- */
-#map {
-  height: 6rem;
-  width: 12rem;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                  ABOUT US                                  */
-/* -------------------------------------------------------------------------- */
-.nomeTeam {
-  color: #d63384;
-}
-
-.titleTeam {
-  color: #d63384;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                  HELP PAGE                                 */
-/* -------------------------------------------------------------------------- */
-.section {
-  padding: 2rem 0;
-  font-weight: 600;
-  border-bottom: 2px solid rgba(2, 64, 0, 0.522);
-}
-
-.section h2, .section .h2 {
-  color: #00659f;
-}
-
-.section:last-child {
-  border: none;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                     API                                    */
-/* -------------------------------------------------------------------------- */
-.endpoint-section {
-  margin-top: 1.5rem;
-}
-
-.endpoint-section .wrapper-output {
-  width: auto;
-  max-height: 18rem;
-  overflow-y: scroll;
-}
-
-.endpoint-section .url-example {
-  margin-left: 1rem;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  border: 1px solid transparent;
-}
-
-.endpoint-section:nth-of-type(even) {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                 PAGE ERROR                                 */
-/* -------------------------------------------------------------------------- */
-.page-error {
-  height: 100vh !important;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }

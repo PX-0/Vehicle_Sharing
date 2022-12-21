@@ -1,0 +1,14 @@
+/* -------------------------------------------------------------------------- */
+/*                             PANNELLO DI LAVORO                             */
+/* -------------------------------------------------------------------------- */
+
+.workbench {
+    text-align: center;
+    margin-top: 6%;
+
+    p {
+        font-size: 1.8rem;
+        font-weight: 600 !important;
+        color: $secondary;
+    }
+}
