@@ -11212,8 +11212,9 @@ pre {
   padding-bottom: 4rem !important;
 }
 
-.swipper-wrapper {
-  position: relative;
+.swiper-button-next,
+.swiper-button-prev {
+  color: #1FAB89 !important;
 }
 
 .card-body {
@@ -11253,9 +11254,7 @@ pre {
 }
 
 .table-calendario {
-  border: 1px solid rgba(0, 0, 0, 0.312);
   border-radius: 10px;
-  padding: 1rem;
   background-color: #f7fdfb;
 }
 
@@ -11273,7 +11272,24 @@ pre {
   }
 }
 
+#veicoliNoleggiati tr:last-child {
+  border-bottom: 1px solid #f7fdfb;
+}
+
+#tabellaDisponibili thead h3, #tabellaDisponibili thead .h3, #tabellaNoleggiati thead h3, #tabellaNoleggiati thead .h3 {
+  font-weight: 700;
+}
+
 @media (min-width: 576px) {
+  #tabellaDisponibili thead th {
+    border-right: 1px solid #efefef;
+  }
+  #veicoliDisponibili td {
+    border-right: 1px solid #efefef;
+  }
+  #veicoliDisponibili tr:last-child, #veicoliNoleggiati tr:last-child {
+    border-bottom: 1px solid #f7fdfb;
+  }
   .tr-veicoli {
     height: 380px;
   }

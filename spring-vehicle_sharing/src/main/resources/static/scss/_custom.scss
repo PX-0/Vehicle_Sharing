@@ -72,9 +72,10 @@ pre{
     padding-bottom: 4rem !important;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
 
-.swipper-wrapper{
-    position: relative;
+    color: #1FAB89 !important;
 }
 
 .card-body {
@@ -128,10 +129,9 @@ pre{
 }
 
 .table-calendario {
-    border: 1px solid rgba(0, 0, 0, 0.312);
+    // border: 1px solid rgba(0, 0, 0, 0.312);
     border-radius: 10px;
-    padding: 1rem;
-    background-color: hsl(160, 60%, 98%);
+    background-color: $calendario-bg;
 }
 
 .sectionTitle-calendario {
@@ -147,11 +147,41 @@ pre{
     }
 }
 
+#veicoliNoleggiati {
+    tr:last-child {
+        border-bottom: 1px solid $calendario-bg;
+    }
+}
+
+#tabellaDisponibili, #tabellaNoleggiati {
+    thead {
+        h3 {
+            font-weight: 700;
+        }
+    }
+}
+
 @media (min-width: 576px) {
+    #tabellaDisponibili {
+        thead {
+            th {
+                border-right: 1px solid #efefef;
+            }
+        }
+    }
+    #veicoliDisponibili {
+        td {
+            border-right: 1px solid #efefef;
+        }
+    }
+    #veicoliDisponibili, #veicoliNoleggiati {
+        tr:last-child {
+            border-bottom: 1px solid $calendario-bg;
+        }
+    }
     .tr-veicoli {
         height: 380px;
-    }
-    
+    }    
 }
 
 @media (min-width: 768px) {
@@ -159,6 +189,7 @@ pre{
         height: 320px;
     }
 }
+
 
 /* ----------------------------- FINE CALENDARIO ---------------------------- */
 
