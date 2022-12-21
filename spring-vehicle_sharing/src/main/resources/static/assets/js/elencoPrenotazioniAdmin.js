@@ -28,7 +28,7 @@ function incrDimCon(cosaFaccio) {
 
     if (cosaFaccio == 'incrementa') {
 
-        if (cEnd  <= LMAX) {
+        if (cEnd < LMAX) {
             cStart += 10;
             cEnd += 10;
             fetchPrenotazioni();

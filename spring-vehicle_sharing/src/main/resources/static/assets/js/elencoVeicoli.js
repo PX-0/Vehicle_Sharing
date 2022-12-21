@@ -28,7 +28,7 @@ function incrDimCon(cosaFaccio) {
 
     if (cosaFaccio == 'incrementa') {
 
-        if (cEnd  <= LMAX) {
+        if (cEnd < LMAX) {
             cStart += 10;
             cEnd += 10;
             fetchVeicoli();
@@ -182,6 +182,10 @@ function stampaVeicoli(elencoVeicoli) {
         tableBody.appendChild(TR);
     }
     this.elencoVeicoli = elencoVeicoli;
+    var tds = document.querySelectorAll('td')
+    tds.forEach(td=>{
+    td.classList.add('col');
+})
 }
 
 document.querySelector('#indietroBtn').addEventListener('click', () => {
@@ -271,3 +275,4 @@ document.querySelector('#mioForm').addEventListener('submit', event => {
 		location.reload();
 	}, 500);
 });
+

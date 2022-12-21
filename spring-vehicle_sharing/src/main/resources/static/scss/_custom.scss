@@ -20,6 +20,9 @@ footer a:hover{
     color:$secondary !important;
 }
 
+input{
+    caret-color: #47A15B;
+}
 /* -------------------------------------------------------------------------- */
 /*                                     HERO                                    */
 /* -------------------------------------------------------------------------- */
@@ -78,20 +81,34 @@ footer a:hover{
     font-weight: 600 !important;
 }
 
+.img-fx{
+    overflow: hidden;
+}
+
+
+
+
+.swiper .card,.swiper .card .btn, .swiper .card .card-body,.swiper .card img{
+    transition: all .2s;
+}
+
 .swiper .card:hover{
-    position: absolute;
-    transform: scale(1.1);
-    z-index: 999;
-    margin-bottom: 2rem !important;
-    background-color: linear-gradient(to left top, #26a96c, #009391, #0077a5, #005799, #4a326f);
-    .card-body{
-        transition: all 0.2;
-        color: #f0f0f0;
+    // background: linear-gradient(to left top, #26a96c, #009391, #0077a5, #005799, #4a326f);
+    
+    box-shadow: 1px 16px 13px -10px rgba(140,140,140,0.57);
+    -webkit-box-shadow: 1px 16px 13px -10px rgba(140,140,140,0.57);
+    -moz-box-shadow: 1px 16px 13px -10px rgba(140,140,140,0.57);
+
+    img{
+        transform: scale(1.1);
     }
-    .btn{
-        background: white;
-        transition: all 0.2;
-    }
+
+    // .card-body{
+    //     color: #f0f0f0;
+    // }
+    // .btn{
+    //     background: white;
+    // }
 }
 
 /* ------------------------------- END BANNER ------------------------------- */
@@ -260,12 +277,12 @@ header .btn-secondary:hover{
 }
 
 #mioForm{
-    color: $secondary;
+    color:$primary;
     font-weight: 700;
-    border: 1px solid $secondary;
+    border: 1px solid transparent;
     padding: 1.2rem;
     border-radius: 10px;
-    background:$primary;
+    background:rgb(248, 248, 248);
 
    @include media-breakpoint-up(md){
     max-width: 40%;
@@ -276,7 +293,11 @@ header .btn-secondary:hover{
 /*                                 VEICOLI AMM                                */
 /* -------------------------------------------------------------------------- */
 
-
+.table-veicoliAmm{
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: #F0FCF7;
+}
 
 /* -------------------------------------------------------------------------- */
 /*                           PAGINA VEICOLO SINGOLO                           */

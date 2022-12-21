@@ -46,31 +46,32 @@
     </header>
     <main>
 
-        <div class="container py-2">
-            <table class="table table-veicoliAmm">
-                <thead>
-                    <tr>
-                        <th scope="col">Veicolo ID</th>
-                        <th scope="col">Alimentazione</th>
-                        <th scope="col">Descrizione</th>
-                        <th scope="col">Disponibilità noleggio</th>
-                        <th scope="col">Immagine</th>
-                        <th scope="col">Posizione attuale</th>
-                        <th scope="col">Tipologia</th>
-                        <th scope="col">Inserito da</th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider" id="tableBody">
-
-                </tbody>
-            </table>
+        <div class="container-fluid py-5">
+            <div class="table-responsive">
+                <table class="table table-veicoliAmm shadow">
+                    <thead>
+                        <tr>
+                            <th scope="col">Veicolo&nbsp;ID</th>
+                            <th scope="col">Alimentazione</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Disponibilità&nbsp;noleggio</th>
+                            <th scope="col">Immagine</th>
+                            <th scope="col">Posizione&nbsp;attuale</th>
+                            <th scope="col">Tipologia</th>
+                            <th scope="col">Inserito&nbsp;da</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="tableBody">
+                    </tbody>
+                </table>
+            </div>
 
             <div class="d-flex justify-content-center gap-3 my-3">
                 <button type="button" id="indietroBtn" class="btn btn-secondary">Indietro</button>
                 <button type="button" id="avantiBtn" class="btn btn-secondary">Avanti</button>
             </div>
 
-            <form action="editVeicolo" method="post" class="mb-3" id="mioForm" enctype="multipart/form-data" hidden>
+            <form action="editVeicolo" method="post" class="mb-3 shadow" id="mioForm" enctype="multipart/form-data" hidden>
                 <div class="mb-3">
                     <label for="veicoloId" class="form-label">Veicolo (ID)</label>
                     <input type="text" class="form-control" id="veicoloId" name="veicoloId" readonly>
@@ -124,13 +125,9 @@
                     </select>
                 </div>
                 <input type="hidden" name="utenteIns" id="utenteIns" readonly>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="reset" class="btn btn-primary">Reset</button>
+                <button type="submit" class="btn btn-secondary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
             </form>
-
-
-            <!-- div mappa -->
-            <div id="map"></div>
 
     </main>
     <!-- Remove the container if you want to extend the Footer to full width. -->

@@ -271,8 +271,9 @@ function CreateCard(url,title,desc,address,link){
 
   var card = document.createElement('div');
   card.classList.add('card');
-
   //immagine
+  var div = document.createElement('div');
+  div.classList.add('img-fx');
   var img = document.createElement('img');
   if(url.startsWith('https')){
     img.setAttribute('src',url);
@@ -280,6 +281,8 @@ function CreateCard(url,title,desc,address,link){
     img.setAttribute('src',"../assets/uploads/"+url);
   }
   img.classList.add('card-img-top');
+  div.appendChild(img);
+  card.appendChild(div)
 
   var cardBody = document.createElement('div');
   cardBody.classList.add('card-body');
@@ -313,7 +316,7 @@ function CreateCard(url,title,desc,address,link){
   cardBody.appendChild(cardText);
   cardBody.appendChild(buttonLink);
 
-  card.appendChild(img);
+  // card.appendChild(img);
   card.appendChild(cardBody);
 
   swiperSlide.appendChild(card);
