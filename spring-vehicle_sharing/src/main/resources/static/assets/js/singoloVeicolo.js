@@ -49,6 +49,11 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
 
   document.querySelector('#veicoloIdTitolo').textContent = title;
   document.querySelector('#veicoloId').value = title;
+  
+  
+  document.querySelector('#navLoginBtn').setAttribute('href', "../utenti/login/" + title);
+  document.querySelector('#mioForm').setAttribute('action', "../prenotazioni/addPrenotazione/" + title);
+  
 
   document.querySelector('#descrizione').textContent = desc;
   
@@ -77,17 +82,22 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
   //buttonLink.setAttribute('type', 'submit');
   //buttonLink.classList.add('btn','btn-primary');
   //buttonLink.textContent="Prenota ora";
-  
+  var demo = document.querySelector('#demo');
   document.querySelector('#btnPrenota').addEventListener('click', event => {
 	  
 	 if (isPrenotato(veicoloCompleto)) {
-		 document.querySelector('#demo').textContent = "Veicolo non disponibile in questa data";
+		 demo.textContent = "Veicolo non disponibile in questa data";
 		 event.preventDefault();
 		 return;
 	 } else {
 		 
 		 if (document.querySelector('#userId').getAttribute('value') == '') {
-			document.querySelector('#demo').textContent = "Devi effettuare il login per prenotare il veicolo";
+			demo.textContent = "Devi effettuare il login per prenotare il veicolo";
+            var buttonLink = document.createElement('a');
+            buttonLink.setAttribute('href','../utenti/login/' + title);
+            buttonLink.classList.add('btn','btn-secondary');
+            buttonLink.textContent="Login";
+            demo.appendChild(buttonLink);
 		 	event.preventDefault();
 		 	return;
 		 }
