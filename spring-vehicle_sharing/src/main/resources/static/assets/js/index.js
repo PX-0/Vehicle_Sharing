@@ -306,7 +306,8 @@ function CreateCard(url,title,desc,address,link){
   //pulsante
   var buttonLink = document.createElement('a');
   buttonLink.classList.add('btn','btn-primary');
-  buttonLink.textContent="Maggiori Info";
+  buttonLink.setAttribute('href',link)
+  buttonLink.textContent="Ulteriori informazioni";
 
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardText);
@@ -328,7 +329,7 @@ fetch(url).then(data=>{return data.json()})
 .then(resp=>{
       resp.forEach(element => {
         CreateCard(element.immagineVeicolo,element.veicoloId,
-          element.descrizione,element.posizioneAttuale,'#')
+          element.descrizione,element.posizioneAttuale,'veicoli/'+element.veicoloId)
           // console.log(element.immagineVeicolo[0]);
 
       });

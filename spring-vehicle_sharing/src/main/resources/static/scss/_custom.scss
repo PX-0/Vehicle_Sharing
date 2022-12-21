@@ -8,8 +8,12 @@ header{
     background-image: linear-gradient(to left bottom, #26a96c, #009391, #0077a5, #005799, #4a326f) !important;
 }
 
+footer{
+    background: rgb(255, 255, 255);
+}
+
 header a:hover{
-        color: #F0FCF7!important;
+    color:darken($secondary, 10%) !important;
 }
 
 footer a:hover{
@@ -57,13 +61,12 @@ footer a:hover{
 .swiper {
     width: 100%;
     height: auto;
+    padding-bottom: 4rem !important;
 }
 
 
-.swiper-button-next,
-.swiper-button-prev {
-
-    color: #1FAB89 !important;
+.swipper-wrapper{
+    position: relative;
 }
 
 .card-body {
@@ -73,6 +76,22 @@ footer a:hover{
 .card-title {
     font-size: 1.5rem !important;
     font-weight: 600 !important;
+}
+
+.swiper .card:hover{
+    position: absolute;
+    transform: scale(1.1);
+    z-index: 999;
+    margin-bottom: 2rem !important;
+    background-color: linear-gradient(to left top, #26a96c, #009391, #0077a5, #005799, #4a326f);
+    .card-body{
+        transition: all 0.2;
+        color: #f0f0f0;
+    }
+    .btn{
+        background: white;
+        transition: all 0.2;
+    }
 }
 
 /* ------------------------------- END BANNER ------------------------------- */
@@ -136,13 +155,21 @@ footer a:hover{
     color: #F0FCF7;
 }
 
+
 a.nav-link {
-    color: $secondary;
+    font-weight: 600!important;
+    color: #f7fdfb;
 }
 
-.active {
-    color: #F0FCF7 !important;
+a.nav-link.active{
+    font-weight: 700 !important;
+    color:darken($secondary, 10%) !important;
 }
+
+header .btn-secondary:hover{
+    color: white !important;
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                                 FINE NAVBAR                                */
@@ -281,4 +308,37 @@ a.nav-link {
     h2{
         color: $secondary;
     }
+    border-bottom: 2px solid rgba(2, 64, 0, 0.522);
+}
+.section:last-child{
+    border: none;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                     API                                    */
+/* -------------------------------------------------------------------------- */
+
+
+
+.endpoint-section{
+    margin-top:1.5rem;
+
+    .wrapper-output{
+        width: auto;
+        max-height: 18rem;
+        overflow-y: scroll;
+    }
+    
+    .url-example{
+        margin-left: 1rem;
+        padding:0.2rem 0.4rem;
+        border-radius: 4px;
+        border: 1px solid transparent;
+    }
+}
+
+.endpoint-section:nth-of-type(even){
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }

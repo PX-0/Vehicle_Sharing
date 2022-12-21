@@ -11154,8 +11154,12 @@ header {
   background-image: linear-gradient(to left bottom, #26a96c, #009391, #0077a5, #005799, #4a326f) !important;
 }
 
+footer {
+  background: white;
+}
+
 header a:hover {
-  color: #F0FCF7 !important;
+  color: #119ef5 !important;
 }
 
 footer a:hover {
@@ -11197,11 +11201,11 @@ footer a:hover {
 .swiper {
   width: 100%;
   height: auto;
+  padding-bottom: 4rem !important;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  color: #1FAB89 !important;
+.swipper-wrapper {
+  position: relative;
 }
 
 .card-body {
@@ -11211,6 +11215,24 @@ footer a:hover {
 .card-title {
   font-size: 1.5rem !important;
   font-weight: 600 !important;
+}
+
+.swiper .card:hover {
+  position: absolute;
+  transform: scale(1.1);
+  z-index: 999;
+  margin-bottom: 2rem !important;
+  background-color: linear-gradient(to left top, #26a96c, #009391, #0077a5, #005799, #4a326f);
+}
+
+.swiper .card:hover .card-body {
+  transition: all 0.2;
+  color: #f0f0f0;
+}
+
+.swiper .card:hover .btn {
+  background: white;
+  transition: all 0.2;
 }
 
 /* ------------------------------- END BANNER ------------------------------- */
@@ -11273,11 +11295,17 @@ footer a:hover {
 }
 
 a.nav-link {
-  color: #42b2f7;
+  font-weight: 600 !important;
+  color: #f7fdfb;
 }
 
-.active {
-  color: #F0FCF7 !important;
+a.nav-link.active {
+  font-weight: 700 !important;
+  color: #119ef5 !important;
+}
+
+header .btn-secondary:hover {
+  color: white !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -11409,8 +11437,38 @@ a.nav-link {
 .section {
   padding: 2rem 0;
   font-weight: 600;
+  border-bottom: 2px solid rgba(2, 64, 0, 0.522);
 }
 
 .section h2, .section .h2 {
   color: #42b2f7;
+}
+
+.section:last-child {
+  border: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                     API                                    */
+/* -------------------------------------------------------------------------- */
+.endpoint-section {
+  margin-top: 1.5rem;
+}
+
+.endpoint-section .wrapper-output {
+  width: auto;
+  max-height: 18rem;
+  overflow-y: scroll;
+}
+
+.endpoint-section .url-example {
+  margin-left: 1rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.endpoint-section:nth-of-type(even) {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }

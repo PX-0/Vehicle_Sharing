@@ -14,10 +14,10 @@ public class PagesMVC {
         return "help"; 
     }
 
-    @GetMapping("/workwithus")
+    @GetMapping("/apidocumention")
     public String work() {
      
-        return "work-with-us"; 
+        return "api-documention"; 
     }
 
     @GetMapping("/aboutus")

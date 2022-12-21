@@ -9,8 +9,13 @@
 /* -------------------------------------------------------------------------- */
 /*                            OVERRIDE DI VARIABILI                           */
 /* -------------------------------------------------------------------------- */
+<<<<<<< Updated upstream
 $primary: #26a96c;
 $secondary: #42b2f7;
+=======
+$primary: #47A15B;
+$secondary: rgb(0, 101, 159);
+>>>>>>> Stashed changes
 $fonts: #0C211F;
 
 
@@ -25,7 +30,7 @@ $fonts: #0C211F;
 // $blue:    #0d6efd !default;
 // $indigo:  #6610f2 !default;
 // $purple:  #6f42c1 !default;
-$pink:    #d63384 !default;
+$pink: #d63384 !default;
 // $red:     #dc3545 !default;
 // $orange:  #fd7e14 !default;
 // $yellow:  #ffc107 !default;
@@ -45,8 +50,26 @@ $pink:    #d63384 !default;
 /*                                    FONTS                                   */
 /* -------------------------------------------------------------------------- */
 
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" ;
-$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace ;
+$font-family-sans-serif: system-ui,
+-apple-system,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+"Noto Sans",
+"Liberation Sans",
+Arial,
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji";
+$font-family-monospace: SFMono-Regular,
+Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../../../../../node_modules/bootstrap/scss/variables";
