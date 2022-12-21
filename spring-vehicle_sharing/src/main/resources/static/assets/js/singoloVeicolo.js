@@ -52,7 +52,7 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
   
   
   document.querySelector('#navLoginBtn').setAttribute('href', "../utenti/login/" + title);
-  
+  document.querySelector('#mioForm').setAttribute('action', "../prenotazioni/addPrenotazione/" + title);
   
 
   document.querySelector('#descrizione').textContent = desc;
@@ -94,7 +94,7 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
 		 if (document.querySelector('#userId').getAttribute('value') == '') {
 			demo.textContent = "Devi effettuare il login per prenotare il veicolo";
             var buttonLink = document.createElement('a');
-            buttonLink.setAttribute('href','../utenti/login');
+            buttonLink.setAttribute('href','../utenti/login/' + title);
             buttonLink.classList.add('btn','btn-secondary');
             buttonLink.textContent="Login";
             demo.appendChild(buttonLink);

@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.springvehicle_sharing.dal.ArchivioUtentiDAO;
 import com.springvehicle_sharing.dal.PrenotazioniDAO;
@@ -35,10 +37,42 @@ public class PrenotazioniMVC {
 	
 	//UTENTE
 	
-	@PostMapping("addPrenotazione")
-	public String addPrenotazioneUtente(HttpSession session, Model m, 
+//	@PostMapping("addPrenotazione")
+//	public String addPrenotazioneUtente(HttpSession session, Model m, 
+//			@RequestParam("utenteId") String u, @RequestParam("veicoloId") String v,
+//			@RequestParam("datePicker") String datePicker) {
+//		
+//		//String prevUrl = (String) session.getAttribute("prevUrl");
+//		
+//		//session.removeAttribute("prevUrl");
+////		System.out.println(u);
+////		System.out.println(v);
+//		
+//		if (session.getAttribute("loggedUser") == null) {
+//			//m.addAttribute("notLogged", true);
+//			return "redirect:/";
+//		}
+//
+//		String[] data = datePicker.split("-");
+//		
+//		Prenotazione prenotazione = new Prenotazione();
+//		prenotazione.setDataPrenotazione(LocalDateTime.of(LocalDate.of(Integer.valueOf(
+//				data[0]), Integer.valueOf(data[1]), Integer.valueOf(data[2])), 
+//				LocalTime.of(0, 0)));
+//		prenotazione.setVeicolo(daoV.findById(v).get());
+//		prenotazione.setUtente(daoU.findById(u).get());
+//		
+//		dao.save(prenotazione);
+//		
+//		//session.setAttribute("avvenuta", true);
+//		return "pagina-del-singolo-veicolo";
+//	}
+	
+	@PostMapping("addPrenotazione/{id}")
+	public String addPrenotazioneUtenteVeicoloID(HttpSession session, 
 			@RequestParam("utenteId") String u, @RequestParam("veicoloId") String v,
-			@RequestParam("datePicker") String datePicker) {
+			@RequestParam("datePicker") String datePicker, @PathVariable("id")
+			String veicoloID, RedirectAttributes redirectAttrs) {
 		
 		//String prevUrl = (String) session.getAttribute("prevUrl");
 		
@@ -50,7 +84,7 @@ public class PrenotazioniMVC {
 			//m.addAttribute("notLogged", true);
 			return "redirect:/";
 		}
-
+		
 		String[] data = datePicker.split("-");
 		
 		Prenotazione prenotazione = new Prenotazione();
@@ -62,8 +96,9 @@ public class PrenotazioniMVC {
 		
 		dao.save(prenotazione);
 		
-		//session.setAttribute("avvenuta", true);
-		return "";
+		redirectAttrs.addFlashAttribute("success", "Prenotazione avvenuta con successo!");
+		//m.addAttribute("success", "Prenotazione avvenuta con successo!");
+		return "redirect:/veicoli/" + veicoloID;
 	}
 	
 	@GetMapping("addPrenotazione")

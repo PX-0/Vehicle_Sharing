@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.springvehicle_sharing.dal.ArchivioUtentiDAO;
 import com.springvehicle_sharing.entities.ArchivioUtenti;
@@ -46,22 +47,25 @@ public class ArchivioUtentiMVC {
 		
 		session.setAttribute("loginVeicoloID", veicoloID);
 		
-		if (utente != null) {
+		/*if (utente != null) {
 			
-			/*if (utente.getTipo() != 'A')
+			if (utente.getTipo() != 'A')
 				return "loginUserError";
 			
-			return "pannello-di-lavoro";*/
+			return "pannello-di-lavoro";
 			return "redirect:/";
-		}
+		}*/
 		
 		return "login";
 	}
 	
 	@PostMapping("loginCheck")
-	public String loginCheck(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session, Model m) {
+	public String loginCheck(@RequestParam("username") String username, 
+			@RequestParam("password") String password, HttpSession session,
+			RedirectAttributes redirectAttrs) {
 		
 		if (dao.findByUserIdEqualsAndPasswordEquals(username, password) == null) {
+			redirectAttrs.addFlashAttribute("loginFailed", "I dati inseriti non sono corretti");
 			return "redirect:/utenti/login";
 		}
 		
@@ -80,14 +84,50 @@ public class ArchivioUtentiMVC {
 		if (utente.getTipo() == 'A')
 			return "pannello-di-lavoro";
 		
+//		if (session.getAttribute("loginVeicoloID") != null) {
+//			String loginVeicoloID = (String) session.getAttribute("loginVeicoloID");
+//			session.removeAttribute("loginVeicoloID");
+//			return "redirect:/veicoli/" + loginVeicoloID;
+//		}
+		
+		return "redirect:/";
+	}
+	
+	@PostMapping("login/loginCheck")
+	public String loginCheckConId(@RequestParam("username") String username, 
+			@RequestParam("password") String password, HttpSession session, 
+			RedirectAttributes redirectAttrs) {
+		
+		if (dao.findByUserIdEqualsAndPasswordEquals(username, password) == null) {
+			redirectAttrs.addFlashAttribute("loginFailed", "I dati inseriti non sono corretti");
+			return "redirect:/utenti/login";
+		}
+		
+		ArchivioUtenti utente = dao.findByUserIdEqualsAndPasswordEquals(username, password);
+		
+//		System.out.println(utente.getTipo());
+		
+		session.setAttribute("loggedUser", utente);
+		//session.setAttribute("loggedUserId", utente.getUserId());
+		
+		/*if (utente.getTipo() != 'A') {
+			session.setAttribute("showBtn", true);
+			return "loginUserError";
+		}*/
+		
+		if (utente.getTipo() == 'A')
+			return "pannello-di-lavoro";
+		
 		if (session.getAttribute("loginVeicoloID") != null) {
 			String loginVeicoloID = (String) session.getAttribute("loginVeicoloID");
 			session.removeAttribute("loginVeicoloID");
-			return "redirect:/" + loginVeicoloID;
+			return "redirect:/veicoli/" + loginVeicoloID;
 		}
 		
 		return "redirect:/";
 	}
+	
+	
 	
 	@GetMapping("loginCheck")
 	public String redirect() {
