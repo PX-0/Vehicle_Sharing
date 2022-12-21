@@ -27,8 +27,8 @@
                                         <h1 class="loginTitle fs-2 mb-0">The Princess Team</h1>
                                     </div>
 
-                                    <form class="p-3" action="loginCheck" method="POST">
-                                        <h3 class="fs-5 py-3" style="color: rgb(0, 101, 159);">Please login to your account</h3>
+                                    <form class="p-3" action="registerCheck" method="POST">
+                                        <h3 class="fs-5 py-3" style="color: rgb(0, 101, 159);">Create your account</h3>
 
                                         <div class="form-outline mb-4">
                                             <h4 class=" text-start ms-4 ms-sm-5 fs-6" for="form2Example11">Username</h4>
@@ -41,14 +41,19 @@
                                             <input type="password" id="password" name="password"
                                                 class="form-control w-75 ms-4 ms-sm-5" placeholder="Insert your password" style="caret-color: #47A15B" />
                                         </div>
+
+                                        <div class="form-outline mb-4">
+                                            <h4 class="form-label text-start ms-4 ms-sm-5 fs-6" for="form2Example22">Ripeti Password</h4>
+                                            <input type="password" id="password" name="password"
+                                                class="form-control w-75 ms-4 ms-sm-5" placeholder="Insert your password" style="caret-color: #47A15B" />
+                                        </div>
 										
                                         <div th:text="${loginFailed}" class="mb-2 text-danger"></div>
                                         <div class="text-center pt-1 mb-5 pb-1">
                                         
-                                            <button
-                                                class="btn btn-primary btn-block text-white fa-lg gradient-custom-2 mb-3"
-                                                type="submit">Log
-                                                in</button>
+                                            <button class="btn btn-primary btn-block text-white fa-lg gradient-custom-2 mb-3"
+                                                type="submit">Create
+                                            </button>
                                             <!-- <a class="text-muted text-decoration-none" href="#!">Forgot password?</a> -->
                                         
                                         </div>
