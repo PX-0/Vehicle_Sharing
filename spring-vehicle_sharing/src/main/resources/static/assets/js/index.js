@@ -107,6 +107,9 @@ function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
     }
   }
 
+  // Proprietà tabella:
+  // <div class="col-12 col-sm-6 px-0">
+
   // var tab1 = document.getElementById("tabellaDisponibili");
   // var tab2 = document.getElementById("tabellaNoleggiati");
 
@@ -135,7 +138,7 @@ function riempiTabella(veicolo, tabella) {
         tbody.appendChild(tr);
         
         var td = document.createElement("td");
-        td.setAttribute("class", "ps-4 py-3 py-sm-0");
+        td.setAttribute("class", "ps-3 ps-sm-4 py-3 py-sm-0");
         tr.appendChild(td);
 
         td.innerHTML = "<h3>" + veicolo.veicoloId + "</h3><ul>" +
@@ -170,12 +173,12 @@ function riempiTabella(veicolo, tabella) {
               ul.innerHTML += "<li>" + veicolo.prenotazioni[i].dataPrenotazione.split("T")[0] + "</li>";
           }
 
-          col2.innerHTML = "<button type='button' class='btn btn-primary'>Ulteriori informazioni</button>";
+          col2.innerHTML = "<a href='veicoli/"+ veicolo.veicoloId  + "' type='button' class='btn btn-primary'>Prenota ora</button>";
 
         } else {
 
           col1.innerHTML = "<div>Veicolo disponibile</div>";
-          col2.innerHTML = "<button type='button' class='btn btn-primary'>Ulteriori informazioni</button>";        
+          col2.innerHTML = "<a href='veicoli/"+ veicolo.veicoloId  + "' type='button' class='btn btn-primary'>Prenota ora</button>";        
         
         }
   
@@ -194,6 +197,7 @@ function printPlaceholderCard(n, tabella) {
     tbody.appendChild(tr);
     
     var td = document.createElement("td");
+    td.setAttribute("class", "px-3 px-md-4");
     tr.appendChild(td);
 
     // card
@@ -248,7 +252,7 @@ function printPlaceholderCard(n, tabella) {
     
     // card button
     var cardBtn = document.createElement("a");
-    cardBtn.setAttribute("class", "btn btn-primary disabled placeholder col-10 col-sm-10 col-md-8 col-lg-6 float-end");
+    cardBtn.setAttribute("class", "btn btn-primary disabled placeholder col-4 col-sm-6 col-lg-5 float-start float-md-end");
     cardBody.appendChild(cardBtn);
 
   }
