@@ -29,13 +29,13 @@
                             <a class="nav-link" aria-current="page" href="../../utenti/login">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../prenotazioni/elenco" class="nav-link">Elenco delle prenotazioni</a>
+                            <a href="../../prenotazioni/elenco" class="nav-link active">Elenco delle prenotazioni</a>
                         </li>
                         <li class="nav-item">
                             <a href="../../veicoli/elenco" class="nav-link">Elenco dei veicoli amministrabili</a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../veicoli/inserisci" class="nav-link active">Inserisci un veicolo</a>
+                            <a href="../../veicoli/inserisci" class="nav-link">Inserisci un veicolo</a>
                         </li>
                         <li class="nav-item">
                             <a href="logout" class="btn btn-secondary ms-2">Logout</a>
@@ -46,62 +46,67 @@
     </header>
     <main>
 
-        <div class="container py-3">
-            <div class="title-formAdd">
-                <p>AGGIUNGI VEICOLO</p>
+        <div class="container py-2">
+            <table class="table table-veicoliAmm">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Data della prenotazione</th>
+                        <th scope="col">Utente</th>
+                        <th scope="col">Veicolo</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider" id="tableBody">
+
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-center gap-3 my-3">
+                <button type="button" id="indietroBtn" class="btn btn-secondary">Indietro</button>
+                <button type="button" id="avantiBtn" class="btn btn-secondary">Avanti</button>
             </div>
-            <form action="addVeicolo" method="POST" id="mioForm" name="mioForm" enctype="multipart/form-data">
+
+            <form action="editPrenotazione" method="post" class="mb-3" id="mioForm" enctype="multipart/form-data" hidden>
                 <div class="mb-3">
-                    <label for="veicoloId" class="form-label">Veicolo (ID)</label>
-                    <input type="text" class="form-control" id="veicoloId" name="veicoloId">
+                    <label for="id" class="form-label">Prenotazione (ID)</label>
+                    <input type="text" class="form-control" id="id" name="id" readonly>
                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
                 <div class="mb-3">
-                    <label for="alimentazione" class="form-label">Alimentazione</label>
-                    <input type="text" class="form-control" id="alimentazione" name="alimentazione">
+                    <label for="dataPrenotazione" class="form-label">Data della prenotazione</label>
+                    <input type="date" class="form-control" id="dataPrenotazione" name="dataPrenotazione">
                 </div>
-                <div class="mb-3">
-                    <label for="descrizione" class="form-label">Descrizione</label>
-                    <input type="text" class="form-control" id="descrizione" name="descrizione">
+                <!-- <div class="mb-3">
+                    <label for="utenteId" class="form-label">Utente (ID)</label>
+                    <input type="text" class="form-control" id="utenteId" name="utenteId">
                 </div>
-                <!-- <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="disponibilitaNoleggio" name="disponibilitaNoleggio">
-                <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
-              </div>-->
+                <div id="utenteIdText" class="form-text" hidden>L'ID dell'utente non è valido</div>
                 <div class="mb-3">
-                    <select id="disponibilitaNoleggio" name="disponibilitaNoleggio" class="form-select">
-                        <option value="-1" selected disabled>Tipologia di noleggio</option>
-                        <option value="Prolungato">Prolungato</option>
-                        <option value="Giornaliero">Giornaliero (durata: 1 giorno)</option>
-                        <option value="No">Non disponibile</option>
+                    <label for="veicoloId" class="form-label">Veicolo (ID)</label>
+                    <input type="text" class="form-control" id="veicoloId" name="veicoloId">
+                </div>
+                <div id="veicoloIdText" class="form-text" hidden>L'ID del veicolo non è valido</div>
+                -->
+                
+                <div class="mb-3">
+                    <select id="utenteId" name="utenteId" class="form-select">
+                        
                     </select>
                 </div>
-                <!-- <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
-              <div class="input-group mb-3">
-                  <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo" aria-describedby="basic-addon3">
-              </div>-->
-                <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="immagineVeicolo" name="immagineVeicolo"
-                        accept="image/*">
-                    <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
-                </div>
                 <div class="mb-3">
-                    <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
-                    <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
-                </div>
-                <div class="mb-3">
-                    <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
-                        <option value="-1" selected disabled>Tipologia di veicolo</option>
-                        <option value="Auto">Auto</option>
-                        <option value="Bicicletta">Bicicletta</option>
-                        <option value="Monopattino">Monopattino</option>
-                        <option value="Motorino">Motorino</option>
+                    <select id="veicoloId" name="veicoloId" class="form-select">
+                        
                     </select>
                 </div>
-                <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
-                <button type="submit" class="btn btn-secondary">Submit</button>
+                
+                <!--<input type="hidden" name="utenteIns" id="utenteIns" readonly>-->
+                <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-primary">Reset</button>
             </form>
-        </div>
+
+
+            <!-- div mappa -->
+            <div id="map"></div>
 
     </main>
     <!-- Remove the container if you want to extend the Footer to full width. -->
@@ -109,7 +114,7 @@
     <!-- Footer -->
     <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
         <!-- Section: Social media -->
-        <section class="d-flex justify-content-between p-3 text-white bg-primary">
+        <section class="d-flex justify-content-between p-3 text-white bg-primary" >
             <!-- Left -->
             <div class="">
                 <span>Get connected with us on social networks:</span>
@@ -195,7 +200,7 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script th:src="@{/assets/js/inserimentoVeicolo.js}"></script>
+    <script th:src="@{/assets/js/elencoPrenotazioniAdmin.js}"></script>
 </body>
 
 </html>
