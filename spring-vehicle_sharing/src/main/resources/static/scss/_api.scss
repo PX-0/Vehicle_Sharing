@@ -1,0 +1,28 @@
+/* -------------------------------------------------------------------------- */
+/*                                     API                                    */
+/* -------------------------------------------------------------------------- */
+
+
+
+.endpoint-section{
+    margin-top:1.5rem;
+
+    .wrapper-output{
+        width: auto;
+        max-height: 18rem;
+        overflow-y: scroll;
+    }
+    
+    .url-example{
+        margin-left: 1rem;
+        padding:0.2rem 0.4rem;
+        border-radius: 4px;
+        border: 1px solid transparent;
+    }
+}
+
+.endpoint-section:nth-of-type(even){
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+

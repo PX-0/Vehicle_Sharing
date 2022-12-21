@@ -1,0 +1,11 @@
+/* -------------------------------------------------------------------------- */
+/*                                 PAGE ERROR                                 */
+/* -------------------------------------------------------------------------- */
+.page-error{
+    height: 100vh!important;
+    width: auto;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

@@ -1,0 +1,24 @@
+/* -------------------------------------------------------------------------- */
+/*                             INSERIMENTO VEICOLO                            */
+/* -------------------------------------------------------------------------- */
+
+.title-formAdd{
+    font-size: 2rem;
+    font-weight: 800;
+    color: $primary;
+    text-align: center;
+}
+
+#mioForm{
+    color:$primary;
+    font-weight: 700;
+    border: 1px solid transparent;
+    padding: 1.2rem;
+    border-radius: 10px;
+    background:rgb(248, 248, 248);
+
+   @include media-breakpoint-up(md){
+    max-width: 40%;
+    margin: 0 auto;
+}
+}
