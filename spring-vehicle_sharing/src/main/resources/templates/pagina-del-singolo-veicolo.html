@@ -19,7 +19,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center me-0 " href="#">
                     <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
-                    <span class="mainTitle ">Princesharing</span>
+                    <h1 class="mainTitle ">Princesharing</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@
                             <a class="nav-link" href="../other/novità">Novità</a>
                         </li>
                         <li class="nav-item">
-                            <a href="../utenti/login" class="btn btn-secondary ms-2">Login</a>
+                            <a href="../utenti/login" id="navLoginBtn" class="btn btn-secondary ms-2">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -80,7 +80,7 @@
 						</form>
 						<!-- <div th:text="${session.avvenuta}"></div> -->
 						<!-- <th:block th:text="${session.loggedUser == null} ? 'Devi effettuare il login per prenotare il veicolo' : ''"></th:block> -->
-						<div th:if="${session.avvenuta == true}">Prenotazione avvenuta con successo</div> <!-- ancora non funzionante -->
+						<p th:text="${success}" class="text-success"></p>
                         
                         <!-- <div th:text="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}"></div>
                         <div style="color:red;" th:text="${session.loggedUser == null} ? 'Devi essere loggato per prenotare il veicolo' : ''" th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}" id="userId"></div>-->

@@ -24,7 +24,7 @@
                                     <div class="text-center">
                                         <img th:src="@{/assets/img/logo.png}" alt="Logo" width="65" height="50"
                                             class="">
-                                        <p class="loginTitle fs-2">The Princess Team</p>
+                                        <h1 class="loginTitle fs-2">The Princess Team</h1>
                                     </div>
 
                                     <form action="loginCheck" method="POST">
@@ -41,13 +41,16 @@
                                             <input type="password" id="password" name="password"
                                                 class="form-control w-75 mx-auto" placeholder="Insert your password" style="caret-color: #47A15B" />
                                         </div>
-
+										
+                                        <div th:text="${loginFailed}" class="mb-2 text-danger"></div>
                                         <div class="text-center pt-1 mb-5 pb-1">
+                                        
                                             <button
                                                 class="btn btn-primary btn-block text-white fa-lg gradient-custom-2 mb-3"
                                                 type="submit">Log
                                                 in</button>
                                             <!-- <a class="text-muted text-decoration-none" href="#!">Forgot password?</a> -->
+                                        
                                         </div>
 
                                         <!-- <div class="d-flex align-items-center justify-content-center pb-4">
