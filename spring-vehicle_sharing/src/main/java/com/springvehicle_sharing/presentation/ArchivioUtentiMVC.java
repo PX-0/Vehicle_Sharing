@@ -45,7 +45,7 @@ public class ArchivioUtentiMVC {
 		
 		ArchivioUtenti utente = dao.findByUserIdEqualsAndPasswordEquals(username, password);
 		
-		System.out.println(utente.getTipo());
+//		System.out.println(utente.getTipo());
 			
 		session.setAttribute("loggedUser", utente);
 		//session.setAttribute("loggedUserId", utente.getUserId());
@@ -57,6 +57,12 @@ public class ArchivioUtentiMVC {
 		
 		if (utente.getTipo() == 'A')
 			return "pannello-di-lavoro";
+		
+		if (session.getAttribute("prevUrl") != null) {
+			String prevUrl = (String) session.getAttribute("prevUrl");
+			session.removeAttribute("prevUrl");
+			return "redirect:/" + prevUrl;
+		}
 		
 		return "redirect:/";
 	}

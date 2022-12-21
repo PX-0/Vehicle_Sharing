@@ -40,7 +40,7 @@ public class PrenotazioniMVC {
 			@RequestParam("utenteId") String u, @RequestParam("veicoloId") String v,
 			@RequestParam("datePicker") String datePicker) {
 		
-		String prevId = (String) session.getAttribute("veicoloSingoloId");
+		String prevUrl = (String) session.getAttribute("prevUrl");
 		
 		session.removeAttribute("veicoloSingoloId");
 //		System.out.println(u);
@@ -48,7 +48,7 @@ public class PrenotazioniMVC {
 		
 		if (session.getAttribute("loggedUser") == null) {
 			//m.addAttribute("notLogged", true);
-			return "redirect:/veicoli/" + prevId;
+			return "redirect:/" + prevUrl;
 		}
 
 		String[] data = datePicker.split("-");
@@ -63,7 +63,7 @@ public class PrenotazioniMVC {
 		dao.save(prenotazione);
 		
 		//session.setAttribute("avvenuta", true);
-		return "redirect:/veicoli/" + prevId;
+		return "redirect:/" + prevUrl;
 	}
 	
 	@GetMapping("addPrenotazione")

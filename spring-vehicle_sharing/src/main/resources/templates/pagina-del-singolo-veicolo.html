@@ -37,7 +37,7 @@
                             <a class="nav-link" href="../other/novità">Novità</a>
                         </li>
                         <li class="nav-item">
-                            <a href="utenti/login" class="btn btn-secondary ms-2">Login</a>
+                            <a href="../utenti/login" class="btn btn-secondary ms-2">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -70,6 +70,9 @@
                         <div id="map"></div>
 
 						<form action="../prenotazioni/addPrenotazione" method="POST" id="mioForm">
+							<input type="date" name="datePicker" id="datePicker" class="form-control mx-auto">
+                            <button type="submit" class="btn btn-primary" id="btnPrenota" name="btnPrenota">Prenota ora</button>
+
 							<input type="hidden" id="veicoloId" name="veicoloId">
                         	<input type="hidden" th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}" id="userId" name="utenteId">
 						</form>

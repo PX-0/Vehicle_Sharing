@@ -61,23 +61,24 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
   document.querySelector('#posizione-attuale').textContent = address;
   getPosizione(address);
   
-  var calendarioIn = document.createElement('input');
-  calendarioIn.setAttribute('type', 'date');
-  calendarioIn.setAttribute('id', 'datePicker');
-  calendarioIn.setAttribute('name', 'datePicker');
-  calendarioIn.setAttribute('class', 'form-control mx-auto');
+  //var calendarioIn = document.createElement('input');
+  //calendarioIn.setAttribute('type', 'date');
+  //calendarioIn.setAttribute('id', 'datePicker');
+  //calendarioIn.setAttribute('name', 'datePicker');
+  //calendarioIn.setAttribute('class', 'form-control mx-auto');
+  var calendarioIn = document.querySelector('#datePicker');
   calendarioIn.valueAsDate = new Date();
   calendarioIn.setAttribute("min", dataOggi());
   
-  document.querySelector('#mioForm').appendChild(calendarioIn);
+  //document.querySelector('#mioForm').appendChild(calendarioIn);
   
   //pulsante
-  var buttonLink = document.createElement('button');
-  buttonLink.setAttribute('type', 'submit');
-  buttonLink.classList.add('btn','btn-primary');
-  buttonLink.textContent="Prenota ora";
+  //var buttonLink = document.createElement('button');
+  //buttonLink.setAttribute('type', 'submit');
+  //buttonLink.classList.add('btn','btn-primary');
+  //buttonLink.textContent="Prenota ora";
   
-  buttonLink.addEventListener('click', event => {
+  document.querySelector('#btnPrenota').addEventListener('click', event => {
 	  
 	 if (isPrenotato(veicoloCompleto)) {
 		 document.querySelector('#demo').textContent = "Veicolo non disponibile in questa data";
@@ -100,7 +101,7 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
 	 }
   });
   
-  document.querySelector('#mioForm').appendChild(buttonLink);
+  //document.querySelector('#mioForm').appendChild(buttonLink);
 }
 /*
 function Prenotazione(id, utente, veicolo, dataPrenotazione){
