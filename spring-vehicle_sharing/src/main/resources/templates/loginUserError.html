@@ -8,16 +8,33 @@
     <link rel="stylesheet" href="../../resources/static/css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
-    <div class="text-center py-4">
-        <h1>Non disponi di diritti sufficienti alla modifica del parco veicoli</h1>
+    
+    <div class="page-error py-5">
+
+        <div class="text-center py-4">
+            <h1>Non disponi di diritti sufficienti ad accedere a quest'area</h1>
+        </div>
+>
+                <div class="container d-flex justify-content-center">
+                    <img th:src="@{/assets/img/DavideExplainingHow.gif}" class="img-fluid">
+                    <img th:src="@{/assets/img/MauroLoading.gif}" class="img-fluid">
+                </div>
+            
+
+        <div>
+            <form action="logout">
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-secondary">Torna alla Home</button>
+                </div>
+            </form>
+            <form action="logout" th:if="${session.showBtn} == true">
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-secondary">Logout</button>
+                </div>
+            </form>
+        </div>
+
     </div>
-    <div class="container">
-        <form action="logout">
-            <button type="submit" class="btn btn-secondary">Torna alla Home</button>
-        </form>
-        <form action="logout" th:if="${session.showBtn} == true">
-            <button type="submit" class="btn btn-secondary ms-2">Logout</button>
-        </form>
-    </div>
+
 </body>
 </html>

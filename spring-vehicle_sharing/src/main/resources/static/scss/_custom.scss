@@ -23,13 +23,14 @@ footer a:hover{
 input{
     caret-color: #47A15B;
 }
+pre{
+    background:#1a1a1a;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                     HERO                                    */
 /* -------------------------------------------------------------------------- */
 
-pre{
-    background:#1a1a1a;
-}
 
 #hero {
     position: relative;
@@ -366,4 +367,17 @@ header .btn-secondary:hover{
 .endpoint-section:nth-of-type(even){
     margin-top: 3rem;
     margin-bottom: 3rem;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 PAGE ERROR                                 */
+/* -------------------------------------------------------------------------- */
+.page-error{
+    height: 100vh!important;
+    width: auto;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
