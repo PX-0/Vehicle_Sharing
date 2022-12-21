@@ -70,8 +70,10 @@
                         <div id="map"></div>
 
 						<form action="../prenotazioni/addPrenotazione" method="POST" id="mioForm">
-							<input type="date" name="datePicker" id="datePicker" class="form-control mx-auto">
-                            <button type="submit" class="btn btn-primary" id="btnPrenota" name="btnPrenota">Prenota ora</button>
+							<div class="container d-flex flex-nowrap">
+                                <input type="date" name="datePicker" id="datePicker" class="form-control ms-0">
+                                <button type="submit" class="btn btn-secondary ms-1" id="btnPrenota" name="btnPrenota">Prenota</button>
+                            </div>
 
 							<input type="hidden" id="veicoloId" name="veicoloId">
                         	<input type="hidden" th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}" id="userId" name="utenteId">
