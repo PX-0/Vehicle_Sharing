@@ -163,9 +163,9 @@ document.querySelector('#avantiBtn').addEventListener('click', () => {
 
 
 
-var utenteId = document.querySelector('#utenteId');
-var veicoloId = document.querySelector('#veicoloId');
-/*
+var prenotazioneIdDaCheckare = document.querySelector('#id');
+/*var veicoloId = document.querySelector('#veicoloId');
+
 function checkUtente(event) {
     if (utenteId.value == '-1') {
         utenteId.classList.remove('is-valid');
@@ -180,25 +180,25 @@ function checkUtente(event) {
 }
 
 utenteId.addEventListener('input', checkUtente);
-
-function checkVeicolo(event) {
-    if (veicoloId.value == '-1') {
-        veicoloId.classList.remove('is-valid');
-        veicoloId.classList.add('is-invalid');
+*/
+function checkPrenotazioneId(event) {
+    if (prenotazioneIdDaCheckare.value == '') {
+        prenotazioneIdDaCheckare.classList.remove('is-valid');
+        prenotazioneIdDaCheckare.classList.add('is-invalid');
         event.preventDefault();
         return false;
     } else {
-        veicoloId.classList.remove('is-invalid');
-        veicoloId.classList.add('is-valid');
+        prenotazioneIdDaCheckare.classList.remove('is-invalid');
+        prenotazioneIdDaCheckare.classList.add('is-valid');
         return true;
     }
 }
 
-veicoloId.addEventListener('input', checkVeicolo);
-*/
+prenotazioneIdDaCheckare.addEventListener('input', checkPrenotazioneId);
+
 document.querySelector('#mioForm').addEventListener('submit', event => {
     
-    if (checkUtente(event) == false || checkVeicolo(event) == false) {
+    if (checkPrenotazioneId(event) == false) {
 		document.querySelector('#utenteIdText').removeAttribute('hidden');
 		document.querySelector('#veicoloIdText').removeAttribute('hidden');
         event.preventDefault();
