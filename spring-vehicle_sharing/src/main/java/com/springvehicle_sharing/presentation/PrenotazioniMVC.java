@@ -42,7 +42,7 @@ public class PrenotazioniMVC {
 		
 		String prevUrl = (String) session.getAttribute("prevUrl");
 		
-		session.removeAttribute("veicoloSingoloId");
+		session.removeAttribute("prevUrl");
 //		System.out.println(u);
 //		System.out.println(v);
 		
