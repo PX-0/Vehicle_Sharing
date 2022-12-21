@@ -8,17 +8,28 @@ header{
     background-image: linear-gradient(to left bottom, #26a96c, #009391, #0077a5, #005799, #4a326f) !important;
 }
 
+footer{
+    background: rgb(255, 255, 255);
+}
+
 header a:hover{
-        color: #F0FCF7!important;
+    color:darken($secondary, 10%) !important;
 }
 
 footer a:hover{
     color:$secondary !important;
 }
 
+input{
+    caret-color: #47A15B;
+}
 /* -------------------------------------------------------------------------- */
 /*                                     HERO                                    */
 /* -------------------------------------------------------------------------- */
+
+pre{
+    background:#1a1a1a;
+}
 
 #hero {
     position: relative;
@@ -57,6 +68,7 @@ footer a:hover{
 .swiper {
     width: 100%;
     height: auto;
+    padding-bottom: 4rem !important;
 }
 
 .swiper-button-next,
@@ -72,6 +84,36 @@ footer a:hover{
 .card-title {
     font-size: 1.5rem !important;
     font-weight: 600 !important;
+}
+
+.img-fx{
+    overflow: hidden;
+}
+
+
+
+
+.swiper .card,.swiper .card .btn, .swiper .card .card-body,.swiper .card img{
+    transition: all .2s;
+}
+
+.swiper .card:hover{
+    // background: linear-gradient(to left top, #26a96c, #009391, #0077a5, #005799, #4a326f);
+    
+    box-shadow: 1px 16px 13px -10px rgba(140,140,140,0.57);
+    -webkit-box-shadow: 1px 16px 13px -10px rgba(140,140,140,0.57);
+    -moz-box-shadow: 1px 16px 13px -10px rgba(140,140,140,0.57);
+
+    img{
+        transform: scale(1.1);
+    }
+
+    // .card-body{
+    //     color: #f0f0f0;
+    // }
+    // .btn{
+    //     background: white;
+    // }
 }
 
 /* ------------------------------- END BANNER ------------------------------- */
@@ -165,13 +207,21 @@ footer a:hover{
     color: #F0FCF7;
 }
 
+
 a.nav-link {
-    color: $secondary;
+    font-weight: 600!important;
+    color: #f7fdfb;
 }
 
-.active {
-    color: #F0FCF7 !important;
+a.nav-link.active{
+    font-weight: 700 !important;
+    color:darken($secondary, 10%) !important;
 }
+
+header .btn-secondary:hover{
+    color: white !important;
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                                 FINE NAVBAR                                */
@@ -262,12 +312,12 @@ a.nav-link {
 }
 
 #mioForm{
-    color: $secondary;
+    color:$primary;
     font-weight: 700;
-    border: 1px solid $secondary;
+    border: 1px solid transparent;
     padding: 1.2rem;
     border-radius: 10px;
-    background:$primary;
+    background:rgb(248, 248, 248);
 
    @include media-breakpoint-up(md){
     max-width: 40%;
@@ -278,7 +328,11 @@ a.nav-link {
 /*                                 VEICOLI AMM                                */
 /* -------------------------------------------------------------------------- */
 
-
+.table-veicoliAmm{
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: #F0FCF7;
+}
 
 /* -------------------------------------------------------------------------- */
 /*                           PAGINA VEICOLO SINGOLO                           */
@@ -310,4 +364,37 @@ a.nav-link {
     h2{
         color: $secondary;
     }
+    border-bottom: 2px solid rgba(2, 64, 0, 0.522);
+}
+.section:last-child{
+    border: none;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                     API                                    */
+/* -------------------------------------------------------------------------- */
+
+
+
+.endpoint-section{
+    margin-top:1.5rem;
+
+    .wrapper-output{
+        width: auto;
+        max-height: 18rem;
+        overflow-y: scroll;
+    }
+    
+    .url-example{
+        margin-left: 1rem;
+        padding:0.2rem 0.4rem;
+        border-radius: 4px;
+        border: 1px solid transparent;
+    }
+}
+
+.endpoint-section:nth-of-type(even){
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }

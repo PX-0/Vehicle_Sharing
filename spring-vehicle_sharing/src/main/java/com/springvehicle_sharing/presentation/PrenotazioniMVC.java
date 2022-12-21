@@ -91,7 +91,7 @@ public class PrenotazioniMVC {
 			}
 		}
 		
-		return "elencoPrenotazioni"; //da fare
+		return "elencoPrenotazioniAdmin";
 	}
 	
 	@RequestMapping("logout")
@@ -103,24 +103,28 @@ public class PrenotazioniMVC {
 	
 	@PostMapping("editPrenotazione")
 	public String editPrenotazione (HttpSession session,
-			@RequestParam("dataPrenotazione") LocalDateTime dataPrenotazione,
+			@RequestParam("id") int id, @RequestParam("dataPrenotazione") String dataPrenotazione,
 			@RequestParam("veicoloId") String veicoloId,
-			@RequestParam("utente") String utente, Model m) {
+			@RequestParam("utenteId") String utenteId, Model m) {
+		
+		String[] data = dataPrenotazione.split("-");
 		
 		Prenotazione prenotazione = new Prenotazione();
-		prenotazione.setDataPrenotazione(dataPrenotazione);
+		prenotazione.setId(id);
+		prenotazione.setDataPrenotazione(LocalDateTime.of(LocalDate.of(Integer.valueOf(
+				data[0]), Integer.valueOf(data[1]), Integer.valueOf(data[2])), 
+				LocalTime.of(0, 0)));
 		prenotazione.setVeicolo(daoV.findById(veicoloId).get());
-		prenotazione.setUtente(daoU.findById(utente).get());
-		
+		prenotazione.setUtente(daoU.findById(utenteId).get());
 		
 		dao.save(prenotazione);
 		
-		return elencoPrenotazioni(session, m);
+		return "redirect:/prenotazioni/elenco";
 	}
 	
 	@GetMapping("editPrenotazione")
 	public String redirectEditPrenotazione() {
-		return "redirect:/elenco"; //
+		return "redirect:/prenotazioni/elenco"; //
 	
 		
 		

@@ -28,7 +28,7 @@
 </head>
 
 <body>
-  <header th:fragment="header">
+  <header>
     <nav class="navbar navbar-expand-md">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center me-0" href="#">
@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" href="#">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../other/aboutus">About Us</a>
@@ -75,6 +75,7 @@
         <div class="swiper">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper" id="swiper-box"></div>
+          <div class="swiper-pagination"></div>
         </div>
     </section>
 
@@ -124,7 +125,7 @@
   <!-- Remove the container if you want to extend the Footer to full width. -->
   <!-- <div class="container my-5"> -->
   <!-- Footer -->
-  <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+  <footer class="text-center text-lg-start text-dark" th:fragment="footer">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-between p-3 text-white bg-primary">
       <!-- Left -->
@@ -171,7 +172,7 @@
             <p class="text-uppercase mb-0 fw-bold">Useful links</p>
             <hr class="mb-2 mt-0 d-inline-block mx-auto" style="width: 60px; height: 2px;" />
             <p>
-              <a href="../other/workwithus" class="" style="color: #1FAB89; text-decoration: none">Work with us</a>
+              <a href="../other/apidocumention" class="" style="color: #1FAB89; text-decoration: none">API</a>
             </p>
             <p>
               <a href="../other/help" class="" style="color: #1FAB89; text-decoration: none">Help</a>

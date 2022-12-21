@@ -42,4 +42,9 @@ public class ArchivioUtentiREST {
 		return dao.save(utente);
 	}
 	
+	@GetMapping("utentiByTipo/{tipo}")
+	public List<ArchivioUtenti> utentiByTipo(@PathVariable("tipo") char tipo) {
+		return dao.findByTipoEquals(tipo);
+	}
+	
 }
