@@ -150,7 +150,7 @@ public class ArchivioUtentiMVC {
 		if (session.getAttribute("loggedUser") != null)
 			return "redirect:/";
 		
-		if (dao.findById(username).get() != null) {
+		if (dao.existsById(username) == true) {
 			redirectAttrs.addFlashAttribute("registerFailed", "ERRORE - Il nome utente è già esistente");
 			return "redirect:/utenti/register";
 		}
