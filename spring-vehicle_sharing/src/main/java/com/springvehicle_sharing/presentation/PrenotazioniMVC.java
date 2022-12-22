@@ -58,7 +58,7 @@ public class PrenotazioniMVC {
 		dao.save(prenotazione);
 		
 		redirectAttrs.addFlashAttribute("success", "Prenotazione avvenuta con successo!");
-		return "redirect:/veicoli/" + veicoloID;
+		return "redirect:/veicoli/" + String.valueOf(veicoloID);
 	}
 	
 	@GetMapping("addPrenotazione")

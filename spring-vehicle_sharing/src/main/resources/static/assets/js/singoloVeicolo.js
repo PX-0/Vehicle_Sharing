@@ -37,7 +37,7 @@ function getPosizione(indirizzo) {
 var calendario = document.querySelector('#calendario');
 var btnPrenota = document.querySelector('#btnPrenota');
 
-function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloCompleto,modello,marca,colore,cilindrata){
+function CreateCard(url,id,desc,address,link,tipo,alim,dispNol,veicoloCompleto,modello,marca,colore,cilindrata){
 
   if(url.startsWith('https')){
 	  
@@ -47,8 +47,8 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
     document.querySelector('#immagineVeicolo').setAttribute('src',"../assets/uploads/"+url);
   }
 
-  //document.querySelector('#veicoloIdTitolo').textContent = title;
-  document.querySelector('#veicoloId').value = title;
+  //document.querySelector('#veicoloIdTitolo').textContent = id;
+  document.querySelector('#veicoloId').value = id;
   
   document.querySelector('#modello').textContent = modello;
   document.querySelector('#marca').textContent = marca;
@@ -56,8 +56,8 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
   document.querySelector('#cilindrata').textContent = cilindrata;
   
   
-  document.querySelector('#button-nav').setAttribute('href', "../utenti/login/" + title);
-  document.querySelector('#mioForm').setAttribute('action', "../prenotazioni/addPrenotazione/" + title);
+  document.querySelector('#button-nav').setAttribute('href', "../utenti/login/" + id);
+  document.querySelector('#mioForm').setAttribute('action', "../prenotazioni/addPrenotazione/" + id);
   
 
   document.querySelector('#descrizione').textContent = desc;
@@ -99,7 +99,7 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
 		 if (document.querySelector('#userId').getAttribute('value') == '') {
 			demo.textContent = "Devi effettuare il login per prenotare il veicolo";
             var buttonLink = document.createElement('a');
-            buttonLink.setAttribute('href','../utenti/login/' + title);
+            buttonLink.setAttribute('href','../utenti/login/' + id);
             buttonLink.classList.add('btn','btn-secondary');
             buttonLink.textContent="Login";
             demo.appendChild(buttonLink);
@@ -157,7 +157,7 @@ const VEICOLO_ID = window.location.href.substring(window.location.href.lastIndex
 
 fetch(URL_VEICOLI + VEICOLO_ID).then(data=>data.json())
 .then(resp => {
-    CreateCard(resp.immagineVeicolo,resp.veicoloId, resp.descrizione,resp.posizioneAttuale,
+    CreateCard(resp.immagineVeicolo,resp.id, resp.descrizione,resp.posizioneAttuale,
     '#', resp.tipologia, resp.alimentazione, resp.disponibilitaNoleggio, resp, 
     resp.modello,resp.marca,resp.colore,resp.cilindrata);
       //console.log(resp.immagineVeicolo[0]);

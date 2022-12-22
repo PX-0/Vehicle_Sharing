@@ -43,7 +43,7 @@ public class ArchivioUtentiMVC {
 	
 	@GetMapping("login/{id}")
 	public String loginVId(HttpSession session, 
-			@PathVariable("id") String veicoloID) {
+			@PathVariable("id") int veicoloID) {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
@@ -53,7 +53,7 @@ public class ArchivioUtentiMVC {
 				return "loginUserError";
 			
 			return "pannello-di-lavoro";*/
-			return "redirect:/veicoli/" + veicoloID;
+			return "redirect:/veicoli/" + String.valueOf(veicoloID);
 		}
 		
 		session.setAttribute("loginVeicoloID", veicoloID);
@@ -121,7 +121,7 @@ public class ArchivioUtentiMVC {
 			return "pannello-di-lavoro";
 		
 		if (session.getAttribute("loginVeicoloID") != null) {
-			String loginVeicoloID = (String) session.getAttribute("loginVeicoloID");
+			String loginVeicoloID = String.valueOf(session.getAttribute("loginVeicoloID"));
 			session.removeAttribute("loginVeicoloID");
 			return "redirect:/veicoli/" + loginVeicoloID;
 		}
