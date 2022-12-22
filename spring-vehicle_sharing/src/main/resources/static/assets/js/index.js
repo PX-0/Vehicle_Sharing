@@ -297,18 +297,22 @@ function CreateCard(url,marca,desc,cc,alimentazione,link){
   cardText.classList.add('card-text');
 
   var descrizione = document.createElement('p');
-  descrizione.setAttribute('id','descrizione');
   descrizione.textContent=desc;
-
-  var cilindrata = document.createElement('p');
-  cilindrata.setAttribute('id','cilindrata');
-  cilindrata.textContent=cc;
-
-  var alimentazione = document.createElement('p');
-  alimentazione.textContent= alimentazione;
-
   cardText.appendChild(descrizione);
-  cardText.appendChild(posizioneAttuale);
+
+  var tipoAlimentazione = document.createElement('p');
+  tipoAlimentazione.textContent= alimentazione;
+
+  cardText.appendChild(tipoAlimentazione);
+
+  if(cilindrata!="-1"){
+    var cilindrata = document.createElement('p');
+    cilindrata.setAttribute('id','cilindrata');
+    cilindrata.textContent=cc;
+    cardText.appendChild(cilindrata);
+  }
+
+
 
   //pulsante
   var buttonLink = document.createElement('a');
@@ -335,9 +339,14 @@ function CreateCard(url,marca,desc,cc,alimentazione,link){
 fetch(url).then(data=>{return data.json()})
 .then(resp=>{
       resp.forEach(element => {
-        CreateCard(element.immagineVeicolo,element.marca,
-          element.descrizione,element.cilindrata,element.alimentazione,'veicoli/'+element.Id)
-          // console.log(element.immagineVeicolo[0]);
+        CreateCard(
+          element.immagineVeicolo,
+          element.marca,
+          element.descrizione,
+          element.cilindrata,
+          element.alimentazione,
+          'veicoli/'+element.Id)
+          // console.log(element.alimentazione);
 
       });
 
