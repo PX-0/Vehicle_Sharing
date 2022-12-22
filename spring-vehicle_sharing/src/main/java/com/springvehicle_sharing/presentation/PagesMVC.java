@@ -31,4 +31,16 @@ public class PagesMVC {
      
         return "novità"; 
     }
+    
+    @GetMapping("/Privacy")
+    public String privacy() {
+    	
+    	return "privacy"; 
+    }
+    
+    @GetMapping("/Cookie")
+    public String cookie() {
+    	
+    	return "cookie"; 
+    }
 }
