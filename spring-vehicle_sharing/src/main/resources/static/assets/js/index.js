@@ -141,7 +141,7 @@ function riempiTabella(veicolo, tabella) {
         td.setAttribute("class", "ps-3 ps-sm-4 py-3 py-sm-0");
         tr.appendChild(td);
 
-        td.innerHTML = "<h3>" + veicolo.veicoloId + "</h3><ul>" +
+        td.innerHTML = "<h3>" + veicolo.marca + " " + veicolo.modello + "</h3><ul>" +
                        "<li>" + veicolo.tipologia + "</li>" +
                        "<li>" + veicolo.descrizione + "</li>" +
                        "<li>" + veicolo.posizioneAttuale + "</li></ul>";
