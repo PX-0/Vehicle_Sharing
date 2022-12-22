@@ -5,7 +5,7 @@ const urlTail = "&format=json&limit=1";
 function mapFill() {
     var coors = JSON.parse(sessionStorage.getItem('coordinate'));
 
-    var map = L.map('map').setView([Number(coors.lat), Number(coors.lon)], 8);
+    var map = L.map('map').setView([Number(coors.lat), Number(coors.lon)], 14);
 
     var marker = L.marker([Number(coors.lat),Number(coors.lon)]).addTo(map);
 
@@ -51,7 +51,11 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
   document.querySelector('#veicoloId').value = title;
   
   
+<<<<<<< Updated upstream
   document.querySelector('#button-nav').setAttribute('href', "../utenti/login/" + title);
+=======
+  document.querySelector('#button-nav').setAttribute('href', "../utenti/login/"+ title);
+>>>>>>> Stashed changes
   document.querySelector('#mioForm').setAttribute('action', "../prenotazioni/addPrenotazione/" + title);
   
 
