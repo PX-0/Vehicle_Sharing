@@ -11567,3 +11567,14 @@ header .btn-secondary:hover {
   font-weight: 600 !important;
   color: #00659f;
 }
+
+.title-page {
+  text-align: center;
+  font-weight: 600;
+  color: #00659f;
+  padding: 2rem;
+}
+
+.card a {
+  color: white !important;
+}

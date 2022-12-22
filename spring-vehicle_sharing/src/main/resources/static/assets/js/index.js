@@ -141,7 +141,7 @@ function riempiTabella(veicolo, tabella) {
         td.setAttribute("class", "ps-3 ps-sm-4 py-3 py-sm-0");
         tr.appendChild(td);
 
-        td.innerHTML = "<h3>" + veicolo.veicoloId + "</h3><ul>" +
+        td.innerHTML = "<h3>" + veicolo.marca + " " + veicolo.modello + "</h3><ul>" +
                        "<li>" + veicolo.tipologia + "</li>" +
                        "<li>" + veicolo.descrizione + "</li>" +
                        "<li>" + veicolo.posizioneAttuale + "</li></ul>";
@@ -263,7 +263,7 @@ const swiperBox = document.querySelector('#swiper-box');
 const url = "http://localhost:9014/api/veicoli";
 /* ------------------------------ end function ------------------------------ */
 
-function CreateCard(url,title,desc,address,link){
+function CreateCard(url,marca,desc,cc,alimentazione,link){
   //creo swiper-slide
   var swiperSlide = document.createElement('div');
   swiperSlide.classList.add('swiper-slide');
@@ -290,22 +290,29 @@ function CreateCard(url,title,desc,address,link){
 
   var cardTitle = document.createElement('div');
   cardTitle.classList.add('card-title');
-  cardTitle.textContent = title;
+  cardTitle.textContent = marca;
 
   //testo della card
   var cardText = document.createElement('div');
   cardText.classList.add('card-text');
 
   var descrizione = document.createElement('p');
-  descrizione.setAttribute('id','descrizione');
   descrizione.textContent=desc;
-
-  var posizioneAttuale = document.createElement('p');
-  posizioneAttuale.setAttribute('id','posizione-attuale');
-  posizioneAttuale.textContent=address;
-
   cardText.appendChild(descrizione);
-  cardText.appendChild(posizioneAttuale);
+
+  var tipoAlimentazione = document.createElement('p');
+  tipoAlimentazione.textContent= alimentazione;
+
+  cardText.appendChild(tipoAlimentazione);
+
+  if(cilindrata!="-1"){
+    var cilindrata = document.createElement('p');
+    cilindrata.setAttribute('id','cilindrata');
+    cilindrata.textContent=cc;
+    cardText.appendChild(cilindrata);
+  }
+
+
 
   //pulsante
   var buttonLink = document.createElement('a');
@@ -332,9 +339,14 @@ function CreateCard(url,title,desc,address,link){
 fetch(url).then(data=>{return data.json()})
 .then(resp=>{
       resp.forEach(element => {
-        CreateCard(element.immagineVeicolo,element.veicoloId,
-          element.descrizione,element.posizioneAttuale,'veicoli/'+element.veicoloId)
-          // console.log(element.immagineVeicolo[0]);
+        CreateCard(
+          element.immagineVeicolo,
+          element.marca,
+          element.descrizione,
+          element.cilindrata,
+          element.alimentazione,
+          'veicoli/'+element.Id)
+          // console.log(element.alimentazione);
 
       });
 

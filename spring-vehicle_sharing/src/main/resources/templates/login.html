@@ -18,47 +18,38 @@
                 <div class="card rounded-3 text-black">
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="card-body px-md-5 pt-5">
-
+                            <div class="row align-items-center justify-content-center p-5 px-sm-5">
+    
                                 <div class="text-center">
-                                    <img th:src="@{/assets/img/logo.png}" alt="Logo" width="65" height="50" class="">
-                                    <h1 class="loginTitle fs-2 mb-0">The Princess Team</h1>
+                                    <img th:src="@{/assets/img/logo.png}" alt="Logo" width="65" height="50">
+                                    <h1 class="loginTitle fs-2 pt-2">The Princess Team</h1>
                                 </div>
+    
+                                <form class="col-11 col-sm-12 col-md-10 pb-5 pt-3 px-3" action="loginCheck" method="POST">
 
-                                <form class="p-3" action="loginCheck" method="POST">
-                                    <h3 class="fs-5 py-3" style="color: rgb(0, 101, 159);">Please login to your account
+                                    <h3 class="fs-5 py-3 text-center" style="color: rgb(0, 101, 159);">Please login to your account
                                     </h3>
-
-                                    <div class="form-outline mb-4">
-                                        <h4 class=" text-start ms-4 ms-sm-5 fs-6" for="form2Example11">Username</h4>
-                                        <input type="text" id="username" name="username"
-                                            class="form-control w-75 ms-4 ms-sm-5 pe-1"
+    
+                                    <div class="pb-4">
+                                        <label for="username" class="form-label">Username</label>
+                                        <input type="text" id="username" name="username" class="form-control"
                                             placeholder="Insert your username" />
                                     </div>
-
-                                    <div class="form-outline mb-4">
-                                        <h4 class="form-label text-start ms-4 ms-sm-5 fs-6" for="form2Example22">
-                                            Password</h4>
-                                        <input type="password" id="password" name="password"
-                                            class="form-control w-75 ms-4 ms-sm-5" placeholder="Insert your password"
-                                            style="caret-color: #47A15B" />
+    
+                                    <div class="pb-4">
+                                        <label for="username" class="form-label">Password</label>
+                                        <input type="text" id="password" name="password" class="form-control"
+                                            placeholder="Insert your password" style="caret-color: #47A15B" />
                                     </div>
+    
+                                    <div th:text="${loginFailed}" class="pb-4 pt-2 text-danger text-center"></div>
 
-                                    <div th:text="${loginFailed}" class="mb-2 text-danger"></div>
-                                    <div class="text-center pt-1 mb-5 pb-1">
-
-                                        <button
-                                            class="btn btn-primary btn-block text-white fa-lg gradient-btn mb-3"
+                                    <div class="text-center pt-4">
+                                        <button class="btn btn-primary text-white gradient-btn"
                                             type="submit">Log
                                             in</button>
-                                        <!-- <a class="text-muted text-decoration-none" href="#!">Forgot password?</a> -->
-
                                     </div>
 
-                                    <!-- <div class="d-flex align-items-center justify-content-center pb-4">
-                                            <p class="mb-0 me-2">Don't have an account?</p>
-                                            <button type="button" class="btn btn-outline-danger">Create new</button>
-                                        </div> -->
                                 </form>
                             </div>
                         </div>
