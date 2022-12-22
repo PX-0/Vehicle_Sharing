@@ -1,5 +1,8 @@
 package com.springvehicle_sharing.presentation;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -127,11 +130,61 @@ public class ArchivioUtentiMVC {
 		return "redirect:/";
 	}
 	
-	
-	
 	@GetMapping("loginCheck")
 	public String redirect() {
 		return "redirect:/utenti/login";
+	}
+	
+	@GetMapping("register")
+	public String register() {
+		return "registrazione";
+	}
+	
+	@PostMapping("registerCheck")
+	public String registerCheck(HttpSession session, @RequestParam("nome") String nome,
+			@RequestParam("cognome") String cognome, @RequestParam("email") String email,
+			@RequestParam(value = "dataNascita", required = false) LocalDate dataNascita,
+			@RequestParam("username") String username, @RequestParam("password") String password,
+			RedirectAttributes redirectAttrs) {
+		
+		if (session.getAttribute("loggedUser") != null)
+			return "redirect:/";
+		
+		if (dao.findById(username).get() != null) {
+			redirectAttrs.addFlashAttribute("registerFailed", "ERRORE - Il nome utente è già esistente");
+			return "redirect:/utenti/register";
+		}
+		
+		ArchivioUtenti utenteReg = new ArchivioUtenti();
+		utenteReg.setNome(nome);
+		utenteReg.setCognome(cognome);
+		utenteReg.setEmail(email);
+		
+		if (dataNascita != null) {
+			
+			String giorno = String.valueOf(dataNascita.getDayOfMonth());
+			String mese = String.valueOf(dataNascita.getMonthValue());
+			String anno = String.valueOf(dataNascita.getYear());
+			
+			utenteReg.setNascita(giorno + "/" + mese + "/" + anno);
+		}
+		
+		utenteReg.setUserId(username);
+		utenteReg.setPassword(password);
+		
+		utenteReg.setDataIscrizione(LocalDateTime.now());
+		utenteReg.setUltimaModifica(LocalDateTime.now());
+		utenteReg.setTipo('B');
+		utenteReg.setFirma("Utente");
+		
+		dao.save(utenteReg);
+		
+		return "redirect:/";
+	}
+	
+	@GetMapping("registerCheck")
+	public String redirectRegister() {
+		return "redirect:/utenti/register";
 	}
 	
 	@RequestMapping("logout")
