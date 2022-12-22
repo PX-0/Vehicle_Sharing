@@ -37,7 +37,7 @@ function getPosizione(indirizzo) {
 var calendario = document.querySelector('#calendario');
 var btnPrenota = document.querySelector('#btnPrenota');
 
-function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloCompleto){
+function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloCompleto,modello,marca,colore,cilindrata){
 
   if(url.startsWith('https')){
 	  
@@ -47,8 +47,13 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
     document.querySelector('#immagineVeicolo').setAttribute('src',"../assets/uploads/"+url);
   }
 
-  document.querySelector('#veicoloIdTitolo').textContent = title;
+  //document.querySelector('#veicoloIdTitolo').textContent = title;
   document.querySelector('#veicoloId').value = title;
+  
+  document.querySelector('#modello').textContent = modello;
+  document.querySelector('#marca').textContent = marca;
+  document.querySelector('#colore').textContent = colore;
+  document.querySelector('#cilindrata').textContent = cilindrata;
   
   
   document.querySelector('#button-nav').setAttribute('href', "../utenti/login/" + title);
@@ -153,7 +158,8 @@ const VEICOLO_ID = window.location.href.substring(window.location.href.lastIndex
 fetch(URL_VEICOLI + VEICOLO_ID).then(data=>data.json())
 .then(resp => {
     CreateCard(resp.immagineVeicolo,resp.veicoloId, resp.descrizione,resp.posizioneAttuale,
-    '#', resp.tipologia, resp.alimentazione, resp.disponibilitaNoleggio, resp);
+    '#', resp.tipologia, resp.alimentazione, resp.disponibilitaNoleggio, resp, 
+    resp.modello,resp.marca,resp.colore,resp.cilindrata);
       //console.log(resp.immagineVeicolo[0]);
    }
 );

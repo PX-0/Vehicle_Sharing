@@ -58,10 +58,10 @@ public class VeicoliMVC {
 	public static String UPLOAD_DIRECTORY = "src/main/resources/static/assets/uploads";
 	
 	@PostMapping("addVeicolo")
-	public String addVeicolo(HttpSession session, @RequestParam("veicoloId") String veicoloId,
-			@RequestParam("alimentazione") String alimentazione, @RequestParam("descrizione")
-			String descrizione, @RequestParam(value = "disponibilitaNoleggio", required = false) 
-			String disponibilitaNoleggio, @RequestParam(value = "immagineVeicolo", required = false) 
+	public String addVeicolo(HttpSession session, @RequestParam("alimentazione") 
+			String alimentazione, @RequestParam("descrizione") String descrizione, 
+			@RequestParam(value = "disponibilitaNoleggio", required = false) String 
+			disponibilitaNoleggio, @RequestParam(value = "immagineVeicolo", required = false) 
 			MultipartFile file, @RequestParam(value = "posizioneAttuale", required = false) 
 			String posizioneAttuale, @RequestParam("tipologia") String tipologia,
 			@RequestParam("modello") String modello, @RequestParam("marca") String marca,
@@ -216,10 +216,8 @@ public class VeicoliMVC {
 	}
 	
 	@GetMapping("{id}")
-	public String veicoloSingolo(@PathVariable("id") String id, HttpSession session) {
-		//if (session.getAttribute("loggedUser") == null)
-			//session.setAttribute("prevUrl", "veicoli/" + id);
-//		session.removeAttribute("avvenuta");
+	public String veicoloSingolo(@PathVariable("id") int id, HttpSession session) {
+
 		return "pagina-del-singolo-veicolo";
 	}
 	
