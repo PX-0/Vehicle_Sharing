@@ -305,7 +305,7 @@ function CreateCard(url,marca,desc,cc,alimentazione,link){
 
   cardText.appendChild(tipoAlimentazione);
 
-  if(cilindrata!="-1"){
+  if(!cilindrata === -1){
     var cilindrata = document.createElement('p');
     cilindrata.setAttribute('id','cilindrata');
     cilindrata.textContent=cc;
@@ -346,7 +346,7 @@ fetch(url).then(data=>{return data.json()})
           element.cilindrata,
           element.alimentazione,
           'veicoli/'+element.Id)
-          // console.log(element.alimentazione);
+          console.log(element.cilindrata);
 
       });
 
