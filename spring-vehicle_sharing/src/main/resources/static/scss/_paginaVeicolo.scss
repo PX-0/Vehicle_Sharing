@@ -3,6 +3,14 @@
 /*                           PAGINA VEICOLO SINGOLO                           */
 /* -------------------------------------------------------------------------- */
 #map{
-    height: 6rem;
-    width: 12rem;
+    height: 7rem;
+    width: 15rem;
+    @include media-breakpoint-up(sm) {
+        height: 12rem;
+        width: 30rem;
+    }
+    @include media-breakpoint-up(md) {
+        height: 17rem;
+        width: 40rem;
+    }
 }

@@ -71,10 +71,12 @@
 
                         <div id="posizione-attuale"></div>
                         <!-- div mappa -->
-                        <div id="map"></div>
+                        <div class="d-inline-block">
+                            <div id="map"></div>
+                        </div>
 
 						<form action="../prenotazioni/addPrenotazione" method="POST" id="mioForm">
-							<div class="container d-flex flex-nowrap">
+							<div class="container d-flex flex-nowrap p-0">
                                 <input type="date" name="datePicker" id="datePicker" class="form-control ms-0">
                                 <button type="submit" class="btn btn-secondary ms-1" id="btnPrenota" name="btnPrenota">Prenota</button>
                             </div>

@@ -11514,8 +11514,22 @@ header .btn-secondary:hover {
 /*                           PAGINA VEICOLO SINGOLO                           */
 /* -------------------------------------------------------------------------- */
 #map {
-  height: 6rem;
-  width: 12rem;
+  height: 7rem;
+  width: 15rem;
+}
+
+@media (min-width: 576px) {
+  #map {
+    height: 12rem;
+    width: 30rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #map {
+    height: 17rem;
+    width: 40rem;
+  }
 }
 
 /* -------------------------------------------------------------------------- */
