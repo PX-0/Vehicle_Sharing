@@ -48,8 +48,6 @@ public class ArchivioUtentiMVC {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
-		session.setAttribute("loginVeicoloID", veicoloID);
-		
 		if (utente != null) {
 			
 			/*if (utente.getTipo() != 'A')
@@ -58,6 +56,8 @@ public class ArchivioUtentiMVC {
 			return "pannello-di-lavoro";*/
 			return "redirect:/veicoli/" + veicoloID;
 		}
+		
+		session.setAttribute("loginVeicoloID", veicoloID);
 		
 		return "login";
 	}
