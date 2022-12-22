@@ -266,7 +266,12 @@ tipologia.addEventListener('input', checkTipologia);
 
 document.querySelector('#mioForm').addEventListener('submit', event => {
     
-    if (checkVeicoloId(event) == false || checkAlimentazione(event) == false || checkDescrizione(event) == false || checkTipologia(event) == false) {
+    var idOk = checkVeicoloId(event);
+    var alimentazioneOk = checkAlimentazione(event);
+    var descrizioneOk = checkDescrizione(event);
+    var tipologiaOk = checkTipologia(event);
+
+    if (!idOk || !alimentazioneOk || !descrizioneOk || !tipologiaOk) {
         event.preventDefault();
         return;
     }
@@ -274,5 +279,6 @@ document.querySelector('#mioForm').addEventListener('submit', event => {
     setTimeout(() => {
 		location.reload();
 	}, 500);
+    
 });
 

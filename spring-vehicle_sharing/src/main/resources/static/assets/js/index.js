@@ -173,14 +173,11 @@ function riempiTabella(veicolo, tabella) {
               ul.innerHTML += "<li>" + veicolo.prenotazioni[i].dataPrenotazione.split("T")[0] + "</li>";
           }
 
-          col2.innerHTML = "<a href='veicoli/"+ veicolo.veicoloId  + "' type='button' class='btn btn-primary'>Prenota ora</button>";
-
         } else {
-
           col1.innerHTML = "<div>Veicolo disponibile</div>";
-          col2.innerHTML = "<a href='veicoli/"+ veicolo.veicoloId  + "' type='button' class='btn btn-primary'>Prenota ora</button>";        
-        
         }
+        
+        col2.innerHTML = "<a href='veicoli/"+ veicolo.veicoloId  + "' type='button' class='btn btn-primary'>Prenota ora</button>";        
   
     }
 
