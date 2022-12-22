@@ -345,7 +345,7 @@ fetch(url).then(data=>{return data.json()})
           element.descrizione,
           element.cilindrata,
           element.alimentazione,
-          'veicoli/'+element.Id)
+          'veicoli/'+element.id)
           console.log(element.cilindrata);
 
       });
