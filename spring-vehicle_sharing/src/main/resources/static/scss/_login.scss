@@ -1,6 +1,7 @@
 /* -------------------------------------------------------------------------- */
 /*                                PAGINA LOGIN                                */
 /* -------------------------------------------------------------------------- */
+
 .loginTitle {
     font-size: 1.5rem;
     font-weight: 500;
@@ -12,22 +13,31 @@
     }
 }
 
-.gradient-custom-2 {
-    /* fallback for old browsers */
+.gradient-btn {
     background-image: linear-gradient(to right top, #26a96c, #009391, #0077a5, #005799, #4a326f);
 }
 
-@media (min-width: 768px) {
-    .gradient-form {
-        height: 100vh !important;
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background-image: linear-gradient(to right top, #26a96c, #009391, #0077a5, #005799, #4a326f);
+
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+    border-top-left-radius: 0rem;
+
+    @include media-breakpoint-up(lg) {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+        border-bottom-left-radius: 0rem;
+        border-top-left-radius: 0rem;
     }
 }
 
-@media (min-width: 768px) {
-    .gradient-custom-2 {
-        border-top-right-radius: .3rem;
-        border-bottom-right-radius: .3rem;
-    }
+.gradient-form {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 /* -------------------------------------------------------------------------- */
