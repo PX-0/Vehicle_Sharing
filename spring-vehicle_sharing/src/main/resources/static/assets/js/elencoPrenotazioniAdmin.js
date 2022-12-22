@@ -182,7 +182,7 @@ function checkUtente(event) {
 utenteId.addEventListener('input', checkUtente);
 */
 function checkPrenotazioneId(event) {
-    if (prenotazioneIdDaCheckare.value == '') {
+    if (prenotazioneIdDaCheckare.value.trim() == '') {
         prenotazioneIdDaCheckare.classList.remove('is-valid');
         prenotazioneIdDaCheckare.classList.add('is-invalid');
         event.preventDefault();

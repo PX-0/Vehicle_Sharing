@@ -5,7 +5,7 @@ var descrizione = document.querySelector('#descrizione');
 var tipologia = document.querySelector('#tipologia');
 
 function checkVeicoloId(event) {
-    if (veicoloId.value == '') {
+    if (veicoloId.value.trim() == '') {
         veicoloId.classList.remove('is-valid');
         veicoloId.classList.add('is-invalid');
         event.preventDefault();
@@ -20,7 +20,7 @@ function checkVeicoloId(event) {
 veicoloId.addEventListener('input', checkVeicoloId);
 
 function checkAlimentazione(event) {
-    if (alimentazione.value == '') {
+    if (alimentazione.value.trim() == '') {
         alimentazione.classList.remove('is-valid');
         alimentazione.classList.add('is-invalid');
         event.preventDefault();
@@ -35,7 +35,7 @@ function checkAlimentazione(event) {
 alimentazione.addEventListener('input', checkAlimentazione);
 
 function checkDescrizione(event) {
-    if (descrizione.value == '') {
+    if (descrizione.value.trim() == '') {
         descrizione.classList.remove('is-valid');
         descrizione.classList.add('is-invalid');
         event.preventDefault();
