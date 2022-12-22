@@ -177,7 +177,7 @@ function riempiTabella(veicolo, tabella) {
           col1.innerHTML = "<div>Veicolo disponibile</div>";
         }
         
-        col2.innerHTML = "<a href='veicoli/"+ veicolo.veicoloId  + "' type='button' class='btn btn-primary'>Prenota ora</button>";        
+        col2.innerHTML = "<a href='veicoli/"+ veicolo.id  + "' type='button' class='btn btn-primary'>Prenota ora</button>";        
   
     }
 
