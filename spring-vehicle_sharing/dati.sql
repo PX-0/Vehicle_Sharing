@@ -53,7 +53,7 @@ insert into veicoli (id, modello, marca, colore, cilindrata, tipologia, alimenta
 values(3, "Mi M365 Pro 2", "Xiaomi", "Rosso metallizzato", "4t4Wh", "Monopattino", "Elettrico", "batteria da 474 Wh , 7.5 Ah e il peso di soli 14.2kg , è tranquillamente annoverabile nell'insieme dei Monopattini urbani di qualità; raggiunge una velocità di c.a. 25 km orari", "Via Appia Nuova 678, 00179", "No","monopattinoXiaomi.jpg", "Amministratore");
 
 INSERT INTO veicoli (id, modello, marca, colore, cilindrata, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) 
-VALUES (4, "Madone SLR 9 eTap Gen 7", 'Trek', 'Nero', "-1", 'Bicicletta', 'Elettrica', " ultraleggera, velocissima e superfluida", 'Italia, Roma, Via Fregene 00183', 'Giornaliero', 'Trek.jpg', 'Amministratore');
+VALUES (4, "Madone SLR 9 eTap Gen 7", 'Trek', 'Rosso', "-1", 'Bicicletta', 'Elettrica', " ultraleggera, velocissima e superfluida", 'Italia, Roma, Via Fregene 00183', 'Giornaliero', 'Trek.jpg', 'Amministratore');
 
 INSERT INTO veicoli (id, modello, marca, colore, cilindrata, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) 
 VALUES (5, "Cube Stereo Hybrid 120 Pro 625", 'E-bike', "Azzurra", "-1", 'Bicicletta', 'Elettrica', "Raffinato design delle sospensioni a quattro barre che mantiene il ciclista isolato dagli urti e dalle vibrazioni del percorso", 'Italia, Roma, Via Fregene 00183', 'No','cube.jpg','Amministratore');
