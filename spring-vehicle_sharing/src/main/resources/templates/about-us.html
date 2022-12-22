@@ -53,10 +53,12 @@
                         <!-- <li class="nav-item">
 			              <a href="utenti/login" class="btn btn-secondary ms-2" id="button-nav">Login</a>
 			            </li>-->
-			            <li class="nav-item">
-			              <a th:if="${session.loggedUser} == null" href="../utenti/login" class="btn btn-secondary ms-2" id="button-nav">Login</a>
-			              <a th:if="${session.loggedUser} != null" href="../utenti/logout" class="btn btn-secondary ms-2" id="button-nav">Logout</a>
-			            </li>
+                        <li class="nav-item">
+                            <a th:if="${session.loggedUser} == null" href="../utenti/login"
+                                class="btn btn-secondary ms-2" id="button-nav">Login</a>
+                            <a th:if="${session.loggedUser} != null" href="../utenti/logout"
+                                class="btn btn-secondary ms-2" id="button-nav">Logout</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -77,8 +79,8 @@
                         <div class="card-body">
                             <h2 class="nomeTeam fs-4">Luisa Acevedo</h2>
                             <p class="card-text">U MAMMUT</p>
-                            <a href="https://www.linkedin.com/in/luisabizik/"
-                                class="btn btn-secondary text-white" target="_blank">Linkedin</a>
+                            <a href="https://www.linkedin.com/in/luisabizik/" class="btn btn-secondary text-white"
+                                target="_blank">Linkedin</a>
                         </div>
                     </div>
                 </div>
@@ -116,8 +118,8 @@
                         <div class="card-body">
                             <h2 class="nomeTeam fs-4">Nicolò Petrucci</h2>
                             <p class="card-text">U SALUMIER</p>
-                            <a href="https://www.linkedin.com/in/nicopetrucci/"
-                                class="btn btn-secondary text-white" target="_blank">Linkedin</a>
+                            <a href="https://www.linkedin.com/in/nicopetrucci/" class="btn btn-secondary text-white"
+                                target="_blank">Linkedin</a>
                         </div>
                     </div>
                 </div>
@@ -129,8 +131,8 @@
                         <div class="card-body">
                             <h2 class="nomeTeam fs-4">Riccardo Tucci</h2>
                             <p class="card-text">U PESCATOR</p>
-                            <a href="https://www.linkedin.com/in/r-tucci-e3/"
-                                class="btn btn-secondary text-white" target="_blank">Linkedin</a>
+                            <a href="https://www.linkedin.com/in/r-tucci-e3/" class="btn btn-secondary text-white"
+                                target="_blank">Linkedin</a>
                         </div>
                     </div>
                 </div>
@@ -162,11 +164,11 @@
                     </div>
                 </div>
                 <!-- Grid column -->
-                <!-- Grid row -->
             </div>
-        </div>    
+            <!-- Grid row -->
+        </div>
     </section>
-
+    <!-- Fine section -->
     <footer th:insert="index.html :: footer"></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
