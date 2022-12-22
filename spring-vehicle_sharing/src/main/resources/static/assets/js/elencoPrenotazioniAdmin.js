@@ -114,8 +114,13 @@ function stampaPrenotazioni(elencoPrenotazioni) {
         TR.appendChild(TD4);
 
         const TD5 = document.createElement('td');
-        TD5.innerHTML = '<a href="#id" class="bi bi-pencil-fill" style="cursor:pointer";></a>';
-        TD5.addEventListener('click', () => {
+        //TD5.innerHTML = '<a href="#id" class="bi bi-pencil-fill" style="cursor:pointer";></a>';
+        
+        const AHREF = document.createElement('a');
+        AHREF.setAttribute('href', '#veicoloId');
+        AHREF.classList.add('bi', 'bi-pencil-fill');
+        AHREF.setAttribute('style', 'cursor:pointer; color:darkblue;');
+        AHREF.addEventListener('click', () => {
 			document.querySelector('#mioForm').removeAttribute('hidden');
             document.querySelector('#id').value = TD.textContent;
             
@@ -124,15 +129,29 @@ function stampaPrenotazioni(elencoPrenotazioni) {
             dataPren.value = TD2.getAttribute('value');
   			dataPren.setAttribute("min", dataOggi());
             
-            document.querySelector('#utenteId').value = TD3.textContent;
-			document.querySelector('#veicoloId').value = TD4.textContent;
+            if (TD3.textContent != '') {
+            	document.querySelector('#utenteId').value = TD3.textContent;
+           	} else {
+				document.querySelector('#utenteId').value = '-1';
+			}
+            
+			if (TD4.textContent != '') {
+            	document.querySelector('#veicoloId').value = TD4.textContent;
+           	} else {
+				document.querySelector('#veicoloId').value = '-1';
+			}
         });
 
+		TD5.appendChild(AHREF);
         TR.appendChild(TD5);
 
         const TD6 = document.createElement('td');
-        TD6.innerHTML = '<i class="bi bi-trash-fill" style="cursor:pointer";></i>';
-        TD6.addEventListener('click', () => {
+        //TD6.innerHTML = '<i class="bi bi-trash-fill" style="cursor:pointer";></i>';
+        
+        const ICON = document.createElement('i');
+        ICON.classList.add('bi', 'bi-trash-fill');
+        ICON.setAttribute('style', 'cursor:pointer; color:black;');
+        ICON.addEventListener('click', () => {
 	
 			fetch(`http://localhost:9014/api/prenotazioni/${TD.textContent}`, {
 				method: 'DELETE',
@@ -146,6 +165,7 @@ function stampaPrenotazioni(elencoPrenotazioni) {
 	
         });
 
+		TD6.appendChild(ICON);
         TR.appendChild(TD6);
 
         tableBody.appendChild(TR);
@@ -207,7 +227,7 @@ document.querySelector('#mioForm').addEventListener('submit', event => {
     
     setTimeout(() => {
 		location.reload();
-	}, 500);
+	}, 1000);
 });
 
 function fetchUtenti() {
@@ -252,7 +272,7 @@ function fetchVeicoli() {
 			
 			const OPTIONDEFAULT = document.createElement('option');
 			OPTIONDEFAULT.value = '-1';
-            OPTIONDEFAULT.textContent = 'Utenti disponibili';
+            OPTIONDEFAULT.textContent = 'Veicoli disponibili';
             //OPTIONDEFAULT.setAttribute('selected', true);
             OPTIONDEFAULT.setAttribute('disabled', true);
             veicoloId.appendChild(OPTIONDEFAULT);
@@ -261,8 +281,8 @@ function fetchVeicoli() {
                 
                 const OPTION = document.createElement('option');
                 
-                OPTION.value = element.veicoloId;
-                OPTION.textContent = element.veicoloId;
+                OPTION.value = element.id;
+                OPTION.textContent = element.id;
                 
                 veicoloId.appendChild(OPTION);
                 

@@ -247,6 +247,11 @@ header .btn-secondary:hover{
 }
 
 .bgFooter{
+    padding-top: .5rem;
+    padding-bottom: 3rem;
+    @include media-breakpoint-up(md){
+        padding-bottom: 1rem;
+    }
     background-color: $footer;
     a:hover{
        color: lighten($secondary,30%) !important;
