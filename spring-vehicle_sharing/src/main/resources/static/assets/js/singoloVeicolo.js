@@ -84,7 +84,7 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
   //buttonLink.textContent="Prenota ora";
   var demo = document.querySelector('#demo');
   document.querySelector('#btnPrenota').addEventListener('click', event => {
-	  
+  document.querySelector('#prenSuccess').innerHTML = '';
 	 if (isPrenotato(veicoloCompleto)) {
 		 demo.textContent = "Veicolo non disponibile in questa data";
 		 event.preventDefault();

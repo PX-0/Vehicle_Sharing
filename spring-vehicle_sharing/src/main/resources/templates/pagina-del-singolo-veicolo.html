@@ -80,12 +80,12 @@
 						</form>
 						<!-- <div th:text="${session.avvenuta}"></div> -->
 						<!-- <th:block th:text="${session.loggedUser == null} ? 'Devi effettuare il login per prenotare il veicolo' : ''"></th:block> -->
-						<p th:text="${success}" class="text-success"></p>
+						<p th:text="${success}" class="text-success" id="prenSuccess"></p>
                         
                         <!-- <div th:text="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}"></div>
                         <div style="color:red;" th:text="${session.loggedUser == null} ? 'Devi essere loggato per prenotare il veicolo' : ''" th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}" id="userId"></div>-->
 
-						<div id="demo"></div>
+						<div id="demo" class="text-danger"></div>
 
                     </div>
 
