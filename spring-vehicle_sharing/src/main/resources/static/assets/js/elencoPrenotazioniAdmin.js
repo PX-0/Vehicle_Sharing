@@ -242,7 +242,7 @@ function fetchUtenti() {
 			const OPTIONDEFAULT = document.createElement('option');
 			OPTIONDEFAULT.value = '-1';
             OPTIONDEFAULT.textContent = 'Utenti disponibili';
-            //OPTIONDEFAULT.setAttribute('selected', true);
+            OPTIONDEFAULT.setAttribute('selected', true);
             OPTIONDEFAULT.setAttribute('disabled', true);
             utenteId.appendChild(OPTIONDEFAULT);
 			
@@ -273,7 +273,7 @@ function fetchVeicoli() {
 			const OPTIONDEFAULT = document.createElement('option');
 			OPTIONDEFAULT.value = '-1';
             OPTIONDEFAULT.textContent = 'Veicoli disponibili';
-            //OPTIONDEFAULT.setAttribute('selected', true);
+            OPTIONDEFAULT.setAttribute('selected', true);
             OPTIONDEFAULT.setAttribute('disabled', true);
             veicoloId.appendChild(OPTIONDEFAULT);
 			
