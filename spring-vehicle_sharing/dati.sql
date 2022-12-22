@@ -65,8 +65,7 @@ insert into veicoli
 (id, modello, marca, colore, cilindrata, tipologia, alimentazione,descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins)
 values
 (7, "Swift", "Suzuki", "Grigio opaco", "1197cc", "Auto",
- "Ibrida", "La Suzuki Swift è una piccola a cinque porte particolarmente compatta e maneggevole. Oltre alle dimensioni, 
- la rende molto adatta all'uso urbano anche il fatto di essere ibrida leggera, con i vantaggi che ne conseguono",
+ "Ibrida", "La Suzuki Swift è una piccola a cinque porte particolarmente compatta e maneggevole.",
  "via dell'Arco di Travertino 8 00178", "Prolungato", "Swift.jpg", "Amministratore");
  
  insert into veicoli 
@@ -74,8 +73,7 @@ values
  cilindrata, tipologia, alimentazione,descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins)
 values
 (8, "Corsa", "Opel", "Rossa", "1199cc", "Auto",
- "Diesel", "La Opel Corsa è una delle auto che hanno segnato la storia del marchio Opel. Conta all'attivo sei generazioni che l'hanno vista come 
- una delle protagoniste dello scenario automobilistico inerente alle vetture da città o comunque a quelle di piccole dimensioni.",
+ "Diesel", "Conta all'attivo sei generazioni che l'hanno vista come una delle protagoniste dello scenario automobilistico inerente alle vetture da città o comunque a quelle di piccole dimensioni.",
  "via casilina 117 00182", "Giornaliero", "OpelCorsa.jpg", "Amministratore");
  
   insert into veicoli 
@@ -83,17 +81,14 @@ values
  cilindrata, tipologia, alimentazione,descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins)
 values
 (9, "Vespa", "Piaggio", "Rosso Fuoco ", "50cc", "Scooter",
- "Benzina", "Vespa Primavera 50 cc quattro tempi adotta l’innovativo motore i-get dotato di sensore barometrico integrato che monitora 
- costantemente la carburazione adattandola alle condizioni di guida, Vespa Primavera 50 è un concentrato di tecnologia. Iniezione elettronica e distribuzione a 3 valvole 
- (2 di aspirazione ed 1 di scarico) calibrate per favorire le prestazioni ed il contenimento dei consumi.",
+ "Benzina", "Vespa Primavera 50 cc quattro tempi adotta l’innovativo motore i-get dotato di sensore barometrico integrato",
  " via tuscolana 1520 00173 ", "Giornaliero", "Vespa.jpg", "Amministratore");
 insert into veicoli 
 (id, modello, marca, colore,
  cilindrata, tipologia, alimentazione,descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins)
 values
 (10, "A1", "Audi", "bianca ", "100cc", "Auto",
- "Diesel", "La seconda generazione di A1 Sportback, la compatta Audi più apprezzata
- , è caratterizzata da un design sportivo che fa subito colpo e da un’ampia flessibilità nelle opzioni di equipaggiamento",
+ "Diesel", "La seconda generazione di A1 Sportback, la compatta Audi più apprezzata, è caratterizzata da un design sportivo che fa subito colpo e da un’ampia flessibilità nelle opzioni di equipaggiamento",
  " Via Genova 10126 ", "Prolungato", "AudiA1.jpg", "Amministratore");
  
  insert into veicoli 
@@ -101,8 +96,7 @@ values
  cilindrata, tipologia, alimentazione,descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins)
 values
 (11, "Liberty", "Piaggio", "Grigio ", "125cc", "Scooter",
- "Benzina", "Piaggio Liberty 125 ABS è la risposta ai bisogni di mobilità e di libertà di un vasto pubblico alla ricerca di stile, leggerezza, facilità di guida e sicurezza. Un veicolo che si distingue per gli elevati standard di maneggevolezza, di agilità e di affidabilità, e per i contenuti tecnologici di primo piano: come il sistema di frenata con ABS (solo sulla ruota anteriore) e il propulsore i-get 
- (Italian Green Experience Technology) omologato Euro 5, raffreddato ad aria e dotato di iniezione elettronica e distribuzione a 3 valvole.",
+ "Benzina", "Piaggio Liberty 125 ABS è la risposta ai bisogni di mobilità e di libertà di un vasto pubblico alla ricerca di stile, leggerezza, facilità di guida e sicurezza.",
  " Via Parghelia 2, 00178 ", "Prolungato", "Liberty.jpg", "Amministratore");
 
 
@@ -111,7 +105,7 @@ insert into prenotazioni (id, data_prenotazione, pagamento_id, utente_id, veicol
 values (1,20230103000000, 1, "Mario", 1);
 
 INSERT INTO prenotazioni (utente_id, veicolo_id, data_prenotazione, pagamento_id) 
-values ('Paolo', 'Ferrari', 20230210101022, 2);
+values ('Paolo', 2, 20230210101022, 2);
 
 insert into prenotazioni (id, data_prenotazione, pagamento_id, utente_id, veicolo_id)
 values (3,20230124000000, 3, "Paolo", 3);
