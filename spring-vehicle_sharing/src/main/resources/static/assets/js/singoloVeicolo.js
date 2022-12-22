@@ -51,11 +51,7 @@ function CreateCard(url,title,desc,address,link,tipo,alim,dispNol,veicoloComplet
   document.querySelector('#veicoloId').value = title;
   
   
-<<<<<<< Updated upstream
   document.querySelector('#button-nav').setAttribute('href', "../utenti/login/" + title);
-=======
-  document.querySelector('#button-nav').setAttribute('href', "../utenti/login/"+ title);
->>>>>>> Stashed changes
   document.querySelector('#mioForm').setAttribute('action', "../prenotazioni/addPrenotazione/" + title);
   
 

@@ -56,7 +56,6 @@
               <!-- <li class="nav-item">
 			              <a href="utenti/login" class="btn btn-secondary ms-2" id="button-nav">Login</a>
 			            </li>-->
-<<<<<<< Updated upstream
 			            <li class="nav-item">
 			              <a th:if="${session.loggedUser} == null" href="../utenti/login" class="btn btn-secondary ms-md-2" id="button-nav">Login</a>
 			              <a th:if="${session.loggedUser} != null" href="../utenti/logout" class="btn btn-secondary ms-md-2" id="button-nav">Logout</a>
@@ -65,28 +64,6 @@
                 </div>
             </div>
         </nav>
-=======
-              <li class="nav-item">
-                <a
-                  th:if="${session.loggedUser} == null"
-                  href="../utenti/login"
-                  class="btn btn-secondary ms-2"
-                  id="button-nav"
-                  >Login</a
-                >
-                <a
-                  th:if="${session.loggedUser} != null"
-                  href="../utenti/logout"
-                  class="btn btn-secondary ms-2"
-                  id="button-nav"
-                  >Logout</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
->>>>>>> Stashed changes
     </header>
 
     <main>
@@ -107,10 +84,10 @@
                   <div id="disponibilitaNoleggio"></div>
                   <div id="posizione-attuale"></div>
                 </div>
-                <!-- div mappa -->
-                <div class="d-flex justify-content-center">
-                  <div id="map" class="ultramap"></div>
-                </div>
+              </div>
+              <!-- div mappa -->
+              <div class="d-inline-block">
+                <div id="map"></div>
               </div>
 
               <form
@@ -118,7 +95,7 @@
                 method="POST"
                 id="mioForm"
               >
-                <div class="container d-flex flex-nowrap">
+                <div class="container d-flex flex-nowrap p-0">
                   <input
                     type="date"
                     name="datePicker"
@@ -135,46 +112,6 @@
                   </button>
                 </div>
 
-<<<<<<< Updated upstream
-		<div class="container my-5">
-
-            <div class="card">
-
-                <img src="" alt="" id="immagineVeicolo" class="card-img-top">
-                <div class="card-body">
-
-                    <div class="card-title" id="veicoloIdTitolo"></div>
-
-                    <div class="card-text">
-                        <div id="descrizione"></div>
-                        
-                        <div id="alimentazione"></div>
-
-                        <div id="tipologia"></div>
-
-                        <div id="disponibilitaNoleggio"></div>
-
-                        <div id="posizione-attuale"></div>
-                        <!-- div mappa -->
-                        <div class="d-inline-block">
-                            <div id="map"></div>
-                        </div>
-
-						<form action="../prenotazioni/addPrenotazione" method="POST" id="mioForm">
-							<div class="container d-flex flex-nowrap p-0">
-                                <input type="date" name="datePicker" id="datePicker" class="form-control ms-0">
-                                <button type="submit" class="btn btn-secondary ms-1" id="btnPrenota" name="btnPrenota">Prenota</button>
-                            </div>
-
-							<input type="hidden" id="veicoloId" name="veicoloId">
-                        	<input type="hidden" th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}" id="userId" name="utenteId">
-						</form>
-						<!-- <div th:text="${session.avvenuta}"></div> -->
-						<!-- <th:block th:text="${session.loggedUser == null} ? 'Devi effettuare il login per prenotare il veicolo' : ''"></th:block> -->
-						<p th:text="${success}" class="text-success" id="prenSuccess"></p>
-                        
-                        <!-- <div th:text="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}"></div>
-=======
                 <input type="hidden" id="veicoloId" name="veicoloId" />
                 <input
                   type="hidden"
@@ -188,7 +125,6 @@
               <p th:text="${success}" class="text-success" id="prenSuccess"></p>
 
               <!-- <div th:text="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}"></div>
->>>>>>> Stashed changes
                         <div style="color:red;" th:text="${session.loggedUser == null} ? 'Devi essere loggato per prenotare il veicolo' : ''" th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}" id="userId"></div>-->
 
               <div id="demo" class="text-danger"></div>
