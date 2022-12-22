@@ -62,9 +62,10 @@ public class VeicoliMVC {
 			@RequestParam("alimentazione") String alimentazione, @RequestParam("descrizione")
 			String descrizione, @RequestParam(value = "disponibilitaNoleggio", required = false) 
 			String disponibilitaNoleggio, @RequestParam(value = "immagineVeicolo", required = false) 
-			/*String immagineVeicolo*/ MultipartFile file, 
-			@RequestParam(value = "posizioneAttuale", required = false) String posizioneAttuale, 
-			@RequestParam("tipologia") String tipologia) {
+			MultipartFile file, @RequestParam(value = "posizioneAttuale", required = false) 
+			String posizioneAttuale, @RequestParam("tipologia") String tipologia,
+			@RequestParam("modello") String modello, @RequestParam("marca") String marca,
+			@RequestParam("colore") String colore, @RequestParam("cilindrata") String cilindrata) {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
@@ -75,7 +76,12 @@ public class VeicoliMVC {
 		}
 		
 		Veicolo veicolo = new Veicolo();
-		veicolo.setVeicoloId(veicoloId);
+		veicolo.setCilindrata(cilindrata);
+		veicolo.setMarca(marca);
+		veicolo.setColore(colore);
+		veicolo.setCilindrata(cilindrata);
+		
+		
 		veicolo.setAlimentazione(alimentazione);
 		veicolo.setDescrizione(descrizione);
 		
@@ -129,8 +135,6 @@ public class VeicoliMVC {
 			}
 		}
 		
-		
-		
 		return "elenco-veicoli-amministrabili";
 	}
 	
@@ -142,15 +146,17 @@ public class VeicoliMVC {
 	}
 	
 	@PostMapping("editVeicolo")
-	public String editVeicolo(HttpSession session, @RequestParam("veicoloId") String veicoloId,
+	public String editVeicolo(HttpSession session, @RequestParam("veicoloId") int veicoloId,
 			@RequestParam("alimentazione") String alimentazione, @RequestParam("descrizione")
 			String descrizione, @RequestParam(value = "disponibilitaNoleggio", required = false) 
 			String disponibilitaNoleggio, @RequestParam(value = "immagineVeicolo", required = false) 
-			/*String immagineVeicolo*/ MultipartFile file, 
-			@RequestParam(value = "posizioneAttuale", required = false) String posizioneAttuale, 
-			@RequestParam("tipologia") String tipologia, @RequestParam("utenteIns") 
-			String utenteIns, @RequestParam("linkVeicolo") String linkVeicolo,
-			@RequestParam(defaultValue = "false", value = "imgCheck") boolean imgCheck, Model m) {
+			MultipartFile file, @RequestParam(value = "posizioneAttuale", required = false) 
+			String posizioneAttuale, @RequestParam("tipologia") String tipologia, 
+			@RequestParam("utenteIns") String utenteIns, @RequestParam("linkVeicolo") 
+			String linkVeicolo, @RequestParam(defaultValue = "false", value = "imgCheck") 
+			boolean imgCheck, Model m, @RequestParam("modello") String modello, 
+			@RequestParam("marca") String marca, @RequestParam("colore") String colore, 
+			@RequestParam("cilindrata") String cilindrata) {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
@@ -161,7 +167,13 @@ public class VeicoliMVC {
 		}
 		
 		Veicolo veicolo = new Veicolo();
-		veicolo.setVeicoloId(veicoloId);
+		veicolo.setId(veicoloId);
+		veicolo.setCilindrata(cilindrata);
+		veicolo.setMarca(marca);
+		veicolo.setColore(colore);
+		veicolo.setCilindrata(cilindrata);
+		
+		
 		veicolo.setAlimentazione(alimentazione);
 		veicolo.setDescrizione(descrizione);
 		

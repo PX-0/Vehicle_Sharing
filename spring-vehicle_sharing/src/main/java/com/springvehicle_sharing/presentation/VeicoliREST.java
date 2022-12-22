@@ -35,7 +35,7 @@ public class VeicoliREST {
 	}
 	
 	@GetMapping("veicoli/{id}")
-	public Veicolo findById(@PathVariable("id") String id) {
+	public Veicolo findById(@PathVariable("id") int id) {
 		return dao.findById(id).get();
 	}
 	
@@ -45,7 +45,7 @@ public class VeicoliREST {
 	}
 	
 	@DeleteMapping("veicoli/{id}")
-	public void deleteVeicolo(@PathVariable("id") String id) {
+	public void deleteVeicolo(@PathVariable("id") int id) {
 		
 		pDao.updateVeicoloId(id);
 		

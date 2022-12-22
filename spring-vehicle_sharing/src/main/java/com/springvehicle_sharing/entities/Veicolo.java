@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -19,16 +21,20 @@ import jakarta.persistence.Table;
 public class Veicolo {
 	
 	@Id
-	private String veicoloId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String modello;
+	private String marca;
+	private String colore;
+	private String cilindrata;
+
+	
 	
 	private String tipologia;
 	private String alimentazione;
 	private String descrizione;
 	private String posizioneAttuale;
 	private String disponibilitaNoleggio; // prolungato - giornaliero - no
-//	@Column(columnDefinition = "DATE")
-//    @DateTimeFormat(iso = ISO.DATE_TIME)
-//	private LocalDate dataPrenotazione;
 	private String immagineVeicolo;
 	
 	@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler", "veicoli", "prenotazioni"})
@@ -39,18 +45,8 @@ public class Veicolo {
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "veicolo"})
 	@OneToMany(mappedBy = "veicolo",  fetch = FetchType.LAZY)
 	private List<Prenotazione> prenotazioni;
-	
-	public Veicolo() {}
 
-	public String getVeicoloId() {
-		return veicoloId;
-	}
-
-	public void setVeicoloId(String veicoloId) {
-		this.veicoloId = veicoloId;
-	}
-
-	@JsonManagedReference
+//	@JsonManagedReference
 	public List<Prenotazione> getPrenotazioni() {
 		return prenotazioni;
 	}
@@ -99,14 +95,6 @@ public class Veicolo {
 		this.disponibilitaNoleggio = disponibilitaNoleggio;
 	}
 
-//	public LocalDate getDataPrenotazione() {
-//		return dataPrenotazione;
-//	}
-//
-//	public void setDataPrenotazione(LocalDate dataPrenotazione) {
-//		this.dataPrenotazione = dataPrenotazione;
-//	}
-
 	public String getImmagineVeicolo() {
 		return immagineVeicolo;
 	}
@@ -122,6 +110,46 @@ public class Veicolo {
 
 	public void setUtenteIns(ArchivioUtenti utenteIns) {
 		this.utenteIns = utenteIns;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getModello() {
+		return modello;
+	}
+
+	public void setModello(String modello) {
+		this.modello = modello;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public String getColore() {
+		return colore;
+	}
+
+	public void setColore(String colore) {
+		this.colore = colore;
+	}
+
+	public String getCilindrata() {
+		return cilindrata;
+	}
+
+	public void setCilindrata(String cilindrata) {
+		this.cilindrata = cilindrata;
 	}
 	
 }

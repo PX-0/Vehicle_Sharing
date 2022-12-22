@@ -13,6 +13,6 @@ public interface PrenotazioniDAO extends JpaRepository<Prenotazione, Integer> {
 	@Transactional
 	@Modifying
 	@Query(value = "UPDATE prenotazioni set veicolo_id = NULL WHERE veicolo_id = ?1", nativeQuery = true)
-	void updateVeicoloId(String veicoloId);
+	void updateVeicoloId(int veicoloId);
 	
 }

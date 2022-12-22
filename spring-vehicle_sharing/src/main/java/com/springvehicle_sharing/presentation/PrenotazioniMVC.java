@@ -37,53 +37,14 @@ public class PrenotazioniMVC {
 	
 	//UTENTE
 	
-//	@PostMapping("addPrenotazione")
-//	public String addPrenotazioneUtente(HttpSession session, Model m, 
-//			@RequestParam("utenteId") String u, @RequestParam("veicoloId") String v,
-//			@RequestParam("datePicker") String datePicker) {
-//		
-//		//String prevUrl = (String) session.getAttribute("prevUrl");
-//		
-//		//session.removeAttribute("prevUrl");
-////		System.out.println(u);
-////		System.out.println(v);
-//		
-//		if (session.getAttribute("loggedUser") == null) {
-//			//m.addAttribute("notLogged", true);
-//			return "redirect:/";
-//		}
-//
-//		String[] data = datePicker.split("-");
-//		
-//		Prenotazione prenotazione = new Prenotazione();
-//		prenotazione.setDataPrenotazione(LocalDateTime.of(LocalDate.of(Integer.valueOf(
-//				data[0]), Integer.valueOf(data[1]), Integer.valueOf(data[2])), 
-//				LocalTime.of(0, 0)));
-//		prenotazione.setVeicolo(daoV.findById(v).get());
-//		prenotazione.setUtente(daoU.findById(u).get());
-//		
-//		dao.save(prenotazione);
-//		
-//		//session.setAttribute("avvenuta", true);
-//		return "pagina-del-singolo-veicolo";
-//	}
-	
 	@PostMapping("addPrenotazione/{id}")
 	public String addPrenotazioneUtenteVeicoloID(HttpSession session, 
-			@RequestParam("utenteId") String u, @RequestParam("veicoloId") String v,
+			@RequestParam("utenteId") String u, @RequestParam("veicoloId") int v,
 			@RequestParam("datePicker") String datePicker, @PathVariable("id")
-			String veicoloID, RedirectAttributes redirectAttrs) {
+			int veicoloID, RedirectAttributes redirectAttrs) {
 		
-		//String prevUrl = (String) session.getAttribute("prevUrl");
-		
-		//session.removeAttribute("prevUrl");
-//		System.out.println(u);
-//		System.out.println(v);
-		
-		if (session.getAttribute("loggedUser") == null) {
-			//m.addAttribute("notLogged", true);
+		if (session.getAttribute("loggedUser") == null)
 			return "redirect:/";
-		}
 		
 		String[] data = datePicker.split("-");
 		
@@ -97,7 +58,6 @@ public class PrenotazioniMVC {
 		dao.save(prenotazione);
 		
 		redirectAttrs.addFlashAttribute("success", "Prenotazione avvenuta con successo!");
-		//m.addAttribute("success", "Prenotazione avvenuta con successo!");
 		return "redirect:/veicoli/" + veicoloID;
 	}
 	
@@ -139,7 +99,7 @@ public class PrenotazioniMVC {
 	@PostMapping("editPrenotazione")
 	public String editPrenotazione (HttpSession session,
 			@RequestParam("id") int id, @RequestParam("dataPrenotazione") String dataPrenotazione,
-			@RequestParam("veicoloId") String veicoloId,
+			@RequestParam("veicoloId") int veicoloId,
 			@RequestParam("utenteId") String utenteId, Model m) {
 		
 		String[] data = dataPrenotazione.split("-");

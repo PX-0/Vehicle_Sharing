@@ -52,26 +52,20 @@ function stampaVeicoli(elencoVeicoli) {
         
         const TR = document.createElement('tr');
 
-        /* "veicoloId": "Aovo",
-            "tipologia": "Monopattino",
-            "alimentazione": "Elettrico",
-            "descrizione": "AovoPro colore nero opaco",
-            "posizioneAttuale": "via tiburtina 1361 00131",
-            "disponibilitaNoleggio": "true",
-            "immagineVeicolo": "monopattinoAovo.jpg",
-            "utenteIns": {
-            "userId": "Amministratore",
-            "ultimaModifica": "2022-12-19T14:13:53",
-            "password": "Amministratore",
-            "firma": "Amministratore dei servizi",
-            "tipo": "A",
-            "nome": "Paolino",
-            "cognome": "Paperino",
-            "nascita": "20/08/1900",
-            "email": "paolino.paperino@paperopoli.com ",
-            "dataIscrizione": "2006-01-01T00:00:00"
-            },
-            "prenotazioni": []
+        /* 
+        	<th scope="col">Veicolo&nbsp;ID</th>
+	        <th scope="col">Modello</th>
+	        <th scope="col">Marca</th>
+	        <th scope="col">Colore</th>
+	        <th scope="col">Cilindrata</th>
+	        
+	        <th scope="col">Alimentazione</th>
+	        <th scope="col">Descrizione</th>
+	        <th scope="col">Disponibilità&nbsp;noleggio</th>
+	        <th scope="col">Immagine</th>
+	        <th scope="col">Posizione&nbsp;attuale</th>
+	        <th scope="col">Tipologia</th>
+	        <th scope="col">Inserito&nbsp;da</th>
         */
 	   
 	   	if (elencoVeicoli[i] == null) {
@@ -79,8 +73,26 @@ function stampaVeicoli(elencoVeicoli) {
 		}
             
         const TD = document.createElement('td');
-        TD.textContent = elencoVeicoli[i].veicoloId;
+        TD.textContent = elencoVeicoli[i].id;
         TR.appendChild(TD);
+            
+        const TD11 = document.createElement('td');
+        TD11.textContent = elencoVeicoli[i].modello;
+        TR.appendChild(TD11);
+            
+        const TD12 = document.createElement('td');
+        TD12.textContent = elencoVeicoli[i].marca;
+        TR.appendChild(TD12);
+            
+        const TD13 = document.createElement('td');
+        TD13.textContent = elencoVeicoli[i].colore;
+        TR.appendChild(TD13);
+            
+        const TD14 = document.createElement('td');
+        TD14.textContent = elencoVeicoli[i].cilindrata;
+        TR.appendChild(TD14);
+        
+  		
         
         const TD2 = document.createElement('td');
         TD2.textContent = elencoVeicoli[i].alimentazione;
@@ -92,7 +104,7 @@ function stampaVeicoli(elencoVeicoli) {
         
         const TD4 = document.createElement('td');
         TD4.setAttribute('value', elencoVeicoli[i].disponibilitaNoleggio);
-        //TD4.innerHTML = elencoVeicoli[i].disponibilitaNoleggio == 'true' ? '<i class="bi bi-check-circle-fill"></i>' : '<i class="bi bi-x-circle-fill"></i>';
+
         if (elencoVeicoli[i].disponibilitaNoleggio == 'No' || elencoVeicoli[i].disponibilitaNoleggio == 'no') {
 			TD4.textContent = 'Non disponibile';
 		} else {
@@ -104,16 +116,6 @@ function stampaVeicoli(elencoVeicoli) {
         const TD5 = document.createElement('td');
         TD5.textContent =  elencoVeicoli[i].immagineVeicolo;
         TD5.setAttribute('value', elencoVeicoli[i].immagineVeicolo);
-        //const IMG = document.createElement('img');
-        
-        //elencoVeicoli[i].immagineVeicolo = elencoVeicoli[i].immagineVeicolo.replace(String.fromCharCode(92),String.fromCharCode(92,92));
-        //var linkEdited = '@{' + elencoVeicoli[i].immagineVeicolo.substring(25);
-        //linkEdited += '}';
-        
-        //IMG.setAttribute('width', '125px');
-        //IMG.setAttribute('height', 'auto');
-        //IMG.setAttribute('th:src', linkEdited);
-        //TD5.appendChild(IMG);
         TR.appendChild(TD5);
         
         const TD6 = document.createElement('td');
@@ -130,18 +132,18 @@ function stampaVeicoli(elencoVeicoli) {
         TR.appendChild(TD8);
 
         const TD9 = document.createElement('td');
-        TD9.innerHTML = '<a href="#veicoloId" class="bi bi-pencil-fill" style="cursor:pointer";></a>';
-        TD9.addEventListener('click', () => {
+        //TD9.innerHTML = '<a href="#veicoloId" class="bi bi-pencil-fill" style="cursor:pointer"></a>';
+        
+        const AHREF = document.createElement('a');
+        AHREF.setAttribute('href', '#veicoloId');
+        AHREF.classList.add('bi', 'bi-pencil-fill');
+        AHREF.setAttribute('style', 'cursor:pointer; color:darkblue;');
+        
+        AHREF.addEventListener('click', () => {
 			document.querySelector('#mioForm').removeAttribute('hidden');
             document.querySelector('#veicoloId').value = TD.textContent;
             document.querySelector('#alimentazione').value = TD2.textContent;
             document.querySelector('#descrizione').value = TD3.textContent;
-            
-            /*if (TD4.getAttribute('value') == 'true') {
-				document.querySelector('#disponibilitaNoleggio').checked = true;
-			} else {
-				document.querySelector('#disponibilitaNoleggio').checked = false;
-			}*/
 			
 			switch (TD4.getAttribute('value')) {
 				case 'No' || 'no':
@@ -157,13 +159,24 @@ function stampaVeicoli(elencoVeicoli) {
 			document.querySelector('#posizioneAttuale').value = TD6.textContent;
 			document.querySelector('#tipologia').value = TD7.textContent;
 			document.querySelector('#utenteIns').value = TD8.getAttribute('value');
+			
+			
+			document.querySelector('#modello').value = TD11.textContent;
+			document.querySelector('#marca').value = TD12.textContent;
+			document.querySelector('#colore').value = TD13.textContent;
+			document.querySelector('#cilindrata').value = TD14.textContent;
         });
-
+		
+		TD9.appendChild(AHREF);
         TR.appendChild(TD9);
 
         const TD10 = document.createElement('td');
-        TD10.innerHTML = '<i class="bi bi-trash-fill" style="cursor:pointer";></i>';
-        TD10.addEventListener('click', () => {
+        //TD10.innerHTML = '<i class="bi bi-trash-fill" style="cursor:pointer";></i>';
+        
+        const ICON = document.createElement('i');
+        ICON.classList.add('bi', 'bi-trash-fill');
+        ICON.setAttribute('style', 'cursor:pointer; color:black;');
+        ICON.addEventListener('click', () => {
 	
 			fetch(`http://localhost:9014/api/veicoli/${TD.textContent}`, {
 				method: 'DELETE',
@@ -173,10 +186,11 @@ function stampaVeicoli(elencoVeicoli) {
 				LMAX--;
 				setTimeout(() => {
 						location.reload();
-					}, 500);
+					}, 1000);
 	
         });
 
+		TD10.appendChild(ICON);
         TR.appendChild(TD10);
 
         tableBody.appendChild(TR);
@@ -198,26 +212,78 @@ document.querySelector('#avantiBtn').addEventListener('click', () => {
 
 
 
-var veicoloId = document.querySelector('#veicoloId');
+var modello = document.querySelector('#modello');
+var marca = document.querySelector('#marca');
+var colore = document.querySelector('#colore');
+var cilindrata = document.querySelector('#cilindrata');
+
+
 var alimentazione = document.querySelector('#alimentazione');
 var descrizione = document.querySelector('#descrizione');
 
 var tipologia = document.querySelector('#tipologia');
 
-function checkVeicoloId(event) {
-    if (veicoloId.value.trim() == '') {
-        veicoloId.classList.remove('is-valid');
-        veicoloId.classList.add('is-invalid');
+function checkModello(event) {
+    if (modello.value.trim() == '') {
+        modello.classList.remove('is-valid');
+        modello.classList.add('is-invalid');
         event.preventDefault();
         return false;
     } else {
-        veicoloId.classList.remove('is-invalid');
-        veicoloId.classList.add('is-valid');
+        modello.classList.remove('is-invalid');
+        modello.classList.add('is-valid');
         return true;
     }
 }
 
-veicoloId.addEventListener('input', checkVeicoloId);
+modello.addEventListener('input', checkModello);
+
+function checkMarca(event) {
+    if (marca.value.trim() == '') {
+        marca.classList.remove('is-valid');
+        marca.classList.add('is-invalid');
+        event.preventDefault();
+        return false;
+    } else {
+        marca.classList.remove('is-invalid');
+        marca.classList.add('is-valid');
+        return true;
+    }
+}
+
+marca.addEventListener('input', checkMarca);
+
+function checkColore(event) {
+    if (colore.value.trim() == '') {
+        colore.classList.remove('is-valid');
+        colore.classList.add('is-invalid');
+        event.preventDefault();
+        return false;
+    } else {
+        colore.classList.remove('is-invalid');
+        colore.classList.add('is-valid');
+        return true;
+    }
+}
+
+colore.addEventListener('input', checkColore);
+
+function checkCilindrata(event) {
+    if (cilindrata.value.trim() == '') {
+        cilindrata.classList.remove('is-valid');
+        cilindrata.classList.add('is-invalid');
+        event.preventDefault();
+        return false;
+    } else {
+        cilindrata.classList.remove('is-invalid');
+        cilindrata.classList.add('is-valid');
+        return true;
+    }
+}
+
+cilindrata.addEventListener('input', checkCilindrata);
+
+
 
 function checkAlimentazione(event) {
     if (alimentazione.value.trim() == '') {
@@ -264,21 +330,30 @@ function checkTipologia(event) {
 
 tipologia.addEventListener('input', checkTipologia);
 
+function validator(event) {
+	
+	var chM = checkModello(event);
+	var chMa = checkMarca(event);
+	var chC = checkColore(event);
+	var chCi = checkCilindrata(event);
+	var chT = checkTipologia(event);
+	var chA = checkAlimentazione(event);
+	var chD = checkDescrizione(event);
+		
+	if (!chM || !chMa || !chC || !chCi || !chT || !chA || !chD)
+		return false;
+	
+	return true;
+}
+
 document.querySelector('#mioForm').addEventListener('submit', event => {
     
-    var idOk = checkVeicoloId(event);
-    var alimentazioneOk = checkAlimentazione(event);
-    var descrizioneOk = checkDescrizione(event);
-    var tipologiaOk = checkTipologia(event);
-
-    if (!idOk || !alimentazioneOk || !descrizioneOk || !tipologiaOk) {
+    if (!validator(event)) {
         event.preventDefault();
         return;
     }
     
     setTimeout(() => {
 		location.reload();
-	}, 500);
-    
+	}, 1000);
 });
-

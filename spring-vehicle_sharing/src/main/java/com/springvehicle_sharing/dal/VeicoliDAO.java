@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.springvehicle_sharing.entities.Veicolo;
 
 @Repository
-public interface VeicoliDAO extends JpaRepository<Veicolo, String>{
+public interface VeicoliDAO extends JpaRepository<Veicolo, Integer>{
 
 }

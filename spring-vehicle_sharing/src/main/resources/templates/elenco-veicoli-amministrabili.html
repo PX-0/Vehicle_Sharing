@@ -52,6 +52,11 @@
                     <thead>
                         <tr>
                             <th scope="col">Veicolo&nbsp;ID</th>
+                            <th scope="col">Modello</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Colore</th>
+                            <th scope="col">Cilindrata</th>
+                            
                             <th scope="col">Alimentazione</th>
                             <th scope="col">Descrizione</th>
                             <th scope="col">Disponibilità&nbsp;noleggio</th>
@@ -71,11 +76,26 @@
             </div>
 
             <form action="editVeicolo" method="post" class="mb-5 shadow p-5" id="mioForm" enctype="multipart/form-data" hidden>
-                <div class="mb-4">
-                    <label for="veicoloId" class="form-label">Veicolo (ID)</label>
-                    <input type="text" class="form-control" id="veicoloId" name="veicoloId" readonly>
-                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                </div>
+                <div class="mb-3">
+                     <label for="veicoloId" class="form-label">ID del veicolo</label>
+                     <input type="number" class="form-control" id="veicoloId" name="veicoloId" readonly>
+                 </div>
+                <div class="mb-3">
+                     <label for="modello" class="form-label">Modello</label>
+                     <input type="text" class="form-control" id="modello" name="modello">
+                 </div>
+                 <div class="mb-3">
+                     <label for="marca" class="form-label">Marca</label>
+                     <input type="text" class="form-control" id="marca" name="marca">
+                 </div>
+                 <div class="mb-3">
+                     <label for="colore" class="form-label">Colore</label>
+                     <input type="text" class="form-control" id="colore" name="colore">
+                 </div>
+                 <div class="mb-3">
+                     <label for="cilindrata" class="form-label">Cilindrata</label>
+                     <input type="text" class="form-control" id="cilindrata" name="cilindrata">
+                 </div>
                 <div class="mb-4">
                     <label for="alimentazione" class="form-label">Alimentazione</label>
                     <input type="text" class="form-control" id="alimentazione" name="alimentazione">
