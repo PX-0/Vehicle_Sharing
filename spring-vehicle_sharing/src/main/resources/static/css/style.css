@@ -11456,13 +11456,6 @@ header .btn-secondary:hover {
   background: #f8f8f8;
 }
 
-@media (min-width: 768px) {
-  #mioForm {
-    max-width: 40%;
-    margin: 0 auto;
-  }
-}
-
 /* -------------------------------------------------------------------------- */
 /*                                PAGINA LOGIN                                */
 /* -------------------------------------------------------------------------- */
@@ -11513,22 +11506,43 @@ header .btn-secondary:hover {
 /* -------------------------------------------------------------------------- */
 /*                           PAGINA VEICOLO SINGOLO                           */
 /* -------------------------------------------------------------------------- */
+.wrapper-card-singolo {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.wrapper-card-singolo .card {
+  border: none !important;
+  background: #F0FCF7;
+}
+
+.wrapper-card-singolo .card .card-img-top {
+  border-radius: 20px;
+}
+
+.map-wrapper {
+  width: 100%;
+}
+
 #map {
   height: 7rem;
-  width: 15rem;
+  width: 100%;
 }
 
 @media (min-width: 576px) {
   #map {
     height: 12rem;
-    width: 30rem;
   }
 }
 
 @media (min-width: 768px) {
   #map {
     height: 17rem;
-    width: 40rem;
   }
 }
 
