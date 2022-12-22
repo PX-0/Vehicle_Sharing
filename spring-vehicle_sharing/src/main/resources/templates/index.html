@@ -50,8 +50,12 @@
             <li class="nav-item">
               <a class="nav-link" href="../other/novità">Novità</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="utenti/login" class="btn btn-secondary ms-2" id="button-nav">Login</a>
+            </li>-->
+            <li class="nav-item">
+              <a th:if="${session.loggedUser} == null" href="utenti/login" class="btn btn-secondary ms-2" id="button-nav">Login</a>
+              <a th:if="${session.loggedUser} != null" href="utenti/logout" class="btn btn-secondary ms-2" id="button-nav">Logout</a>
             </li>
           </ul>
         </div>
@@ -213,9 +217,9 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script th:src="@{/assets/js/index.js}"></script>
-  <script th:src="@{/assets/js/loginCheck.js}"></script>
+  <!-- <script th:src="@{/assets/js/loginCheck.js}"></script> vedi l'header -->
 
-  <div id="user-session-data" hidden th:text="${session.loggedUser}"></div>
+  <!-- <div id="user-session-data" hidden th:text="${session.loggedUser}"></div> -->
 </body>
 
 </html>
