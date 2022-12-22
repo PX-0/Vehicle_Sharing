@@ -11427,7 +11427,15 @@ header .btn-secondary:hover {
 }
 
 .bgFooter {
+  padding-top: .5rem;
+  padding-bottom: 3rem;
   background-color: #00456c;
+}
+
+@media (min-width: 768px) {
+  .bgFooter {
+    padding-bottom: 1rem;
+  }
 }
 
 .bgFooter a:hover {
