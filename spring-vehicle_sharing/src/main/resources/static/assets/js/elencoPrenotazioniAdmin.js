@@ -110,7 +110,7 @@ function stampaPrenotazioni(elencoPrenotazioni) {
         TR.appendChild(TD3);
         
         const TD4 = document.createElement('td');
-        TD4.textContent = elencoPrenotazioni[i].veicolo.veicoloId;
+        TD4.textContent = elencoPrenotazioni[i].veicolo.id;
         TR.appendChild(TD4);
 
         const TD5 = document.createElement('td');
