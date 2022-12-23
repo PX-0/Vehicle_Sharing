@@ -11335,11 +11335,6 @@ pre {
 /* -------------------------------------------------------------------------- */
 /*                                 CALENDARIO                                 */
 /* -------------------------------------------------------------------------- */
-.dataPicker {
-  padding-top: .5rem;
-  max-width: 66%;
-}
-
 .table-calendario {
   border-radius: 10px;
   background-color: #f7fdfb;
@@ -11365,12 +11360,20 @@ pre {
   }
 }
 
+.badge-readMore {
+  border: 1px solid #00659f;
+}
+
 #veicoliNoleggiati tr:last-child {
   border-bottom: 1px solid #f7fdfb;
 }
 
 #tabellaDisponibili thead h3, #tabellaDisponibili thead .h3, #tabellaNoleggiati thead h3, #tabellaNoleggiati thead .h3 {
   font-weight: 700;
+}
+
+#tabellaDisponibili .btn-primary, #tabellaNoleggiati .btn-primary {
+  color: white;
 }
 
 @media (min-width: 576px) {

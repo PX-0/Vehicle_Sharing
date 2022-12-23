@@ -129,11 +129,6 @@ pre{
 /*                                 CALENDARIO                                 */
 /* -------------------------------------------------------------------------- */
 
-.dataPicker {
-    padding-top: .5rem;
-    max-width: 66%;
-}
-
 .table-calendario {
     border-radius: 10px;
     background-color: $calendario-bg;
@@ -158,6 +153,12 @@ pre{
     }
 }
 
+.badge-readMore {
+    border: 1px solid $secondary;
+}
+
+
+
 #veicoliNoleggiati {
     tr:last-child {
         border-bottom: 1px solid $calendario-bg;
@@ -169,6 +170,9 @@ pre{
         h3 {
             font-weight: 700;
         }
+    }
+    .btn-primary {
+        color: white;
     }
 }
 
