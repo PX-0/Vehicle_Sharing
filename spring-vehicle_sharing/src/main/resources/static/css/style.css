@@ -11283,44 +11283,63 @@ pre {
 /* -------------------------------------------------------------------------- */
 /*                                   BANNER                                   */
 /* -------------------------------------------------------------------------- */
-.home-swiper .swiper {
+.swiper {
   width: 100%;
   height: auto;
   padding-bottom: 4rem !important;
 }
 
-.home-swiper .card-body {
+#area-personale.swiper {
+  width: 20rem;
+  max-width: 40rem;
+  height: auto;
+  padding-bottom: 4rem !important;
+}
+
+.card-body {
   text-align: center;
 }
 
-.home-swiper .card-title {
+.card-text:hover {
+  cursor: default !important;
+}
+
+.card-title {
   font-size: 1.5rem !important;
   font-weight: 600 !important;
 }
 
-.home-swiper .img-fx {
+.img-fx {
   overflow: hidden;
 }
 
-.home-swiper .swiper .card {
+.swiper .card {
   max-height: 22rem !important;
 }
 
-.home-swiper .swiper .card img {
+.swiper .card img {
   max-height: 12rem;
 }
 
-.home-swiper .swiper .card, .home-swiper .swiper .card .btn, .home-swiper .swiper .card .card-body, .home-swiper .swiper .card img {
+#area-personale.swiper .card {
+  max-height: 18rem !important;
+}
+
+#area-personale.swiper .card img {
+  max-height: 12rem;
+}
+
+.swiper .card, .swiper .card .btn, .swiper .card .card-body, .swiper .card img {
   transition: all .2s;
 }
 
-.home-swiper .swiper .card:hover {
+.swiper .card:hover {
   box-shadow: 1px 16px 13px -10px rgba(140, 140, 140, 0.57);
   -webkit-box-shadow: 1px 16px 13px -10px rgba(140, 140, 140, 0.57);
   -moz-box-shadow: 1px 16px 13px -10px rgba(140, 140, 140, 0.57);
 }
 
-.home-swiper .swiper .card:hover img {
+.swiper .card:hover img {
   transform: scale(1.1);
   width: 100%;
   height: auto;

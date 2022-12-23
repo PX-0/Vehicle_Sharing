@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Princesharing</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="../../resources/static/css/style.css" th:href="@{/css/style.css}" />
+  <link rel="stylesheet" href="../../resources/static/css/style.css" th:href="@{/css/style.css}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
 </head>
 
@@ -58,12 +58,12 @@
     <div id="hello-utente" class="text-center fs-1 text-secondary">
     </div>
 
-    <div id="msg-NotBooking"></div>
+    <div id="msg-NotBooking" class="text-center text-primary pt-5 px-3"></div>
 
     <div id="prenotazioni-utente" class="text-center text-primary"></div>
 
-      <div class="container prenotazioni-cards py-4">
-        <div class="swiper">
+      <div class="container py-4">
+        <div class="swiper" id="area-personale">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper" id="swiper-box"></div>
           <div class="swiper-pagination"></div>
