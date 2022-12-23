@@ -91,24 +91,31 @@
         </div>
     </section>
 
-    <section id="calendario" class="my-5">
-      <!-- inizio calendario -->
-      <div class="container">
-        <!-- inizio container -->
+    <!-- inizio calendario -->
+    <section id="calendario" class="my-5"> 
+      <!-- inizio container -->
+      <div class="container"> 
         <h2 class="sectionTitle-calendario text-secondary fs-1 fw-bold">LE NOSTRE DISPONIBILITÀ</h2>
-        <div class="row justify-content-start mb-3">
-          <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-            <label>Verifica la disponibilità dei nostri veicoli:</label>
-            <div class="dataPicker">
-              <input type="date" id="datePicker" class="form-control">
-            </div>
-            <div id="dataScelta"></div>
+        <div class="row justify-content-between mb-3">
+          <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 pt-3">
+            <label for="datePicker">Filtra per data:</label>
+            <input type="date" id="datePicker" class="form-control">
+          </div>
+          <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 pt-3 text-sm-end">
+            <label for="filtroVeicoli">Filtra per tipo di veicolo:</label>
+            <select id="filtroVeicoli" class="form-select">
+              <option selected value="Tutti">Tutti i veicoli</option>
+              <option value="Auto">Automobili</option>
+              <option value="Scooter">Scooter</option>
+              <option value="Bicicletta">Biciclette</option>
+              <option value="Monopattino">Monopattini</option>
+            </select>
           </div>
         </div>
+        <!-- inizio row -->
         <div class="row table-calendario shadow px-3 pt-3">
-          <!-- inizio row -->
+          <!-- colonna 1 -->
           <div id="tabellaDisponibili" class="col-12 col-sm-6 px-0">
-            <!-- colonna 1 -->
             <table class="table table-hover align-middle pe-0">
               <thead class="">
                 <tr>
@@ -120,8 +127,8 @@
               <tbody id="veicoliDisponibili"></tbody>
             </table>
           </div>
+          <!-- colonna 2 -->
           <div id="tabellaNoleggiati" class="col-12 col-sm-6 px-0">
-            <!-- colonna 2 -->
             <table class="table table-hover align-middle px-0">
               <thead>
                 <tr>
@@ -133,9 +140,12 @@
               <tbody id="veicoliNoleggiati"></tbody>
             </table>
           </div>
-        </div> <!-- fine row -->
-      </div> <!-- fine container -->
-    </section> <!-- fine calendario -->
+        <!-- fine row -->
+        </div>
+      <!-- fine container -->
+      </div>
+    <!-- fine calendario -->
+    </section>
 
     <section id="chart">
       <div class="desc-chart">

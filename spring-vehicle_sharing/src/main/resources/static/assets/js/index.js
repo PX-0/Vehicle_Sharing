@@ -49,6 +49,9 @@ calendario.addEventListener("change", getCalendario);
 document.getElementById("datePicker").valueAsDate = new Date();
 document.getElementById("datePicker").setAttribute("min", dataOggi());
 
+var filtro = document.getElementById("filtroVeicoli");
+filtro.addEventListener("change", getCalendario);
+
 getCalendario();
 
 function dataOggi() {
@@ -84,6 +87,15 @@ function isPrenotato(veicolo, data) {
     return false;
 }
 
+function filtra(veicolo, tipo) {
+  console.log("tipologia veicolo: " + veicolo.tipologia + " - tipo: " + tipo);
+  if (veicolo.tipologia == tipo || tipo == "Tutti") {
+    return true;
+  } else {
+    return false
+  }
+}
+
 function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
   var tbody1 = document.getElementById(tabella1);
   tbody1.innerHTML = "";
@@ -94,18 +106,17 @@ function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
   var noleggiati = 0;
 
   for (const veicolo of listaVeicoli) {
-    if (!isPrenotato(veicolo, calendario.value)) {
+    if (!isPrenotato(veicolo, calendario.value) && filtra(veicolo, filtro.value)) {
       riempiTabella(veicolo, tabella1);
       if (veicolo.disponibilitaNoleggio != "No") {
         disponibili++;
       }
-    } else {
+    } else if (isPrenotato(veicolo,calendario.value) && filtra(veicolo, filtro.value)) {
       riempiTabella(veicolo, tabella2);
       if (veicolo.disponibilitaNoleggio != "No") {
         noleggiati++;
       }
     }
-    
   }
 
   printPlaceholderCard((disponibili - noleggiati), tabella2);
@@ -134,7 +145,7 @@ function riempiTabella(veicolo, tabella) {
     
     ulVeicolo.innerHTML = "<li>" + "Tipologia: " + veicolo.tipologia + "</li>" +
                             "<li class='pe-4 py-2' >" + "Descrizione: " +
-                              "<button onclick='showMore(" + veicolo.id + ")' onblur='showLess("+ veicolo.id  +")' id='btnMore" + veicolo.id + "' class='btn btn-secondary btn-sm'>" +
+                              "<button onclick='showMore(" + veicolo.id + ")' onblur='showLess("+ veicolo.id  +")' id='btnMore" + veicolo.id + "' class='badge badge-readMore bg-secondary'>" +
                               "Espandi</button><br>" +
                               "<div id='more" + veicolo.id + "' style='display: none;' class='pt-1 px-2 mt-1 border bg-white rounded'>" + veicolo.descrizione + "</p></li>" + 
                           "<li>" + "Posizione attuale: <br> " + veicolo.posizioneAttuale + "</li>";
@@ -168,7 +179,7 @@ function riempiTabella(veicolo, tabella) {
 
     if (!isPrenotato(veicolo, calendario.value)) {
       col1.classList.add("text-secondary");
-      col1.innerHTML = "<b>Veicolo disponibile</b>";
+      col1.innerHTML = "<b>Veicolo disponibile </b>";
       col2.innerHTML = "<a href='veicoli/"+ veicolo.id  + "' type='button' class='btn btn-primary p'>Prenota ora</button>";        
     } else {
       col1.classList.add("text-danger");
@@ -231,7 +242,6 @@ function printPlaceholderCard(n, tabella) {
     // card title
     var cardTitle = document.createElement("h5");
     cardTitle.setAttribute("class", "card-title text-start");
-    // cardTitle.setAttribute("class", "card-title placeholder-glow text-start");
     cardTitle.innerHTML = "Slot libero";
     cardBody.appendChild(cardTitle);
 
