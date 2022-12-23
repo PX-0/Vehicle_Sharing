@@ -11345,6 +11345,23 @@ pre {
   }
 }
 
+@media (min-width: 576px) {
+  .tr-fixed {
+    height: 25rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .div-overflow {
+    overflow: auto;
+    height: 10rem;
+  }
+}
+
+.div-overflow ul li {
+  margin: .5rem 0;
+}
+
 #veicoliNoleggiati tr:last-child {
   border-bottom: 1px solid #f7fdfb;
 }
@@ -11355,22 +11372,13 @@ pre {
 
 @media (min-width: 576px) {
   #tabellaDisponibili thead th {
-    border-right: 1px solid #efefef;
+    border-right: 1px solid #dee2e6;
   }
   #veicoliDisponibili td {
-    border-right: 1px solid #efefef;
+    border-right: 1px solid #dee2e6;
   }
   #veicoliDisponibili tr:last-child, #veicoliNoleggiati tr:last-child {
     border-bottom: 1px solid #f7fdfb;
-  }
-  .tr-veicoli {
-    height: 380px;
-  }
-}
-
-@media (min-width: 768px) {
-  .tr-veicoli {
-    height: 320px;
   }
 }
 
@@ -11485,7 +11493,6 @@ header .btn-secondary:hover {
 }
 
 .gradient-custom-2 {
-  /* fallback for old browsers */
   background-image: linear-gradient(to right top, #26a96c, #009391, #0077a5, #005799, #4a326f);
   border-top-right-radius: 0rem;
   border-bottom-right-radius: .3rem;
