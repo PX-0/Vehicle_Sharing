@@ -43,7 +43,7 @@ function creaGrafico() {
 	//datiChart[2] *= 0;
 	datiChart[2] *= .6;
 	datiChart[3] *= .4;
-	console.log(datiChart);
+	//console.log(datiChart);
 	new Chart(ctx, {
 	  type: 'pie',
 	  data: {
