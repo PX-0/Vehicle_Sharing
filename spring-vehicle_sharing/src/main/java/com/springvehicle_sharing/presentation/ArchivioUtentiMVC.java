@@ -205,4 +205,13 @@ public class ArchivioUtentiMVC {
 		return "redirect:/";
 	}
 	
+	@GetMapping("areaPersonale")
+	public String areaPersonale(HttpSession session) {
+		
+		if (session.getAttribute("loggedUser") != null)
+			return "redirect:/";
+		
+		return "areaPersonale";
+	}
+	
 }
