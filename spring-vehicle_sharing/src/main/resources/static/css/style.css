@@ -11327,6 +11327,8 @@ pre {
 
 .swiper .card:hover img {
   transform: scale(1.1);
+  width: 100%;
+  height: auto;
 }
 
 /* ------------------------------- END BANNER ------------------------------- */
@@ -11426,7 +11428,7 @@ header .btn-secondary:hover {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                 FINE NAVBAR                                */
+/*                                     MAP                                    */
 /* -------------------------------------------------------------------------- */
 .leaflet-control-zoom-out,
 .leaflet-control-zoom-in {
@@ -11437,6 +11439,39 @@ header .btn-secondary:hover {
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
   border: 1px solid transparent !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    CHART                                   */
+/* -------------------------------------------------------------------------- */
+.wrapper-chart {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  background-color: white;
+  padding: 2rem;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .wrapper-chart {
+    width: 70%;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrapper-chart {
+    width: 50%;
+  }
+}
+
+.desc-chart {
+  text-align: center;
+}
+
+#myChart {
+  display: inline-block !important;
 }
 
 /* -------------------------------------------------------------------------- */

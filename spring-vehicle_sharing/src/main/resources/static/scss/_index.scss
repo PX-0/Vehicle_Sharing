@@ -111,6 +111,8 @@ pre{
 
     img{
         transform: scale(1.1);
+        width: 100%;
+        height: auto;
     }
 
     // .card-body{
@@ -234,9 +236,8 @@ header .btn-secondary:hover{
     color: white !important;
 }
 
-
 /* -------------------------------------------------------------------------- */
-/*                                 FINE NAVBAR                                */
+/*                                     MAP                                    */
 /* -------------------------------------------------------------------------- */
 
 .leaflet-control-zoom-out,
@@ -249,6 +250,39 @@ header .btn-secondary:hover{
 .leaflet-touch .leaflet-bar {
     border: 1px solid transparent !important;
 }
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    CHART                                   */
+/* -------------------------------------------------------------------------- */
+
+.wrapper-chart{
+    border: 1px solid transparent;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    background-color: white;
+    padding: 2rem;
+    width: 100%;
+    height: auto;
+
+    @include media-breakpoint-up(md){
+        width: 70%;
+    }
+    @include media-breakpoint-up(lg){
+        width: 50%;
+    }
+}
+.desc-chart{
+    text-align: center;
+}
+
+#myChart{
+    display: inline-block !important;
+}
+
+
+
+
 
 /* -------------------------------------------------------------------------- */
 /*                                   FOOTER                                   */
