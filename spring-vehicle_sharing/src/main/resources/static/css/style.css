@@ -11185,8 +11185,8 @@ fieldset:disabled .btn {
 /* -------------------------------------------------------------------------- */
 .table-veicoliAmm {
   border: 1px solid transparent;
-  border-radius: 8px;
-  background-color: #F0FCF7;
+  border-radius: 12px;
+  background-color: white;
 }
 
 .text-truncate {
@@ -11481,7 +11481,7 @@ header .btn-secondary:hover {
   border: 1px solid transparent;
   padding: 1.2rem;
   border-radius: 10px;
-  background: #f8f8f8;
+  background: white !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -11600,4 +11600,11 @@ header .btn-secondary:hover {
 
 .card a {
   color: white !important;
+}
+
+.table-booking {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: white;
+  padding: 1rem;
 }
