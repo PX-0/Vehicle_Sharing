@@ -50,6 +50,9 @@
             <li class="nav-item">
               <a class="nav-link" href="../other/novità">Novità</a>
             </li>
+            <li class="nav-item" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'B'">
+              <a class=" nav-link" href="utenti/areaPersonale" > Area Personale</a>
+            </li>
             <!-- <li class="nav-item">
               <a href="utenti/login" class="btn btn-secondary ms-2" id="button-nav">Login</a>
             </li>-->
@@ -57,8 +60,10 @@
               <a class="nav-link" href="utenti/pannello">Pannello di lavoro</a>
             </li>
             <li class="nav-item">
-              <a th:if="${session.loggedUser} == null" href="utenti/login" class="btn btn-secondary ms-md-2" id="button-nav">Login</a>
-              <a th:if="${session.loggedUser} != null" href="utenti/logout" class="btn btn-secondary ms-md-2" id="button-nav">Logout</a>
+              <a th:if="${session.loggedUser} == null" href="utenti/login" class="btn btn-secondary ms-md-2"
+                id="button-nav">Login</a>
+              <a th:if="${session.loggedUser} != null" href="utenti/logout" class="btn btn-secondary ms-md-2"
+                id="button-nav">Logout</a>
             </li>
           </ul>
         </div>
@@ -86,8 +91,10 @@
         </div>
     </section>
 
-    <section id="calendario" class="my-5"> <!-- inizio calendario -->     
-      <div class="container"> <!-- inizio container -->     
+    <section id="calendario" class="my-5">
+      <!-- inizio calendario -->
+      <div class="container">
+        <!-- inizio container -->
         <h2 class="sectionTitle-calendario text-secondary fs-1 fw-bold">LE NOSTRE DISPONIBILITÀ</h2>
         <div class="row justify-content-start mb-3">
           <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
@@ -98,8 +105,10 @@
             <div id="dataScelta"></div>
           </div>
         </div>
-        <div class="row table-calendario shadow px-3 pt-3"> <!-- inizio row -->
-          <div id="tabellaDisponibili" class="col-12 col-sm-6 px-0"> <!-- colonna 1 -->
+        <div class="row table-calendario shadow px-3 pt-3">
+          <!-- inizio row -->
+          <div id="tabellaDisponibili" class="col-12 col-sm-6 px-0">
+            <!-- colonna 1 -->
             <table class="table table-hover align-middle pe-0">
               <thead class="">
                 <tr>
@@ -111,7 +120,8 @@
               <tbody id="veicoliDisponibili"></tbody>
             </table>
           </div>
-          <div id="tabellaNoleggiati" class="col-12 col-sm-6 px-0"> <!-- colonna 2 -->
+          <div id="tabellaNoleggiati" class="col-12 col-sm-6 px-0">
+            <!-- colonna 2 -->
             <table class="table table-hover align-middle px-0">
               <thead>
                 <tr>
