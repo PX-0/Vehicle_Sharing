@@ -87,49 +87,106 @@
                     </ul>
                     <div class="wrapper-output">
                         <pre class="text-light" disabled>
-                        {   
-                            {"veicoloId": "BMW",
-                            "tipologia": "Auto",
-                            "alimentazione": "Diesel",
-                            "descrizione": "boh",
-                            "posizioneAttuale": "Italia, Roma, via tiburtina 13",
-                            "disponibilitaNoleggio": "Giornaliero",
-                            "immagineVeicolo": "hero-bg2.jpg",
-                            "utenteIns": {
-                            "userId": "Amministratore",
-                            "ultimaModifica": "2022-12-19T14:18:34",
-                            "password": "Amministratore",
-                            "firma": "Amministratore dei servizi",
-                            "tipo": "A",
-                            "nome": "Paolino",
-                            "cognome": "Paperino",
-                            "nascita": "20/08/1900",
-                            "email": "paolino.paperino@paperopoli.com ",
-                            "dataIscrizione": "2006-01-01T00:00:00"
-                            },
-                            "prenotazioni": []
-                            },
                             {
-                            "veicoloId": "Ferrari",
-                            "tipologia": "Auto",
-                            "alimentazione": "Benzina",
-                            "descrizione": "599xx evo, colore nero, 499,99cc",
-                            "posizioneAttuale": "Italia, Roma, Via Genzano 89",
-                            "disponibilitaNoleggio": "true",
-                            "immagineVeicolo": "https://www.gtspiritmedia.com/gtspirit/uploads/2015/06/Ferrari-599XX-For-Sale6.jpg",
-                            "utenteIns": {
-                            "userId": "Amministratore",
-                            "ultimaModifica": "2022-12-19T14:18:34",
-                            "password": "Amministratore",
-                            "firma": "Amministratore dei servizi",
-                            "tipo": "A",
-                            "nome": "Paolino",
-                            "cognome": "Paperino",
-                            "nascita": "20/08/1900",
-                            "email": "paolino.paperino@paperopoli.com ",
-                            "dataIscrizione": "2006-01-01T00:00:00"
-                            }
-                        }</pre>
+                                "id": 1,
+                                "modello": "Fiat 600",
+                                "marca": "Fiat",
+                                "colore": "Blue cobalto",
+                                "cilindrata": "900cc",
+                                "tipologia": "Auto",
+                                "alimentazione": "Benzina",
+                                "descrizione": "Riguardo i dettagli del telaio auto responsabile della tenuta di strada, comportamento di guida e comfort di guida. Sospensioni anteriori e Coil springs. sospensioni posteriori. Il sistema di frenata Seicento Sporting comprende Dischi nella parte anteriore e Tamburo nella parte posteriore. 3 porte e 5 posti",
+                                "posizioneAttuale": "Via dei colli della serpentara 00139",
+                                "disponibilitaNoleggio": "Prolungato",
+                                "immagineVeicolo": "Fiato600.jpg",
+                                "utenteIns": {
+                                "userId": "Amministratore",
+                                "ultimaModifica": "2022-12-22T17:18:35",
+                                "password": "Amministratore",
+                                "firma": "Amministratore dei servizi",
+                                "tipo": "A",
+                                "nome": "Paolino",
+                                "cognome": "Paperino",
+                                "nascita": "20/08/1900",
+                                "email": "paolino.paperino@paperopoli.com ",
+                                "dataIscrizione": "2006-01-01T00:00:00"
+                                },
+                                "prenotazioni": [
+                                {
+                                "id": 1,
+                                "utente": {
+                                "userId": "Mario",
+                                "ultimaModifica": "2020-04-05T00:00:00",
+                                "password": "Mauri",
+                                "firma": "Utente",
+                                "tipo": "B",
+                                "nome": "Rossi",
+                                "cognome": "Rossi",
+                                "nascita": "31/12/1998",
+                                "email": "pino.rex123@pip.com",
+                                "dataIscrizione": "2020-03-04T00:00:00"
+                                },
+                                "pagamento": {
+                                "id": 1,
+                                "metodoPagamento": "Carta di credito",
+                                "nCarta": "1342985084639857",
+                                "scadenza": "2024-01-01",
+                                "cvv": "69",
+                                "importo": 800
+                                },
+                                "dataPrenotazione": "2023-01-03T00:00:00"
+                                }
+                                ]
+                                },
+                                {
+                                "id": 2,
+                                "modello": "599xx evo",
+                                "marca": "Ferrari",
+                                "colore": "Nero",
+                                "cilindrata": "499,99cc",
+                                "tipologia": "Auto",
+                                "alimentazione": "Benzina",
+                                "descrizione": "autovettura coupé, ala mobile come quella per la F1 solamente che non è controllata dal pilota ma elettronicamente tramite sensori che rilevano se si è su un rettilineo o in curva e adatta da sola la resistenza dell'ala",
+                                "posizioneAttuale": "Italia, Roma, Via Genzano 89",
+                                "disponibilitaNoleggio": "Giornaliero",
+                                "immagineVeicolo": "https://www.gtspiritmedia.com/gtspirit/uploads/2015/06/Ferrari-599XX-For-Sale6.jpg",
+                                "utenteIns": {
+                                "userId": "Amministratore",
+                                "ultimaModifica": "2022-12-22T17:18:35",
+                                "password": "Amministratore",
+                                "firma": "Amministratore dei servizi",
+                                "tipo": "A",
+                                "nome": "Paolino",
+                                "cognome": "Paperino",
+                                "nascita": "20/08/1900",
+                                "email": "paolino.paperino@paperopoli.com ",
+                                "dataIscrizione": "2006-01-01T00:00:00"
+                                },
+                                "prenotazioni": [
+                                {
+                                "id": 2,
+                                "utente": {
+                                "userId": "Paolo",
+                                "ultimaModifica": "2022-12-22T17:18:35",
+                                "password": "paolo",
+                                "firma": "Utente con diritti minimi",
+                                "tipo": "B",
+                                "nome": "Paolo",
+                                "cognome": "DeSantis",
+                                "nascita": "20/10/2001",
+                                "email": "paolo.desantis@gmail.com",
+                                "dataIscrizione": "2010-08-01T10:20:40"
+                                },
+                                "pagamento": {
+                                "id": 2,
+                                "metodoPagamento": "Mastercard",
+                                "nCarta": "5167099046768999",
+                                "scadenza": "2025-01-01",
+                                "cvv": "321",
+                                "importo": 13.5
+                                },
+                                "dataPrenotazione": "2023-02-10T10:10:22"
+                                }</pre>
                     </div>
                 </div>
 
@@ -139,23 +196,26 @@
                         <li>L'API ha il seguente endpoint:</li>
                         <li>api/veicoli/{veicoloId}</li>
                         <li>Method: [GET]</li>
-                        <li>Esempio URL:<span class="bg-black text-light url-example " disabled>http://localhost:9014/api/veicoli/Ferrari</span></li>
+                        <li>Esempio URL:<span class="bg-black text-light url-example " disabled>http://localhost:9014/api/veicoli/10</span></li>
                         <li>Esempio Risposta:</li>
                     </ul>
                     <div class="wrapper-output">
                         <pre class="text-light" disabled>
                             {
-                                {
-                                "veicoloId": "Ferrari",
+                                "id": 10,
+                                "modello": "A1",
+                                "marca": "Audi",
+                                "colore": "bianca ",
+                                "cilindrata": "100cc",
                                 "tipologia": "Auto",
-                                "alimentazione": "Benzina",
-                                "descrizione": "599xx evo, colore nero, 499,99cc",
-                                "posizioneAttuale": "Italia, Roma, Via Genzano 89",
-                                "disponibilitaNoleggio": "true",
-                                "immagineVeicolo": "https://www.gtspiritmedia.com/gtspirit/uploads/2015/06/Ferrari-599XX-For-Sale6.jpg",
+                                "alimentazione": "Diesel",
+                                "descrizione": "La seconda generazione di A1 Sportback, la compatta Audi più apprezzata, è caratterizzata da un design sportivo che fa subito colpo e da un’ampia flessibilità nelle opzioni di equipaggiamento",
+                                "posizioneAttuale": " Via Genova 10126 ",
+                                "disponibilitaNoleggio": "Prolungato",
+                                "immagineVeicolo": "AudiA1.jpg",
                                 "utenteIns": {
                                 "userId": "Amministratore",
-                                "ultimaModifica": "2022-12-19T14:18:34",
+                                "ultimaModifica": "2022-12-22T17:18:35",
                                 "password": "Amministratore",
                                 "firma": "Amministratore dei servizi",
                                 "tipo": "A",
@@ -164,8 +224,9 @@
                                 "nascita": "20/08/1900",
                                 "email": "paolino.paperino@paperopoli.com ",
                                 "dataIscrizione": "2006-01-01T00:00:00"
-                                }
-                            }</pre>
+                                },
+                                "prenotazioni": []
+                                }</pre>
                     </div>
                 </div>
             </div>

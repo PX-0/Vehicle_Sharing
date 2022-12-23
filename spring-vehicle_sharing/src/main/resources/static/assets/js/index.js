@@ -278,11 +278,18 @@ function CreateCard(url,marca,desc,cc,alimentazione,link){
   var div = document.createElement('div');
   div.classList.add('img-fx');
   var img = document.createElement('img');
-  if(url.startsWith('https')){
-    img.setAttribute('src',"https://source.unsplash.com/300x400/?logo-"+marca);
+
+  if(url.startsWith('http')){
+    img.setAttribute('src',url);
+    
+  }else if(url==null){
+    
+    img.setAttribute('src',"../uploads/elementor-placeholder-image.jpg");
+    
   }else{
     img.setAttribute('src',"../assets/uploads/"+url);
   }
+
   img.classList.add('card-img-top',"img-fluid");
   div.appendChild(img);
   card.appendChild(div)
@@ -357,3 +364,5 @@ fetch(url).then(data=>{return data.json()})
       });
 
 })
+
+//img 100w h-auto

@@ -11189,6 +11189,10 @@ fieldset:disabled .btn {
   background-color: #F0FCF7;
 }
 
+.text-truncate {
+  max-width: 130px;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                 PAGE ERROR                                 */
 /* -------------------------------------------------------------------------- */
@@ -11304,11 +11308,11 @@ pre {
 }
 
 .swiper .card {
-  max-height: 20rem !important;
+  max-height: 22rem !important;
 }
 
 .swiper .card img {
-  max-height: 8rem;
+  max-height: 12rem;
 }
 
 .swiper .card, .swiper .card .btn, .swiper .card .card-body, .swiper .card img {
@@ -11580,6 +11584,10 @@ header .btn-secondary:hover {
 .workbench p {
   font-size: 1.8rem;
   font-weight: 600 !important;
+  color: #00659f;
+}
+
+.dropdown-item {
   color: #00659f;
 }
 

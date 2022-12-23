@@ -89,7 +89,14 @@ function stampaVeicoli(elencoVeicoli) {
         TR.appendChild(TD13);
             
         const TD14 = document.createElement('td');
-        TD14.textContent = elencoVeicoli[i].cilindrata;
+        if(elencoVeicoli[i].cilindrata == "-1"){
+            
+            TD14.innerHTML = '<i class="bi bi-file-earmark-excel-fill"></i>';
+
+        }else{
+
+            TD14.textContent = elencoVeicoli[i].cilindrata;
+        }
         TR.appendChild(TD14);
         
   		
@@ -99,6 +106,7 @@ function stampaVeicoli(elencoVeicoli) {
         TR.appendChild(TD2);
         
         const TD3 = document.createElement('td');
+        TD3.classList.add('text-truncate');
         TD3.textContent = elencoVeicoli[i].descrizione;
         TR.appendChild(TD3);
         
@@ -116,6 +124,7 @@ function stampaVeicoli(elencoVeicoli) {
         const TD5 = document.createElement('td');
         TD5.textContent =  elencoVeicoli[i].immagineVeicolo;
         TD5.setAttribute('value', elencoVeicoli[i].immagineVeicolo);
+        TD5.classList.add('text-truncate');
         TR.appendChild(TD5);
         
         const TD6 = document.createElement('td');

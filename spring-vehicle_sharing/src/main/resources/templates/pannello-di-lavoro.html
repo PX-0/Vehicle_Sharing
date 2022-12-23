@@ -26,20 +26,24 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../utenti/login">Home</a>
+                            <a class="nav-link" aria-current="page" href="../../utenti/login">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../prenotazioni/elenco" class="nav-link">Elenco delle prenotazioni</a>
+                             <a class="nav-link active" aria-current="page" href="#">Pannello di lavoro</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="../../veicoli/elenco" class="nav-link">Elenco dei veicoli amministrabili</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Aree
+                            </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a href="../../prenotazioni/elenco" class="dropdown-item">Elenco delle prenotazioni</a></li>
+                            <li> <a href="../../veicoli/elenco" class="dropdown-item">Elenco dei veicoli amministrabili</a></li>
+                            <li><a href="../../veicoli/inserisci" class="dropdown-item">Inserisci un veicolo</a></li>
+                          </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="../../veicoli/inserisci" class="nav-link">Inserisci un veicolo</a>
-                        </li>
-                        <li class="nav-item">
+                          <li class="nav-item">
                             <a href="logout" class="btn btn-secondary ms-md-2">Logout</a>
-                        </li>
+                        </li> 
                     </ul>
                 </div>
             </div>
@@ -50,10 +54,9 @@
             <div class="cta d-flex align-items-start justify-content-center py-3">
                 <div class="workbench">
                     <p>PANNELLO DI LAVORO</p>
-                    <a href="../../veicoli/inserisci" class="btn btn-secondary mb-3">Inserisci un veicolo</a>
+                    <a href="../../veicoli/inserisci" class="btn btn-secondary  mb-3">Inserisci un veicolo</a>
                     <a href="../../veicoli/elenco" class="btn btn-secondary mb-3">Elenco dei veicoli amministrabili</a>
                     <a href="../../prenotazioni/elenco" class="btn btn-secondary mb-3">Elenco delle prenotazioni</a>
-                    <!-- <a href="logout" class="btn btn-secondary mb-3">Logout</a> -->
                 </div>
             </div>
         </section>
