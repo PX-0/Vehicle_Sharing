@@ -54,7 +54,7 @@
 			              <a href="utenti/login" class="btn btn-secondary ms-2" id="button-nav">Login</a>
 			            </li>-->
 			            <li class="nav-item" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'A'">
-			              <a class="nav-link" href="utenti/pannello">Pannello di lavoro</a>
+			              <a class="nav-link" href="../utenti/pannello">Pannello di lavoro</a>
 			            </li>
                         <li class="nav-item">
                             <a th:if="${session.loggedUser} == null" href="../utenti/login"
