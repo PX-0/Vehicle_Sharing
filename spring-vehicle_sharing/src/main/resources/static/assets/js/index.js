@@ -133,7 +133,7 @@ function riempiTabella(veicolo, tabella) {
     td.appendChild(ulVeicolo);
     
     ulVeicolo.innerHTML = "<li>" + "Tipologia: " + veicolo.tipologia + "</li>" +
-                            "<li class='py-1' >" + "Descrizione: " +
+                            "<li class='pe-4 py-2' >" + "Descrizione: " +
                               "<button onclick='showMore(" + veicolo.id + ")' onblur='showLess("+ veicolo.id  +")' id='btnMore" + veicolo.id + "' class='btn btn-secondary btn-sm'>" +
                               "Espandi</button><br>" +
                               "<div id='more" + veicolo.id + "' style='display: none;' class='pt-1 px-2 mt-1 border bg-white rounded'>" + veicolo.descrizione + "</p></li>" + 
