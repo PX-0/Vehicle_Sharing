@@ -127,6 +127,10 @@
       </div> <!-- fine container -->
     </section> <!-- fine calendario -->
 
+	<div style="height:40rem;">
+        <canvas id="myChart"></canvas>
+      </div>
+
   </main>
 
   <!-- Remove the container if you want to extend the Footer to full width. -->
@@ -227,6 +231,8 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script th:src="@{/assets/js/index.js}"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script th:src="@{/assets/js/chart.js}"></script>
   <!-- <div id="user-session-data" hidden th:text="${session.loggedUser}"></div> -->
 </body>
 
