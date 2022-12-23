@@ -11303,6 +11303,14 @@ pre {
   overflow: hidden;
 }
 
+.swiper .card {
+  max-height: 20rem !important;
+}
+
+.swiper .card img {
+  max-height: 8rem;
+}
+
 .swiper .card, .swiper .card .btn, .swiper .card .card-body, .swiper .card img {
   transition: all .2s;
 }

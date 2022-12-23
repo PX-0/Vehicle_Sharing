@@ -277,11 +277,11 @@ function CreateCard(url,marca,desc,cc,alimentazione,link){
   div.classList.add('img-fx');
   var img = document.createElement('img');
   if(url.startsWith('https')){
-    img.setAttribute('src',url);
+    img.setAttribute('src',"https://source.unsplash.com/300x400/?logo-"+marca);
   }else{
     img.setAttribute('src',"../assets/uploads/"+url);
   }
-  img.classList.add('card-img-top');
+  img.classList.add('card-img-top',"img-fluid");
   div.appendChild(img);
   card.appendChild(div)
 
@@ -296,20 +296,25 @@ function CreateCard(url,marca,desc,cc,alimentazione,link){
   var cardText = document.createElement('div');
   cardText.classList.add('card-text');
 
-  var descrizione = document.createElement('p');
-  descrizione.textContent=desc;
-  cardText.appendChild(descrizione);
+  // var descrizione = document.createElement('p');
+  // descrizione.textContent=desc;
+  // cardText.appendChild(descrizione);
 
   var tipoAlimentazione = document.createElement('p');
   tipoAlimentazione.textContent= alimentazione;
 
   cardText.appendChild(tipoAlimentazione);
 
-  if(!cilindrata === -1){
+  if(cc != "-1"){
     var cilindrata = document.createElement('p');
     cilindrata.setAttribute('id','cilindrata');
     cilindrata.textContent=cc;
     cardText.appendChild(cilindrata);
+  }else{
+    var br = document.createElement('br');
+    var br2 = document.createElement('br');
+    cardText.appendChild(br);
+    cardText.appendChild(br2);
   }
 
 
@@ -346,7 +351,6 @@ fetch(url).then(data=>{return data.json()})
           element.cilindrata,
           element.alimentazione,
           'veicoli/'+element.id)
-          console.log(element.cilindrata);
 
       });
 

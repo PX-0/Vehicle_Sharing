@@ -71,7 +71,6 @@ pre{
     height: auto;
     padding-bottom: 4rem !important;
 }
-
 .swiper-button-next,
 .swiper-button-prev {
 
@@ -91,7 +90,12 @@ pre{
     overflow: hidden;
 }
 
-
+.swiper .card{
+    max-height: 20rem !important;
+    img{
+        max-height: 8rem;
+    }
+}
 
 
 .swiper .card,.swiper .card .btn, .swiper .card .card-body,.swiper .card img{
