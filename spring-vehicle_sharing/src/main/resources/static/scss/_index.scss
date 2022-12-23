@@ -66,31 +66,26 @@ pre{
 /*                                   BANNER                                   */
 /* -------------------------------------------------------------------------- */
 
-.swiper {
+.home-swiper .swiper {
     width: 100%;
     height: auto;
     padding-bottom: 4rem !important;
 }
-.swiper-button-next,
-.swiper-button-prev {
 
-    color: #1FAB89 !important;
-}
-
-.card-body {
+.home-swiper .card-body {
     text-align: center;
 }
 
-.card-title {
+.home-swiper .card-title {
     font-size: 1.5rem !important;
     font-weight: 600 !important;
 }
 
-.img-fx{
+.home-swiper .img-fx{
     overflow: hidden;
 }
 
-.swiper .card{
+.home-swiper .swiper .card{
     max-height: 22rem !important;
     img{
         max-height: 12rem;
@@ -98,11 +93,11 @@ pre{
 }
 
 
-.swiper .card,.swiper .card .btn, .swiper .card .card-body,.swiper .card img{
+.home-swiper .swiper .card,.home-swiper .swiper .card .btn,.home-swiper .swiper .card .card-body,.home-swiper .swiper .card img{
     transition: all .2s;
 }
 
-.swiper .card:hover{
+.home-swiper .swiper .card:hover{
     // background: linear-gradient(to left top, #26a96c, #009391, #0077a5, #005799, #4a326f);
     
     box-shadow: 1px 16px 13px -10px rgba(140,140,140,0.57);
@@ -111,6 +106,8 @@ pre{
 
     img{
         transform: scale(1.1);
+        width: 100%;
+        height: auto;
     }
 
     // .card-body{
@@ -126,11 +123,6 @@ pre{
 /* -------------------------------------------------------------------------- */
 /*                                 CALENDARIO                                 */
 /* -------------------------------------------------------------------------- */
-
-.dataPicker {
-    padding-top: .5rem;
-    max-width: 66%;
-}
 
 .table-calendario {
     border-radius: 10px;
@@ -156,15 +148,11 @@ pre{
     }
 }
 
-.div-overflow {
-    @include media-breakpoint-up(sm) {
-        overflow: auto;
-        height: 10rem;
-    }
-    ul li {
-        margin: .5rem 0;
-    }
+.badge-readMore {
+    border: 1px solid $secondary;
 }
+
+
 
 #veicoliNoleggiati {
     tr:last-child {
@@ -177,6 +165,9 @@ pre{
         h3 {
             font-weight: 700;
         }
+    }
+    .btn-primary {
+        color: white;
     }
 }
 
@@ -234,9 +225,8 @@ header .btn-secondary:hover{
     color: white !important;
 }
 
-
 /* -------------------------------------------------------------------------- */
-/*                                 FINE NAVBAR                                */
+/*                                     MAP                                    */
 /* -------------------------------------------------------------------------- */
 
 .leaflet-control-zoom-out,
@@ -249,6 +239,39 @@ header .btn-secondary:hover{
 .leaflet-touch .leaflet-bar {
     border: 1px solid transparent !important;
 }
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    CHART                                   */
+/* -------------------------------------------------------------------------- */
+
+.wrapper-chart{
+    border: 1px solid transparent;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    background-color: white;
+    padding: 2rem;
+    width: 100%;
+    height: auto;
+
+    @include media-breakpoint-up(md){
+        width: 70%;
+    }
+    @include media-breakpoint-up(lg){
+        width: 50%;
+    }
+}
+.desc-chart{
+    text-align: center;
+}
+
+#myChart{
+    display: inline-block !important;
+}
+
+
+
+
 
 /* -------------------------------------------------------------------------- */
 /*                                   FOOTER                                   */

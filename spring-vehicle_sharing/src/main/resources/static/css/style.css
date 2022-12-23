@@ -11283,61 +11283,53 @@ pre {
 /* -------------------------------------------------------------------------- */
 /*                                   BANNER                                   */
 /* -------------------------------------------------------------------------- */
-.swiper {
+.home-swiper .swiper {
   width: 100%;
   height: auto;
   padding-bottom: 4rem !important;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  color: #1FAB89 !important;
-}
-
-.card-body {
+.home-swiper .card-body {
   text-align: center;
 }
 
-.card-title {
+.home-swiper .card-title {
   font-size: 1.5rem !important;
   font-weight: 600 !important;
 }
 
-.img-fx {
+.home-swiper .img-fx {
   overflow: hidden;
 }
 
-.swiper .card {
+.home-swiper .swiper .card {
   max-height: 22rem !important;
 }
 
-.swiper .card img {
+.home-swiper .swiper .card img {
   max-height: 12rem;
 }
 
-.swiper .card, .swiper .card .btn, .swiper .card .card-body, .swiper .card img {
+.home-swiper .swiper .card, .home-swiper .swiper .card .btn, .home-swiper .swiper .card .card-body, .home-swiper .swiper .card img {
   transition: all .2s;
 }
 
-.swiper .card:hover {
+.home-swiper .swiper .card:hover {
   box-shadow: 1px 16px 13px -10px rgba(140, 140, 140, 0.57);
   -webkit-box-shadow: 1px 16px 13px -10px rgba(140, 140, 140, 0.57);
   -moz-box-shadow: 1px 16px 13px -10px rgba(140, 140, 140, 0.57);
 }
 
-.swiper .card:hover img {
+.home-swiper .swiper .card:hover img {
   transform: scale(1.1);
+  width: 100%;
+  height: auto;
 }
 
 /* ------------------------------- END BANNER ------------------------------- */
 /* -------------------------------------------------------------------------- */
 /*                                 CALENDARIO                                 */
 /* -------------------------------------------------------------------------- */
-.dataPicker {
-  padding-top: .5rem;
-  max-width: 66%;
-}
-
 .table-calendario {
   border-radius: 10px;
   background-color: #f7fdfb;
@@ -11363,15 +11355,8 @@ pre {
   }
 }
 
-@media (min-width: 576px) {
-  .div-overflow {
-    overflow: auto;
-    height: 10rem;
-  }
-}
-
-.div-overflow ul li {
-  margin: .5rem 0;
+.badge-readMore {
+  border: 1px solid #00659f;
 }
 
 #veicoliNoleggiati tr:last-child {
@@ -11380,6 +11365,10 @@ pre {
 
 #tabellaDisponibili thead h3, #tabellaDisponibili thead .h3, #tabellaNoleggiati thead h3, #tabellaNoleggiati thead .h3 {
   font-weight: 700;
+}
+
+#tabellaDisponibili .btn-primary, #tabellaNoleggiati .btn-primary {
+  color: white;
 }
 
 @media (min-width: 576px) {
@@ -11426,7 +11415,7 @@ header .btn-secondary:hover {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                 FINE NAVBAR                                */
+/*                                     MAP                                    */
 /* -------------------------------------------------------------------------- */
 .leaflet-control-zoom-out,
 .leaflet-control-zoom-in {
@@ -11437,6 +11426,39 @@ header .btn-secondary:hover {
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
   border: 1px solid transparent !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    CHART                                   */
+/* -------------------------------------------------------------------------- */
+.wrapper-chart {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  background-color: white;
+  padding: 2rem;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .wrapper-chart {
+    width: 70%;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrapper-chart {
+    width: 50%;
+  }
+}
+
+.desc-chart {
+  text-align: center;
+}
+
+#myChart {
+  display: inline-block !important;
 }
 
 /* -------------------------------------------------------------------------- */

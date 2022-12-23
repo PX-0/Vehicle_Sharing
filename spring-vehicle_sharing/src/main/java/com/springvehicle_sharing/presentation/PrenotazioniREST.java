@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springvehicle_sharing.dal.ArchivioUtentiDAO;
 import com.springvehicle_sharing.dal.PrenotazioniDAO;
+import com.springvehicle_sharing.entities.ArchivioUtenti;
 import com.springvehicle_sharing.entities.Prenotazione;
 
 @RestController
@@ -20,6 +22,9 @@ public class PrenotazioniREST {
 	
 	@Autowired
 	PrenotazioniDAO dao;
+	
+	@Autowired
+	ArchivioUtentiDAO uDao;
 	
 	@GetMapping("prenotazioni")
 	public List<Prenotazione> findAll() {
@@ -39,6 +44,12 @@ public class PrenotazioniREST {
 	@DeleteMapping("prenotazioni/{id}")
 	public void deletePrenotazione(@PathVariable("id") int id) {
 		dao.deleteById(id);
+	}
+	
+	@GetMapping("prenotazioniByUtente/{id}")
+	public List<Prenotazione> prenotazioniByUtente(@PathVariable("id") String utente) {
+		
+		return dao.findByUtente(uDao.findById(utente).get());
 	}
 	
 }

@@ -144,4 +144,8 @@ public class ArchivioUtenti {
 		this.prenotazioni = prenotazioni;
 	}
 	
+	@Override
+	public String toString() {
+		return nome+","+cognome+","+userId;
+	}
 }

@@ -208,7 +208,9 @@ public class ArchivioUtentiMVC {
 	@GetMapping("areaPersonale")
 	public String areaPersonale(HttpSession session) {
 		
-		if (session.getAttribute("loggedUser") != null)
+		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
+		
+		if (utente == null || utente.getTipo() != 'B')
 			return "redirect:/";
 		
 		return "areaPersonale";
