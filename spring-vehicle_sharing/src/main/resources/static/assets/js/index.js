@@ -119,7 +119,7 @@ function riempiTabella(veicolo, tabella) {
     var tbody = document.getElementById(tabella);
     
     var tr = document.createElement("tr");
-    tr.setAttribute("style", "height: 25rem;");
+    tr.setAttribute("class", "tr-fixed");
     tbody.appendChild(tr);
     
     var td = document.createElement("td");
@@ -133,10 +133,10 @@ function riempiTabella(veicolo, tabella) {
     td.appendChild(ulVeicolo);
     
     ulVeicolo.innerHTML = "<li>" + "Tipologia: " + veicolo.tipologia + "</li>" +
-                            "<li class='pb-'>" + "Descrizione: " +
-                              "<button onclick='showMore(" + veicolo.id + ")' id='btnMore" + veicolo.id + "' class='btn btn-secondary btn-sm'>" +
-                              "Read more</button><br>" +
-                              "<p id='more" + veicolo.id + "' style='display: none;'>" + veicolo.descrizione + "</p></li>" + 
+                            "<li class='py-1' >" + "Descrizione: " +
+                              "<button onclick='showMore(" + veicolo.id + ")' onblur='showLess("+ veicolo.id  +")' id='btnMore" + veicolo.id + "' class='btn btn-secondary btn-sm'>" +
+                              "Espandi</button><br>" +
+                              "<div id='more" + veicolo.id + "' style='display: none;' class='pt-1 px-2 mt-1 border bg-white rounded'>" + veicolo.descrizione + "</p></li>" + 
                           "<li>" + "Posizione attuale: <br> " + veicolo.posizioneAttuale + "</li>";
   
     if (veicolo.prenotazioni.length >= 1) {
@@ -155,7 +155,7 @@ function riempiTabella(veicolo, tabella) {
     }
     
     var row = document.createElement("div");
-    row.setAttribute("class", "row align-items-center justify-content-evenly py-4")
+    row.setAttribute("class", "row align-items-center justify-content-evenly")
     td.appendChild(row);
 
     var col1 = document.createElement("div");
@@ -184,12 +184,24 @@ function showMore(id) {
   var more = document.getElementById("more"+id);
   var btnMore = document.getElementById("btnMore"+id);
   if (more.style.display == "none") {
-    btnMore.innerHTML = "Read less";
-    more.style.display = "inline";
+    btnMore.innerHTML = "Riduci";
+    more.style.display = "block";
   } else {
-    btnMore.innerHTML = "Read more";
+    btnMore.innerHTML = "Espandi";
     more.style.display = "none";
   }
+}
+
+function showLess(id) {
+  var more = document.getElementById("more"+id);
+  var btnMore = document.getElementById("btnMore"+id);
+  // if (more.style.display == "none") {
+    // btnMore.innerHTML = "Riduci";
+    // more.style.display = "block";
+  // } else {
+    btnMore.innerHTML = "Espandi";
+    more.style.display = "none";
+  // }
 }
 
 function printPlaceholderCard(n, tabella) {
