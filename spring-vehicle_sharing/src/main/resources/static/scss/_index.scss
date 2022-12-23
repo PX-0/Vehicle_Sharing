@@ -66,31 +66,26 @@ pre{
 /*                                   BANNER                                   */
 /* -------------------------------------------------------------------------- */
 
-.swiper {
+.home-swiper .swiper {
     width: 100%;
     height: auto;
     padding-bottom: 4rem !important;
 }
-.swiper-button-next,
-.swiper-button-prev {
 
-    color: #1FAB89 !important;
-}
-
-.card-body {
+.home-swiper .card-body {
     text-align: center;
 }
 
-.card-title {
+.home-swiper .card-title {
     font-size: 1.5rem !important;
     font-weight: 600 !important;
 }
 
-.img-fx{
+.home-swiper .img-fx{
     overflow: hidden;
 }
 
-.swiper .card{
+.home-swiper .swiper .card{
     max-height: 22rem !important;
     img{
         max-height: 12rem;
@@ -98,11 +93,11 @@ pre{
 }
 
 
-.swiper .card,.swiper .card .btn, .swiper .card .card-body,.swiper .card img{
+.home-swiper .swiper .card,.home-swiper .swiper .card .btn,.home-swiper .swiper .card .card-body,.home-swiper .swiper .card img{
     transition: all .2s;
 }
 
-.swiper .card:hover{
+.home-swiper .swiper .card:hover{
     // background: linear-gradient(to left top, #26a96c, #009391, #0077a5, #005799, #4a326f);
     
     box-shadow: 1px 16px 13px -10px rgba(140,140,140,0.57);
