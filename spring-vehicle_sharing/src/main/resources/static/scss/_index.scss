@@ -133,7 +133,6 @@ pre{
 }
 
 .table-calendario {
-    // border: 1px solid rgba(0, 0, 0, 0.312);
     border-radius: 10px;
     background-color: $calendario-bg;
 }
@@ -148,6 +147,22 @@ pre{
 
     @include media-breakpoint-up(md) {
         font-size: 3rem;
+    }
+}
+
+.tr-fixed {
+    @include media-breakpoint-up(sm) {
+        height: 25rem;
+    }
+}
+
+.div-overflow {
+    @include media-breakpoint-up(sm) {
+        overflow: auto;
+        height: 10rem;
+    }
+    ul li {
+        margin: .5rem 0;
     }
 }
 
@@ -169,30 +184,22 @@ pre{
     #tabellaDisponibili {
         thead {
             th {
-                border-right: 1px solid #efefef;
+                border-right: 1px solid #dee2e6;
             }
         }
     }
     #veicoliDisponibili {
         td {
-            border-right: 1px solid #efefef;
+            border-right: 1px solid #dee2e6;
         }
     }
     #veicoliDisponibili, #veicoliNoleggiati {
         tr:last-child {
             border-bottom: 1px solid $calendario-bg;
         }
-    }
-    .tr-veicoli {
-        height: 380px;
-    }    
+    }  
 }
 
-@media (min-width: 768px) {
-    .tr-veicoli {
-        height: 320px;
-    }
-}
 
 
 /* ----------------------------- FINE CALENDARIO ---------------------------- */

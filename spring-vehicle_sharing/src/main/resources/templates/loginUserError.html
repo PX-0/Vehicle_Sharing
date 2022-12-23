@@ -21,13 +21,13 @@
                 </div>
             
 
-        <div>
-            <form action="logout">
+        <div class="d-flex gap-2 justify-content-center">
+            <form action="login">
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-secondary">Torna alla Home</button>
                 </div>
             </form>
-            <form action="logout" th:if="${session.showBtn} == true">
+            <form action="logout" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'B'">
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-secondary">Logout</button>
                 </div>

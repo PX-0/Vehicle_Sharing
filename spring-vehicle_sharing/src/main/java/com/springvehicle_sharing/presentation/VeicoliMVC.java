@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.springvehicle_sharing.dal.ArchivioUtentiDAO;
 import com.springvehicle_sharing.dal.VeicoliDAO;
@@ -65,7 +66,8 @@ public class VeicoliMVC {
 			MultipartFile file, @RequestParam(value = "posizioneAttuale", required = false) 
 			String posizioneAttuale, @RequestParam("tipologia") String tipologia,
 			@RequestParam("modello") String modello, @RequestParam("marca") String marca,
-			@RequestParam("colore") String colore, @RequestParam("cilindrata") String cilindrata) {
+			@RequestParam("colore") String colore, @RequestParam("cilindrata") String cilindrata,
+			RedirectAttributes redirectAttrs) {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
@@ -76,7 +78,7 @@ public class VeicoliMVC {
 		}
 		
 		Veicolo veicolo = new Veicolo();
-		veicolo.setCilindrata(cilindrata);
+		veicolo.setModello(modello);
 		veicolo.setMarca(marca);
 		veicolo.setColore(colore);
 		veicolo.setCilindrata(cilindrata);
@@ -109,7 +111,9 @@ public class VeicoliMVC {
 		
 		dao.save(veicolo);
 		
-		return inserisciVeicolo(session);
+		redirectAttrs.addFlashAttribute("success", true);
+		
+		return "redirect:/veicoli/inserisci";
 	}
 	
 	@GetMapping("addVeicolo")
@@ -168,7 +172,7 @@ public class VeicoliMVC {
 		
 		Veicolo veicolo = new Veicolo();
 		veicolo.setId(veicoloId);
-		veicolo.setCilindrata(cilindrata);
+		veicolo.setModello(modello);
 		veicolo.setMarca(marca);
 		veicolo.setColore(colore);
 		veicolo.setCilindrata(cilindrata);

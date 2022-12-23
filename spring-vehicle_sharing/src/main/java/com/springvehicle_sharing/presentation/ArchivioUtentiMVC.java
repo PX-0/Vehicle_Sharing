@@ -134,6 +134,18 @@ public class ArchivioUtentiMVC {
 		return "redirect:/utenti/login";
 	}
 	
+	// Pannello di lavoro
+	@RequestMapping("pannello")
+	public String pannelloDiLavoro(HttpSession session) {
+		
+		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
+		
+		if (utente != null && utente.getTipo() == 'A')
+				return "pannello-di-lavoro";
+		
+		return "loginUserError";
+	}
+	
 	@GetMapping("register")
 	public String register() {
 		return "registrazione";

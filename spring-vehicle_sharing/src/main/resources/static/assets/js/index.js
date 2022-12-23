@@ -107,22 +107,6 @@ function stampaVeicoli(listaVeicoli, tabella1, tabella2) {
     }
   }
 
-  // Proprietà tabella:
-  // <div class="col-12 col-sm-6 px-0">
-
-  // var tab1 = document.getElementById("tabellaDisponibili");
-  // var tab2 = document.getElementById("tabellaNoleggiati");
-
-  // if (noleggiati != 0) {
-  //   printPlaceholderCard((disponibili - noleggiati), tabella2);
-  //   tab1.setAttribute("class", "col-6");
-  //   tab2.removeAttribute("hidden");
-
-  // } else {
-  //   tab1.setAttribute("class", "col-12");
-  //   tab2.setAttribute("hidden", "");
-  // }
-
   printPlaceholderCard((disponibili - noleggiati), tabella2);
 
 }
@@ -134,50 +118,68 @@ function riempiTabella(veicolo, tabella) {
         var tbody = document.getElementById(tabella);
         
         var tr = document.createElement("tr");
-        tr.setAttribute("class", "tr-veicoli");
+        tr.setAttribute("style", "height: 25rem;");
         tbody.appendChild(tr);
         
         var td = document.createElement("td");
-        td.setAttribute("class", "ps-3 ps-sm-4 py-3 py-sm-0");
+        td.setAttribute("class", "px-2 px-lg-4 py-3 py-sm-0");
         tr.appendChild(td);
 
-        td.innerHTML = "<h3>" + veicolo.marca + " " + veicolo.modello + "</h3><ul>" +
-                       "<li>" + veicolo.tipologia + "</li>" +
-                       "<li>" + veicolo.descrizione + "</li>" +
-                       "<li>" + veicolo.posizioneAttuale + "</li></ul>";
+        td.innerHTML = "<h3>" + veicolo.marca + " " + veicolo.modello + "</h3>";
+        td.innerHTML += "<p>Dettagli:</p>";
+
+        var divOverflow = document.createElement("div");
+        divOverflow.setAttribute("class", "div-overflow rounded border bg-white py-2 ps-3 ps-sm-4 pe-3");
+        td.appendChild(divOverflow);
+
+        var ulVeicolo = document.createElement("ul");
+        divOverflow.appendChild(ulVeicolo);
+
+        ulVeicolo.innerHTML = "<li>" + "Tipologia: " + veicolo.tipologia + "</li>" +
+                              "<li>" + veicolo.descrizione + "</li>" +
+                              "<li>" + "Posizione attuale: <br> " + veicolo.posizioneAttuale + "</li>";
 
          var row = document.createElement("div");
-         row.setAttribute("class", "row align-items-center")
+         row.setAttribute("class", "row align-items-center justify-content-evenly py-4 pb-md-0")
          td.appendChild(row);
 
          var col1 = document.createElement("div");
-         col1.setAttribute("class", "col-12 col-md-6 mb-2")
+         col1.setAttribute("class", "text-center col-12 col-md-6 col-xl-4 pb-2 pb-md-0")
          row.appendChild(col1);
 
          var col2 = document.createElement("div");
-         col2.setAttribute("class", "col-12 col-md-6")
+         col2.setAttribute("class", "text-center col-12 col-md-6 col-xl-4")
          row.appendChild(col2);
+         
+         var p = document.createElement("div");
+         p.setAttribute("class", "col-12");
+         divOverflow.appendChild(p);
 
         if (veicolo.prenotazioni.length >= 1) {
 
-          var p = document.createElement("div");
-          p.setAttribute("class", "col-12");
-          col1.appendChild(p);
-          p.textContent = "Veicolo prenotato per i giorni:";
+          p.innerHTML = "Veicolo prenotato per i giorni:";
 
-          var ul = document.createElement("ul");
-          ul.setAttribute("class", "pb-0 mb-0")
-          col1.appendChild(ul);
+          var ulPrenotazioni = document.createElement("ul");
+          ulPrenotazioni.setAttribute("class", "pb-0 mb-0")
+          p.appendChild(ulPrenotazioni);
 
           for (var i = 0; i < veicolo.prenotazioni.length; i++) {
-              ul.innerHTML += "<li>" + veicolo.prenotazioni[i].dataPrenotazione.split("T")[0] + "</li>";
+            var li = document.createElement("li");
+            ulPrenotazioni.appendChild(li);
+            li.innerHTML = veicolo.prenotazioni[i].dataPrenotazione.split("T")[0];
           }
-
-        } else {
-          col1.innerHTML = "<div>Veicolo disponibile</div>";
+          
         }
         
-        col2.innerHTML = "<a href='veicoli/"+ veicolo.id  + "' type='button' class='btn btn-primary'>Prenota ora</button>";        
+        if (!isPrenotato(veicolo, calendario.value)) {
+          col1.classList.add("text-secondary");
+          col1.innerHTML = "<b>Veicolo disponibile</b>";
+          col2.innerHTML = "<a href='veicoli/"+ veicolo.id  + "' type='button' class='btn btn-primary'>Prenota ora</button>";        
+        } else {
+          col1.classList.add("text-danger");
+          col1.innerHTML = "<b>Veicolo occupato</b>";
+          col2.innerHTML = "<a href='veicoli/"+ veicolo.id  + "' type='button' class='btn btn-secondary'>Info veicolo</button>";        
+        }
   
     }
 
@@ -190,7 +192,7 @@ function printPlaceholderCard(n, tabella) {
   for (var i = 0; i < n; i++) {
     
     var tr = document.createElement("tr");
-    tr.setAttribute("class", "tr-veicoli");
+    tr.setAttribute("class", "tr-fixed");
     tbody.appendChild(tr);
     
     var td = document.createElement("td");
@@ -199,7 +201,7 @@ function printPlaceholderCard(n, tabella) {
 
     // card
     var card = document.createElement("div");
-    card.setAttribute("class", "card col-12 col-lg-9 my-3 my-lg-2");
+    card.setAttribute("class", "card col-12 col-lg-9");
     td.appendChild(card);
     
     // // card image
@@ -210,7 +212,7 @@ function printPlaceholderCard(n, tabella) {
     
     // card body
     var cardBody = document.createElement("div");
-    cardBody.setAttribute("class", "card-body p-2 p-sm-3 p-md-4");
+    cardBody.setAttribute("class", "card-body p-3 p-md-4");
     card.appendChild(cardBody);
     
     // card title
@@ -249,7 +251,7 @@ function printPlaceholderCard(n, tabella) {
     
     // card button
     var cardBtn = document.createElement("a");
-    cardBtn.setAttribute("class", "btn btn-primary disabled placeholder col-4 col-sm-6 col-lg-5 float-start float-md-end");
+    cardBtn.setAttribute("class", "btn btn-secondary disabled placeholder col-4 col-sm-6 col-lg-5 float-center float-md-end");
     cardBody.appendChild(cardBtn);
 
   }

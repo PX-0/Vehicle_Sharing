@@ -53,6 +53,9 @@
             <!-- <li class="nav-item">
               <a href="utenti/login" class="btn btn-secondary ms-2" id="button-nav">Login</a>
             </li>-->
+            <li class="nav-item" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'A'">
+              <a class="nav-link" href="utenti/pannello">Pannello di lavoro</a>
+            </li>
             <li class="nav-item">
               <a th:if="${session.loggedUser} == null" href="utenti/login" class="btn btn-secondary ms-md-2" id="button-nav">Login</a>
               <a th:if="${session.loggedUser} != null" href="utenti/logout" class="btn btn-secondary ms-md-2" id="button-nav">Logout</a>
@@ -85,7 +88,7 @@
 
     <section id="calendario" class="my-5"> <!-- inizio calendario -->     
       <div class="container"> <!-- inizio container -->     
-        <h2 class="sectionTitle-calendario text-secondary">LE NOSTRE DISPONIBILITÀ</h2>
+        <h2 class="sectionTitle-calendario text-secondary fs-1 fw-bold">LE NOSTRE DISPONIBILITÀ</h2>
         <div class="row justify-content-start mb-3">
           <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
             <label>Verifica la disponibilità dei nostri veicoli:</label>
@@ -98,7 +101,7 @@
         <div class="row table-calendario shadow px-3 pt-3"> <!-- inizio row -->
           <div id="tabellaDisponibili" class="col-12 col-sm-6 px-0"> <!-- colonna 1 -->
             <table class="table table-hover align-middle pe-0">
-              <thead>
+              <thead class="">
                 <tr>
                   <th scope="col" class="py-4 py-sm-2">
                     <h3 class="ps-sm-3 pb-3 mb-0 text-center text-sm-start">Veicoli disponibili</h3>
