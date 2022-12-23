@@ -11365,17 +11365,6 @@ pre {
   }
 }
 
-@media (min-width: 576px) {
-  .div-overflow {
-    overflow: auto;
-    height: 10rem;
-  }
-}
-
-.div-overflow ul li {
-  margin: .5rem 0;
-}
-
 #veicoliNoleggiati tr:last-child {
   border-bottom: 1px solid #f7fdfb;
 }

@@ -158,16 +158,6 @@ pre{
     }
 }
 
-.div-overflow {
-    @include media-breakpoint-up(sm) {
-        overflow: auto;
-        height: 10rem;
-    }
-    ul li {
-        margin: .5rem 0;
-    }
-}
-
 #veicoliNoleggiati {
     tr:last-child {
         border-bottom: 1px solid $calendario-bg;
