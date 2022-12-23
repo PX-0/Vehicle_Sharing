@@ -290,7 +290,7 @@ function CreateCard(url,marca,desc,cc,alimentazione,link){
     img.setAttribute('src',"../assets/uploads/"+url);
   }
 
-  img.classList.add('card-img-top',"img-fluid");
+  img.classList.add('card-img-top');
   div.appendChild(img);
   card.appendChild(div)
 
@@ -364,5 +364,7 @@ fetch(url).then(data=>{return data.json()})
       });
 
 })
+
+
 
 //img 100w h-auto
