@@ -47,7 +47,7 @@
     <main>
 
         <div class="container py-2">
-            <table class="table table-veicoliAmm">
+            <table class="table table-booking shadow">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -66,46 +66,49 @@
                 <button type="button" id="avantiBtn" class="btn btn-secondary">Avanti</button>
             </div>
 
-            <form action="editPrenotazione" method="post" class="mb-3" id="mioForm" enctype="multipart/form-data" hidden>
-                <div class="mb-3">
-                    <label for="id" class="form-label">Prenotazione (ID)</label>
-                    <input type="text" class="form-control" id="id" name="id" readonly>
-                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                </div>
-                <div class="mb-3">
-                    <label for="dataPrenotazione" class="form-label">Data della prenotazione</label>
-                    <input type="date" class="form-control" id="dataPrenotazione" name="dataPrenotazione">
-                </div>
-                <!-- <div class="mb-3">
-                    <label for="utenteId" class="form-label">Utente (ID)</label>
-                    <input type="text" class="form-control" id="utenteId" name="utenteId">
-                </div>
-                <div id="utenteIdText" class="form-text" hidden>L'ID dell'utente non è valido</div>
-                <div class="mb-3">
-                    <label for="veicoloId" class="form-label">Veicolo (ID)</label>
-                    <input type="text" class="form-control" id="veicoloId" name="veicoloId">
-                </div>
-                <div id="veicoloIdText" class="form-text" hidden>L'ID del veicolo non è valido</div>
-                -->
-                
-                <div class="mb-3">
-                    <select id="utenteId" name="utenteId" class="form-select">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <form action="editPrenotazione" method="post" class="mb-3" id="mioForm" enctype="multipart/form-data" hidden>
+                            <div class="mb-3">
+                                <label for="id" class="form-label">Prenotazione (ID)</label>
+                                <input type="text" class="form-control" id="id" name="id" readonly>
+                                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                            </div>
+                            <div class="mb-3">
+                                <label for="dataPrenotazione" class="form-label">Data della prenotazione</label>
+                                <input type="date" class="form-control" id="dataPrenotazione" name="dataPrenotazione">
+                            </div>
+                            <!-- <div class="mb-3">
+                                <label for="utenteId" class="form-label">Utente (ID)</label>
+                                <input type="text" class="form-control" id="utenteId" name="utenteId">
+                            </div>
+                            <div id="utenteIdText" class="form-text" hidden>L'ID dell'utente non è valido</div>
+                            <div class="mb-3">
+                                <label for="veicoloId" class="form-label">Veicolo (ID)</label>
+                                <input type="text" class="form-control" id="veicoloId" name="veicoloId">
+                            </div>
+                            <div id="veicoloIdText" class="form-text" hidden>L'ID del veicolo non è valido</div>
+                            -->
                         
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <select id="veicoloId" name="veicoloId" class="form-select">
+                            <div class="mb-3">
+                                <select id="utenteId" name="utenteId" class="form-select">
                         
-                    </select>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <select id="veicoloId" name="veicoloId" class="form-select">
+                        
+                                </select>
+                            </div>
+                        
+                            <!--<input type="hidden" name="utenteIns" id="utenteIns" readonly>-->
+                            <button type="submit" id="btnSubmit" class="btn btn-primary">Aggiorna</button>
+                            <button type="reset" class="btn btn-primary">Reset</button>
+                        </form>
+                    </div>
                 </div>
-                
-                <!--<input type="hidden" name="utenteIns" id="utenteIns" readonly>-->
-                <button type="submit" id="btnSubmit" class="btn btn-primary">Aggiorna</button>
-                <button type="reset" class="btn btn-primary">Reset</button>
-            </form>
-
-            <!-- div mappa -->
-            <div id="map"></div>
+            </div>
 
     </main>
 

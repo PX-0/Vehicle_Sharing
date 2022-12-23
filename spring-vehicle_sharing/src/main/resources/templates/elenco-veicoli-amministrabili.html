@@ -75,83 +75,89 @@
                 <button type="button" id="avantiBtn" class="btn btn-secondary">Avanti</button>
             </div>
 
-            <form action="editVeicolo" method="post" class="mb-5 shadow p-5" id="mioForm" enctype="multipart/form-data" hidden>
-                <div class="mb-3">
-                     <label for="veicoloId" class="form-label">ID del veicolo</label>
-                     <input type="number" class="form-control" id="veicoloId" name="veicoloId" readonly>
-                 </div>
-                <div class="mb-3">
-                     <label for="modello" class="form-label">Modello</label>
-                     <input type="text" class="form-control" id="modello" name="modello">
-                 </div>
-                 <div class="mb-3">
-                     <label for="marca" class="form-label">Marca</label>
-                     <input type="text" class="form-control" id="marca" name="marca">
-                 </div>
-                 <div class="mb-3">
-                     <label for="colore" class="form-label">Colore</label>
-                     <input type="text" class="form-control" id="colore" name="colore">
-                 </div>
-                 <div class="mb-3">
-                     <label for="cilindrata" class="form-label">Cilindrata</label>
-                     <input type="text" class="form-control" id="cilindrata" name="cilindrata">
-                 </div>
-                <div class="mb-4">
-                    <label for="alimentazione" class="form-label">Alimentazione</label>
-                    <input type="text" class="form-control" id="alimentazione" name="alimentazione">
+            <div class="container pt-3">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <form action="editVeicolo" method="post" class="mb-5 shadow p-5" id="mioForm" enctype="multipart/form-data" hidden>
+                            <div class="mb-3">
+                                 <label for="veicoloId" class="form-label">ID del veicolo</label>
+                                 <input type="number" class="form-control" id="veicoloId" name="veicoloId" readonly>
+                             </div>
+                            <div class="mb-3">
+                                 <label for="modello" class="form-label">Modello</label>
+                                 <input type="text" class="form-control" id="modello" name="modello">
+                             </div>
+                             <div class="mb-3">
+                                 <label for="marca" class="form-label">Marca</label>
+                                 <input type="text" class="form-control" id="marca" name="marca">
+                             </div>
+                             <div class="mb-3">
+                                 <label for="colore" class="form-label">Colore</label>
+                                 <input type="text" class="form-control" id="colore" name="colore">
+                             </div>
+                             <div class="mb-3">
+                                 <label for="cilindrata" class="form-label">Cilindrata</label>
+                                 <input type="text" class="form-control" id="cilindrata" name="cilindrata">
+                             </div>
+                            <div class="mb-4">
+                                <label for="alimentazione" class="form-label">Alimentazione</label>
+                                <input type="text" class="form-control" id="alimentazione" name="alimentazione">
+                            </div>
+                                   <!-- <div class="mb-3">
+                                <label for="descrizione" class="form-label">Descrizione</label>
+                                <input type="text" class="form-control" id="descrizione" name="descrizione">
+                            </div>-->
+                            <div class="mb-3">
+                                <label for="descrizione" class="form-label">Descrizione</label>
+                                <textarea class="form-control" id="descrizione" name="descrizione" style="height: 100px"></textarea>
+                            </div>
+                            <!-- <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="disponibilitaNoleggio" name="disponibilitaNoleggio">
+                                        <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
+                                      </div>-->
+                            <div class="mb-3">
+                                <select id="disponibilitaNoleggio" name="disponibilitaNoleggio" class="form-select">
+                                    <option value="-1" selected disabled>Tipologia di noleggio</option>
+                                    <option value="Prolungato">Prolungato</option>
+                                    <option value="Giornaliero">Giornaliero (durata: 1 giorno)</option>
+                                    <option value="No">Non disponibile</option>
+                                </select>
+                            </div>
+                            <!-- <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
+                                          <div class="input-group mb-3">
+                                              <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo" aria-describedby="basic-addon3">
+                                          </div>-->
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="immagineVeicolo" name="immagineVeicolo" accept="image/*">
+                                <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
+                                <input type="hidden" id="linkVeicolo" name="linkVeicolo">
+                            </div>
+                            <div class="form-check form-switch mb-4">
+                                <input class="form-check-input" type="checkbox" role="switch" id="imgCheck" name="imgCheck" checked>
+                                <label class="form-check-label" for="imgCheck">Non cancellare l'immagine</label>
+                            </div>
+                            <div class="mb-4">
+                                <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
+                                <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
+                            </div>
+                            <div class="mb-4">
+                                <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
+                                    <option value="-1" selected disabled>Tipologia di veicolo</option>
+                                    <option value="Auto">Auto</option>
+                                    <option value="Bicicletta">Bicicletta</option>
+                                    <option value="Monopattino">Monopattino</option>
+                                    <option value="Motorino">Motorino</option>
+                                </select>
+                            </div>
+                            <input type="hidden" name="utenteIns" id="utenteIns" readonly>
+                            <div class="pt-3">
+                                <button type="submit" class="btn btn-secondary mx-1">Aggiorna</button>
+                                <button type="reset" class="btn btn-secondary mx-1">Reset</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-           <!-- <div class="mb-3">
-                    <label for="descrizione" class="form-label">Descrizione</label>
-                    <input type="text" class="form-control" id="descrizione" name="descrizione">
-                </div>-->
-                <div class="mb-3">
-                	<label for="descrizione" class="form-label">Descrizione</label>
-                	<textarea class="form-control" id="descrizione" name="descrizione" style="height: 100px"></textarea>
-                </div>
-                <!-- <div class="form-check form-switch mb-3">
-                            <input class="form-check-input" type="checkbox" role="switch" id="disponibilitaNoleggio" name="disponibilitaNoleggio">
-                            <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
-                          </div>-->
-                <div class="mb-3">
-                    <select id="disponibilitaNoleggio" name="disponibilitaNoleggio" class="form-select">
-                        <option value="-1" selected disabled>Tipologia di noleggio</option>
-                        <option value="Prolungato">Prolungato</option>
-                        <option value="Giornaliero">Giornaliero (durata: 1 giorno)</option>
-                        <option value="No">Non disponibile</option>
-                    </select>
-                </div>
-                <!-- <label for="immagineVeicolo" class="form-label">Immagine del veicolo</label>
-            	              <div class="input-group mb-3">
-            	                  <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo" aria-describedby="basic-addon3">
-            	              </div>-->
-                <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="immagineVeicolo" name="immagineVeicolo" accept="image/*">
-                    <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
-                    <input type="hidden" id="linkVeicolo" name="linkVeicolo">
-                </div>
-                <div class="form-check form-switch mb-4">
-                    <input class="form-check-input" type="checkbox" role="switch" id="imgCheck" name="imgCheck" checked>
-                    <label class="form-check-label" for="imgCheck">Non cancellare l'immagine</label>
-                </div>
-                <div class="mb-4">
-                    <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
-                    <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
-                </div>
-                <div class="mb-4">
-                    <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
-                        <option value="-1" selected disabled>Tipologia di veicolo</option>
-                        <option value="Auto">Auto</option>
-                        <option value="Bicicletta">Bicicletta</option>
-                        <option value="Monopattino">Monopattino</option>
-                        <option value="Motorino">Motorino</option>
-                    </select>
-                </div>
-                <input type="hidden" name="utenteIns" id="utenteIns" readonly>
-                <div class="pt-3">
-                    <button type="submit" class="btn btn-secondary mx-1">Aggiorna</button>
-                    <button type="reset" class="btn btn-secondary mx-1">Reset</button>
-                </div>
-            </form>
+            </div>
         </div>
     </main>
 
