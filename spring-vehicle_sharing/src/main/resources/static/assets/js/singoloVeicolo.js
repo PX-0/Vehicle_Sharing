@@ -55,8 +55,9 @@ function CreateCard(url,id,desc,address,link,tipo,alim,dispNol,veicoloCompleto,m
   document.querySelector('#colore').textContent = colore;
   document.querySelector('#cilindrata').textContent = cilindrata;
   
+  if (document.querySelector('#button-nav-login') != null)
+  	document.querySelector('#button-nav-login').setAttribute('href', "../utenti/login/" + id);
   
-  document.querySelector('#button-nav').setAttribute('href', "../utenti/login/" + id);
   document.querySelector('#mioForm').setAttribute('action', "../prenotazioni/addPrenotazione/" + id);
   
 
