@@ -122,9 +122,27 @@ function stampaVeicoli(elencoVeicoli) {
         TR.appendChild(TD4);
         
         const TD5 = document.createElement('td');
-        TD5.textContent =  elencoVeicoli[i].immagineVeicolo;
+        //TD5.textContent =  elencoVeicoli[i].immagineVeicolo;
         TD5.setAttribute('value', elencoVeicoli[i].immagineVeicolo);
         TD5.classList.add('text-truncate');
+        
+        const TESTIMG = document.createElement('img');
+
+		if (elencoVeicoli[i].immagineVeicolo.startsWith('http')) {
+		    
+		  TESTIMG.setAttribute('src', elencoVeicoli[i].immagineVeicolo);
+		} else if (elencoVeicoli[i].immagineVeicolo == null) {
+		    
+		  TESTIMG.setAttribute('src',"../uploads/elementor-placeholder-image.jpg");
+		} else {
+			  
+		  TESTIMG.setAttribute('src',"../assets/uploads/" + elencoVeicoli[i].immagineVeicolo);
+		}
+        
+        TESTIMG.setAttribute("height", "45px");
+        TESTIMG.setAttribute("width", "auto");
+        TESTIMG.setAttribute("title", elencoVeicoli[i].immagineVeicolo);
+        TD5.appendChild(TESTIMG)
         TR.appendChild(TD5);
         
         const TD6 = document.createElement('td');
