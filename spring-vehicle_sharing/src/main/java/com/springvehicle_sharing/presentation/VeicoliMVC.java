@@ -189,7 +189,7 @@ public class VeicoliMVC {
 			veicolo.setImmagineVeicolo(null);
 		} else {
 			
-			if (file != null) {
+			if (!file.isEmpty()) {
 				StringBuilder fileNames = new StringBuilder();
 				Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, file.getOriginalFilename());
 				fileNames.append(file.getOriginalFilename());

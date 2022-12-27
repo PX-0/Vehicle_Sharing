@@ -127,22 +127,30 @@ function stampaVeicoli(elencoVeicoli) {
         TD5.classList.add('text-truncate');
         
         const TESTIMG = document.createElement('img');
-
-		if (elencoVeicoli[i].immagineVeicolo.startsWith('http')) {
-		    
-		  TESTIMG.setAttribute('src', elencoVeicoli[i].immagineVeicolo);
-		} else if (elencoVeicoli[i].immagineVeicolo == null) {
-		    
-		  TESTIMG.setAttribute('src',"../uploads/elementor-placeholder-image.jpg");
+		
+		console.log(elencoVeicoli[i].immagineVeicolo);
+		
+		if (elencoVeicoli[i].immagineVeicolo == null || elencoVeicoli[i].immagineVeicolo == 'null') {
+			
+			TD5.innerHTML = "<span class = 'text-danger'> Da definire </span>";
 		} else {
-			  
-		  TESTIMG.setAttribute('src',"../assets/uploads/" + elencoVeicoli[i].immagineVeicolo);
-		}
-        
+			
+			if (elencoVeicoli[i].immagineVeicolo.startsWith('http')) {
+			    
+			  TESTIMG.setAttribute('src', elencoVeicoli[i].immagineVeicolo);
+			} else if (elencoVeicoli[i].immagineVeicolo == null) {
+			    
+			  TESTIMG.setAttribute('src',"../uploads/elementor-placeholder-image.jpg");
+			} else {
+				  
+			  TESTIMG.setAttribute('src',"../assets/uploads/" + elencoVeicoli[i].immagineVeicolo);
+			}
         TESTIMG.setAttribute("height", "45px");
         TESTIMG.setAttribute("width", "auto");
         TESTIMG.setAttribute("title", elencoVeicoli[i].immagineVeicolo);
-        TD5.appendChild(TESTIMG)
+        TD5.appendChild(TESTIMG);
+		}
+        
         TR.appendChild(TD5);
         
         const TD6 = document.createElement('td');
@@ -382,7 +390,7 @@ document.querySelector('#mioForm').addEventListener('submit', event => {
     
     setTimeout(() => {
 		location.reload();
-	}, 1000);
+	}, 1500);
 });
 
 document.querySelector("#delImg").addEventListener("change", () => {
