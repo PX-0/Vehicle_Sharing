@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springvehicle_sharing.dal.ArchivioUtentiDAO;
 import com.springvehicle_sharing.dal.PrenotazioniDAO;
-import com.springvehicle_sharing.entities.ArchivioUtenti;
 import com.springvehicle_sharing.entities.Prenotazione;
 
 @RestController

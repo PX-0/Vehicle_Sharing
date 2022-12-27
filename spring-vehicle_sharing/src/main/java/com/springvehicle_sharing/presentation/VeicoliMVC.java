@@ -157,8 +157,8 @@ public class VeicoliMVC {
 			MultipartFile file, @RequestParam(value = "posizioneAttuale", required = false) 
 			String posizioneAttuale, @RequestParam("tipologia") String tipologia, 
 			@RequestParam("utenteIns") String utenteIns, @RequestParam("linkVeicolo") 
-			String linkVeicolo, @RequestParam(defaultValue = "false", value = "imgCheck") 
-			boolean imgCheck, Model m, @RequestParam("modello") String modello, 
+			String linkVeicolo, @RequestParam(defaultValue = "false", value = "delImg") 
+			boolean delImg, Model m, @RequestParam("modello") String modello, 
 			@RequestParam("marca") String marca, @RequestParam("colore") String colore, 
 			@RequestParam("cilindrata") String cilindrata) {
 		
@@ -184,9 +184,9 @@ public class VeicoliMVC {
 		if (disponibilitaNoleggio != null)
 			veicolo.setDisponibilitaNoleggio(disponibilitaNoleggio);
 		
-		if (imgCheck) {
+		if (delImg) {
 			
-			veicolo.setImmagineVeicolo(linkVeicolo);
+			veicolo.setImmagineVeicolo(null);
 		} else {
 			
 			if (file != null) {

@@ -366,3 +366,9 @@ document.querySelector('#mioForm').addEventListener('submit', event => {
 		location.reload();
 	}, 1000);
 });
+
+document.querySelector("#delImg").addEventListener("change", () => {
+	document.querySelector("#fileInGroup").classList.toggle("visually-hidden");
+	document.querySelector("#delImgInGroup").classList.toggle("mt-3");
+	document.querySelector("#delImgInGroup").classList.toggle("fs-5");
+});
