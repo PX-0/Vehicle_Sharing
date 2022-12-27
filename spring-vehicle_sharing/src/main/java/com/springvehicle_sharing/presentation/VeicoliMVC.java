@@ -200,6 +200,8 @@ public class VeicoliMVC {
 					// TODO Auto-generated catch block
 					e.getMessage();
 				}
+			} else {
+				veicolo.setImmagineVeicolo(linkVeicolo);
 			}
 		}
 		
