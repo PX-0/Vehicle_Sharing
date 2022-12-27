@@ -11649,3 +11649,16 @@ header .btn-secondary:hover {
   background: white;
   padding: 1rem;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                  NOVITA                                  */
+/* -------------------------------------------------------------------------- */
+/*.newsCards .card {
+    max-height: 30rem !important;
+    img{
+        max-height: 15rem;
+        // width: auto;
+       
+    }
+}
+*/
