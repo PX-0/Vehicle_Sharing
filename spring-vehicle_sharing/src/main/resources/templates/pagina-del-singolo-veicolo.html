@@ -53,8 +53,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="../other/novità">Novità</a>
               </li>
-              <li class="nav-item" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'B'">
-                <a class=" nav-link" href="../utenti/areaPersonale" > Area Personale</a>
+              <li
+                class="nav-item"
+                th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'B'"
+              >
+                <a class="nav-link" href="../utenti/areaPersonale">
+                  Area Personale</a
+                >
               </li>
               <!-- <li class="nav-item">
 			              <a href="utenti/login" class="btn btn-secondary ms-2" id="button-nav">Login</a>
@@ -89,64 +94,69 @@
               <img src="" alt="" id="immagineVeicolo" class="card-img-top" />
               <div class="card-body">
                 <h1 class="h2" id=""></h1>
-                <div class="card-text">
-                  <div class="d-flex justify-content-center align-items-center">
-                    <div class="infos-auto py-5">
-                      <div>
-                        Descrizione:
-                        <span id="descrizione"> </span>
-                      </div>
-                      <div id="alimentazione"></div>
-                      <div id="tipologia"></div>
-                      
-                      <div id="modello"></div>
-                      <div id="marca"></div>
-                      <div id="colore"></div>
-                      <div id="cilindrata"></div>
-                      
-                      <div id="disponibilitaNoleggio"></div>
-                      <div id="posizione-attuale"></div>
-                    </div>
+                <div class="card-text row">
+                  <!-- <div class=""> -->
+                  <div class="infos-auto col py-5 text-start">
+                    <div class="info-auto" id="descrizione"></div>
+                    <div class="info-auto" id="alimentazione"></div>
+                    <div class="info-auto" id="tipologia"></div>
+
+                    <div class="info-auto" id="modello"></div>
+                    <div class="info-auto" id="marca"></div>
+                    <div class="info-auto" id="colore"></div>
+                    <div class="info-auto" id="cilindrata"></div>
+
+                    <div class="info-auto" id="disponibilitaNoleggio"></div>
+                    <div class="info-auto" id="posizione-attuale"></div>
                   </div>
+                  <!-- </div> -->
                   <!-- div mappa -->
-                  <div class="d-inline-block map-wrapper">
-                    <div id="map"></div>
-                  </div>
-                  <form
-                    action="../prenotazioni/addPrenotazione"
-                    method="POST"
-                    id="mioForm"
-                  >
-                    <div class="container d-flex flex-nowrap p-0">
-                      <input
-                        type="date"
-                        name="datePicker"
-                        id="datePicker"
-                        class="form-control ms-0"
-                      />
-                      <button
-                        type="submit"
-                        class="btn btn-secondary ms-1"
-                        id="btnPrenota"
-                        name="btnPrenota"
-                      >
-                        Prenota
-                      </button>
+                  <div class="col d-flex flex-column justify-content-end pb-5">
+                    <div class="d-inline-block map-wrapper">
+                      <div id="map"></div>
                     </div>
-                    <input type="hidden" id="veicoloId" name="veicoloId" />
-                    <input
-                      type="hidden"
-                      th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}"
-                      id="userId"
-                      name="utenteId"
-                    />
-                  </form>
-                  <!-- <div th:text="${session.avvenuta}"></div> -->
-                  <!-- <th:block th:text="${session.loggedUser == null} ? 'Devi effettuare il login per prenotare il veicolo' : ''"></th:block> -->
-                  <p th:text="${success}" class="text-success" id="prenSuccess"></p>
-                  <!-- <div th:text="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}"></div>
-                            <div style="color:red;" th:text="${session.loggedUser == null} ? 'Devi essere loggato per prenotare il veicolo' : ''" th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}" id="userId"></div>-->
-                  <div id="demo" class="text-danger"></div>
+                    <form
+                      action="../prenotazioni/addPrenotazione"
+                      method="POST"
+                      id="bookingForm"
+                    >
+                      <div
+                        class="container d-flex flex-nowrap p-0"
+                      >
+                        <input
+                          type="date"
+                          name="datePicker"
+                          id="datePicker"
+                          class="form-control ms-0"
+                        />
+                        <button
+                          type="submit"
+                          class="btn btn-secondary ms-1"
+                          id="btnPrenota"
+                          name="btnPrenota"
+                        >
+                          Prenota
+                        </button>
+                      </div>
+                      <input type="hidden" id="veicoloId" name="veicoloId" />
+                      <input
+                        type="hidden"
+                        th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}"
+                        id="userId"
+                        name="utenteId"
+                      />
+                    </form>
+                    <!-- <div th:text="${session.avvenuta}"></div> -->
+                    <!-- <th:block th:text="${session.loggedUser == null} ? 'Devi effettuare il login per prenotare il veicolo' : ''"></th:block> -->
+                    <p
+                      th:text="${success}"
+                      class="text-success"
+                      id="prenSuccess"
+                    ></p>
+                    <!-- <div th:text="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}"></div>
+                              <div style="color:red;" th:text="${session.loggedUser == null} ? 'Devi essere loggato per prenotare il veicolo' : ''" th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}" id="userId"></div>-->
+                    <div id="demo" class="text-danger"></div>
+                  </div>
                 </div>
               </div>
             </div>

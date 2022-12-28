@@ -50,26 +50,26 @@ function CreateCard(url,id,desc,address,link,tipo,alim,dispNol,veicoloCompleto,m
   //document.querySelector('#veicoloIdTitolo').textContent = id;
   document.querySelector('#veicoloId').value = id;
   
-  document.querySelector('#modello').textContent = modello;
-  document.querySelector('#marca').textContent = marca;
-  document.querySelector('#colore').textContent = colore;
-  document.querySelector('#cilindrata').textContent = cilindrata;
+  document.querySelector('#modello').innerHTML = "<span>Modello: </span>"+modello;
+  document.querySelector('#marca').innerHTML = "<span>Marca: </span>"+marca;
+  document.querySelector('#colore').innerHTML = "<span>Colore: </span>"+colore;
+  document.querySelector('#cilindrata').innerHTML = "<span>Cilindrata: </span>"+cilindrata;
   
   if (document.querySelector('#button-nav-login') != null)
   	document.querySelector('#button-nav-login').setAttribute('href', "../utenti/login/" + id);
   
-  document.querySelector('#mioForm').setAttribute('action', "../prenotazioni/addPrenotazione/" + id);
+  document.querySelector('#bookingForm').setAttribute('action', "../prenotazioni/addPrenotazione/" + id);
   
 
-  document.querySelector('#descrizione').textContent = desc;
+  document.querySelector('#descrizione').innerHTML = "<span>Descrizione: </span>"+desc;
   
-  document.querySelector('#alimentazione').textContent = alim;
+  document.querySelector('#alimentazione').innerHTML = "<span>Alimentazione:  </span>"+alim;
 
-  document.querySelector('#tipologia').textContent = tipo;
+  document.querySelector('#tipologia').innerHTML = "<span>Tipo veicolo:  </span>"+tipo;
 
-  document.querySelector('#disponibilitaNoleggio').textContent = dispNol;
+  document.querySelector('#disponibilitaNoleggio').innerHTML = "<span>Noleggio:  </span>"+dispNol;
 
-  document.querySelector('#posizione-attuale').textContent = address;
+  document.querySelector('#posizione-attuale').innerHTML = "<span>Posizione attuale:  </span>"+address;
   getPosizione(address);
   
   //var calendarioIn = document.createElement('input');
@@ -175,3 +175,5 @@ function dataOggi() {
   today = yyyy + "-" + mm + "-" + dd;
   return today;
 }
+
+document.querySelectorAll('.info-auto').forEach(info=> info.classList.add('py-3'));
