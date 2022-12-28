@@ -11251,6 +11251,10 @@ pre {
   background: #1a1a1a;
 }
 
+h3, .h3 {
+  color: #00659f;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                     HERO                                    */
 /* -------------------------------------------------------------------------- */
@@ -11552,8 +11556,9 @@ header .btn-secondary:hover {
 .title-formAdd {
   font-size: 2rem;
   font-weight: 800;
-  color: #47A15B;
+  color: white;
   text-align: center;
+  border-radius: 8px;
 }
 
 #mioForm {
@@ -11652,6 +11657,15 @@ header .btn-secondary:hover {
   #map {
     height: 17rem;
   }
+}
+
+.info-auto.py-3 span {
+  color: #00659f;
+  font-weight: 700;
+}
+
+#bookingForm {
+  padding-top: .5rem;
 }
 
 /* -------------------------------------------------------------------------- */
