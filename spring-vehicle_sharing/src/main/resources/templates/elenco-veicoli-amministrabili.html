@@ -127,14 +127,15 @@
                                           <div class="input-group mb-3">
                                               <input type="text" class="form-control" id="immagineVeicolo" name="immagineVeicolo" aria-describedby="basic-addon3">
                                           </div>-->
-                            <div class="input-group mb-3">
+                            <div class="input-group" id="fileInGroup">
                                 <input type="file" class="form-control" id="immagineVeicolo" name="immagineVeicolo" accept="image/*">
                                 <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
                                 <input type="hidden" id="linkVeicolo" name="linkVeicolo">
                             </div>
-                            <div class="form-check form-switch mb-4">
-                                <input class="form-check-input" type="checkbox" role="switch" id="imgCheck" name="imgCheck" checked>
-                                <label class="form-check-label" for="imgCheck">Non cancellare l'immagine</label>
+                            <div id="fileHelp" class="form-text mb-3">* Per mantenere l'immagine ignora questo campo e il bottone sottostante</div>
+                            <div class="form-check form-switch mb-4" id="delImgInGroup">
+                                <input class="form-check-input" type="checkbox" role="switch" id="delImg" name="delImg">
+                                <label class="form-check-label text-danger" for="delImg">Elimina PERMANENTEMENTE l'immagine</label>
                             </div>
                             <div class="mb-4">
                                 <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>

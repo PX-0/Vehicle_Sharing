@@ -11667,10 +11667,12 @@ header .btn-secondary:hover {
 /* -------------------------------------------------------------------------- */
 /*                                  NOVITA                                  */
 /* -------------------------------------------------------------------------- */
-.newsCards .card {
-  max-height: 30rem !important;
+/*.newsCards .card {
+    max-height: 30rem !important;
+    img{
+        max-height: 15rem;
+        // width: auto;
+       
+    }
 }
-
-.newsCards .card img {
-  max-height: 15rem;
-}
+*/

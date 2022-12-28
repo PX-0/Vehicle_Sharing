@@ -18,6 +18,11 @@
     <link rel="apple-touch-icon" sizes="152x152" href="../static/assets/img/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../static/assets/img/favicon/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../static/assets/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/assets/img/favicon/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/assets/img/favicon/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/assets/img/favicon/android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/assets/img/favicon/android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/assets/img/favicon/android-icon-36x36.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../static/assets/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../static/assets/img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../static/assets/img/favicon/favicon-16x16.png">
@@ -28,6 +33,7 @@
 </head>
 
 <body>
+
     <header th:fragment="header">
         <nav class="navbar navbar-expand-md">
             <div class="container-fluid">
@@ -50,28 +56,32 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../other/novità">Novità</a>
                         </li>
-                        <li class="nav-item" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'B'">
-                            <a class=" nav-link" href="../utenti/areaPersonale" > Area Personale</a>
-                          </li>
+                        <li class="nav-item"
+                            th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'B'">
+                            <a class=" nav-link" href="../utenti/areaPersonale"> Area Personale</a>
+                        </li>
                         <!-- <li class="nav-item">
 			              <a href="utenti/login" class="btn btn-secondary ms-2" id="button-nav">Login</a>
 			            </li>-->
-			            <li class="nav-item" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'A'">
-			              <a class="nav-link" href="../utenti/pannello">Pannello di lavoro</a>
-			            </li>
+                        <li class="nav-item"
+                            th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'A'">
+                            <a class="nav-link" href="../utenti/pannello">Pannello di lavoro</a>
+                        </li>
                         <li class="nav-item">
                             <a th:if="${session.loggedUser} == null" href="../utenti/login"
-                            class="btn btn-secondary ms-md-2" id="button-nav">Login</a>
+                                class="btn btn-secondary ms-md-2" id="button-nav">Login</a>
                             <a th:if="${session.loggedUser} != null" href="../utenti/logout"
-                            class="btn btn-secondary ms-md-2" id="button-nav">Logout</a>
+                                class="btn btn-secondary ms-md-2" id="button-nav">Logout</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <!-- Inizio main -->
     <main class="container">
+
         <div class="container text-center mt-4 mb-5">
             <div class="text-center py-5">
                 <h2 class="fs-1 fw-bold">Informativa sulla Privacy</h2>
@@ -83,83 +93,963 @@
             <!-- Row -->
             <div class="row justify-content-center gap-4 pb-5">
             <!-- Column -->
-            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-primary">
+            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-primary" role="button"
+                data-bs-toggle="modal" data-bs-target="#modalSicurezza">
                 <!-- Content -->
                 <div class="container d-flex align-items-center py-3 ">
-                    <img class="p-2" alt="" src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_ebay_UPN_HowWeProtect_FullColor.svg" style="float:left">
+                    <img class="p-2" alt=""
+                        src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_ebay_UPN_HowWeProtect_FullColor.svg"
+                        style="float:left">
                     <h3 class="fs-5 mb-0 p-2">Sicurezza dei dati</h3>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalSicurezza" tabindex="-1" aria-labelledby="modalSicurezzaLabel"
+                aria-hidden="true">
+                <!-- Vertically centered scrollable modal -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalSicurezzaLabel">Strumenti e tecnologie per la
+                                sicurezza dei dati</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Chiudi"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p> Ecco i tool e le strategie che adottiamo per la sicurezza dei dati:
+                                <ul>
+                                    <li>Cyber Threat Intelligence;</li>
+                                    <li>risk management;</li>
+                                    <li>data mesh;</li>
+                                    <li>security by design;</li>
+                                    <li>l’approccio zero-trust;</li>
+                                    <li>la micro-segmentazione;</li>
+                                    <li>security e privacy by default e by reaction e by detection.</li>
+                                </ul>
+                                L’approccio proattivo fa leva su sistemi automatizzati in grado di sfruttare capacità di
+                                calcolo dell’intelligenza artificiale (AI), contribuendo a un tracciamento continuo e
+                                all’acquisizione di dati per valutare il livello di indagine e monitoraggio su
+                                un’eventuale minaccia. Invece di identificare le azioni da intraprendere rapidamente per
+                                bloccare un cyber attacco o limitarsi a potenziare i controlli di cybersecurity, bisogna
+                                monitorare, prevedere e tracciare, mappando le attività sospette.
+                                <br>
+                                Business continuity e cyber resilienza rappresentano gli obiettivi da tenere sempre
+                                presente in azienda per delineare processi di cyber security, scegliendo strumenti e
+                                tecnologie da adottare.
+                                <br>
+                                <b>Cyber Threat Intelligence</b>
+                                <br>
+                                La Cyber Threat Intelligence ricopre un ruolo di primo piano, perché parte dal
+                                monitoraggio di Internet e del dark web per contrastare con efficacia l’attività dei
+                                cyber criminali, al fine di prevenire cyber attacchi sferrati da gang e criminali
+                                informatici.
+                                Si tratta di una partita che si gioca sul terreno delle vulnerabilità (da scoprire e
+                                risolvere), anche mediante infiltrati nel dark web.
+                                <br>
+                                <b>Il risk management</b>
+                                <br>
+                                Le imprese abilitano strategie e strumenti di difesa più efficaci. Una di queste, per
+                                esempio, è il risk management che permette di sapere:
+                                <ul>
+                                    <li>la provenienza dei dati sulla sicurezza da più fonti;</li>
+                                    <li>trasmettere i dati ogni giorno a una cyber threat intelligence;</li>
+                                    <li>fornire ai clienti una visualizzazione dall’esterno e dall’interno per
+                                        consentire ai</li>
+                                    <li>decisori di prende decisioni consapevoli e data-driven;</li>
+                                    <li>sanare le proprie carenze in termini di sicurezza con efficacia e flessibilità,
+                                        oggi con</li>
+                                    <li>sistemi di security e privacy by default.</li>
+                                </ul>
+                                <b>Il data mesh</b>
+                                <br>
+                                Per gestire meglio il rischio, trarre gli insights business in tempo reale (real-time
+                                data e analytics) e migliorare la disponibilità dei dati, le aziende stanno dando
+                                l’addio al processo pipeline per abbracciare il modello decentralizzato ovvero il data
+                                mesh.
+                                Il data mesh, infatti, rende i dati disponibili a ognuno, ovunque e rapidamente: è
+                                capace di rendere i data accessibili alla fonte, invece di trasferirli e centralizzarli.
+                                <br>
+                                <b>La security by design</b>
+                                <br>
+                                La pandemia ha contribuito ad accelerare i processi di digital transformation e
+                                migrazione al cloud, ma anche fatto esplodere il numero di cyber attacchi e incidenti
+                                dovuti all’incremento di dispositivi connessi in rete che ha ampliato i perimetri e
+                                dunque le aree di rischio.
+                                Gli attaccanti sfruttano la principale vulnerabilità, il fattore umano: l’essere umano,
+                                infatti, non si è ancora adattato alle minacce legate alla digitalizzazione. Social
+                                engineering e scarsa consapevolezza dei pericoli mettono a rischio le aziende.
+                                Altro fattore umano è collegato alla motivazione degli attaccanti: quanto più usiamo i
+                                servizi digitali, più essi risultano esposti alle falle, perché diventano appetibili per
+                                i criminal hacker che li mettono nel mirino.
+                                In questo scenario, la security by design offre un approccio in cui le aziende adottano
+                                la cybersecurity fin dalle prime fasi di un progetto, consentendo di affrontare le
+                                strategie giuste e adottare le soluzioni più opportune. In poche parole, la security by
+                                design declina lo sviluppo del servizio alle strategie di sicurezza identificate e non
+                                viceversa.
+                                <br>
+                                <b>L’approccio zero-trust</b>
+                                <br>
+                                Secondo l’approccio zero-trust, la migrazione verso cloud e multi-cloud ibrido deve
+                                andare di pari passo con l’adozione delle policy di sicurezza.
+                                <br>
+                                <b>La micro-segmentazione</b>
+                                Lo spostamento di workload nel cloud comporta la migrazione delle policy di sicurezza
+                                spesso basate su elementi fisici come indirizzi IP, MAC Address eccetera.
+                                In caso di cloud o multi cloud ibrido, spostare i flussi di lavoro è fondamentale come
+                                affrontare i problemi che ne derivano. La soluzione da adottare è quella della
+                                micro-segmentazione.
+                                Infatti bisogna disaccoppiare le policy dagli elementi fisici, consentendo di
+                                implementare principi zero-trust e allo stesso modo facilitare la migrazione.
+                                <br>
+                                <b>Security e privacy by default diventano by reaction e by detection</b>
+                                <br>
+                                Oggi giorno, in cui i perimetri diventano sempre più complessi da gestire e la supply
+                                chain digitale diventa sia bersaglio che vettore di attacco per il cyber crimine, non è
+                                più solo una questione di security by design e by default.
+                                Sicurezza by design e by default devono attualmente evolversi in security by reaction e
+                                by detection, mentre occorre orientarsi verso servizi e provider digitali autoctoni, per
+                                tendere verso l’obiettivo della sovranità digitale europea e aziendale.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Fine Column -->
+
             <!-- Column -->
-            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-secondary">
+            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-secondary" role="button"
+                data-bs-toggle="modal" data-bs-target="#modalDati">
                 <!-- Content -->
                 <div class="container d-flex align-items-center py-3 ">
-                    <img class="p-2" alt="" src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_ebay_UPN_HowWeCollect_FullColor.svg" style="float:left">
+                    <img class="p-2" alt=""
+                        src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_ebay_UPN_HowWeCollect_FullColor.svg"
+                        style="float:left">
                     <h3 class="fs-5 mb-0 p-2">Quali dati personali raccogliamo ed elaboriamo</h3>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalDati" tabindex="-1" aria-labelledby="modalDatiLabel" aria-hidden="true">
+                <!-- Vertically centered scrollable modal -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalDatiLabel">Trattamento di dati personali
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Chiudi"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Il trattamento di dati personali può costituire un'ingerenza con il diritto al rispetto
+                                della vita privata.
+                                <br>
+                                Però, quest'ultimo diritto non è un diritto assoluto, ma relativo, cioè va contemperato
+                                opportunamente con gli altri diritti in gioco, sia privati sia pubblici. Qualsiasi
+                                trattamento di dati personali deve, quindi, essere svolto:
+                                <ul>
+                                    <li>in maniera lecita e secondo correttezza e trasparenza;</li>
+                                    <li>i dati devono essere raccolti e trattati per scopi determinati, espliciti e
+                                        legittimi, e utilizzati in termini compatibili con tali scopi;</li>
+                                    <li>i dati devono essere esatti e aggiornati, pertinenti, completi e non eccedenti
+                                        rispetto agli scopi del trattamento;</li>
+                                    <li>i dati devono essere conservati per un periodo non superiore al tempo necessario
+                                        per</li>
+                                    <li>raggiungere gli scopi del trattamento, trascorso il quale i dati vanno
+                                        cancellati oppure anonimizzati.</li>
+                                </ul>
+                                Il titolare del trattamento deve anche essere in grado di dimostrare la conformità del
+                                trattamento dei dati (principio di responsabilizzazione).
+                                <br>
+                                Ovviamente i dati raccolti o trattati in modo illecito non possono essere in alcun modo
+                                utilizzati. In caso contrario l'utilizzatore può essere soggetto a sanzioni e condannato
+                                al risarcimento dei danni causati (art. 2050 cod. civ. e art. 13 Cod. Privacy).
+                                <br>
+                                L'articolo 4 del Regolamento europeo definisce il trattamento dei dati personali, come
+                                qualsiasi operazione o insieme di operazioni, compiute con o senza l’ausilio di processi
+                                automatizzati e applicate a dati personali o insiemi di dati personali, come la
+                                raccolta, la registrazione, l’organizzazione, la strutturazione, la conservazione,
+                                l’adattamento o la modifica, l’estrazione, la consultazione, l’uso, la comunicazione
+                                mediante trasmissione, diffusione o qualsiasi altra forma di messa a disposizione, il
+                                raffronto o l’interconnessione, la limitazione, la cancellazione o la distruzione. Il
+                                concetto di trattamento ingloba, quindi, tutte quelle operazioni che implicano una
+                                conoscenza di dati personali. E' irrilevante per la configurabilità del trattamento la
+                                mancata registrazione dei dati in una banca dati, essendo sufficiente anche una raccolta
+                                di dati e conseguente elaborazione temporanea. </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Fine Column -->
+
             <!-- Column -->
-            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-primary">
+            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-primary" role="button"
+                data-bs-toggle="modal" data-bs-target="#modalDurata">
                 <!-- Content -->
                 <div class="container d-flex align-items-center py-3 ">
-                    <img class="p-2" alt="" src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_ebay_UPN_DataRetentionDeletion_FullColor.svg" style="float:left">
+                    <img class="p-2" alt=""
+                        src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_ebay_UPN_DataRetentionDeletion_FullColor.svg"
+                        style="float:left">
                     <h3 class="fs-5 mb-0 p-2">Durata della conservazione e cancellazione dei dati</h3>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalDurata" tabindex="-1" aria-labelledby="modalDurataLabel"
+                aria-hidden="true">
+                <!-- Vertically centered scrollable modal -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalDurataLabel">Durata della conservazione e
+                                cancellazione
+                                dei dati</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Chiudi"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>Conservazione dei dati a lungo termine</b>
+                                <br>
+                                E’ possibile conservare i dati per lungo termine solo in via eccezionale. Si tratta di
+                                periodi di archiviazione più lunghi perché di interesse storico, pubblico o scientifico.
+                                Per conservare i dati in questa maniera bisogna assicurarsi che essi siano cifrati o
+                                quantomeno anonimizzati.
+                                <br>
+                                <b>Principio di limitazione del trattamento e diritto alla cancellazione dei dati</b>
+                                <br>
+                                Ogni sforzo del titolare del trattamento per determinare i tempi di conservazione dei
+                                dati nulla può, chiaramente, nel caso di esercizio del diritto alla cancellazione (o
+                                diritto all’oblio) da parte degli interessati.
+                                <br>
+                                <b>Il diritto alla cancellazione prevale sull’interesse alla conservazione</b>
+                                <br>
+                                Nei casi previsti, se un interessato chiede la cancellazione dei propri dati, il
+                                titolare
+                                deve procedere senza ingiustificato ritardo, e quindi senza riservarsi di continuare a
+                                trattare il dato sino alla scadenza originariamente fissata, prossima o meno che sia.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Fine Column -->
+
             <!-- Column -->
-            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-secondary">
+            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-secondary" role="button"
+                data-bs-toggle="modal" data-bs-target="#modalTrattamento">
                 <!-- Content -->
                 <div class="container d-flex align-items-center py-3 ">
-                    <img class="p-2" alt="" src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_ebay_UPN_HowWeUse_FullColor.svg" style="float:left">
+                    <img class="p-2" alt=""
+                        src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_ebay_UPN_HowWeUse_FullColor.svg"
+                        style="float:left">
                     <h3 class="fs-5 mb-0 p-2">Finalità e base giuridica del trattamento dei dati</h3>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalTrattamento" tabindex="-1" aria-labelledby="modalTrattamentoLabel"
+                aria-hidden="true">
+                <!-- Vertically centered scrollable modal -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalTrattamentoLabel">Base giuridica del trattamento</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Chiudi"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p> Un trattamento per essere lecito deve trovare fondamento in una idonea base giuridica
+                                (consenso,legittimi interessi, ecc...). La normativa prevede, inoltre, che debba essere
+                                tenuto un registro dei trattamenti svolti dal titolare, da fornire alle autorità in caso
+                                di controllo.
+                                <br>
+                                <b>Ambito di applicazione materiale e esenzioni</b>
+                                <br>
+                                In base all'art. 2 il Regolamento generale si applica a due tipi di trattamenti di dati
+                                personali:
+                                <ul>
+                                    <li>quelli interamente o parzialmente automatizzati;</li>
+                                    <li>quelli non automatizzati (il riferimento è a trattamenti su carta) di dati
+                                        personali contenuti in un archivio o destinati a figurarvi.</li>
+                                </ul>
+                                Per "<b>archivio</b>" (filing system) si intende "qualsiasi insieme strutturato di dati
+                                personali accessibili secondo criteri determinati, indipendentemente dal fatto che tale
+                                insieme sia centralizzato, decentralizzato o ripartito in modo funzionale o geografico"
+                                (GDPR art. 4). Tale nozione è stata specificata meglio dalla Corte di Giustizia:
+                                "l’insieme di dati personali raccolti nell’ambito di un’attività di predicazione porta a
+                                porta, contenente nomi, indirizzi e altre informazioni riguardanti le persone contattate
+                                porta a porta, allorché tali dati sono strutturati secondo criteri specifici che
+                                consentono, in pratica, di recuperarli facilmente per un successivo impiego. Affinché il
+                                suddetto insieme rientri in tale nozione, non è necessario che esso comprenda schedari,
+                                elenchi specifici o altri sistemi di ricerca” (CGUE, C-25/17). Si tratta di una
+                                definizione importante perché delimita l'applicabilità del GDPR (a differenza del Codice
+                                Privacy previgente). Il concetto di archivio, quindi, esclude dall'ambito di
+                                applicazione del GDPR gli archivi non strutturati, ma nel contempo il GDPR si guarda
+                                bene dall'escludere un trattamento solo perché esso sia realizzato su carta. In sintesi
+                                se è possibile estrarre informazioni su un individiduo anche dai registri cartacei, tali
+                                documenti rientrano nel concetto di archivio.
+                                <br>
+                                In tale prospettiva il GDPR disciplina solo il trattamento dei dati personali che
+                                riguardano una persona fisica, con esclusione delle persone giuridiche (tranne poche
+                                eccezioni). Quindi solo le persone fisiche possono essere interessati del trattamento,
+                                non anche le persone giuridiche. Il GDPR, però, non si applica alle persone decedute
+                                (Considerando 27), ma qui interviene il Decreto di adeguamento del Codice Privacy che
+                                estende le tutele del GDPR al trattamento dei dati dei deceduti (art. 2-terdecies).
+                                <br>
+                                Il regolamento, invece, non si applica nei seguenti casi:
+                                <ul>
+                                    <li>trattamenti effettuati per attività che non rientrano nell’ambito di
+                                        applicazione del diritto dell’Unione;</li>
+                                    <li>trattamenti effettuati dagli Stati membri nell’esercizio di attività che
+                                        rientrano nell’ambito di applicazione del titolo V, capo 2, del Trattato dell’UE
+                                        (politica estera
+                                        e sicurezza);</li>
+                                    <li>trattamenti effettuati dalle autorità competenti a fini di prevenzione,
+                                        indagine, accertamento o perseguimento di reati o esecuzione di sanzioni penali,
+                                        incluse la
+                                        salvaguardia contro minacce alla sicurezza pubblica e la prevenzione delle
+                                        stesse (direttiva 2016/680);</li>
+                                    <li>trattamenti effettuati da una persona fisica per l’esercizio di attività a
+                                        carattere esclusivamente personale o domestico (esenzione per uso personale).
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Fine Column -->
+
             <!-- Column -->
-            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-primary">
+            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-primary" role="button"
+                data-bs-toggle="modal" data-bs-target="#modalProtezione">
                 <!-- Content -->
                 <div class="container d-flex align-items-center py-3 ">
-                    <img class="p-2" alt="" src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_ebay_UPN_QuestionsComplaints_FullColor.svg" style="float:left">
+                    <img class="p-2" alt=""
+                        src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_ebay_UPN_QuestionsComplaints_FullColor.svg"
+                        style="float:left">
                     <h3 class="fs-5 mb-0 p-2">Responsabile della protezione dei dati e referente</h3>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalProtezione" tabindex="-1" aria-labelledby="modalProtezioneLabel"
+                aria-hidden="true">
+                <!-- Vertically centered scrollable modal -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalProtezioneLabel">I rapporti tra Dpo, referente privacy
+                                e IT manager nelle imprese</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Chiudi"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><b>Chi è il Dpo, responsabile della protezione dati</b>
+                                <br>
+                                Il Dpo, sulla base dei compiti assegnati dal Regolamento, non è un soggetto che
+                                materialmente assolve agli adempimenti privacy, ma ne verifica la corretta esecuzione e
+                                suggerisce al titolare le azioni da intraprendere. Nella maggior parte dei casi questa
+                                funzione viene assegnata a soggetti terzi rispetto al titolare, sia per evitare
+                                possibili conflitti di interesse della funzione, sia per questioni logistiche.
+                                È abbastanza difficile per un’azienda assegnare questa funzione a un soggetto che
+                                all’interno della stessa goda di sufficiente autonomia, abbia conoscenza specialistica
+                                della materia e capacità di assolvere ai compiti assegnati, mantenendo la necessaria
+                                indipendenza, se lo stesso si trova in una posizione di “subordine” dovuta al fatto
+                                stesso di essere dipendente dell’azienda stessa.
+                                <br>
+                                Allo stesso modo, a meno che nell’azienda siano già presenti figure altamente
+                                qualificate per assolvere a tali funzioni, non è consigliabile inserire ex novo un
+                                dipendente le cui competenze si limitino a qualche corso di formazione sulla materia.
+                                La complessità della normativa sulla protezione dei dati necessità di esperienza e
+                                approfondimenti costanti. Oltre a requisiti professionali (conoscenza specialistica
+                                della materia, capacità di assolvere ai compiti assegnati, buona conoscenza del
+                                funzionamento della struttura del titolare da cui il Dpo viene designato, abilità
+                                interpretativa delle norme relative alla protezione dei dati in tale contesto), il Dpo
+                                deve possedere delle qualità personali e relazionali ”Le qualità personali dovrebbero
+                                comprendere, per esempio, l’integrità ed elevati standard deontologici. Il responsabile
+                                protezione dati dovrebbe perseguire in via primaria l’osservanza delle disposizioni del
+                                GDPR”
+                                <br>
+                                Sul punto il GEPD, la rete istituzionale dell’UE sui responsabili protezione dati,
+                                sottolinea che il Dpo deve essere capace di mediare e risolvere i problemi in maniera
+                                accettabile per l’organizzazione, ma nel pieno rispetto della legge.
+                                Val la pena di ricordare che la responsabilità non grava sulle spalle del Dpo ma sul
+                                titolare, che da un lato ha l’obbligo di consultare il responsabile protezione dati e di
+                                coinvolgerlo ogni qual volta sia necessario o emergano problemi di conformità al GDPR,
+                                dall’altro, dovrà documentare e motivare l’eventuale disapplicazione dei pareri del
+                                responsabile protezione dati.
+                                <br>
+                                <b>La figura del referente privacy</b>
+                                <br>
+                                È possibile avere nel titolare in senso astratto un interlocutore in grado di
+                                comprendere sino in fondo le implicazioni pratiche di alcuni adempimenti? Può un
+                                amministratore delegato conoscere in dettaglio la modalità di trattamento di ciascun
+                                settore della propria azienda? È possibile impostare e verificare le procedure per il
+                                trattamento dati ignorando eventuali deleghe funzionali del titolare?
+                                <br>
+                                Nel passaggio di adeguamento dal D.Lgs.196/2003 al Regolamento UE 679/2016( GDPR), molti
+                                esperti si sono trovati di fronte a una novità quasi inaspettata. Era sparito il
+                                responsabile interno di specifici trattamenti, figura possibile ai sensi del
+                                D.Lgs.196/2003.
+                                Infatti il GDPR indica espressamente che quale responsabile del trattamento si possa
+                                individuare solo un soggetto (terzo) cui il titolare affida il trattamento.
+                                La novità non era di poco conto. È vero che gli obblighi ricadono in capo al titolare,
+                                ma chi, in fase di adeguamento può pensare di interloquire con un intero consiglio di
+                                amministrazione, chi potrebbe ignorare le deleghe operative dallo stesso assegnate?
+                                Fortunatamente a tutto ciò ha posto rimedio il D.L. 101/2018 che, nell’armonizzare il
+                                D.Lgs.196/2003 ha inserito all’art. 2-quaterdecies la figura del “referente privacy”,
+                                inteso come uno o più soggetti cui il titolare delega specifiche attività relative alla
+                                normativa privacy.
+                                <br>
+                                <b>La figura dell’IT manager</b>
+                                <br>
+                                Un’altra figura chiave, con cui il responsabile protezione dati deve necessariamente
+                                collaborare è l’IT manager. È sottinteso dalla presenza del responsabile protezione dati
+                                (prevista per chi svolge determinati trattamenti su larga scala) che le aziende che sono
+                                obbligate alla sua nomina svolgono trattamenti che prevedono una significativa quantità
+                                di dati con l’ausilio di strumenti elettronici. Le enormi possibilità di trattamento che
+                                gli strumenti informatici consentono sui dati personali e in particolare le misure di
+                                sicurezza adottate per preservarli, sono un patrimonio di conoscenza dell’IT manager che
+                                spesso le custodisce gelosamente.
+                                <br>
+                                L’importanza e la delicatezza di questo settore dell’azienda è stata chiarita nel
+                                provvedimento del Garante “Misure e accorgimenti prescritti ai titolari dei trattamenti
+                                effettuati con strumenti elettronici relativamente alle attribuzioni delle funzioni di
+                                amministratore di sistema - 27 novembre 2008 (G.U. n. 300 del 24 dicembre 2008)”.
+                                Provvedimento che conserva tutta la sua efficacia e che non a caso impone che
+                                “L'attribuzione delle funzioni di amministratore di sistema deve avvenire previa
+                                valutazione dell'esperienza, della capacità e dell'affidabilità del soggetto designato,
+                                il quale deve fornire idonea garanzia del pieno rispetto delle vigenti disposizioni in
+                                materia di trattamento ivi compreso il profilo relativo alla sicurezza.”
+                                <br>
+                                Il ruolo dell’IT nelle aziende è ormai strategico, la quantità di informazioni che è
+                                possibile elaborare, l’utilizzo della robotica, dell’IoT, rendono possibili dei
+                                trattamenti che, se da un lato possono agevolare le aziende nel raggiungimento dei
+                                propri obiettivi di business, dall’altro possono essere molto invasivi delle libertà
+                                degli individui cui questi dati si riferiscono.
+                                Conciliare ciò che è possibile con ciò che è lecito ai sensi della vigente normativa
+                                sulla protezione dei dati, è uno dei compiti più difficili che un DPO si trova ad
+                                assolvere.
+                                Di fronte a sistemi operativi complessi, che consentono un dettaglio di dati
+                                incredibile, magari frutto della intraprendenza e genialità di un IT manager, dover
+                                applicare il concetto di “minimizzazione dei dati” è in alcuni casi un’impresa realmente
+                                complicata.
+                                <br>
+                                Il Dpo assume un ruolo cruciale: quello di condividere con il referente privacy e con
+                                L’IT manager i fondamenti della normativa, entrando nel dettaglio di tutti i trattamenti
+                                e delle modalità con cui gli stessi sono svolti. Sensibilizzando in particolare sui
+                                rischi del collezionismo di dati che espongono il titolare a sanzioni.
+                                Quanto un Dpo sia visto come “censore” e quanto come “alleato dell’azienda nel prevenire
+                                sanzioni” dipende dal rapporto che instaura con il referente privacy e con l’IT manager.
+                                Nella misura in cui questi due soggetti sono sensibilizzati sulla normativa, comprendono
+                                che il ruolo del Dpo è quello di preservare l’azienda da possibili sanzioni e non di
+                                limitarne le possibilità di sviluppo nel trattamento dati, di far sì che i trattamenti
+                                avvengano nelle migliori condizioni di sicurezza possibili (la sicurezza in assoluto,
+                                come dimostrano anche i recentissimi data breach, non esiste). Un Dpo che riesce a
+                                trasferire questi concetti ai suoi interlocutori potrà svolgere un ottimo lavoro e dare
+                                un senso concreto alla sua funzione.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Fine Column -->
+
             <!-- Column -->
-            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-secondary">
+            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-secondary" role="button"
+                data-bs-toggle="modal" data-bs-target="#modalQualita">
                 <!-- Content -->
                 <div class="container d-flex align-items-center py-3 ">
-                    <img class="p-2" alt="" src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_eBay_UPN_Controller_FullColor_RGB.svg" style="float:left">
+                    <img class="p-2" alt=""
+                        src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_eBay_UPN_Controller_FullColor_RGB.svg"
+                        style="float:left">
                     <h3 class="fs-5 mb-0 p-2">Controllo Qualità</h3>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalQualita" tabindex="-1" aria-labelledby="modalQualitaLabel"
+                aria-hidden="true">
+                <!-- Vertically centered scrollable modal -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalQualitaLabel">Controlli sulla privacy: chi effettua le
+                                ispezioni, quali sanzioni e cosa viene
+                                controllato</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Chiudi"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p> Il 25 maggio è entrato in vigore il Regolamento UE 679 del 2016 che stabilisce i
+                                requisiti da rispettare per le gestione dei dati personali. Per ciò che riguarda le
+                                verifiche ispettive da parte degli organi di controllo preposti, scriviamo di seguito un
+                                elenco di cosa sarà oggetto di ispezione. Innanzitutto ricordiamo che tra gli enti
+                                preposti alle verifiche troviamo l’Autorità Garante per la Privacy e la Guardia di
+                                Finanza che ha sottoscritto un protocollo d’intesa proprio con il Garante.
+                                <br>
+                                Le verifiche ispettive avranno come oggetto:
+
+                                <ul>
+                                    <li>registro trattamento dati;</li>
+                                    <li>obbligo nomina del DPO (se obbligatoria);</li>
+                                    <li>acquisizione del programma formativo, le dispense, i materiali erogati, il test
+                                        finale;</li>
+                                    <li>analisi del profilo delle istruzioni agli incaricati al trattamento connesse
+                                        all’accesso, alla consultazione delle banche dati, i livelli di autorizzazione e
+                                        policy
+                                        aziendali (ad esempio in materia di password aziendali e di videosorveglianza);
+                                    </li>
+                                    <li>analisi delle misure organizzative e di protezione adottate;</li>
+                                    <li>controlli sulle misure previste in caso di data breach (da intendere non come
+                                        situazioni estreme ma come tutti quei casi di perdita accidentale e occasionale
+                                        di dati, come il
+                                        furto di un pc, di un hardisk e via di seguito) o in caso di valutazione di
+                                        impatto.</li>
+                                </ul>
+                                <b>Sanzioni</b>
+                                <br>
+                                Sarà il Garante a decidere l’entità delle sanzioni, in base agli elementi
+                                raccolti durante la fase ispettiva della Guardia di finanza. Il Garante, secondo l’art.
+                                83 del Regolamento, garantirà inoltre che essa sia effettiva, proporzionata e
+                                dissuasiva.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Fine Column -->
+
             <!-- Column -->
-            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-primary">
+            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-primary" role="button"
+                data-bs-toggle="modal" data-bs-target="#modalDiritti">
                 <!-- Content -->
                 <div class="container d-flex align-items-center py-3 ">
-                    <img class="p-2" alt="" src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_ebay_UPN_YourAccess_FullColor.svg" style="float:left">
+                    <img class="p-2" alt=""
+                        src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_ebay_UPN_YourAccess_FullColor.svg"
+                        style="float:left">
                     <h3 class="fs-5 mb-0 p-2">Diritti dell'interessato</h3>
                 </div>
             </div>
-            <!-- Fine Column -->
-            <!-- Column -->
-            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-secondary">
-                <!-- Content -->
-                <div class="container d-flex align-items-center py-3 ">
-                    <img class="p-2" alt="" src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_eBay_UPN_InternationalDataTransfers_FullColor_RGB.svg" style="float:left">
-                    <h3 class="fs-5 mb-0 p-2">Trasferimenti internazionali di dati</h3>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalDiritti" tabindex="-1" aria-labelledby="modalDirittiLabel"
+                aria-hidden="true">
+                <!-- Vertically centered scrollable modal -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalDirittiLabel">I diritti dell'interessato</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Chiudi"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p> La normativa di riferimento della privacy nell’ordinamento italiano è il decreto
+                                legislativo n. 196 del 2003, c.d. Codice della Privacy, così come profondamente
+                                riformato dal decreto legislativo n. 101 del 2018, che è stato adottato a seguito
+                                dell’entrata in vigore del Regolamento generale sulla protezione dei dati personali
+                                (GDPR in inglese, versione più usata o RPGD in italiano) n. 679 del 2016. (da ora in poi
+                                Regolamento o GDPR). Il GDPR si tratta di un regolamento europeo e quindi deve essere
+                                direttamente applicato da tutti gli Stati membri dell’Unione europea.
+                                Tale Regolamento stabilisce norme relative alla protezione delle persone fisiche con
+                                riguardo al trattamento dei dati personali, nonché norme relative alla libera
+                                circolazione di tali dati.
+                                <br>
+                                La persona fisica titolare dei dati personali è detta anche interessato. Il Regolamento
+                                disciplina, tra l’altro, il riconoscimento di una serie di diritti all’interessato,
+                                rinvenibili dall’articolo 15 all’articolo 22, esercitabili a tutela dei propri dati
+                                personali.
+                                <br>
+                                Tali diritti riconosciuti dal GDPR sono:
+                                <ul>
+                                    <li>Diritto di accesso dell’interessato - articolo 15</li>
+                                    <li>Diritto di rettifica - articolo 16</li>
+                                    <li>Diritto di cancellazione - articolo 17</li>
+                                    <li>Diritto di limitazione di trattamento - articolo 18</li>
+                                    <li>Diritto alla portabilità dei dati - articolo 20</li>
+                                    <li>Diritto di opposizione - articolo 21</li>
+                                </ul>
+                                <b>Diritto di accesso dell’interessato - articolo 15</b>
+                                <br>
+                                Processo decisionale automatizzato relativo alle persone fisiche, compresa la
+                                profilazione - articolo 22
+                                <br>
+                                Questo diritto, c.d. diritto di accesso privacy, consiste nel chiedere al titolare del
+                                trattamento se sia o meno in corso un trattamento di dati personali che lo riguardano e,
+                                in tal caso, di ottenere l’accesso a tali dati personali. Pertanto, si pone un obbligo
+                                in capo al titolare del trattamento di rendere note le informazioni sui dati trattati
+                                che riguardano lo stesso richiedente e, inoltre, di rendere le informazioni in modo
+                                chiaro e di facile comprensione anche per chi non ha una competenza in materia di
+                                privacy.
+                                <br>
+                                È comunque fondamentale considerare che l’accesso privacy non deve causare un
+                                pregiudizio concreto allo svolgimento di indagini difensive o all’esercizio di un
+                                diritto in sede giudiziaria.
+                                L’interessato, in particolare, ha il diritto di ottenere dal titolare del trattamento le
+                                informazioni riguardanti:
+
+                                <ul>
+                                    <li>le finalità del trattamento;</li>
+                                    <li>le categorie di dati personali in questione;</li>
+                                    <li>i destinatari o le categorie di destinatari a cui i dati personali sono stati o
+                                        saranno comunicati, in particolare se destinatari di paesi terzi o
+                                        organizzazioni
+                                        internazionali;</li>
+                                    <li>quando possibile, il periodo di conservazione dei dati personali previsto
+                                        oppure, se non è possibile, i criteri utilizzati per determinare tale periodo;
+                                    </li>
+                                    <li>l’esistenza del diritto dell’interessato di chiedere al titolare del trattamento
+                                        la rettifica o la cancellazione dei dati personali o la limitazione del
+                                        trattamento dei
+                                        dati personali che lo riguardano o di opporsi al loro trattamento;</li>
+                                    <li>il diritto di proporre reclamo a un’autorità di controllo;</li>
+                                    <li>qualora i dati non siano raccolti presso l’interessato, tutte le informazioni
+                                        disponibili sulla loro origine.</li>
+                                </ul>
+                                <br>
+                                <b>Diritto di rettifica - articolo 16</b>
+                                <br>
+                                Tale diritto consiste nella possibilità dell’interessato di richiedere modifiche ai
+                                propri dati personali nel caso in cui lo stesso ritenga che tali dati personali non
+                                siano aggiornati o comunque siano inesatti. L’interessato ha quindi il diritto di
+                                ottenere l’integrazione dei dati personali incompleti, anche fornendo una dichiarazione
+                                integrativa.
+                                <br>
+                                <b>Diritto di cancellazione - articolo 17</b>
+                                <br>
+                                Conosciuto anche come diritto all’oblio, questo diritto è il risultato di un lungo iter
+                                giurisprudenziale legato alla diffusione degli episodi di cronaca. Tale diritto
+                                conferisce all’interessato la possibilità di chiedere la cancellazione dei propri dati,
+                                senza ingiustificato ritardo e si applica, di norma, nelle situazioni in cui è terminato
+                                il rapporto con l’interessato. Tale diritto dipende dal periodo di conservazione del
+                                dato personale specifico disciplinato dalla normativa e, pertanto, non ha una portata
+                                assoluta.
+                                <br>
+                                In particolare, le fattispecie in cui si applica tale diritto sono:
+                                <ul>
+                                    <li>i dati personali non sono più necessari rispetto alle finalità per le quali sono
+                                        stati raccolti o altrimenti trattati;</li>
+                                    <li>l’interessato revoca il consenso su cui si basa il trattamento conformemente
+                                        all’articolo 6, paragrafo 1, lettera a), o all’articolo 9, paragrafo 2, lettera
+                                        a), e se
+                                        non sussiste altro fondamento giuridico per il trattamento;</li>
+                                    <li>l’interessato si oppone al trattamento ai sensi dell’articolo 21, paragrafo 1, e
+                                        non
+                                        sussiste alcun motivo legittimo prevalente per procedere al trattamento, oppure
+                                        si
+                                        oppone al trattamento ai sensi dell’articolo 21, paragrafo 2;</li>
+                                    <li>i dati personali sono stati trattati illecitamente;</li>
+                                    <li>i dati personali devono essere cancellati per adempiere un obbligo giuridico
+                                        previsto
+                                        dal diritto dell’Unione o dello Stato membro cui è soggetto il titolare del
+                                        trattamento;</li>
+                                    <li>i dati personali sono stati raccolti relativamente all’offerta di servizi della
+                                        società dell’informazione di cui all’articolo 8, paragrafo 1.</li>
+                                </ul>
+                                Sono comunque previste delle fattispecie in cui non si può applicare tale diritto.
+                                <br>
+                                <b>Diritto di limitazione di trattamento - articolo 18</b>
+                                <br>
+                                Tale diritto permette all’interessato di ottenere dal titolare del trattamento una
+                                limitazione del trattamento quando ricorrono alcune ipotesi, di seguito indicate:
+                                <ul>
+                                    <li>l’interessato contesta l’esattezza dei dati personali;</li>
+                                    <li>il trattamento è illecito;</li>
+                                    <li>i dati personali sono necessari all’interessato;</li>
+                                    <li>l’interessato si è opposto al trattamento.</li>
+                                </ul>
+                                <b>Diritto alla portabilità dei dati - articolo 20</b>
+                                <br>
+                                Questo diritto conferisce all’interessato la possibilità di chiedere il trasferimento
+                                dei dati personali che lo riguardano forniti a un titolare del trattamento ad un altro
+                                titolare del trattamento. La ricezione dei dati personali che riguardano l’interessato
+                                deve avvenire tramite un formato strutturato, leggibile da dispositivo automatico. Tale
+                                diritto è esercitabile se il trattamento si basi sul consenso o un contratto e che
+                                avvenga tramite l’utilizzo di mezzi automatizzati.
+                                <br>
+                                <b>Diritto di opposizione - articolo 21</b>
+                                Questo diritto conferisce all’interessato la possibilità di opporsi in qualsiasi momento
+                                al trattamento di dati personali.
+                                Il titolare del trattamento, pertanto, ha l’obbligo di astenersi dal trattamento di dati
+                                personali, salvo che egli dimostri l’esistenza di motivi legittimi cogenti per procedere
+                                al trattamento che prevalgono sugli interessi, sui diritti e sulle libertà
+                                dell’interessato oppure per l’accertamento, l’esercizio o la difesa di un diritto in
+                                sede giudiziaria. L’interessato, inoltre, può opporsi anche al trattamento dei dati per
+                                fini commerciali e/o di marketing diretto. Nel caso di trattamenti basati sul consenso,
+                                comunque, prevale la possibilità di revoca del consenso rispetto al diritto di
+                                opposizione. È bene sottolineare che l’opposizione al trattamento è operazione diversa
+                                dalla cancellazione dei dati.
+                                <br>
+                                <b> Processo decisionale automatizzato relativo alle persone fisiche, compresa la
+                                    profilazione - articolo 22</b>
+                                <br>
+                                Tale articolo dispone che l’interessato ha il diritto di non essere sottoposto a una
+                                decisione basata unicamente sul trattamento automatizzato, compresa la profilazione, che
+                                produca effetti giuridici che lo riguardano o che incida in modo analogo
+                                significativamente sulla sua persona. Tale previsione non si applica nel caso in cui la
+                                decisione:
+                                <ul>
+                                    <li>sia necessaria per la conclusione o l’esecuzione di un contratto tra
+                                        l’interessato e
+                                        un titolare del trattamento;</li>
+                                    <li>sia autorizzata dal diritto dell’Unione o dello Stato membro cui è soggetto il
+                                        titolare del trattamento, che precisa altresì misure adeguate a tutela dei
+                                        diritti,
+                                        delle libertà e dei legittimi interessi dell’interessato;</li>
+                                    <li>si basi sul consenso esplicito dell’interessato.</li>
+                                </ul>
+                                Il processo decisionale automatizzato è quello strumento che permette di prendere
+                                decisioni tramite l’utilizzo di mezzi elettronici e/o informatici con o senza
+                                l’intervento umano e che comporta, attraverso i dati trattati, una previsione di una
+                                situazione patrimoniale, economica, finanziaria, nonché di comportamenti attitudini
+                                personali e ogni altro dato personale che riguardi l’interessato e che sia desumibile a
+                                seguito del trattamento in argomento. L’impiego di tali strumenti c.d. automatizzati può
+                                comportare seri rischi per i diritti e le libertà degli individui.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Fine Column -->
+
+            <!-- Column -->
+            <div class="col-10 col-lg-5 col-xl-4 p-md-3 border border-2 rounded border-secondary" role="button"
+                data-bs-toggle="modal" data-bs-target="#modalTrasferimento">
+                <!-- Content -->
+                <div class="container d-flex align-items-center py-3 ">
+                    <img class="p-2" alt=""
+                        src="https://secureir.ebaystatic.com/pictures/aw/OCS_SelfService/Icon_eBay_UPN_InternationalDataTransfers_FullColor_RGB.svg"
+                        style="float:left">
+                    <h3 class="fs-5 mb-0 p-2">Trasferimenti internazionali di dati</h3>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalTrasferimento" tabindex="-1" aria-labelledby="modalTrasferimentoLabel"
+                aria-hidden="true">
+                <!-- Vertically centered scrollable modal -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalTrasferimentoLabel">Trasferimenti internazionali di
+                                dati
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Chiudi"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Uno degli aspetti più attentamente seguiti dagli esperti del settore data protection,
+                                imprenditori, studiosi, giuristi è il tema del trasferimento dei dati verso Paesi non
+                                appartenenti all’UE, o meglio non aderenti allo Spazio economico europeo, o verso
+                                organizzazioni internazionali.
+                                <br>
+                                Il concetto di base è semplice, se i nostri dati personali sono tutelati dalla
+                                legislazione europea che garantisce agli interessati di controllare l’uso che viene
+                                fatto dei loro dati personali e che possono esercitare una serie di diritti anche con
+                                l’ausilio di autorità di controllo indipendenti è evidente che una volta che gli stessi
+                                dati sono trasferiti verso paesi che non hanno simili tutele gli interessati
+                                perderebbero quelle garanzie riconosciute dal loro legislatore vanificando così le
+                                garanzie ed i diritti ad essi riconosciuti.
+                                <br>
+                                <b>Trasferimento dati, cosa dice la normativa europea</b>
+                                <br>
+                                La normativa europea prevede così la possibilità di trasferire dati verso paesi terzi a
+                                certe condizioni: innanzitutto in caso di decisione di “adeguatezza” della Commissione
+                                Europea che viene riconosciuta a quei paesi che assicurano un adeguato livello di
+                                protezione che nella giurisprudenza della Corte di giustizia (Causa 362/14 del 6 Ottobre
+                                2015 cd. Schrems I) non significa un livello di protezione identico ma “essenzialmente
+                                equivalente” a quello assicurato all’interno del Unione Europea.
+                                <br>
+                                Per addivenire a tale decisone la Commissione prende in considerazione vari elementi,
+                                tra questi, il quadro giuridico, lo stato di diritto, il rispetto dei diritti umani e
+                                delle libertà fondamentali, la legislazione pertinente, anche in materia di pubblica
+                                sicurezza, di difesa e sicurezza nazionale, il diritto penale, le norme sulla protezione
+                                dei dati, l’esistenza di autorità di controllo indipendenti per garantire e far
+                                rispettare le norme sulla protezione dei dati. Sono già diversi i paesi che hanno
+                                chiesto ed ottenuto il riconoscimento di “adeguatezza” solo per citare i più importanti
+                                l’Argentina, il Canada, Israele, la Nuova Zelanda, l’Uruguay e da ultimo il Giappone e
+                                la Corea del sud.
+                                <br>
+                                <b>Clausole contrattuali e norme vincolanti d’impresa</b>
+                                <br>
+                                In assenza della decisione di adeguatezza può essere utilizzato lo strumento delle
+                                garanzie adeguate, mi riferisco in primis alle clausole contrattuali (Clausole
+                                Contrattuali ad hoc o Standard - SCC). Lo scorso novembre la Commissione Ue ha adottato
+                                un nuovo set di clausole per allineare le SCC ai nuovi requisiti del RGPD e riflettere
+                                l’uso di nuove e più complesse operazioni di trattamento. Questo strumento ha una serie
+                                di vantaggi il primo dei quali è la flessibilità e può offrire lo stesso livello di
+                                protezione, ma prevede dei passaggi procedurali al Comitato europeo - EDPB per
+                                garantirne la consistency.
+                                <br>
+                                Ulteriore strumento che può essere utilizzato in assenza di riconoscimento
+                                dell’adeguatezza è dato dalle Norme vincolanti d’impresa (BCR) approvate dall’EDPB il
+                                cui scopo è di facilitare il trasferimento infragruppo dei dati personali. Qui le norme
+                                hanno natura “legalmente vincolante” anche per le società stabilite al di fuori dell’UE.
+                                <br>
+                                In assenza di una decisione di adeguatezza o di garanzie adeguate (SCC e BCR) un
+                                trasferimento o un insieme dei trasferimenti di dati personali verso un paese terzo o
+                                un’organizzazione internazionale può comunque avere luogo in presenza di una delle
+                                deroghe previste dal RGPD (art. 49). Sono casi limitati che vanno interpretati sapendo
+                                che parliamo di deroghe, di eccezioni. Si tratta di consenso o interesse vitale
+                                dell’interessato, esecuzione di un contratto tra l’interessato e il titolare del
+                                trattamento o concluso nell’interesse dell’interessato, importanti motivi di interesse
+                                pubblico riconosciuti nell’UE, accertamento, esercizio o difesa di azioni legali, dati
+                                presenti nei pubblici registri, interessi legittimi cogenti perseguiti dal titolare del
+                                trattamento che non prevalgono sugli interessi o sui diritti e le libertà
+                                dell’interessato, anche in questi casi va sempre fatta una valutazione delle circostanze
+                                del trasferimento e della presenza di adeguate garanzie in materia.
+                                <br>
+                                <b>I nuovi strumenti del GDPR per il trasferimento dei dati</b>
+                                <br>
+                                Il GDPR ha introdotto anche dei “nuovi” strumenti” utili a facilitare il trasferimento.
+                                Tra questi le Clausole contrattuali tipo che devono essere adottate da un’autorità
+                                nazionale e che poi, con l’approvazione dalla Commissione europea, avranno una validità
+                                generale in quanto in grado di garantire la coerenza. Ulteriore novità è data dal codice
+                                di condotta che una volta approvato avrà validità generale all’interno dell’Unione e che
+                                può anche essere rispettato e utilizzato da titolari o responsabili del trattamento non
+                                soggetti al RGPD. Così l’ambito di applicazione del CdC come strumento di trasferimento
+                                potrebbe consentire a un titolare o responsabile del trattamento in un paese terzo di
+                                fornire garanzie adeguate, in particolare per i trasferimenti specifici di un settore.
+                                In proposito lo scorso 22 febbraio il Comitato europeo ha approvato le Linee guida sui
+                                codici di condotta come strumenti per i trasferimenti.
+                                <br>
+                                <b>La certificazione</b>
+                                Altro nuovo strumento è il meccanismo di certificazione come strumento di trasferimento
+                                che mira a fornire garanzie adeguate al trattamento dei dati personali. Anche per questo
+                                strumento il Comitato europeo ha avviato i lavori per fornire le linee guida in materia
+                                di certificazione come strumento per i trasferimenti. A codici e certificazioni vanno
+                                aggiunti gli impegni vincolanti ed esecutivi grazie ai quali titolari e responsabili del
+                                trattamento sono tenuti ad assumere impegni, tramite strumenti contrattuali o altri
+                                strumenti giuridicamente vincolanti utili ad aggiungere le opportune garanzie previste
+                                dal codice con riguardo ai diritti dei soggetti.
+                                <br>
+                                <b>Le disposizioni negli accordi tra soggetti pubblici</b>
+                                <br>
+                                Importante citare in questo contesto anche le disposizioni da inserire negli accordi
+                                amministrativi tra soggetti pubblici dei diversi paesi che includono diritti esecutivi
+                                ed effettivi dell’interessato. Questo rappresenta uno strumento giuridicamente
+                                vincolante ed esecutivo tra gli enti pubblici e richiedono la necessità di
+                                un’autorizzazione da parte della Autorità competente sull’ente pubblico cedente e la
+                                necessità di un parere del Comitato europeo sempre per garantirne la consistency.
+                                <br>
+                                <b>Le sentenze Schrems I e II</b>
+                                <br>
+                                In questo scenario obiettivamente complesso che riguarda i trasferimenti internazionali
+                                di dati personali verso paesi terzi o organismi internazionali si sono inserite nuove
+                                sfide. Mi riferisco principalmente alle due sentenze della Corte di giustizia UE (Causa
+                                362/14, sopra citata, e la Causa 311/18 del 16 luglio 2020 c.d. Schrems I e II,
+                                prendendo il nome del reclamante Max Schrems), in particolare la seconda decisone ha
+                                invalidato l’accordo per il trasferimento dei dati personali verso gli USA, denominato
+                                Privacy Shield ma ha contestualmente riconosciuto valida la decisione della Commissione
+                                sulle clausole contrattuali tipo. Questo riconoscimento è importante perché conferma la
+                                possibilità di utilizzare le Clausole come strumento di trasferimento anche se la Corte
+                                avverte che ciò dipende dalla presenza di meccanismi che consentono effettivamente di
+                                garantire un livello di protezione sostanzialmente equivalente a quello garantito
+                                all’interno dell’UE.
+                                <br>
+                                Ecco perché il titolare del trattamento deve verificare che il livello di protezione sia
+                                equivalente e se necessario deve aggiungere alle Clausole le cd. “misure supplementari”.
+                                Se neanche con queste può essere garantita nella pratica il livello equivalente,
+                                l’esportatore dei dati è tenuto a sospendere il trasferimento e/o a rescindere il
+                                contratto con l’importatore. Pertanto cosa fare e come “salvare” il trasferimento? Ora
+                                l’esportatore di dati personali, con l’aiuto dell’importatore, deve verificare, prima di
+                                ogni trasferimento, e tenendo conto delle circostanze del trasferimento, se la legge
+                                applicabile nel paese terzo in questione possa incidere sugli impegni contenuti nello
+                                strumento utilizzato e se sarà il caso, dovrà applicare eventuali misure supplementari
+                                per garantirne l’efficacia.
+                                <br>
+                                <b>Trasferimento dati, le iniziative dell’EDPB</b>
+                                <br>
+                                Il ruolo dell’autorità sarà invece di valutare il livello di protezione offerto nella
+                                pratica dallo strumento di trasferimento e intervenire ove necessario vietando il
+                                trasferimento. In questo contesto il Comitato europeo sulla protezione dei dati
+                                personali ha cercato di fornire un ausilio ai titolari e responsabili del trattamento e
+                                agli operatori del settore.
+                                <br>
+                                Varie sono state le iniziative fornite grazie al lavoro delle varie autorità presenti
+                                nel Comitato, compreso il Garante italiano. Sono state sviluppate all’indomani della
+                                decisone Schrems II delle FAQ sulle conseguenze del provvedimento per i titolari e gli
+                                incaricati del trattamento (luglio 2020), ha poi emanato le Raccomandazioni 1/2020 per
+                                assistere i titolari e gli incaricati del trattamento principalmente nella valutazione
+                                caso per caso delle circostanze del trasferimento e del loro dovere di identificare e
+                                attuare effettive misure supplementari per garantire un livello di protezione
+                                sostanzialmente equivalente in caso di trasferimento dei dati verso paesi terzi, ha
+                                anche emanato raccomandazioni sulle supplementary misures e linee guida sui codici di
+                                condotta come strumento per i trasferimenti.
+                                <br>
+                                Questi documenti contengono utili suggerimenti per titolari e responsabili esportatori
+                                dei dati qualora non vi sia una decisione di adeguatezza. Questi, infatti, sono i
+                                principali “responsabili” nell’identificazione delle tutele più adeguate al
+                                trasferimento che si intende effettuare e devono verificare, caso per caso, anche a
+                                seconda dello strumento di trasferimento scelto, se la legge o la prassi del paese terzo
+                                pregiudica l’efficacia delle garanzie adeguate contenute nel RGPD e in caso devono
+                                attuare misure supplementari. Tutta questa valutazione dovrà essere accuratamente
+                                documentata.
+                                <br>
+                                Vi sono anche utili indicazioni per gli importatori del Paese terzo: collaborare con
+                                l’esportatore per consentire la valutazione della normativa specifica nel paese terzo;
+                                attuare le garanzie contenute nello strumento di trasferimento delle relative misure
+                                supplementari e fornire informazioni all’esportatore nel caso in cui non sia in grado di
+                                rispettare gli impegni.
+                                <br>
+                                <b>Conclusione</b>
+                                <br>
+                                Come si evince il contesto è in continua evoluzione e, in attesa che a seguito delle
+                                pronunce della Corte di giustizia le parti (UE e USA) pervengano a un nuovo accordo, le
+                                stesse autorità nazionali sono state chiamate ad intervenire, a seguito di specifiche
+                                segnalazioni, per verificare la regolarità di alcuni trasferimenti. Tra le prime
+                                autorità ad intervenire vi è quella dell’Austria, patria di Max Schrems, che ha adottato
+                                un provvedimento rispetto all’utilizzo di servizi di Google così come il Garante delle
+                                istituzioni europee (EDPS) ha emanato una decisione sull’uso degli analytics da parte
+                                del Parlamento europeo, di fatto vietandolo ritenendo il relativo trattamento in
+                                contrasto con il regolamento relativo al trattamento dei dati da parte delle istituzioni
+                                europee.
+                                <br>
+                                Seguiranno a breve le decisioni di altre Autorità che hanno aperto analoghe istruttorie.
+                                In conclusione la situazione resta ancora aperta, almeno per quanto riguarda i flussi di
+                                dati personali tra Unione europea e Stati Uniti d’America, fino a che non subentrerà un
+                                nuovo accordo sull’adeguatezza, a cui le due parti hanno già iniziato a lavorare, che
+                                contenga tutte le garanzie che la Corte di giustizia ha sin qui evidenziato.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fine Column -->
+
         </div>
+        <!-- Fine Row -->
+
     </main>
     <!-- Fine main -->
+
     <!-- Footer -->
     <footer th:insert="index.html :: footer"></footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
