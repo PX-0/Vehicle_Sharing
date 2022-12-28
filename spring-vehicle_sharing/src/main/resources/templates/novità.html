@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -131,9 +131,6 @@
               <li class="nav-item">
                 <a class="nav-link active" href="../other/novità">Novità</a>
               </li>
-              <li class="nav-item" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'B'">
-                <a class=" nav-link" href="../utenti/areaPersonale" > Area Personale</a>
-              </li>
               <li class="nav-item" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'A'">
 	              <a class="nav-link" href="../utenti/pannello">Pannello di lavoro</a>
 	            </li>
@@ -200,18 +197,21 @@
 
     <section class="spacer">
       <div class="container newsCards">
+        <!-- <div class="container"> -->
         <h2 class="title-page text-uppercase">Prossimamente</h2>
         <div class="row justify-content-center">
 
           <div class="col-sm-6 p-3">
 
-              <div class="card">
-                  <img src="https://www.regali24.it/smartedit/images/erlebnisimpression/guidare-una-lamborghini-huracan-in-pista-udine.jpg" class="card-img-top" alt="..." />
+              <div class="card">                
+                <img src="../static/assets/img/novita/Lamborghini3.jpg" class="card-img-top" alt="lamborghini blu su pista" />
                 <div class="card-body">
-                   <h3 class="card-title">Auto estreme</h3>
-                    <p class="card-text">
-                     A breve amplieremo il nostro parco titoli con macchine altamente sportive con le quali potrere anche fare simulazioni su pista.
+                  <div class="card-title">Auto estreme</div>
+                  <div class="card-text">
+                    <p>
+                      A breve amplieremo il nostro parco titoli con macchine altamente sportive con le quali potrere anche fare simulazioni su pista.
                     </p>
+                  </div>
                   <a href="#" class="btn btn-primary">Tienimi aggiornato</a>
                 </div>
               </div>
@@ -220,12 +220,14 @@
 
           <div class="col-sm-6 p-3">
               <div class="card">
-                  <img src="https://motori.virgilio.it/wp-content/uploads/sites/4/2020/03/officine-aperte.jpg" class="card-img-top" alt="..." />
+                <img src="../static/assets/img/novita/meccanico3.jpg" class="card-img-top" alt="meccanico" />
                 <div class="card-body">
-                  <h3 class="card-title">Meccanico di fiducia</h3>
-                    <p class="card-text">
-                      Collaborazione con moltissimi meccanici per assicurarvi un auto di cortesia per usarla durante la vostra riparazione
-                    </p>
+                  <div class="card-title">Meccanico di fiducia</div>
+                    <div class="card-text">
+                      <p>
+                        Collaborazione con moltissimi meccanici per assicurarvi un auto di cortesia per usarla durante la vostra riparazione
+                      </p>
+                    </div>
                   <a href="#" class="btn btn-primary">Tienimi aggiornato</a>
                 </div>
               </div>
@@ -234,13 +236,14 @@
 
           <div class="col-sm-6 p-3">
               <div class="card">
-                <img src="https://www.pontedilegnotonale.com/media/3old2y3w/bike-bikepass.jpg?mode=min&quality=70&width=600&height=400&rnd=132194329960130000" class="card-img-top" alt="..." />
+                <img src="../static/assets/img/novita/bicicletta3.jpg" class="card-img-top" alt="escursione in bici" />
                 <div class="card-body">
-                  <h3 class="card-title">All'aria aperta</h3>
-                    <p class="card-text">
-                      Pacchetto escursioni per gruppi o singoli alla riscoperta della natura e dei paesaggi meravigliosi e più nascosti
-                    </p>
-              
+                  <div class="card-title">All'aria aperta</div>
+                    <div class="card-text">
+                      <p>
+                        Pacchetto escursioni per gruppi o singoli alla riscoperta della natura e dei paesaggi meravigliosi e più nascosti
+                      </p>
+                    </div> 
                   <a href="#" class="btn btn-primary">Tienimi aggiornato</a>
                 </div>
               </div>
@@ -249,13 +252,15 @@
 
           <div class="col-sm-6 p-3">
               <div class="card">
-                <img src="https://images.ctfassets.net/q33z48p65a6w/7caXs8aJziGDrjhWiw3PxN/db8374a32e40aa386c22379e72c4de51/1910_New_Insurance_Package_Landing_Page_Module_3_large.jpg?w=1200&h=645&fit=thumb" class="card-img-top" alt="..." />
+                <img src="../static/assets/img/novita/telefono3.jpg" class="card-img-top" alt="ragazza con telefono" />
                 <div class="card-body">
-                  <h3 class="card-title">App</h3>
+                  <div class="card-title">App</div>
                   
-                    <p class="card-text">
-                      Prossimamente creeremo un app dedicata per ottimizzare le scelte e le prenotazioni da mobile
-                    </p>
+                    <div class="card-text">
+                      <p>
+                        Prossimamente creeremo un app dedicata per ottimizzare le scelte e le prenotazioni da mobile
+                      </p>
+                    </div>
                  
                   <a href="#" class="btn btn-primary">Tienimi aggiornato</a>
                 </div>
