@@ -383,6 +383,26 @@ fetch(url).then(data=>{return data.json()})
 
 })
 
-
-
 //img 100w h-auto
+
+/* -------------------------------------------------------------------------- */
+/*                                   COOKIE                                   */
+/* -------------------------------------------------------------------------- */
+
+function removeCookieConsent() {
+  // Trova l' elemento della finestra dei cookie
+  var cookieConsent = document.querySelector('.cookie-consent');
+
+  // Se esiste, rimuovilo dal DOM
+  if (cookieConsent) {
+    cookieConsent.parentNode.removeChild(cookieConsent);
+  }
+}
+
+// Assegna la funzione come gestore del click per il bottone
+var button = document.querySelector('.allow-button');
+button.addEventListener('click', removeCookieConsent);
+
+/* -------------------------------------------------------------------------- */
+/*                                 FINE COOKIE                                */
+/* -------------------------------------------------------------------------- */
