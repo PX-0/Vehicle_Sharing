@@ -11507,6 +11507,46 @@ header .btn-secondary:hover {
 /*                                 FINE FOOTER                                */
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
+/*                                   COOKIES                                  */
+/* -------------------------------------------------------------------------- */
+.cookie-consent {
+  position: fixed;
+  bottom: .8rem;
+  width: 22rem;
+  padding-top: .7rem;
+  height: 8.5rem;
+  color: #fff;
+  line-height: .8rem;
+  padding-left: .3rem;
+  padding-right: 2rem;
+  font-size: 14px;
+  background: #292929;
+  z-index: 120;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+@media (min-width: 768px) {
+  .cookie-consent {
+    margin-left: 2rem;
+  }
+}
+
+.allow-button {
+  height: 1.5rem;
+  width: 6.5rem;
+  color: #fff;
+  font-size: 12px;
+  line-height: .8rem;
+  border-radius: 3px;
+  border: 1px solid green;
+  background-color: green;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 FINE COOKIE                                */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
 /*                             INSERIMENTO VEICOLO                            */
 /* -------------------------------------------------------------------------- */
 .title-formAdd {

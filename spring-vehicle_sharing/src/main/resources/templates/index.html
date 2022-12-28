@@ -33,6 +33,16 @@
 </head>
 
 <body>
+  <div class="cookie-consent me-2">
+    <span>Utilizziamo sia cookie tecnici sia cookie di parti terze per inviare messaggi promozionali sulla base dei
+      comportamenti degli utenti. Può conoscere i dettagli consultando la nostra privacy policy qui. Proseguendo nella
+      navigazione si accetta l'uso dei cookie; in caso contrario è possibile abbandonare il sito. Vedi <a
+        href="../other/Privacy" class="ml-1 text-decoration-none">Privacy policy</a></span>
+    <div class="mt-2 d-flex align-items-center justify-content-center g-2">
+      <button class="allow-button me-1">Consenti cookie</button>
+      <button class="allow-button">Chiudi</button>
+    </div>
+  </div>
   <header>
     <nav class="navbar navbar-expand-md">
       <div class="container-fluid">
@@ -56,7 +66,7 @@
               <a class="nav-link" href="../other/novità">Novità</a>
             </li>
             <li class="nav-item" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'B'">
-              <a class=" nav-link" href="utenti/areaPersonale" > Area Personale</a>
+              <a class=" nav-link" href="utenti/areaPersonale"> Area Personale</a>
             </li>
             <!-- <li class="nav-item">
               <a href="utenti/login" class="btn btn-secondary ms-2" id="button-nav">Login</a>
@@ -97,9 +107,9 @@
     </section>
 
     <!-- inizio calendario -->
-    <section id="calendario" class="my-5"> 
+    <section id="calendario" class="my-5">
       <!-- inizio container -->
-      <div class="container"> 
+      <div class="container">
         <h2 class="sectionTitle-calendario text-secondary fs-1 fw-bold">LE NOSTRE DISPONIBILITÀ</h2>
         <div class="row justify-content-between mb-3">
           <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 pt-3">
@@ -145,11 +155,11 @@
               <tbody id="veicoliNoleggiati"></tbody>
             </table>
           </div>
-        <!-- fine row -->
+          <!-- fine row -->
         </div>
-      <!-- fine container -->
+        <!-- fine container -->
       </div>
-    <!-- fine calendario -->
+      <!-- fine calendario -->
     </section>
 
     <section id="chart">
@@ -157,21 +167,21 @@
         <h2 class="text-secondary fs-1 fw-bold">I NOSTRI RISPARMI DI CO<sub>2</sub></h2>
         <p>
           Questo grafico rappresenta quanti kg
-            di CO<sub>2</sub> risparmia ogni tipologia di
-            veicolo “green” in base al numero di
-            veicoli presenti.
+          di CO<sub>2</sub> risparmia ogni tipologia di
+          veicolo “green” in base al numero di
+          veicoli presenti.
         </p>
       </div>
 
       <div class="container">
         <div class="row justify-content-center mx-2 mx-md-0">
           <div class="col-lg-3 wrapper-chart shadow justify-content-center">
-              <canvas id="myChart"></canvas>
+            <canvas id="myChart"></canvas>
           </div>
         </div>
       </div>
     </section>
-      
+
 
   </main>
 
@@ -232,9 +242,6 @@
             </p>
             <p>
               <a href="../other/Privacy" class="" style="color: #1FAB89; text-decoration: none">Privacy policy</a>
-            </p>
-            <p>
-              <a href="../other/Cookie" class="" style="color: #1FAB89; text-decoration: none">Cookie Policy</a>
             </p>
           </div>
           <!-- Grid column -->
