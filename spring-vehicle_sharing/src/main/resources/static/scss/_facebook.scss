@@ -199,3 +199,17 @@
     border: 1px solid #f2f4f9;
     border-radius: 0.25rem;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                  VARIANTI                                  */
+/* -------------------------------------------------------------------------- */
+
+.profile-pic{
+    height: 4rem;
+    width: auto;
+}
+
+.profile-name{
+    text-decoration: none;
+    color: $secondary !important;
+}
