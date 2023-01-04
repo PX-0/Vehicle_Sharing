@@ -26,10 +26,10 @@ public class PagesMVC {
         return "about-us"; 
     }
 
-    @GetMapping("/novità")
+    @GetMapping("/novita")
     public String novità() {
      
-        return "novità"; 
+        return "novita"; 
     }
     
     @GetMapping("/Privacy")

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errore</title>
+    <link rel="stylesheet" href="../../resources/static/css/style.css" th:href="@{/css/style.css}">
+</head>
+<body>
+    
+    <div class="page-error py-5">
+
+        <div class="text-center py-4">
+            <h1>hai sbagliato url..........................hai la 404</h1>
+        </div>
+
+                <div class="container d-flex justify-content-center">
+                    <img th:src="@{/assets/img/DavideExplainingHow.gif}" class="img-fluid">
+                    <img th:src="@{/assets/img/MauroLoading.gif}" class="img-fluid">
+                </div>
+            
+
+        <div class="d-flex gap-2 justify-content-center">
+            <form th:action="@{/}">
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-secondary">Torna al sito</button>
+                </div>
+            </form>
+            <form th:action="@{/utenti/logout}" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'B'">
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-secondary">Logout</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
