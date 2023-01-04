@@ -211,5 +211,8 @@
 
 .profile-name{
     text-decoration: none;
-    color: $secondary !important;
+    color: $secondary;
+}
+.header-link-item a{
+    text-decoration: none;
 }
