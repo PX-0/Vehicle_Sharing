@@ -9,8 +9,19 @@
        
     }
 }
-*/
 
  img{
         max-height: 12rem;
     }
+    
+    .container:nth-of-type(even) .newsImage {
+    order: 1;
+}
+
+.container:nth-of-type(even) .newsText {
+    text-align: right;
+}
+*/
+
+
+
