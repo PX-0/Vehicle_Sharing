@@ -122,6 +122,7 @@ public class ArchivioUtentiMVC {
 		
 		if (session.getAttribute("loginVeicoloID") != null) {
 			String loginVeicoloID = String.valueOf(session.getAttribute("loginVeicoloID"));
+			session.removeAttribute("registerVeicoloID");
 			session.removeAttribute("loginVeicoloID");
 			return "redirect:/veicoli/" + loginVeicoloID;
 		}
@@ -148,6 +149,26 @@ public class ArchivioUtentiMVC {
 	
 	@GetMapping("register")
 	public String register() {
+		return "registrazione";
+	}
+	
+	@GetMapping("register/{id}")
+	public String registerVId(HttpSession session, 
+			@PathVariable("id") int veicoloID) {
+		
+		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
+		
+		if (utente != null) {
+			
+			/*if (utente.getTipo() != 'A')
+				return "loginUserError";
+			
+			return "pannello-di-lavoro";*/
+			return "redirect:/veicoli/" + String.valueOf(veicoloID);
+		}
+		
+		session.setAttribute("registerVeicoloID", veicoloID);
+		
 		return "registrazione";
 	}
 	
@@ -188,7 +209,14 @@ public class ArchivioUtentiMVC {
 		utenteReg.setTipo('B');
 		utenteReg.setFirma("Utente");
 		
-		dao.save(utenteReg);
+		session.setAttribute("loggedUser", dao.save(utenteReg));
+		
+		if (session.getAttribute("registerVeicoloID") != null) {
+			String registerVeicoloID = String.valueOf(session.getAttribute("registerVeicoloID"));
+			session.removeAttribute("registerVeicoloID");
+			session.removeAttribute("loginVeicoloID");
+			return "redirect:/veicoli/" + registerVeicoloID;
+		}
 		
 		return "redirect:/";
 	}
@@ -202,6 +230,8 @@ public class ArchivioUtentiMVC {
 	public String logout(HttpSession session) {
 		session.removeAttribute("loggedUser");
 		session.removeAttribute("showBtn");
+		session.removeAttribute("registerVeicoloID");
+		session.removeAttribute("loginVeicoloID");
 		return "redirect:/";
 	}
 	

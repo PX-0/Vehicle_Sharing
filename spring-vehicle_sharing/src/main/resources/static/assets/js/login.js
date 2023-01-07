@@ -36,8 +36,11 @@ password.addEventListener('input', passwordCheck);
 const URL_UTENTI = "http://localhost:9014/api/utenti";
 
 mioForm.addEventListener('submit', event => {
+	
+	var usChk = usernameCheck();
+	var psChk = passwordCheck();	
 
-    if (!usernameCheck() || !passwordCheck()) {
+    if (!usChk || !psChk) {
         event.preventDefault();
         return;
     }
@@ -81,3 +84,11 @@ mioForm.addEventListener('submit', event => {
 
 // alertPlaceholder.innerHTML = '';
 // alert('Credenziali errate', 'danger')
+
+
+// registrazione ancorata al singolo veicolo
+
+var nVeicoloAttualeReg = window.location.href.split("/").pop();
+
+if (nVeicoloAttualeReg != "login")
+	document.querySelector('#registerAnchor').setAttribute('href', `../register/${nVeicoloAttualeReg}`)

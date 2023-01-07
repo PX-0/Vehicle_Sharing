@@ -23,7 +23,7 @@
                             <h1 class="loginTitle fs-2 pt-2">The Princess Team</h1>
                         </div>
 
-                        <form class="col-11 col-sm-12 pb-5 pt-3 px-3" action="registerCheck" method="POST">
+                        <form class="col-11 col-sm-12 pb-5 pt-3 px-3" action="registerCheck" method="POST" id="register-form">
 
                             <h3 class="fs-5 py-3 text-center" style="color: rgb(0, 101, 159);">Create your account</h3>
 
@@ -89,7 +89,7 @@
                                 </div>
 
                                 <div class="col-12 col-lg-6 text-center text-lg-end pt-3 pt-lg-0">
-                                    <a href="login">Already have an account?</a>
+                                    <a href="login" id="loginAnchor">Already have an account?</a>
                                 </div>
 
                             </div>
@@ -113,7 +113,8 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="../.././resources/assets/js/veicolo.js"></script>
+    <script th:src="@{/assets/js/registrazione.js}"></script>
+    
 </body>
 
 </html>
