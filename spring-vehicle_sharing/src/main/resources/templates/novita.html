@@ -31,68 +31,48 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-  <body>
+<body>
     <header th:fragment="header">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand d-flex align-items-center me-0" href="#">
-            <img
-              th:src="@{/assets/img/logo.png}"
-              alt="Logo"
-              width="40"
-              height="30"
-              class=""
-            />
-            <h1 class="mainTitle">Princesharing</h1>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link" href="http://localhost:9014/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../other/aboutus">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="../other/novità">Novità</a>
-              </li>
-              <li class="nav-item" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'A'">
-	              <a class="nav-link" href="../utenti/pannello">Pannello di lavoro</a>
-	            </li>
-              <!-- <li class="nav-item">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center me-0 " href="#">
+                    <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
+                    <h1 class="mainTitle ">Princesharing</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://localhost:9014/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../other/aboutus">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../other/novita">Novità</a>
+                        </li>
+                        <li class="nav-item" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'B'">
+                            <a class=" nav-link" href="../utenti/areaPersonale" > Area Personale</a>
+                          </li>
+                        <!-- <li class="nav-item">
 			              <a href="utenti/login" class="btn btn-secondary ms-2" id="button-nav">Login</a>
 			            </li>-->
-              <li class="nav-item">
-                <a
-                  th:if="${session.loggedUser} == null"
-                  href="../utenti/login"
-                  class="btn btn-secondary ms-2"
-                  id="button-nav"
-                  >Login</a
-                >
-                <a
-                  th:if="${session.loggedUser} != null"
-                  href="../utenti/logout"
-                  class="btn btn-secondary ms-2"
-                  id="button-nav"
-                  >Logout</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+			            <li class="nav-item" th:if="${session.loggedUser} != null and ${session.loggedUser.tipo} == 'A'">
+			              <a class="nav-link" href="../utenti/pannello">Pannello di lavoro</a>
+			            </li>
+                        <li class="nav-item">
+                            <a th:if="${session.loggedUser} == null" href="../utenti/login"
+                                class="btn btn-secondary ms-2" id="button-nav">Login</a>
+                            <a th:if="${session.loggedUser} != null" href="../utenti/logout"
+                                class="btn btn-secondary ms-2" id="button-nav">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
   <main>
