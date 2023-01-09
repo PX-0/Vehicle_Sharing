@@ -65,6 +65,20 @@ function incrDimCon(cosaFaccio) {
 fetchUtenti();
 fetchVeicoli();
 
+const myModal = new bootstrap.Modal('#myModal', {
+  keyboard: false
+});
+
+// Create toast instance
+var element = document.getElementById("liveToast");
+var myToast = new bootstrap.Toast(element);
+
+if (localStorage.getItem("faiVedereIlToast")) {
+	
+	localStorage.removeItem("faiVedereIlToast");
+	myToast.show();
+}
+
 function stampaPrenotazioni(elencoPrenotazioni) {
     tableBody.innerHTML = '';
     for(var i = cStart; i < cEnd; i++) {
@@ -167,19 +181,29 @@ function stampaPrenotazioni(elencoPrenotazioni) {
         const ICON = document.createElement('i');
         ICON.classList.add('bi', 'bi-trash-fill');
         ICON.setAttribute('style', 'cursor:pointer; color:black;');
+        
         ICON.addEventListener('click', () => {
-	
-			fetch(`http://localhost:9014/api/prenotazioni/${TD.textContent}`, {
-				method: 'DELETE',
-			})
-				.then(data => data.json())
-				.then(response => console.log(response));
-				LMAX--;
-				setTimeout(() => {
-						location.reload();
-					}, 1000);
-	
-        });
+			
+			var old_element = document.getElementById("modalBtnDelete");
+			var new_element = old_element.cloneNode(true);
+			old_element.parentNode.replaceChild(new_element, old_element);
+			
+			myModal.show();
+		
+			document.querySelector('#modalBtnDelete').addEventListener('click', () => {
+				
+				fetch(`http://localhost:9014/api/prenotazioni/${TD.textContent}`, {
+					method: 'DELETE',
+				})
+					.then(data => data.json())
+					.then(response => console.log(response));
+					LMAX--;
+					setTimeout(() => {
+							localStorage.setItem("faiVedereIlToast", true);
+							location.reload();
+						}, 1000);
+			});
+		});
 
 		TD6.appendChild(ICON);
         TR.appendChild(TD6);
