@@ -170,7 +170,7 @@ function stampaVeicoli(elencoVeicoli) {
         //TD9.innerHTML = '<a href="#veicoloId" class="bi bi-pencil-fill" style="cursor:pointer"></a>';
         
         const AHREF = document.createElement('a');
-        AHREF.setAttribute('href', '#veicoloId');
+        AHREF.setAttribute('href', '#mioForm');
         AHREF.classList.add('bi', 'bi-pencil-fill');
         AHREF.setAttribute('style', 'cursor:pointer; color:darkblue;');
         
