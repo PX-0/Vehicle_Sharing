@@ -11715,6 +11715,18 @@ header .btn-secondary:hover {
        
     }
 }
+
+ img{
+        max-height: 12rem;
+    }
+    
+    .container:nth-of-type(even) .newsImage {
+    order: 1;
+}
+
+.container:nth-of-type(even) .newsText {
+    text-align: right;
+}
 */
 .profile-page .profile-header {
   box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
@@ -11938,54 +11950,4 @@ header .btn-secondary:hover {
 
 .header-link-item a {
   text-decoration: none;
-}
-
-#twitterLogo {
-  color: #1DA0F2;
-}
-
-.bgblue {
-  background-color: #1DA1F2;
-}
-
-.btn-pri {
-  border-radius: 32px;
-  font-weight: 700;
-  background-color: #1DA0F2;
-  border-color: #1DA0F2;
-}
-
-.btn-out {
-  border-radius: 16px;
-  font-weight: 500;
-  font-size: .75rem;
-}
-
-.avatar {
-  height: 2rem;
-  border: 2px solid #296b94;
-  border-radius: 50%;
-  margin: 1rem;
-}
-
-#currentUser {
-  color: #0e78b9;
-  font-weight: 500;
-}
-
-/* label per visualizzazione errori nei dati */
-#tweetCheck, #userCheck, #passCheck, #cittaCheck {
-  color: red;
-  font-weight: 500;
-}
-
-/* sezione che visualizza l'ultimo tweet inviato */
-#prevTweet {
-  display: flex;
-  align-items: center;
-  background-color: #FFFFFF;
-  font-weight: 500;
-  color: #0e78b9;
-  border: 1px solid #EFEFEF;
-  padding: 1rem;
 }
