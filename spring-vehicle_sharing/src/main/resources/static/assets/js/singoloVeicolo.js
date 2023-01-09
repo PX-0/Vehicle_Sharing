@@ -53,7 +53,12 @@ function CreateCard(url,id,desc,address,link,tipo,alim,dispNol,veicoloCompleto,m
   document.querySelector('#modello').innerHTML = "<span>Modello: </span>"+modello;
   document.querySelector('#marca').innerHTML = "<span>Marca: </span>"+marca;
   document.querySelector('#colore').innerHTML = "<span>Colore: </span>"+colore;
-  document.querySelector('#cilindrata').innerHTML = "<span>Cilindrata: </span>"+cilindrata;
+
+  if (cilindrata == -1) {
+    document.querySelector('#cilindrata').style.display = "none";
+  } else {
+    document.querySelector('#cilindrata').innerHTML = "<span>Cilindrata: </span>"+cilindrata;
+  }
   
   if (document.querySelector('#button-nav-login') != null)
   	document.querySelector('#button-nav-login').setAttribute('href', "../utenti/login/" + id);
