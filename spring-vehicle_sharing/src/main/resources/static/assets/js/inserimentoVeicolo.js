@@ -158,6 +158,7 @@ document.querySelector('#immagineVeicolo').addEventListener('change', event => {
 	    preview.style.display = "block";
 	    //preview.style.maxWidth = "100%";
 	    preview.classList.add('img-fluid');
+	    preview.classList.add('rounded');
 	}
 	
 });
