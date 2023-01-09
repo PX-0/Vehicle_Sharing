@@ -11,8 +11,8 @@
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
 </head>
 
-<body>
-    <div class="container bg-secondary">
+<body class="bg-secondary">
+    <div class="container bg-secondary mb-5">
         <div class="profile-page tx-13">
             <div class="row">
                 <div class="col-12 grid-margin">
@@ -20,14 +20,14 @@
                         <div class="cover">
                             <div class="gray-shade"></div>
                             <figure>
-                                <img src="../static/assets/img/sfondo-facebook.png" class="img-fluid"
+                                <img th:src="@{/assets/img/sfondo-facebook.png}" class="img-fluid"
                                     alt="sfondo profilo">
                             </figure>
                             <div class="cover-body d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h1><img class="profile-pic" src="../static/assets/img/img-facebook.jpg"
+                                    <h1><img class="profile-pic" th:src="@{/assets/img/img-facebook.jpg}"
                                             alt="profilo">
-                                        <a class="profile-name">Princesharing</a></h1>
+                                        <span class="profile-name">Princesharing</span></h1>
                                 </div>
                                 <div class="d-none d-md-block">
                                     <button class="btn btn-secondary btn-icon-text btn-edit-profile">
@@ -52,7 +52,7 @@
                                             d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18">
                                         </path>
                                     </svg>
-                                    <a class="pt-1px d-none d-md-block" href="#">Facebook</a>
+                                    <a class="pt-1px d-none d-md-block ps-1" href="#">Feisbuk</a>
                                 </li>
                                 <li class="header-link-item ps-3 border-left d-flex align-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -63,7 +63,7 @@
                                         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                                     </svg>
-                                    <a class="pt-1px d-none d-md-block" href="#"> Amici<span
+                                    <a class="pt-1px d-none d-md-block ps-1" href="#"> Amici<span
                                             class="text-muted tx-12">3.765</span></a>
                                 </li>
                                 <li class="header-link-item ps-3 border-left d-flex align-items-center">
@@ -74,7 +74,7 @@
                                         <circle cx="8.5" cy="8.5" r="1.5"></circle>
                                         <polyline points="21 15 16 10 5 21"></polyline>
                                     </svg>
-                                    <a class="pt-1px d-none d-md-block" href="#">Foto<span
+                                    <a class="pt-1px d-none d-md-block ps-1" href="#">Foto<span
                                             class="text-muted tx-12">53</span></a>
                                 </li>
                                 <li class="header-link-item ps-3 border-left d-flex align-items-center">
@@ -84,7 +84,7 @@
                                         <polygon points="23 7 16 12 23 17 23 7"></polygon>
                                         <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
                                     </svg>
-                                    <a class="pt-1px d-none d-md-block" href="#">Video<span
+                                    <a class="pt-1px d-none d-md-block ps-1" href="#">Video<span
                                             class="text-muted tx-12">18</span></a>
                                 </li>
                             </ul>
@@ -95,8 +95,8 @@
             <div class="row profile-body">
                 <!-- left wrapper start -->
                 <div class="d-none d-md-block col-md-4 col-xl-3 left-wrapper">
-                    <div class="card-f rounded">
-                        <div class="card-body">
+                    <div class="card-f rounded p-3">
+                        <div class="card-body text-start">
                             <div class="d-flex align-items-center justify-content-center mb-2">
                                 <h6 class="card-title mb-0">About us</h6>
                             </div>
@@ -118,7 +118,7 @@
                             </div>
                             <div class="mt-3">
                                 <label class="tx-11 font-weight-bold mb-0 text-uppercase">Website :</label>
-                                <p class="text-primary">www.Princesharing.com</p>
+                                <a href="http://localhost:9014/">www.princesharing.com</a>
                             </div>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                 <div class="col-md-8 col-xl-6 middle-wrapper">
                     <div class="row">
                         <div class="col-md-12 grid-margin">
-                            <div class="card-f rounded">
+                            <div class="card-f rounded px-3">
                                 <div class="card-header">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="d-flex align-items-center">
@@ -142,7 +142,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <p class="mb-3 tx-14">Insegnare e lavorare insieme ai ragazzi che hanno realizzato
+                                    <p class="mb-0 tx-14 text-start">Insegnare e lavorare insieme ai ragazzi che hanno realizzato
                                         questo progetto è stata una
                                         bella esperienza, se potessi li assumerei tutti. L'unica cosa che mi sento di
                                         dire in questo momento è: 'Abbiamo un sogno nel cuoreee'.</p>
@@ -150,7 +150,7 @@
                                 </div>
                                 <div class="card-footer">
                                     <div class="d-flex post-actions">
-                                        <a href="#" class="d-flex align-items-center text-muted text-decoration-none">
+                                        <a href="#" class="d-flex  text-muted text-decoration-none">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
@@ -159,12 +159,12 @@
                                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
                                                 </path>
                                             </svg>
-                                            <div>
+                                            <div class="ps-2">
                                                 <p class="d-none d-md-block mb-0">Mi piace</p>
                                                 <p class="text-muted mb-0">1.234</p>
                                             </div>
                                         </a>
-                                        <a href="#" class="d-flex align-items-center text-decoration-none text-muted ms-3">
+                                        <a href="#" class="d-flex  text-decoration-none text-muted ms-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
@@ -172,12 +172,12 @@
                                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
                                                 </path>
                                             </svg>
-                                            <div>
-                                                <p class="d-none d-md-block mb-0">Commento</p>
+                                            <div class="ps-2">
+                                                <p class="d-none d-md-block mb-0">Commenta</p>
                                                 <p class="text-muted mb-0">178</p>
                                             </div>
                                         </a>
-                                        <a href="#" class="d-flex align-items-center text-decoration-none text-muted ms-3">
+                                        <a href="#" class="d-flex  text-decoration-none text-muted ms-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
@@ -186,7 +186,7 @@
                                                 <polyline points="16 6 12 2 8 6"></polyline>
                                                 <line x1="12" y1="2" x2="12" y2="15"></line>
                                             </svg>
-                                            <div>
+                                            <div class="ps-2">
                                                 <p class="d-none d-md-block mb-0">Condividi</p>
                                                 <p class="text-muted mb-0">58</p>
                                             </div>
@@ -196,7 +196,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="card-f rounded">
+                            <div class="card-f rounded px-3">
                                 <div class="card-header">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="d-flex align-items-center">
@@ -210,7 +210,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <p class="mb-3 tx-14">Il sito di quest'azienda ha un font davvero adeguato e
+                                    <p class="mb-0 tx-14 text-start">Il sito di quest'azienda ha un font davvero adeguato e
                                         soprattutto è mobile friendly, difficile trovarne di migliori in circolazione.
                                         Per non parlare dei colori, vederli per la prima volta mi ha fatto ricordare
                                         quanto è bello non essere ciechi.</p>
@@ -218,21 +218,21 @@
                                 </div>
                                 <div class="card-footer">
                                     <div class="d-flex post-actions">
-                                        <a href="#" class="d-flex align-items-center text-muted text-decoration-none">
+                                        <a href="#" class="d-flex text-muted text-decoration-none">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-heart icon-md">
+                                                class="feather feather-heart icon-md"> 
                                                 <path
                                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
                                                 </path>
                                             </svg>
-                                            <div>
+                                            <div class="ps-2">
                                                 <p class="d-none d-md-block mb-0">Mi piace</p>
                                                 <p class="text-muted mb-0">3.841</p>
                                             </div>
                                         </a>
-                                        <a href="#" class="d-flex align-items-center text-decoration-none text-muted ms-3">
+                                        <a href="#" class="d-flex text-decoration-none text-muted ms-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
@@ -240,12 +240,12 @@
                                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
                                                 </path>
                                             </svg>
-                                            <div>
-                                                <p class="d-none d-md-block mb-0">Commento</p>
+                                            <div class="ps-2">
+                                                <p class="d-none d-md-block mb-0">Commenta</p>
                                                 <p class="text-muted mb-0">624</p>
                                             </div>
                                         </a>
-                                        <a href="#" class="d-flex align-items-center text-decoration-none text-muted ms-3">
+                                        <a href="#" class="d-flex text-decoration-none text-muted ms-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
@@ -254,7 +254,7 @@
                                                 <polyline points="16 6 12 2 8 6"></polyline>
                                                 <line x1="12" y1="2" x2="12" y2="15"></line>
                                             </svg>
-                                            <div>
+                                            <div class="ps-2">
                                                 <p class="d-none d-md-block mb-0">Condividi</p>
                                                 <p class="text-muted mb-0">258</p>
                                             </div>
@@ -270,9 +270,9 @@
                 <div class="d-none d-xl-block col-xl-3 right-wrapper">
                     <div class="row">
                         <div class="col-md-12 grid-margin">
-                            <div class="card-f rounded">
-                                <div class="card-body">
-                                    <h6 class="card-title">Suggeriti per te</h6>
+                            <div class="card-f rounded p-3">
+                                <div class="card-body text-start text-nowrap">
+                                    <h6 class="card-title mb-3 text-center">Suggeriti per te</h6>
                                     <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
                                         <div class="d-flex align-items-center hover-pointer">
                                             <img class="img-xs rounded-circle"

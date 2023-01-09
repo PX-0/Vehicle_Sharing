@@ -43,4 +43,10 @@ public class PagesMVC {
     	
     	return "cookie"; 
     }
+
+    @GetMapping("/feisbuk")
+    public String feisbuk() {
+     
+        return "feisbuk"; 
+    }
 }
