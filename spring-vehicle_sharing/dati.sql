@@ -98,7 +98,12 @@ values
 (11, "Liberty", "Piaggio", "Grigio ", "125cc", "Scooter",
  "Benzina", "Piaggio Liberty 125 ABS è la risposta ai bisogni di mobilità e di libertà di un vasto pubblico alla ricerca di stile, leggerezza, facilità di guida e sicurezza.",
  " Via Parghelia 2, 00178 ", "Prolungato", "Liberty.jpg", "Amministratore");
-
+ 
+insert into veicoli 
+(id, modello, marca, colore,cilindrata, tipologia, alimentazione,descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins)
+values
+(12, "Model S", "Tesla", "Bianco", "-1", "Auto", "Elettrica", "Lunga 4 metri e 98 centimetri, offre una buona abitabilità interna per cinque passeggeri, autonomia di 600km ", 
+"Via cola di Rienzo 243, 00193", "Prolungato", "Tesla.jpg", "Amministratore");
 
 -- prenotazioni ------------------------------------------------------------------------------
 insert into prenotazioni (id, data_prenotazione, pagamento_id, utente_id, veicolo_id)
