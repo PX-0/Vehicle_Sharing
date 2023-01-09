@@ -59,7 +59,7 @@ INSERT INTO veicoli (id, modello, marca, colore, cilindrata, tipologia, alimenta
 VALUES (5, "Cube Stereo Hybrid 120 Pro 625", 'E-bike', "Azzurra", "-1", 'Bicicletta', 'Elettrica', "Raffinato design delle sospensioni a quattro barre che mantiene il ciclista isolato dagli urti e dalle vibrazioni del percorso", 'Italia, Roma, Via Fregene 00183', 'No','cube.jpg','Amministratore');
 
 insert into veicoli (id, modello, marca, colore, cilindrata, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) 
-values(6, "AovoPro", "Aovo", "Nero opaco", "350W", "Monopattino","Elettrico", "motore brushless da 350W che ti permette di risalire pendenze fino a 20°. Il brushless (senza spazzole) è un motore elettrico efficiente e longevo, perfetto per i monopattini. Resta fresco e non disperde energia in calore", "Via Tiburtina 1361, 00131", "Prolungato", "monopattinoAovo.jpg", "Amministratore");
+values(6, "AovoPro", "Aovo", "Nero opaco", "-1", "Monopattino","Elettrico", "motore brushless da 350W che ti permette di risalire pendenze fino a 20°. Il brushless (senza spazzole) è un motore elettrico efficiente e longevo, perfetto per i monopattini. Resta fresco e non disperde energia in calore", "Via Tiburtina 1361, 00131", "Prolungato", "monopattinoAovo.jpg", "Amministratore");
 
 insert into veicoli 
 (id, modello, marca, colore, cilindrata, tipologia, alimentazione,descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins)
