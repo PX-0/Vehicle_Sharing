@@ -140,7 +140,8 @@ function stampaPrenotazioni(elencoPrenotazioni) {
         TR.appendChild(TD3);
         
         const TD4 = document.createElement('td');
-        TD4.textContent = elencoPrenotazioni[i].veicolo.id;
+        TD4.innerHTML = elencoPrenotazioni[i]?.veicolo?.id ?? "<span class='text-danger'> Da definire </span>";
+        TD4.setAttribute('value', elencoPrenotazioni[i]?.veicolo?.id ?? -1);
         TR.appendChild(TD4);
 
         const TD5 = document.createElement('td');
@@ -159,14 +160,14 @@ function stampaPrenotazioni(elencoPrenotazioni) {
             dataPren.value = TD2.getAttribute('value');
   			dataPren.setAttribute("min", dataOggi());
             
-            if (TD3.textContent != '') {
+            if (TD3.textContent != '' && TD3.textContent != null && TD3.textContent != undefined) {
             	document.querySelector('#utenteId').value = TD3.textContent;
            	} else {
 				document.querySelector('#utenteId').value = '-1';
 			}
             
-			if (TD4.textContent != '') {
-            	document.querySelector('#veicoloId').value = TD4.textContent;
+			if (TD4.textContent != '' && TD4.textContent != null && TD4.textContent != undefined) {
+            	document.querySelector('#veicoloId').value = TD4.getAttribute('value');
            	} else {
 				document.querySelector('#veicoloId').value = '-1';
 			}
