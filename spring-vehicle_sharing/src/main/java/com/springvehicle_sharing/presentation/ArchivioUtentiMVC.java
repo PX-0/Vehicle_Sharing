@@ -211,6 +211,48 @@ public class ArchivioUtentiMVC {
 		
 		session.setAttribute("loggedUser", dao.save(utenteReg));
 		
+		return "redirect:/";
+	}
+	
+	@PostMapping("registerCheckVid")
+	public String registerCheckVid(HttpSession session, @RequestParam("nome") String nome,
+			@RequestParam("cognome") String cognome, @RequestParam("email") String email,
+			@RequestParam(value = "dataNascita", required = false) LocalDate dataNascita,
+			@RequestParam("username") String username, @RequestParam("password") String password,
+			RedirectAttributes redirectAttrs) {
+		
+		if (session.getAttribute("loggedUser") != null)
+			return "redirect:/";
+		
+		if (dao.existsById(username) == true) {
+			redirectAttrs.addFlashAttribute("registerFailed", "ERRORE - Il nome utente è già esistente");
+			return "redirect:/utenti/register";
+		}
+		
+		ArchivioUtenti utenteReg = new ArchivioUtenti();
+		utenteReg.setNome(nome);
+		utenteReg.setCognome(cognome);
+		utenteReg.setEmail(email);
+		
+		if (dataNascita != null) {
+			
+			String giorno = String.valueOf(dataNascita.getDayOfMonth());
+			String mese = String.valueOf(dataNascita.getMonthValue());
+			String anno = String.valueOf(dataNascita.getYear());
+			
+			utenteReg.setNascita(giorno + "/" + mese + "/" + anno);
+		}
+		
+		utenteReg.setUserId(username);
+		utenteReg.setPassword(password);
+		
+		utenteReg.setDataIscrizione(LocalDateTime.now());
+		utenteReg.setUltimaModifica(LocalDateTime.now());
+		utenteReg.setTipo('B');
+		utenteReg.setFirma("Utente");
+		
+		session.setAttribute("loggedUser", dao.save(utenteReg));
+		
 		if (session.getAttribute("registerVeicoloID") != null) {
 			String registerVeicoloID = String.valueOf(session.getAttribute("registerVeicoloID"));
 			session.removeAttribute("registerVeicoloID");
