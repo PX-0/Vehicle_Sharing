@@ -47,10 +47,10 @@ insert into veicoli (id, modello, marca, colore, cilindrata, tipologia, alimenta
 values(1, "Fiat 600", "Fiat", "Blue cobalto", "900cc", "Auto", "Benzina", "Riguardo i dettagli del telaio auto responsabile della tenuta di strada, comportamento di guida e comfort di guida. Sospensioni anteriori e Coil springs. sospensioni posteriori. Il sistema di frenata Seicento Sporting comprende Dischi nella parte anteriore e Tamburo nella parte posteriore. 3 porte e 5 posti", "Via dei colli della serpentara 00139", "Prolungato", "Fiato600.jpg", "Amministratore");
 
 INSERT INTO veicoli (id, modello, marca, colore, cilindrata, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) 
-VALUES (2, '599xx evo','Ferrari', 'Nero', '499,99cc', 'Auto', 'Benzina', "autovettura coupé, ala mobile come quella per la F1 solamente che non è controllata dal pilota ma elettronicamente tramite sensori che rilevano se si è su un rettilineo o in curva e adatta da sola la resistenza dell'ala",   'Italia, Roma, Via Genzano 89', 'Giornaliero', 'https://www.gtspiritmedia.com/gtspirit/uploads/2015/06/Ferrari-599XX-For-Sale6.jpg', 'Amministratore');
+VALUES (2, '599xx evo','Ferrari', 'Nero', '499,99cv', 'Auto', 'Benzina', "autovettura coupé, ala mobile come quella per la F1 solamente che non è controllata dal pilota ma elettronicamente tramite sensori che rilevano se si è su un rettilineo o in curva e adatta da sola la resistenza dell'ala",   'Italia, Roma, Via Genzano 89', 'Giornaliero', 'https://www.gtspiritmedia.com/gtspirit/uploads/2015/06/Ferrari-599XX-For-Sale6.jpg', 'Amministratore');
 
 insert into veicoli (id, modello, marca, colore, cilindrata, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins)
-values(3, "Mi M365 Pro 2", "Xiaomi", "Rosso metallizzato", "4t4Wh", "Monopattino", "Elettrico", "batteria da 474 Wh , 7.5 Ah e il peso di soli 14.2kg , è tranquillamente annoverabile nell'insieme dei Monopattini urbani di qualità; raggiunge una velocità di c.a. 25 km orari", "Via Appia Nuova 678, 00179", "No","monopattinoXiaomi.jpg", "Amministratore");
+values(3, "Mi M365 Pro 2", "Xiaomi", "Rosso metallizzato", "-1", "Monopattino", "Elettrico", "batteria da 474 Wh , 7.5 Ah e il peso di soli 14.2kg , è tranquillamente annoverabile nell'insieme dei Monopattini urbani di qualità; raggiunge una velocità di c.a. 25 km orari", "Via Appia Nuova 678, 00179", "No","monopattinoXiaomi.jpg", "Amministratore");
 
 INSERT INTO veicoli (id, modello, marca, colore, cilindrata, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) 
 VALUES (4, "Madone SLR 9 eTap Gen 7", 'Trek', 'Rosso', "-1", 'Bicicletta', 'Elettrica', " ultraleggera, velocissima e superfluida", 'Italia, Roma, Via Fregene 00183', 'Giornaliero', 'Trek.jpg', 'Amministratore');
@@ -87,7 +87,7 @@ insert into veicoli
 (id, modello, marca, colore,
  cilindrata, tipologia, alimentazione,descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins)
 values
-(10, "A1", "Audi", "bianca ", "100cc", "Auto",
+(10, "A1", "Audi", "bianca ", "999cc", "Auto",
  "Diesel", "La seconda generazione di A1 Sportback, la compatta Audi più apprezzata, è caratterizzata da un design sportivo che fa subito colpo e da un’ampia flessibilità nelle opzioni di equipaggiamento",
  " Via Genova 10126 ", "Prolungato", "AudiA1.jpg", "Amministratore");
  
