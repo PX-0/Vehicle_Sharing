@@ -121,13 +121,25 @@
                         </div>
                         <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
                         <button type="submit" class="btn btn-secondary">Aggiungi</button>
-                    	<span th:if="${success} == true" class="ms-2 text-success">Veicolo inserito con successo!</span>
+                    	<!-- <span th:if="${success} == true" class="ms-2 text-success">Veicolo inserito con successo!</span> -->
                     </form>
                 </div>
             </div>
+            
+			<div class="toast-container position-fixed bottom-0 end-0 p-3" th:if="${success} == true">
+			  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+			    <div class="toast-header">
+			      <img th:src="@{/assets/img/logo.png}" class="rounded me-2" alt="logo" height="17px">
+			      <strong class="me-auto fs-6">Sistema</strong>
+			      <small class="text-muted">ora</small>
+			      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			    </div>
+			    <div class="toast-body fs-6">
+			      Veicolo inserito con successo!
+			    </div>
+			  </div>
+			</div>
         </div>
-
-
     </main>
     <!-- Footer -->
     <footer th:insert="index.html :: footer"></footer>

@@ -90,7 +90,7 @@ function CreateCard(url,id,desc,address,link,tipo,alim,dispNol,veicoloCompleto,m
   //buttonLink.textContent="Prenota ora";
   var demo = document.querySelector('#demo');
   document.querySelector('#btnPrenota').addEventListener('click', event => {
-  document.querySelector('#prenSuccess').innerHTML = '';
+
 	 if (isPrenotato(veicoloCompleto)) {
 		 demo.textContent = "Veicolo non disponibile in questa data";
 		 event.preventDefault();
@@ -107,6 +107,8 @@ function CreateCard(url,id,desc,address,link,tipo,alim,dispNol,veicoloCompleto,m
 		 	event.preventDefault();
 		 	return;
 		 }
+		 
+		 localStorage.setItem("faiVedereIlToast", true);
 		 
 		 /*var userIdLogged = document.querySelector('#userId').getAttribute('value');
 		 
@@ -138,6 +140,16 @@ function aggiungiPrenotazione(utente, veicolo) {
 	})
 	.then(data => data.json());
 }*/
+
+// Create toast instance
+var element = document.getElementById("liveToast");
+var myToast = new bootstrap.Toast(element);
+
+if (localStorage.getItem("faiVedereIlToast")) {
+	
+	localStorage.removeItem("faiVedereIlToast");
+	myToast.show();
+}
 
 function isPrenotato(veicolo) {
 	

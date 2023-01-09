@@ -132,6 +132,16 @@ function validator(event) {
 	return true;
 }
 
+// Create toast instance
+var element = document.getElementById("liveToast");
+var myToast = new bootstrap.Toast(element);
+
+if (localStorage.getItem("faiVedereIlToast")) {
+	
+	localStorage.removeItem("faiVedereIlToast");
+	myToast.show();
+}
+
 document.querySelector('#mioForm').addEventListener('submit', event => {
     
     if (!validator(event)) {
@@ -139,6 +149,7 @@ document.querySelector('#mioForm').addEventListener('submit', event => {
         return;
     }
     
+	localStorage.setItem("faiVedereIlToast", true);
     setTimeout(() => {
 		location.reload();
 	}, 1000);

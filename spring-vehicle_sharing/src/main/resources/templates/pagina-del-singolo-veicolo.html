@@ -150,11 +150,11 @@
                     </form>
                     <!-- <div th:text="${session.avvenuta}"></div> -->
                     <!-- <th:block th:text="${session.loggedUser == null} ? 'Devi effettuare il login per prenotare il veicolo' : ''"></th:block> -->
-                    <p
+                    <!-- <p
                       th:text="${success}"
                       class="text-success"
                       id="prenSuccess"
-                    ></p>
+                    ></p> -->
                     <!-- <div th:text="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}"></div>
                               <div style="color:red;" th:text="${session.loggedUser == null} ? 'Devi essere loggato per prenotare il veicolo' : ''" th:value="${session.loggedUser == null} ? '' : ${session.loggedUser.userId}" id="userId"></div>-->
                     <div id="demo" class="text-danger"></div>
@@ -163,8 +163,23 @@
               </div>
             </div>
           </div>
+          
+          <div class="toast-container position-fixed bottom-0 end-0 p-3">
+			  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+			    <div class="toast-header">
+			      <img th:src="@{/assets/img/logo.png}" class="rounded me-2" alt="logo" height="17px">
+			      <strong class="me-auto fs-6">Sistema</strong>
+			      <small class="text-muted">ora</small>
+			      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			    </div>
+			    <div class="toast-body fs-6">
+			      Veicolo prenotato con successo!
+			    </div>
+			  </div>
+			</div>
         </div>
       </div>
+      
     </main>
 
     <!-- Footer -->
