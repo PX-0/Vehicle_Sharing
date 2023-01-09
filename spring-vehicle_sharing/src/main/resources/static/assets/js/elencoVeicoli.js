@@ -8,6 +8,7 @@ function fetchVeicoli() {
 	    .then(response => {
             LMAX = response.length; //Math.ceil(response.length / 10);
             stampaVeicoli(response);
+            incrDimCon();
         });
 }
 
@@ -42,6 +43,21 @@ function incrDimCon(cosaFaccio) {
             fetchVeicoli();
         }
     }
+    
+    //disabled
+    
+    if (cStart < 10 && cEnd < 20) {
+		document.querySelector('#indietroBtn').classList.add('disabled');
+	} else {
+		document.querySelector('#indietroBtn').classList.remove('disabled');
+	}
+	
+	if (cEnd >= LMAX) {
+		document.querySelector('#avantiBtn').classList.add('disabled');
+	} else {
+		document.querySelector('#avantiBtn').classList.remove('disabled');
+	}
+    
     // console.log(cStart);
     // console.log(cEnd);
 }
@@ -170,7 +186,7 @@ function stampaVeicoli(elencoVeicoli) {
         //TD9.innerHTML = '<a href="#veicoloId" class="bi bi-pencil-fill" style="cursor:pointer"></a>';
         
         const AHREF = document.createElement('a');
-        AHREF.setAttribute('href', '#veicoloId');
+        AHREF.setAttribute('href', '#mioForm');
         AHREF.classList.add('bi', 'bi-pencil-fill');
         AHREF.setAttribute('style', 'cursor:pointer; color:darkblue;');
         
