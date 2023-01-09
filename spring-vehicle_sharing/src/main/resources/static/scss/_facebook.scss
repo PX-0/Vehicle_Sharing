@@ -1,6 +1,6 @@
 .profile-page .profile-header {
     box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
-    border: 1px solid #f2f4f9;
+    // border: 1px solid #f2f4f9;
 }
 
 .profile-page .profile-header .cover {
@@ -160,7 +160,7 @@
     border-radius: 0 0 0 0;
 }
 .card-header {
-    padding: 0.875rem 1.5rem;
+    padding: 0.875rem 0;
     margin-bottom: 0;
     background-color: rgba(0, 0, 0, 0);
     border-bottom: 1px solid #f2f4f9;
@@ -210,7 +210,6 @@
 }
 
 .profile-name{
-    text-decoration: none;
     color: $secondary;
 }
 .header-link-item a{
