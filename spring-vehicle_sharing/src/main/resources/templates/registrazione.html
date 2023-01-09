@@ -73,8 +73,13 @@
 
                                     <div class="pb-4">
                                         <label for="confermaPassword" class="form-label">Ripeti password</label>
-                                        <input type="password" id="confermaPassword" name="confermaPassword"
-                                            class="form-control" placeholder="Repeat your password">
+                                        <div class="input-group has-validation">
+	                                        <input type="password" id="confermaPassword" name="confermaPassword"
+	                                            class="form-control" placeholder="Repeat your password">
+		                                    <div class="invalid-feedback">
+											  	La password non corrisponde.
+											</div>
+										</div>
                                     </div>
 
                                 </div>
