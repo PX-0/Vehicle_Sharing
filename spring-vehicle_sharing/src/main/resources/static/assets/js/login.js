@@ -90,5 +90,5 @@ mioForm.addEventListener('submit', event => {
 
 var nVeicoloAttualeReg = window.location.href.split("/").pop();
 
-if (nVeicoloAttualeReg != "login")
+if (!nVeicoloAttualeReg.startsWith("login"))
 	document.querySelector('#registerAnchor').setAttribute('href', `../register/${nVeicoloAttualeReg}`)

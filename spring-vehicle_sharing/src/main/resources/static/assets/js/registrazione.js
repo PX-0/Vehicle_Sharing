@@ -5,7 +5,7 @@ var loginAnchor = document.querySelector('#loginAnchor');
 
 var nVeicoloAttualeReg = window.location.href.split("/").pop();
 
-if (nVeicoloAttualeReg != "register") {
+if (!nVeicoloAttualeReg.startsWith("register")) {
 	
 	loginAnchor.setAttribute('href', `../login/${nVeicoloAttualeReg}`);
 	mioForm.setAttribute('action', `../registerCheckVid`);
