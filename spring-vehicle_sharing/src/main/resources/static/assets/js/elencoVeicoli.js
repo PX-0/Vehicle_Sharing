@@ -195,7 +195,19 @@ function stampaVeicoli(elencoVeicoli) {
 			document.querySelector('#tipologia').value = TD7.textContent;
 			document.querySelector('#utenteIns').value = TD8.getAttribute('value');
 			
-			
+			if (TESTIMG.getAttribute('src')) {
+				document.querySelector('.preview').removeAttribute('hidden');
+				document.querySelector('.preview').classList.add('mt-3');
+				let previewGiaConFile = document.querySelector('#file-ip-1-preview');
+				previewGiaConFile.setAttribute('src', TESTIMG.getAttribute('src'));
+				previewGiaConFile.style.display = "block";
+			    //previewGiaConFile.style.maxWidth = "100%";
+			    previewGiaConFile.classList.add('img-fluid');
+			    previewGiaConFile.classList.add('rounded');
+			} else {
+				document.querySelector('#file-ip-1-preview').setAttribute('src', '');
+			}
+		    
 			document.querySelector('#modello').value = TD11.textContent;
 			document.querySelector('#marca').value = TD12.textContent;
 			document.querySelector('#colore').value = TD13.textContent;
@@ -398,4 +410,24 @@ document.querySelector("#delImg").addEventListener("change", () => {
 	document.querySelector("#fileHelp").classList.toggle("visually-hidden");
 	document.querySelector("#delImgInGroup").classList.toggle("mt-3");
 	document.querySelector("#delImgInGroup").classList.toggle("fs-5");
+});
+
+//preview immagine
+
+document.querySelector('#immagineVeicolo').addEventListener('change', event => {
+	
+	document.querySelector('.preview').removeAttribute('hidden');
+	//document.querySelector('.preview').classList.add('mb-3');
+	document.querySelector('.preview').classList.add('mt-3');
+	
+	if(event.target.files.length > 0){
+	    var src = URL.createObjectURL(event.target.files[0]);
+	    var preview = document.getElementById("file-ip-1-preview");
+	    preview.src = src;
+	    preview.style.display = "block";
+	    //preview.style.maxWidth = "100%";
+	    preview.classList.add('img-fluid');
+	    preview.classList.add('rounded');
+	}
+	
 });
