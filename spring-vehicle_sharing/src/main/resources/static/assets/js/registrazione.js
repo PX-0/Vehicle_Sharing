@@ -103,6 +103,7 @@ cognome.addEventListener('input', cognomeCheck);
 email.addEventListener('input', emailCheck);
 username.addEventListener('input', usernameCheck);
 password.addEventListener('input', passwordCheck);
+password.addEventListener('input', confermaPasswordCheck);
 confermaPassword.addEventListener('input', confermaPasswordCheck);
 
 mioForm.addEventListener('submit', event => {
