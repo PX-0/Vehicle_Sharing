@@ -143,3 +143,21 @@ document.querySelector('#mioForm').addEventListener('submit', event => {
 		location.reload();
 	}, 1000);
 });
+
+//preview immagine
+
+document.querySelector('#immagineVeicolo').addEventListener('change', event => {
+	
+	document.querySelector('.preview').removeAttribute('hidden');
+	document.querySelector('.preview').classList.add('mb-3');
+	
+	if(event.target.files.length > 0){
+	    var src = URL.createObjectURL(event.target.files[0]);
+	    var preview = document.getElementById("file-ip-1-preview");
+	    preview.src = src;
+	    preview.style.display = "block";
+	    //preview.style.maxWidth = "100%";
+	    preview.classList.add('img-fluid');
+	}
+	
+});
