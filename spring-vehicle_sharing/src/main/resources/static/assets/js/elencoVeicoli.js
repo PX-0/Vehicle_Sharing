@@ -89,7 +89,7 @@ function stampaVeicoli(elencoVeicoli) {
         TR.appendChild(TD13);
             
         const TD14 = document.createElement('td');
-        if(elencoVeicoli[i].cilindrata == "-1"){
+        if(elencoVeicoli[i].cilindrata == "-1" || elencoVeicoli[i].cilindrata == "0"){
             
             TD14.innerHTML = '<i class="bi bi-file-earmark-excel-fill"></i>';
 
