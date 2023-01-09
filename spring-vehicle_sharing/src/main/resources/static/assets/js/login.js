@@ -2,9 +2,9 @@ var username = document.querySelector('#username');
 var password = document.querySelector('#password');
 var mioForm = document.querySelector('#form-login');
 
-// document.querySelector('#mostraPassword').addEventListener('change', () => {
-//     password.getAttribute('type') == 'text' ? password.setAttribute('type', 'password') : password.setAttribute('type', 'text');
-// });
+document.querySelector('#mostraPassword').addEventListener('change', () => {
+	password.getAttribute('type') == 'text' ? password.setAttribute('type', 'password') : password.setAttribute('type', 'text');
+});
 
 function usernameCheck() {
     if (username.value.trim() == '') {
