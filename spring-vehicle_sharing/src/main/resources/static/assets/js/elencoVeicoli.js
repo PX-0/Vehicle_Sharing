@@ -62,6 +62,20 @@ function incrDimCon(cosaFaccio) {
     // console.log(cEnd);
 }
 
+const myModal = new bootstrap.Modal('#myModal', {
+  keyboard: false
+});
+
+// Create toast instance
+var element = document.getElementById("liveToast");
+var myToast = new bootstrap.Toast(element);
+
+if (localStorage.getItem("faiVedereIlToast")) {
+	
+	localStorage.removeItem("faiVedereIlToast");
+	myToast.show();
+}
+
 function stampaVeicoli(elencoVeicoli) {
     tableBody.innerHTML = '';
     for(var i = cStart; i < cEnd; i++) {
@@ -239,19 +253,29 @@ function stampaVeicoli(elencoVeicoli) {
         const ICON = document.createElement('i');
         ICON.classList.add('bi', 'bi-trash-fill');
         ICON.setAttribute('style', 'cursor:pointer; color:black;');
+        
         ICON.addEventListener('click', () => {
-	
-			fetch(`http://localhost:9014/api/veicoli/${TD.textContent}`, {
-				method: 'DELETE',
-			})
-				.then(data => data.json())
-				.then(response => console.log(response));
-				LMAX--;
-				setTimeout(() => {
-						location.reload();
-					}, 1000);
-	
-        });
+			
+			var old_element = document.getElementById("modalBtnDelete");
+			var new_element = old_element.cloneNode(true);
+			old_element.parentNode.replaceChild(new_element, old_element);
+			
+			myModal.show();
+		
+			document.querySelector('#modalBtnDelete').addEventListener('click', () => {
+				
+				fetch(`http://localhost:9014/api/veicoli/${TD.textContent}`, {
+					method: 'DELETE',
+				})
+					.then(data => data.json())
+					.then(response => console.log(response));
+					LMAX--;
+					setTimeout(() => {
+							localStorage.setItem("faiVedereIlToast", true);
+							location.reload();
+						}, 1000);
+			});
+		});
 
 		TD10.appendChild(ICON);
         TR.appendChild(TD10);
