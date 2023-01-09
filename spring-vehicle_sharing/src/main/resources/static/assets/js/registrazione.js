@@ -83,6 +83,10 @@ function passwordCheck() {
 }
 
 function confermaPasswordCheck() {
+	
+	if (confermaPassword.value.trim() == '' && confermaPassword.value == password.value)
+		return false;
+	
     if (confermaPassword.value.trim() == '' || confermaPassword.value != password.value) {
         confermaPassword.classList.remove('is-valid');
         confermaPassword.classList.add('is-invalid');
