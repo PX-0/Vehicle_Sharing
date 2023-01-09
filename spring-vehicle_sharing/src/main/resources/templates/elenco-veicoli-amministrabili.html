@@ -100,7 +100,7 @@
                                  <label for="cilindrata" class="form-label">Cilindrata</label>
                                  <input type="text" class="form-control" id="cilindrata" name="cilindrata">
                              </div>
-                            <div class="mb-4">
+                            <div class="mb-3">
                                 <label for="alimentazione" class="form-label">Alimentazione</label>
                                 <input type="text" class="form-control" id="alimentazione" name="alimentazione">
                             </div>
@@ -138,15 +138,15 @@
 							 	</div>
                             </div>
                             <div id="fileHelp" class="form-text mb-3">* Per mantenere l'immagine ignora questo campo (inserimento file) e il bottone sottostante</div>
-                            <div class="form-check form-switch mb-4" id="delImgInGroup">
+                            <div class="form-check form-switch mb-3" id="delImgInGroup">
                                 <input class="form-check-input" type="checkbox" role="switch" id="delImg" name="delImg">
                                 <label class="form-check-label text-danger" for="delImg">Elimina PERMANENTEMENTE l'immagine</label>
                             </div>
-                            <div class="mb-4">
+                            <div class="mb-3">
                                 <label for="posizioneAttuale" class="form-label">Posizione Attuale</label>
                                 <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
                             </div>
-                            <div class="mb-4">
+                            <div class="mb-3">
                                 <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
                                     <option value="-1" selected disabled>Tipologia di veicolo</option>
                                     <option value="Auto">Auto</option>
@@ -156,9 +156,9 @@
                                 </select>
                             </div>
                             <input type="hidden" name="utenteIns" id="utenteIns" readonly>
-                            <div class="pt-3">
-                                <button type="submit" class="btn btn-secondary mx-1">Aggiorna</button>
-                                <button type="reset" class="btn btn-secondary mx-1">Reset</button>
+                            <div class="text-end">
+                                <button type="reset" class="btn btn-secondary">Reset</button>
+                                <button type="submit" class="btn btn-primary text-white ms-1">Aggiorna</button>
                             </div>
                         </form>
                     </div>
@@ -167,22 +167,22 @@
         </div>
         
         <div class="modal" tabindex="-1" id="myModal">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title">Elimina il veicolo</h5>
-		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		      </div>
-		      <div class="modal-body">
-		        <p>Stai per eliminare permanentemente il veicolo, vuoi continuare?</p>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-		        <button type="button" class="btn btn-primary" id="modalBtnDelete">Conferma</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+            <div class="modal-dialog modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Elimina il veicolo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Stai per eliminare permanentemente il veicolo, vuoi continuare?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                        <button type="button" class="btn btn-primary text-white" id="modalBtnDelete">Conferma</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 		
 		<div class="toast-container position-fixed bottom-0 end-0 p-3">
 		  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">

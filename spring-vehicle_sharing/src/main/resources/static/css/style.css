@@ -11185,7 +11185,7 @@ fieldset:disabled .btn {
 /* -------------------------------------------------------------------------- */
 .table-veicoliAmm {
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: 8px;
   background-color: white;
 }
 
@@ -11354,7 +11354,7 @@ h3, .h3 {
 /*                                 CALENDARIO                                 */
 /* -------------------------------------------------------------------------- */
 .table-calendario {
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: #f7fdfb;
 }
 
@@ -11566,7 +11566,7 @@ header .btn-secondary:hover {
   font-weight: 700;
   border: 1px solid transparent;
   padding: 1.2rem;
-  border-radius: 10px;
+  border-radius: 8px;
   background: white !important;
 }
 
@@ -11701,7 +11701,6 @@ header .btn-secondary:hover {
   border: 1px solid transparent;
   border-radius: 8px;
   background: white;
-  padding: 1rem;
 }
 
 /* -------------------------------------------------------------------------- */

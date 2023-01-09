@@ -47,33 +47,36 @@
     </header>
     <main>
 
-        <div class="container p-5">
-            <table class="table table-booking shadow">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Data della prenotazione</th>
-                        <th scope="col">Utente</th>
-                        <th scope="col">Veicolo</th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider" id="tableBody">
-
-                </tbody>
-            </table>
-
-            <div class="d-flex justify-content-center gap-3 my-3">
+        <div class="container pt-5">
+            <div class="table-responsive">
+        
+                <table class="table table-booking shadow">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Data della prenotazione</th>
+                            <th scope="col">Utente</th>
+                            <th scope="col">Veicolo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="tableBody">
+        
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-center gap-3 pt-3 pb-5">
                 <button type="button" id="indietroBtn" class="btn btn-secondary">Indietro</button>
                 <button type="button" id="avantiBtn" class="btn btn-secondary">Avanti</button>
             </div>
 
-            <div class="container">
+            <div class="container pt-3">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
-                        <form action="editPrenotazione" method="post" class="mb-3" id="mioForm" enctype="multipart/form-data" hidden>
+                        <form action="editPrenotazione" method="post" class="mb-5 shadow p-5" id="mioForm" enctype="multipart/form-data" hidden>
                             <div class="mb-3">
-                                <label for="id" class="form-label">Prenotazione (ID)</label>
-                                <input type="text" class="form-control" id="id" name="id" readonly>
+                                <label for="id" class="form-label">ID della prenotazione</label>
+                                <input type="number" class="form-control form-control-plaintext ps-2" id="id" name="id" readonly>
+
                                 <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                             </div>
                             <div class="mb-3">
@@ -93,41 +96,42 @@
                             -->
                         
                             <div class="mb-3">
-                                <select id="utenteId" name="utenteId" class="form-select">
-                        
-                                </select>
+                                <label for="utenteId" class="form-label">Utente</label>
+                                <select id="utenteId" name="utenteId" class="form-select"></select>
                             </div>
+
                             <div class="mb-3">
-                                <select id="veicoloId" name="veicoloId" class="form-select">
-                        
-                                </select>
+                                <label for="veicoloId" class="form-label">Veicolo</label>
+                                <select id="veicoloId" name="veicoloId" class="form-select"></select>
                             </div>
                         
                             <!--<input type="hidden" name="utenteIns" id="utenteIns" readonly>-->
-                            <button type="submit" id="btnSubmit" class="btn btn-primary">Aggiorna</button>
-                            <button type="reset" class="btn btn-primary">Reset</button>
+                            <div class="text-end">
+                                <button type="reset" class="btn btn-secondary">Reset</button>
+                                <button type="submit" id="btnSubmit" class="btn btn-primary text-white ms-1">Aggiorna</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
 
-		<div class="modal" tabindex="-1" id="myModal">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title">Elimina la prenotazione</h5>
-		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		      </div>
-		      <div class="modal-body">
-		        <p>Stai per eliminare permanentemente la prenotazione, vuoi continuare?</p>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-		        <button type="button" class="btn btn-primary" id="modalBtnDelete">Conferma</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+        <div class="modal" tabindex="-1" id="myModal">
+            <div class="modal-dialog modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Elimina la prenotazione</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Stai per eliminare permanentemente la prenotazione, vuoi continuare?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                        <button type="button" class="btn btn-primary text-white" id="modalBtnDelete">Conferma</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 		
 		<div class="toast-container position-fixed bottom-0 end-0 p-3">
 		  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">

@@ -46,13 +46,13 @@
         </nav>
     </header>
     <main>
-        <div class="container">
+        <div class="container pt-5">
             <div class="row justify-content-center">
-                <div class=" col-md-8 col-lg-6 py-5">
+                <div class=" col-md-8 col-lg-6">
                     <div class="title-formAdd shadow bg-primary">
                         <p>AGGIUNGI VEICOLO</p>
                     </div>
-                    <form action="addVeicolo" class="shadow" method="POST" id="mioForm" name="mioForm" enctype="multipart/form-data">
+                    <form action="addVeicolo" class="mb-5 shadow p-5" method="POST" id="mioForm" name="mioForm" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="modello" class="form-label">Modello</label>
                             <input type="text" class="form-control" id="modello" name="modello">
@@ -120,7 +120,7 @@
                             </select>
                         </div>
                         <input type="hidden" name="utenteIns" id="utenteIns" th:value="${session.loggedUser.userId}">
-                        <button type="submit" class="btn btn-secondary">Aggiungi</button>
+                        <div class="text-end"><button type="submit" class="btn btn-primary text-white">Aggiungi</button></div>
                     	<!-- <span th:if="${success} == true" class="ms-2 text-success">Veicolo inserito con successo!</span> -->
                     </form>
                 </div>
