@@ -98,10 +98,10 @@ function CreateCard(url,id,desc,address,link,tipo,alim,dispNol,veicoloCompleto,m
 	 } else {
 		 
 		 if (document.querySelector('#userId').getAttribute('value') == '') {
-			demo.textContent = "Devi effettuare il login per prenotare il veicolo";
+			demo.innerHTML = "Devi effettuare il login per prenotare il veicolo <br>";
             var buttonLink = document.createElement('a');
             buttonLink.setAttribute('href','../utenti/login/' + id);
-            buttonLink.classList.add('btn','btn-secondary');
+            buttonLink.classList.add('btn','btn-secondary', 'btn-sm', 'mt-2');
             buttonLink.textContent="Login";
             demo.appendChild(buttonLink);
 		 	event.preventDefault();
