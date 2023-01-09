@@ -105,7 +105,7 @@ function CreateCard(url, data, posizione) {
   cardText.classList.add('card-text', 'text-center');
 
   var dataPrenotazione = document.createElement('p');
-  dataPrenotazione.textContent = "Prenatata per il: " + getDataFormattata(data);
+  dataPrenotazione.textContent = "Prenotata per il: " + getDataFormattata(data);
 
   var luogo = document.createElement('p');
   luogo.textContent = "Si trova in: " + posizione;
