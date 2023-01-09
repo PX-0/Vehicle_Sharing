@@ -404,20 +404,41 @@ fetch(url)
 /*                                   COOKIE                                   */
 /* -------------------------------------------------------------------------- */
 
+// function removeCookieConsent() {
+//   // Trova l' elemento della finestra dei cookie
+//   var cookieConsent = document.querySelector(".cookie-consent");
+
+//   // Se esiste, rimuovilo dal DOM
+//   if (cookieConsent) {
+//     cookieConsent.parentNode.removeChild(cookieConsent);
+//   }
+// }
+
+// // Assegna la funzione come gestore del click per il bottone
+// var button = document.querySelector(".allow-button");
+// button.addEventListener("click", removeCookieConsent);
+
 function removeCookieConsent() {
   // Trova l' elemento della finestra dei cookie
-  var cookieConsent = document.querySelector(".cookie-consent");
+  var cookieConsent = document.querySelector('.cookie-consent');
 
   // Se esiste, rimuovilo dal DOM
   if (cookieConsent) {
     cookieConsent.parentNode.removeChild(cookieConsent);
   }
+
+  // Imposta un flag nella memoria locale per indicare che la finestra dei cookie è stata chiusa
+  localStorage.setItem('cookieConsentClosed', 'true');
 }
 
-// Assegna la funzione come gestore del click per il bottone
-var button = document.querySelector(".allow-button");
-button.addEventListener("click", removeCookieConsent);
+// Controlla se la finestra dei cookie è stata chiusa in precedenza
+if (localStorage.getItem('cookieConsentClosed') !== 'true') {
+  // Mostra la finestra dei cookie
 
+  // Assegna la funzione come gestore del click per il bottone
+  var button = document.querySelector('.allow-button');
+  button.addEventListener('click', removeCookieConsent);
+}
 /* -------------------------------------------------------------------------- */
 /*                                 FINE COOKIE                                */
 /* -------------------------------------------------------------------------- */
