@@ -49,7 +49,8 @@ async function requestGetVeicoli() {
       CreateCard(
         element.veicolo.immagineVeicolo,
         element.dataPrenotazione,
-        element.veicolo.posizioneAttuale)
+        element.veicolo.posizioneAttuale,
+        element.id)
 
     )
   } else {
@@ -70,7 +71,7 @@ function getDataFormattata(data) {
 
 }
 
-function CreateCard(url, data, posizione) {
+function CreateCard(url, data, posizione, id) {
 
   //creo swiper-slide
   var swiperSlide = document.createElement('div');
@@ -112,6 +113,34 @@ function CreateCard(url, data, posizione) {
 
   cardText.appendChild(dataPrenotazione);
   cardText.appendChild(luogo);
+  
+  //modal per delete
+  const BUTTON = document.createElement('button');
+  BUTTON.setAttribute('type', 'button');
+  BUTTON.classList.add('btn', 'btn-danger');
+  BUTTON.textContent = "Annulla"
+  BUTTON.addEventListener('click', () => {
+	 
+	var old_element = document.getElementById("modalBtnDelete");
+	var new_element = old_element.cloneNode(true);
+	old_element.parentNode.replaceChild(new_element, old_element);
+	
+	myModal.show();
+	
+	document.querySelector('#modalBtnDelete').addEventListener('click', () => {
+		
+		fetch(`http://localhost:9014/api/prenotazioni/${id}`, {
+			method: 'DELETE',
+		})
+			.then(data => data.json())
+			.then(response => console.log(response));
+			setTimeout(() => {
+					localStorage.setItem("faiVedereIlToast", true);
+					location.reload();
+				}, 1000);
+	}); 
+  });
+  cardText.appendChild(BUTTON);
 
   cardBody.appendChild(cardText);
 
@@ -142,3 +171,19 @@ function createWelcome() {
 
 requestGetVeicoli();
 createWelcome();
+
+// modal e toast
+
+const myModal = new bootstrap.Modal('#myModal', {
+  keyboard: false
+});
+
+// Create toast instance
+var element = document.getElementById("liveToast");
+var myToast = new bootstrap.Toast(element);
+
+if (localStorage.getItem("faiVedereIlToast")) {
+	
+	localStorage.removeItem("faiVedereIlToast");
+	myToast.show();
+}
