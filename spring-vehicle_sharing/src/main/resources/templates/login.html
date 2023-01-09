@@ -26,32 +26,30 @@
 
                         <form class="col-11 col-sm-12 col-md-10 pb-5 pt-3 px-3" action="loginCheck" method="POST" id="form-login">
 
-                            <h3 class="fs-5 py-3 text-center" style="color: rgb(0, 101, 159);">Please login to your
-                                account
-                            </h3>
+                            <h3 class="fs-5 py-3 text-center" style="color: rgb(0, 101, 159);">Accedi al tuo account</h3>
 
                             <div class="pb-4">
                                 <label for="username" class="form-label">Username</label>
                                 <input type="text" id="username" name="username" class="form-control"
-                                    placeholder="Insert your username">
+                                    placeholder="Inserisci il tuo username">
                             </div>
 
                             <div class="pb-4">
                                 <label for="username" class="form-label">Password</label>
                                 <input type="password" id="password" name="password" class="form-control"
-                                    placeholder="Insert your password">
+                                    placeholder="Inserisci la tua password">
                             </div>
 
                             <div th:text="${loginFailed}" class="pb-4 pt-2 text-danger text-center"></div>
 
                             <div class="row justify-content-between align-items-center">
 
-                                <div class="col-12 col-lg-6 text-center text-lg-start">
+                                <div class="col-12 col-lg-6 text-center text-lg-end order-lg-2">
                                     <button class="btn btn-primary text-white gradient-btn" type="submit">Login</button>
                                 </div>
 
-                                <div class="col-12 col-lg-6 text-center text-lg-end pt-3 pt-lg-0">
-                                    <a href="register" id="registerAnchor">Create a new account</a>
+                                <div class="col-12 col-lg-6 text-center text-lg-start pt-3 pt-lg-0 order-lg-1">
+                                    <a href="register" id="registerAnchor">Crea un nuovo account</a>
                                 </div>
 
                             </div>
