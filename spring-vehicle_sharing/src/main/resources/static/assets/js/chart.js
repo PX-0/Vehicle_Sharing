@@ -49,7 +49,7 @@ function creaGrafico() {
 	  data: {
 	    labels: ['Biciclette', 'Monopattini', /*'Motorini',*/ 'Auto Elettriche', 'Auto Ibride'],
 	    datasets: [{
-	      label: '# of Votes',
+	      label: ' kg di CO2 risparmiati',
 	      data: datiChart,
 	      borderWidth: 1
 	    }]

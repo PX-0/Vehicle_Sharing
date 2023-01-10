@@ -9,13 +9,13 @@ INSERT INTO archivio_utenti (user_id, password, firma, tipo, nome, cognome, nasc
 VALUES ('Paolo', 'paolo', 'Utente con diritti minimi', 'B', 'Paolo','DeSantis','20/10/2001', 'paolo.desantis@gmail.com', 20100801102040);
 
 insert into archivio_utenti (user_id,cognome,data_iscrizione,email,firma,nascita,nome,password,tipo,ultima_modifica)
-values ("Luca","Gialli",20180503050000,"lucagialli@gmail.com","Utente con diritti minimi","06/07/1999","luca","GIALLI","B",20220702000000);
+values ("Luca","Gialli",20180503050000,"lucagialli@gmail.com","Utente con diritti minimi","06/07/1999","Luca","GIALLI","B",20220702000000);
 
 insert into archivio_utenti (user_id,cognome,data_iscrizione,email,firma,nascita,nome,password,tipo,ultima_modifica)
-values ("Alessia","Como",20200204000000,"comale@tiscali.com","Utente","07/09/1995","alessia","ComAle","B",20220401000000);
+values ("Alessia","Como",20200204000000,"comale@tiscali.com","Utente","07/09/1995","Alessia","ComAle","B",20220401000000);
 
 insert into archivio_utenti (user_id,cognome,data_iscrizione,email,firma,nascita,nome,password,tipo,ultima_modifica)
-values ("Mattia","Verdi",20210604033845,"mattiaverdi@gmail.com","Utente","04/10/1990","mattia","VERDI","B",20220805191845);
+values ("Mattia","Verdi",20210604033845,"mattiaverdi@gmail.com","Utente","04/10/1990","Mattia","VERDI","B",20220805191845);
 
 
 -- pagamenti --------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ VALUES ('7', '321', '450.00', 'Mastercard', '5167099046768999', 20250101);
 
 -- veicoli -------------------------------------------------
 insert into veicoli (id, modello, marca, colore, cilindrata, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins)
-values(1, "Fiat 600", "Fiat", "Blue cobalto", "900cc", "Auto", "Benzina", "Riguardo i dettagli del telaio auto responsabile della tenuta di strada, comportamento di guida e comfort di guida. Sospensioni anteriori e Coil springs. sospensioni posteriori. Il sistema di frenata Seicento Sporting comprende Dischi nella parte anteriore e Tamburo nella parte posteriore. 3 porte e 5 posti", "Via dei colli della serpentara 00139", "Prolungato", "Fiato600.jpg", "Amministratore");
+values(1, "600", "Fiat", "Blue cobalto", "900cc", "Auto", "Benzina", "Riguardo i dettagli del telaio auto responsabile della tenuta di strada, comportamento di guida e comfort di guida. Sospensioni anteriori e Coil springs. sospensioni posteriori. Il sistema di frenata Seicento Sporting comprende Dischi nella parte anteriore e Tamburo nella parte posteriore. 3 porte e 5 posti", "Via dei colli della serpentara 00139", "Prolungato", "Fiato600.jpg", "Amministratore");
 
 INSERT INTO veicoli (id, modello, marca, colore, cilindrata, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) 
 VALUES (2, '599xx evo','Ferrari', 'Nero', '499,99cv', 'Auto', 'Benzina', "autovettura coupé, ala mobile come quella per la F1 solamente che non è controllata dal pilota ma elettronicamente tramite sensori che rilevano se si è su un rettilineo o in curva e adatta da sola la resistenza dell'ala",   'Italia, Roma, Via Genzano 89', 'Giornaliero', 'Ferrari.jpg', 'Amministratore');
@@ -59,7 +59,7 @@ INSERT INTO veicoli (id, modello, marca, colore, cilindrata, tipologia, alimenta
 VALUES (5, "Cube Stereo Hybrid 120 Pro 625", 'E-bike', "Azzurra", "-1", 'Bicicletta', 'Elettrica', "Raffinato design delle sospensioni a quattro barre che mantiene il ciclista isolato dagli urti e dalle vibrazioni del percorso", 'Italia, Roma, Via Fregene 00183', 'No','cube.jpg','Amministratore');
 
 insert into veicoli (id, modello, marca, colore, cilindrata, tipologia, alimentazione, descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins) 
-values(6, "AovoPro", "Aovo", "Nero opaco", "-1", "Monopattino","Elettrico", "motore brushless da 350W che ti permette di risalire pendenze fino a 20°. Il brushless (senza spazzole) è un motore elettrico efficiente e longevo, perfetto per i monopattini. Resta fresco e non disperde energia in calore", "Via Tiburtina 1361, 00131", "Prolungato", "monopattinoAovo.jpg", "Amministratore");
+values(6, "Pro", "Aovo", "Nero opaco", "-1", "Monopattino","Elettrico", "motore brushless da 350W che ti permette di risalire pendenze fino a 20°. Il brushless (senza spazzole) è un motore elettrico efficiente e longevo, perfetto per i monopattini. Resta fresco e non disperde energia in calore", "Via Tiburtina 1361, 00131", "Prolungato", "monopattinoAovo.jpg", "Amministratore");
 
 insert into veicoli 
 (id, modello, marca, colore, cilindrata, tipologia, alimentazione,descrizione, posizione_attuale, disponibilita_noleggio, immagine_veicolo, utente_ins)
