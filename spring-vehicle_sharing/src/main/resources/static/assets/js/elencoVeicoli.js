@@ -122,6 +122,7 @@ function stampaVeicoli(elencoVeicoli) {
         if(elencoVeicoli[i].cilindrata == "-1" || elencoVeicoli[i].cilindrata == "0"){
             
             TD14.innerHTML = '<i class="bi bi-file-earmark-excel-fill"></i>';
+            TD14.setAttribute('value', elencoVeicoli[i].cilindrata);
 
         }else{
 
@@ -241,7 +242,9 @@ function stampaVeicoli(elencoVeicoli) {
 			document.querySelector('#modello').value = TD11.textContent;
 			document.querySelector('#marca').value = TD12.textContent;
 			document.querySelector('#colore').value = TD13.textContent;
-			document.querySelector('#cilindrata').value = TD14.textContent;
+			
+			document.querySelector('#cilindrata').value = TD14.getAttribute('value');
+
         });
 		
 		TD9.appendChild(AHREF);

@@ -96,10 +96,11 @@
                                  <label for="colore" class="form-label">Colore</label>
                                  <input type="text" class="form-control" id="colore" name="colore">
                              </div>
-                             <div class="mb-3">
+                             <div class="">
                                  <label for="cilindrata" class="form-label">Cilindrata</label>
                                  <input type="text" class="form-control" id="cilindrata" name="cilindrata">
                              </div>
+                             <div id="fileHelp" class="form-text mb-3">* Insersci <span class="font-monospace">-1</span> se non disponibile</div>
                             <div class="mb-3">
                                 <label for="alimentazione" class="form-label">Alimentazione</label>
                                 <input type="text" class="form-control" id="alimentazione" name="alimentazione">
@@ -117,8 +118,9 @@
                                         <label class="form-check-label" for="disponibilitaNoleggio">Disponibile al noleggio</label>
                                       </div>-->
                             <div class="mb-3">
+                            	<label for="disponibilitaNoleggio" class="form-label">Tipologia di Noleggio</label>
                                 <select id="disponibilitaNoleggio" name="disponibilitaNoleggio" class="form-select">
-                                    <option value="-1" selected disabled>Tipologia di noleggio</option>
+                                    <option value="-1" selected disabled>----------</option>
                                     <option value="Prolungato">Prolungato</option>
                                     <option value="Giornaliero">Giornaliero (durata: 1 giorno)</option>
                                     <option value="No">Non disponibile</option>
@@ -147,8 +149,9 @@
                                 <input type="text" class="form-control" id="posizioneAttuale" name="posizioneAttuale">
                             </div>
                             <div class="mb-3">
+                            	<label for="tipologia" class="form-label">Tipologia di Veicolo</label>
                                 <select name="tipologia" id="tipologia" class="form-select" aria-label="Default select example">
-                                    <option value="-1" selected disabled>Tipologia di veicolo</option>
+                                    <option value="-1" selected disabled>----------</option>
                                     <option value="Auto">Auto</option>
                                     <option value="Bicicletta">Bicicletta</option>
                                     <option value="Monopattino">Monopattino</option>
