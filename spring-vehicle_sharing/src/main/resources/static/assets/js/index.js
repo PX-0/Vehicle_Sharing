@@ -403,42 +403,40 @@ fetch(url)
 /* -------------------------------------------------------------------------- */
 /*                                   COOKIE                                   */
 /* -------------------------------------------------------------------------- */
-
-// function removeCookieConsent() {
+//  function removeCookieConsent() {
 //   // Trova l' elemento della finestra dei cookie
-//   var cookieConsent = document.querySelector(".cookie-consent");
+//    var cookieConsent = document.querySelector(".cookie-consent");
+//    // Se esiste, rimuovilo dal DOM
+//    if (cookieConsent) {
+//      cookieConsent.parentNode.removeChild(cookieConsent);
+//    }
+//  }
+//  // Assegna la funzione come gestore del click per il bottone
+//  var button = document.querySelector(".allow-button");
+//  button.addEventListener("click", removeCookieConsent);
 
-//   // Se esiste, rimuovilo dal DOM
-//   if (cookieConsent) {
-//     cookieConsent.parentNode.removeChild(cookieConsent);
+//  function checkCookieConsent() {
+//   // Controlla se esiste un cookie chiamato "cookieBannerClosed"
+//   var cookieConsentClosed = getCookie("cookieConsentClosed");
+//   if (cookieConsentClosed === "true") {
+//     // Trova il elemento della finestra dei cookie
+//     var cookieConsent = document.querySelector('.cookie-consent');
+//     // Se esiste, rimuovilo dal DOM
+//     if (cookieConsent) {
+//       cookieConsent.parentNode.removeChild(cookieConsent);
+//     }
 //   }
 // }
 
-// // Assegna la funzione come gestore del click per il bottone
-// var button = document.querySelector(".allow-button");
-// button.addEventListener("click", removeCookieConsent);
+// function getCookie(name) {
+//     var value = "; " + document.cookie;
+//     var parts = value.split("; " + name + "=");
+//     if (parts.length == 2) return parts.pop().split(";").shift();
+// }
 
-function removeCookieConsent() {
-  // Trova l' elemento della finestra dei cookie
-  var cookieConsent = document.querySelector('.cookie-consent');
+// // richiamiamo la funzione al caricamento della pagina
+// window.onload = checkCookieConsent;
 
-  // Se esiste, rimuovilo dal DOM
-  if (cookieConsent) {
-    cookieConsent.parentNode.removeChild(cookieConsent);
-  }
-
-  // Imposta un flag nella memoria locale per indicare che la finestra dei cookie è stata chiusa
-  localStorage.setItem('cookieConsentClosed', 'true');
-}
-
-// Controlla se la finestra dei cookie è stata chiusa in precedenza
-if (localStorage.getItem('cookieConsentClosed') !== 'true') {
-  // Mostra la finestra dei cookie
-
-  // Assegna la funzione come gestore del click per il bottone
-  var button = document.querySelector('.allow-button');
-  button.addEventListener('click', removeCookieConsent);
-}
 /* -------------------------------------------------------------------------- */
 /*                                 FINE COOKIE                                */
 /* -------------------------------------------------------------------------- */
