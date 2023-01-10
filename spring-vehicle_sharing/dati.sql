@@ -107,7 +107,7 @@ values
 
 -- prenotazioni ------------------------------------------------------------------------------
 insert into prenotazioni (id, data_prenotazione, pagamento_id, utente_id, veicolo_id)
-values (1,20230103000000, 1, "Mario", 1);
+values (1,20230130000000, 1, "Mario", 1);
 
 INSERT INTO prenotazioni (utente_id, veicolo_id, data_prenotazione, pagamento_id) 
 values ('Paolo', 2, 20230210101022, 2);
