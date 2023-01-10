@@ -56,12 +56,12 @@ function creaGrafico() {
 	  },
 		options: {
 		    scales: {
-		        xAxes: [{
+		        xAxes: {
 					display: false, //this will remove all the x-axis grid lines
 		            ticks: {
 		                display: false //this will remove only the label
 		            }
-		        }]
+		        }
 		    },
 		    plugins: {
 			    legend:{
