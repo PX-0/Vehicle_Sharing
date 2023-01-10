@@ -67,7 +67,7 @@ function creaGrafico() {
 			    legend:{
 					position: 'bottom',
 					labels: {
-					          boxWidth: 20,
+					          boxWidth: 10,
 					          boxHeight: 10,
 					          padding: 30
 					        }
