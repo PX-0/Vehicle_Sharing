@@ -121,3 +121,5 @@ mioForm.addEventListener('submit', event => {
     }
     
 });
+
+document.querySelector('#dataNascita').setAttribute('max', new Date().toISOString().split("T")[0]);

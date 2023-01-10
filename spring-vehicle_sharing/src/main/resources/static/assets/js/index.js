@@ -44,7 +44,7 @@ const swiper = new Swiper(".swiper", {
 var calendario = document.getElementById("datePicker");
 calendario.addEventListener("change", getCalendario);
 document.getElementById("datePicker").valueAsDate = new Date();
-document.getElementById("datePicker").setAttribute("min", dataOggi());
+document.getElementById("datePicker").setAttribute("min", new Date().toISOString().split("T")[0]); //dataOggi()
 
 var filtro = document.getElementById("filtroVeicoli");
 filtro.addEventListener("change", getCalendario);

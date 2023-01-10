@@ -84,8 +84,7 @@ function CreateCard(url,id,desc,address,link,tipo,alim,dispNol,veicoloCompleto,m
   //calendarioIn.setAttribute('class', 'form-control mx-auto');
   var calendarioIn = document.querySelector('#datePicker');
   calendarioIn.valueAsDate = new Date();
-  calendarioIn.setAttribute("min", dataOggi());
-  
+  calendarioIn.setAttribute("min", new Date().toISOString().split("T")[0]);
   //document.querySelector('#mioForm').appendChild(calendarioIn);
   
   //pulsante
@@ -182,7 +181,7 @@ fetch(URL_VEICOLI + VEICOLO_ID).then(data=>data.json())
    }
 );
 
-function dataOggi() {
+/*function dataOggi() {
   var today = new Date();
   var yyyy = today.getFullYear();
   var mm = today.getMonth()+1;
@@ -191,6 +190,6 @@ function dataOggi() {
   if (dd < 10) dd="0" + dd;
   today = yyyy + "-" + mm + "-" + dd;
   return today;
-}
+}*/
 
 document.querySelectorAll('.info-auto').forEach(info=> info.classList.add('py-3'));
