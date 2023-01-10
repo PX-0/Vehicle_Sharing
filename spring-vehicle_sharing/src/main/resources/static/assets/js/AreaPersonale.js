@@ -118,7 +118,7 @@ function CreateCard(url, data, posizione, id) {
   const BUTTON = document.createElement('button');
   BUTTON.setAttribute('type', 'button');
   BUTTON.classList.add('btn', 'btn-danger');
-  BUTTON.textContent = "Annulla"
+  BUTTON.textContent = "Annulla prenotazione";
   BUTTON.addEventListener('click', () => {
 	 
 	var old_element = document.getElementById("modalBtnDelete");
