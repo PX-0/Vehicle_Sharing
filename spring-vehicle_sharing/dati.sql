@@ -9,13 +9,13 @@ INSERT INTO archivio_utenti (user_id, password, firma, tipo, nome, cognome, nasc
 VALUES ('Paolo', 'paolo', 'Utente con diritti minimi', 'B', 'Paolo','DeSantis','20/10/2001', 'paolo.desantis@gmail.com', 20100801102040);
 
 insert into archivio_utenti (user_id,cognome,data_iscrizione,email,firma,nascita,nome,password,tipo,ultima_modifica)
-values ("Luca","Gialli",20180503050000,"lucagialli@gmail.com","Utente con diritti minimi","06/07/1999","luca","GIALLI","B",20220702000000);
+values ("Luca","Gialli",20180503050000,"lucagialli@gmail.com","Utente con diritti minimi","06/07/1999","Luca","GIALLI","B",20220702000000);
 
 insert into archivio_utenti (user_id,cognome,data_iscrizione,email,firma,nascita,nome,password,tipo,ultima_modifica)
-values ("Alessia","Como",20200204000000,"comale@tiscali.com","Utente","07/09/1995","alessia","ComAle","B",20220401000000);
+values ("Alessia","Como",20200204000000,"comale@tiscali.com","Utente","07/09/1995","Alessia","ComAle","B",20220401000000);
 
 insert into archivio_utenti (user_id,cognome,data_iscrizione,email,firma,nascita,nome,password,tipo,ultima_modifica)
-values ("Mattia","Verdi",20210604033845,"mattiaverdi@gmail.com","Utente","04/10/1990","mattia","VERDI","B",20220805191845);
+values ("Mattia","Verdi",20210604033845,"mattiaverdi@gmail.com","Utente","04/10/1990","Mattia","VERDI","B",20220805191845);
 
 
 -- pagamenti --------------------------------------------------------------------------------
