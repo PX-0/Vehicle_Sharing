@@ -100,7 +100,8 @@ public class PrenotazioniMVC {
 	public String editPrenotazione (HttpSession session,
 			@RequestParam("id") int id, @RequestParam("dataPrenotazione") String dataPrenotazione,
 			@RequestParam("veicoloId") int veicoloId,
-			@RequestParam("utenteId") String utenteId, Model m) {
+			@RequestParam("utenteId") String utenteId, Model m,
+			RedirectAttributes redirectAttrs) {
 		
 		String[] data = dataPrenotazione.split("-");
 		
@@ -113,6 +114,8 @@ public class PrenotazioniMVC {
 		prenotazione.setUtente(daoU.findById(utenteId).get());
 		
 		dao.save(prenotazione);
+		
+		redirectAttrs.addFlashAttribute("updSuccess", true);
 		
 		return "redirect:/prenotazioni/elenco";
 	}

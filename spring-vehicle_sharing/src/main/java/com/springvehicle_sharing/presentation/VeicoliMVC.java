@@ -160,7 +160,7 @@ public class VeicoliMVC {
 			String linkVeicolo, @RequestParam(defaultValue = "false", value = "delImg") 
 			boolean delImg, Model m, @RequestParam("modello") String modello, 
 			@RequestParam("marca") String marca, @RequestParam("colore") String colore, 
-			@RequestParam("cilindrata") String cilindrata) {
+			@RequestParam("cilindrata") String cilindrata, RedirectAttributes redirectAttrs) {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
@@ -212,6 +212,8 @@ public class VeicoliMVC {
 		veicolo.setUtenteIns(uDao.findById(utenteIns).get());
 		
 		dao.save(veicolo);
+		
+		redirectAttrs.addFlashAttribute("updSuccess", true);
 		
 		return "redirect:/veicoli/elenco";
 	}

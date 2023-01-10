@@ -79,6 +79,15 @@ if (localStorage.getItem("faiVedereIlToast")) {
 	myToast.show();
 }
 
+var elementUpd = document.getElementById("liveToastUpd");
+var myToastUpd = new bootstrap.Toast(elementUpd);
+
+if (localStorage.getItem("faiVedereIlToastUpd")) {
+	
+	localStorage.removeItem("faiVedereIlToastUpd");
+	myToastUpd.show();
+}
+
 function stampaPrenotazioni(elencoPrenotazioni) {
     tableBody.innerHTML = '';
     for(var i = cStart; i < cEnd; i++) {
@@ -140,7 +149,10 @@ function stampaPrenotazioni(elencoPrenotazioni) {
         TR.appendChild(TD3);
         
         const TD4 = document.createElement('td');
-        TD4.innerHTML = elencoPrenotazioni[i]?.veicolo?.id ?? "<span class='text-danger'> Da definire </span>";
+        TD4.innerHTML = `${elencoPrenotazioni[i]?.veicolo?.id} 
+        (${elencoPrenotazioni[i]?.veicolo?.marca} - ${elencoPrenotazioni[i]?.veicolo?.modello})`
+        ?? "<span class='text-danger'> Da definire </span>";
+        
         TD4.setAttribute('value', elencoPrenotazioni[i]?.veicolo?.id ?? -1);
         TR.appendChild(TD4);
 
@@ -260,12 +272,13 @@ prenotazioneIdDaCheckare.addEventListener('input', checkPrenotazioneId);
 document.querySelector('#mioForm').addEventListener('submit', event => {
     
     if (checkPrenotazioneId(event) == false) {
-		document.querySelector('#utenteIdText').removeAttribute('hidden');
-		document.querySelector('#veicoloIdText').removeAttribute('hidden');
+		//document.querySelector('#utenteIdText').removeAttribute('hidden');
+		//document.querySelector('#veicoloIdText').removeAttribute('hidden');
         event.preventDefault();
         return true;
     }
     
+    localStorage.setItem("faiVedereIlToastUpd", true);
     setTimeout(() => {
 		location.reload();
 	}, 1000);
@@ -323,7 +336,7 @@ function fetchVeicoli() {
                 const OPTION = document.createElement('option');
                 
                 OPTION.value = element.id;
-                OPTION.textContent = element.id;
+                OPTION.textContent = `${element.id} (${element?.marca} - ${element?.modello})`;
                 
                 veicoloId.appendChild(OPTION);
                 

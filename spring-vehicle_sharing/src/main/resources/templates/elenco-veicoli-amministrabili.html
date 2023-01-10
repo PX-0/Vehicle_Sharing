@@ -200,6 +200,20 @@
 		    </div>
 		  </div>
 		</div>
+		
+		<div class="toast-container position-fixed bottom-0 end-0 p-3" th:if="${updSuccess} == true">
+		  <div id="liveToastUpd" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+		    <div class="toast-header">
+		      <img th:src="@{/assets/img/logo.png}" class="rounded me-2" alt="logo" height="17px">
+		      <strong class="me-auto fs-6">Sistema</strong>
+		      <small class="text-muted">ora</small>
+		      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+		    </div>
+		    <div class="toast-body fs-6">
+		      Veicolo modificato con successo!
+		    </div>
+		  </div>
+		</div>
     </main>
 
     

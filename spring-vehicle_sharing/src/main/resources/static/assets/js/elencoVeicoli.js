@@ -76,6 +76,15 @@ if (localStorage.getItem("faiVedereIlToast")) {
 	myToast.show();
 }
 
+var elementUpd = document.getElementById("liveToastUpd");
+var myToastUpd = new bootstrap.Toast(elementUpd);
+
+if (localStorage.getItem("faiVedereIlToastUpd")) {
+	
+	localStorage.removeItem("faiVedereIlToastUpd");
+	myToastUpd.show();
+}
+
 function stampaVeicoli(elencoVeicoli) {
     tableBody.innerHTML = '';
     for(var i = cStart; i < cEnd; i++) {
@@ -444,6 +453,7 @@ document.querySelector('#mioForm').addEventListener('submit', event => {
         return;
     }
     
+	localStorage.setItem("faiVedereIlToastUpd", true);
     setTimeout(() => {
 		location.reload();
 	}, 1500);
