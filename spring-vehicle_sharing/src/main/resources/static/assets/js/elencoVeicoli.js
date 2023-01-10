@@ -127,6 +127,7 @@ function stampaVeicoli(elencoVeicoli) {
         }else{
 
             TD14.textContent = elencoVeicoli[i].cilindrata;
+            TD14.setAttribute('value', elencoVeicoli[i].cilindrata);
         }
         TR.appendChild(TD14);
         
