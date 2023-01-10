@@ -1,6 +1,7 @@
 body {
     background: #F0FCF7 !important;
-    font-family: $font-family-sans-serif;
+    // font-family: $font-family-sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 500;
 }
 
@@ -221,12 +222,12 @@ h3{
 /*                                  TITOLO, NAVBAR e NAV-LINK                 */
 /* -------------------------------------------------------------------------- */
 .mainTitle {
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 1.6rem;
+    font-weight: 600;
 
     @include media-breakpoint-up(md) {
-        font-size: 2.5rem;
-        font-weight: 500;
+        font-size: 2.25rem;
+        // font-weight: 500;
     }
 
     color: #F0FCF7;

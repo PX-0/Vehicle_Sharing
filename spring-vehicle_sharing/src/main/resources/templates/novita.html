@@ -9,16 +9,17 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;600;700;900&display=swap" rel="stylesheet">  
+    <style> @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;600;700;900&display=swap'); </style>
 </head>
 
 <body>
     <header th:fragment="header">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center me-0 " href="http://localhost:9014/">
-                    <img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="">
-                    <h1 class="mainTitle ">Princesharing</h1>
-                </a>
+              <a class="navbar-brand d-flex align-items-center me-0" href="http://localhost:9014/">
+                <h1 class="mainTitle"><img th:src="@{/assets/img/logo.png}" alt="Logo" width="40" height="30" class="me-2">Princesharing</h1>
+              </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
