@@ -54,12 +54,25 @@ function creaGrafico() {
 	      borderWidth: 1
 	    }]
 	  },
-	  options: {
-	    scales: {
-	      y: {
-	        beginAtZero: true
-	      }
-	    }
-	  }
+		options: {
+		    scales: {
+		        xAxes: [{
+					display: false, //this will remove all the x-axis grid lines
+		            ticks: {
+		                display: false //this will remove only the label
+		            }
+		        }]
+		    },
+		    plugins: {
+			    legend:{
+					position: 'bottom',
+					labels: {
+					          boxWidth: 20,
+					          boxHeight: 10,
+					          padding: 30
+					        }
+					}
+			}
+		}
 	});
 }
