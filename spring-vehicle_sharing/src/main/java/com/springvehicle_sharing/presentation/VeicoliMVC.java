@@ -1,5 +1,6 @@
 package com.springvehicle_sharing.presentation;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -160,7 +161,8 @@ public class VeicoliMVC {
 			String linkVeicolo, @RequestParam(defaultValue = "false", value = "delImg") 
 			boolean delImg, Model m, @RequestParam("modello") String modello, 
 			@RequestParam("marca") String marca, @RequestParam("colore") String colore, 
-			@RequestParam("cilindrata") String cilindrata, RedirectAttributes redirectAttrs) {
+			@RequestParam("cilindrata") String cilindrata, RedirectAttributes redirectAttrs,
+			@RequestParam("immagineVeicoloNomeFile") String immagineVeicoloNomeFile) {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
@@ -186,6 +188,7 @@ public class VeicoliMVC {
 		
 		if (delImg) {
 			
+			new File(UPLOAD_DIRECTORY + "/" + immagineVeicoloNomeFile).delete();
 			veicolo.setImmagineVeicolo(null);
 		} else {
 			

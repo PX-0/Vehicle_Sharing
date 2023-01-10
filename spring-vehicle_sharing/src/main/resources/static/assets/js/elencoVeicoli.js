@@ -254,6 +254,8 @@ function stampaVeicoli(elencoVeicoli) {
 			document.querySelector('#colore').value = TD13.textContent;
 			
 			document.querySelector('#cilindrata').value = TD14.getAttribute('value');
+			
+			document.querySelector('#immagineVeicoloNomeFile').value = TESTIMG.getAttribute('title');
 
         });
 		
