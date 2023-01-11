@@ -162,7 +162,8 @@ public class VeicoliMVC {
 			boolean delImg, Model m, @RequestParam("modello") String modello, 
 			@RequestParam("marca") String marca, @RequestParam("colore") String colore, 
 			@RequestParam("cilindrata") String cilindrata, RedirectAttributes redirectAttrs,
-			@RequestParam("immagineVeicoloNomeFile") String immagineVeicoloNomeFile) {
+			@RequestParam(value = "immagineVeicoloNomeFile", required = false) 
+			String immagineVeicoloNomeFile) {
 		
 		ArchivioUtenti utente = (ArchivioUtenti) session.getAttribute("loggedUser");
 		
